@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQs | SR Digital World</title>
+<meta name="description" content="SR Digital World ke common sawalat ke jawab - orders, payment, products aur support ke baray mein.">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:hidden}
+.nav-bar{background:rgba(10,10,15,0.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,140,0,0.15);padding:16px 0;position:sticky;top:0;z-index:1000}
+.nav-logo{font-size:1.4rem;font-weight:900;background:linear-gradient(135deg,#FF8C00,#FFB347);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-0.5px}
+.nav-link-item{color:#999;text-decoration:none;font-size:14px;font-weight:600;transition:color 0.25s;position:relative;padding:4px 0}
+.nav-link-item:hover{color:#FF8C00}
+.nav-link-item.active{color:#FF8C00}
+.nav-link-item.active::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:2px;background:#FF8C00;border-radius:2px}
+.page-hero{padding:70px 0 50px;background:#000;text-align:center;border-bottom:1px solid #1a1a25;position:relative;overflow:hidden}
+.page-hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 50% 50% at 50% 0%,rgba(255,140,0,0.1) 0%,transparent 70%)}
+.section-eyebrow{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#FF8C00;margin-bottom:12px}
+.section-title{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;color:#fff;letter-spacing:-1px;line-height:1.1}
+.faqs-section{padding:70px 0;background:#0a0a0f}
+
+/* CATEGORY TABS */
+.cat-tabs{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:46px}
+.cat-tab{background:#111118;border:1px solid #1e1e2a;color:#888;padding:10px 20px;border-radius:100px;font-size:13px;font-weight:600;cursor:pointer;transition:all 0.3s;font-family:'Inter',sans-serif}
+.cat-tab:hover{border-color:rgba(255,140,0,0.4);color:#FF8C00}
+.cat-tab.active{background:#FF8C00;color:#000;border-color:#FF8C00}
+
+.faq-group{display:none}
+.faq-group.active{display:block}
+
+.faq-item{background:#111118;border:1px solid #1e1e2a;border-radius:16px;margin-bottom:14px;overflow:hidden;transition:border 0.3s}
+.faq-item.open{border-color:rgba(255,140,0,0.35)}
+.faq-q{padding:20px 24px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;gap:16px}
+.faq-q-text{color:#fff;font-weight:700;font-size:14.5px}
+.faq-q-icon{width:30px;height:30px;border-radius:50%;background:rgba(255,140,0,0.1);display:flex;align-items:center;justify-content:center;color:#FF8C00;font-size:13px;flex-shrink:0;transition:transform 0.3s}
+.faq-item.open .faq-q-icon{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height 0.35s ease, padding 0.35s ease}
+.faq-a-inner{padding:0 24px 20px;color:#888;font-size:13.5px;line-height:1.7}
+.faq-item.open .faq-a{max-height:300px}
+
+.cta-banner{background:linear-gradient(135deg,#1a1208,#0a0a0f);border:1px solid rgba(255,140,0,0.2);border-radius:24px;padding:50px 40px;text-align:center;margin-top:60px}
+
+.footer{background:#050508;padding:60px 0 24px;border-top:1px solid #1a1a25;text-align:center}
+.footer-link{color:#666;text-decoration:none;font-size:13px;transition:color 0.25s}
+.footer-link:hover{color:#FF8C00}
+.footer-logo{font-size:1.1rem;font-weight:900;background:linear-gradient(135deg,#FF8C00,#FFB347);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+.footer-text{color:#333;font-size:12px}
+.wa-float{position:fixed;bottom:28px;right:28px;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:26px;text-decoration:none;z-index:9999;box-shadow:0 4px 20px rgba(0,0,0,0.4);transition:all 0.3s}
+.wa-float:hover{background:#20ba5a;transform:scale(1.1)}
+@media(max-width:768px){.section-title{font-size:1.9rem}.faq-q-text{font-size:13.5px}}
+</style>
+</head>
+<body>
+
+<a href="https://wa.me/923229952880" target="_blank" class="wa-float">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<nav class="nav-bar">
+  <div class="container d-flex justify-content-between align-items-center flex-wrap gap-3">
+    <a href="index.html" class="nav-logo" style="text-decoration:none">⚡ SR Digital World</a>
+    <div class="nav-links d-none d-lg-flex align-items-center gap-4">
+      <a href="index.html" class="nav-link-item">Home</a>
+      <a href="products.html" class="nav-link-item">Products</a>
+      <a href="pricing.html" class="nav-link-item">Pricing</a>
+      <a href="about.html" class="nav-link-item">About</a>
+      <a href="faqs.html" class="nav-link-item active">FAQs</a>
+      <a href="contact.html" class="nav-link-item">Contact</a>
+    </div>
+    <a href="https://wa.me/923229952880" target="_blank" style="background:#FF8C00;color:#000;padding:8px 20px;border-radius:100px;font-weight:700;font-size:13px;text-decoration:none;white-space:nowrap">
+      <i class="fa-brands fa-whatsapp" style="margin-right:6px"></i>Order on WhatsApp
+    </a>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="container" style="position:relative">
+    <div class="section-eyebrow">Help Center</div>
+    <h1 class="section-title">Common Sawalat</h1>
+    <p style="color:#666;font-size:15px;margin-top:14px;max-width:500px;margin-left:auto;margin-right:auto">Jo bhi sawal ho, shayad uska jawab yahan pehle se maujood ho</p>
+  </div>
+</section>
+
+<section class="faqs-section">
+  <div class="container">
+
+    <div class="cat-tabs">
+      <button class="cat-tab active" onclick="showCat('orders',this)">Orders & Delivery</button>
+      <button class="cat-tab" onclick="showCat('payment',this)">Payment</button>
+      <button class="cat-tab" onclick="showCat('products',this)">Products</button>
+      <button class="cat-tab" onclick="showCat('support',this)">Support</button>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-9">
+
+        <!-- ORDERS -->
+        <div class="faq-group active" id="cat-orders">
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+              <span class="faq-q-text">Order kaise place karein?</span>
+              <div class="faq-q-icon"><i class="fa-solid fa-plus"></i></div>
+            </div>
+            <div class="faq-a"><div class="faq-a-inner">Products ya Pricing page par jayein, apna desired tool aur duration select karein, "Order Now" click karein, naam aur WhatsApp number dalein — message automatically WhatsApp par chala jayega.</div></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+              <span class="faq-q-text">Delivery kitni dair mein hoti hai?</span>
+              <div class="faq-q-icon"><i class="fa-solid fa-plus"></i></div>
+            </div>
+            <div class="faq-a"><div class="faq-a-inner">Payment confirm hote hi, usually 10-30 minutes ke andar account credentials WhatsApp par bhej diye jaate hain. Peak hours mein thoda time lag sakta hai.</div></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+              <span class="faq-q-text">Order track kaise karein?</span>
+              <div class="faq-q-icon"><i class="fa-solid fa-plus"></i></div>
+            </div>
+            <div class="faq-a"><div class="faq-a-inner">Order place karne ke baad WhatsApp hi single point of contact hai — wahi chat mein updates milte rehte hain.</div></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+              <span class="faq-q-text">Kya order cancel ho sakta hai?</span>
+              <div class="faq-q-icon"><i class="fa-solid fa-plus"></i></div>
+            </div>
+            <div class="faq-a"><div class="faq-a-inner">Payment se pehle koi bhi order free mein cancel ho sakta hai. Payment ke baad cancellation WhatsApp par discuss karni hogi.</div></div>
+          </div>
+        </div>
+
+        <!-- PAYMENT -->
+        <div class="faq-group" id="cat-payment">
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+              <span class="faq-q-text">Payment ke kaunse methods accept hote hain?</span>
+              <div class="faq-q-icon"><i class="fa-solid fa-plus"></i></div>
+            </div>
+            <div class="faq-a"><div class="faq-a-inner">JazzCash, EasyPaisa aur Bank Transfer — sab accept hote hain. Order confirm hone ke baad WhatsApp par payment details mil jaati hain.</div></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+              <span class="faq-q-text">Kya advance payment zaroori hai?</span>
+              <div class="faq-q-icon"><i class="fa-solid fa-plus"></i></div>
+            </div>
+            <div class="faq-a"><div class="faq-a-inner">Haan, delivery se pehle payment confirm karni hoti hai taake order processing turant shuru ho sake.</div></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+              <span class="faq-q-text">Kya refund milta hai?</span>
+              <div class="faq-q-icon"><i class="fa-solid fa-plus"></i></div>
+            </div>
+            <div class="faq-a"><div class="faq-a-inner">Agar account access mein koi genuine issue ho toh hum 24 ghante ke andar replace ya refund process karte hain.</div></div>
+          </div>
+        </div>
+
+        <!-- PRODUCTS -->
+        <div class="faq-group" id="cat-products">
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+              <span class="faq-q-text">Yeh subscriptions genuine hain ya shared?</span>
+              <div class="faq-q-icon"><i class="fa-solid fa-plus"></i></div>
+            </div>
+            <div class="faq-a"><div class="faq-a-inner">Sab subscriptions verified aur original hain — koi fake ya cracked versions nahi diye jaate.</div></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+              <span class="faq-q-text">Subscription expire hone ke baad kya hoga?</span>
+              <div class="faq-q-icon"><i class="fa-solid fa-plus"></i></div>
+            </div>
+            <div class="faq-a"><div class="faq-a-inner">Aap WhatsApp par renewal ke liye contact kar sakte hain — naya order place karna hoga apne preferred duration ke saath.</div></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+              <span class="faq-q-text">Kya koi aur tool bhi mil sakta hai jo list mein nahi hai?</span>
+              <div class="faq-q-icon"><i class="fa-solid fa-plus"></i></div>
+            </div>
+            <div class="faq-a"><div class="faq-a-inner">WhatsApp par message karein apni requirement ke saath — agar available hua toh hum zaroor provide karenge.</div></div>
+          </div>
+        </div>
+
+        <!-- SUPPORT -->
+        <div class="faq-group" id="cat-support">
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+              <span class="faq-q-text">Support kab available hota hai?</span>
+              <div class="faq-q-icon"><i class="fa-solid fa-plus"></i></div>
+            </div>
+            <div class="faq-a"><div class="faq-a-inner">24/7 — raat ho ya din, WhatsApp par message bhejein aur usually 30 minutes ke andar reply milta hai.</div></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+              <span class="faq-q-text">Agar account mein problem aa jaye toh kya karein?</span>
+              <div class="faq-q-icon"><i class="fa-solid fa-plus"></i></div>
+            </div>
+            <div class="faq-a"><div class="faq-a-inner">Turant WhatsApp par order details ke saath message karein — hum jald se jald resolve karenge ya replace kar denge.</div></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="cta-banner">
+      <h3 style="color:#fff;font-weight:800;font-size:1.5rem;margin-bottom:10px">Apna Jawab Nahi Mila?</h3>
+      <p style="color:#777;font-size:14px;margin-bottom:24px">Hum yahan hain madad ke liye — WhatsApp par direct sawal puchein</p>
+      <a href="https://wa.me/923229952880" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:#FF8C00;color:#000;padding:13px 28px;border-radius:100px;font-weight:700;font-size:14px;text-decoration:none">
+        <i class="fa-brands fa-whatsapp"></i> WhatsApp Par Puchein
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="row text-start g-4 mb-4">
+      <div class="col-md-4">
+        <div class="footer-logo">⚡ SR Digital World</div>
+        <p style="color:#555;font-size:13px;line-height:1.7;margin-top:8px">Pakistan ka #1 digital tools store. Premium subscriptions, best prices, instant delivery.</p>
+      </div>
+      <div class="col-md-4">
+        <div style="color:#fff;font-weight:700;font-size:13px;margin-bottom:12px;letter-spacing:0.5px">QUICK LINKS</div>
+        <div class="d-flex flex-column gap-2">
+          <a href="index.html" class="footer-link">Home</a>
+          <a href="products.html" class="footer-link">Products</a>
+          <a href="pricing.html" class="footer-link">Pricing</a>
+          <a href="about.html" class="footer-link">About Us</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div style="color:#fff;font-weight:700;font-size:13px;margin-bottom:12px;letter-spacing:0.5px">SUPPORT</div>
+        <div class="d-flex flex-column gap-2">
+          <a href="faqs.html" class="footer-link">FAQs</a>
+          <a href="contact.html" class="footer-link">Contact Us</a>
+          <a href="https://wa.me/923229952880" target="_blank" class="footer-link">WhatsApp Support</a>
+        </div>
+      </div>
+    </div>
+    <p class="footer-text" style="border-top:1px solid #1a1a25;padding-top:20px">© 2026 SR Digital World. All Rights Reserved. | 🇵🇰 Made in Pakistan</p>
+  </div>
+</footer>
+
+<script>
+function toggleFaq(el){
+  const item=el.parentElement;
+  const wasOpen=item.classList.contains('open');
+  item.parentElement.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+  if(!wasOpen){item.classList.add('open');}
+}
+function showCat(cat,btn){
+  document.querySelectorAll('.cat-tab').forEach(t=>t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.faq-group').forEach(g=>g.classList.remove('active'));
+  document.getElementById('cat-'+cat).classList.add('active');
+}
+</script>
+</body>
+</html>

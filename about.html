@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | SR Digital World</title>
+<meta name="description" content="SR Digital World ki kahani - Pakistan ke students aur young creators ke liye premium digital tools, best prices par.">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:hidden}
+.nav-bar{background:rgba(10,10,15,0.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,140,0,0.15);padding:16px 0;position:sticky;top:0;z-index:1000}
+.nav-logo{font-size:1.4rem;font-weight:900;background:linear-gradient(135deg,#FF8C00,#FFB347);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-0.5px}
+.nav-link-item{color:#999;text-decoration:none;font-size:14px;font-weight:600;transition:color 0.25s;position:relative;padding:4px 0}
+.nav-link-item:hover{color:#FF8C00}
+.nav-link-item.active{color:#FF8C00}
+.nav-link-item.active::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:2px;background:#FF8C00;border-radius:2px}
+.page-hero{padding:70px 0 50px;background:#000;text-align:center;border-bottom:1px solid #1a1a25;position:relative;overflow:hidden}
+.page-hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 50% 50% at 50% 0%,rgba(255,140,0,0.1) 0%,transparent 70%)}
+.section-eyebrow{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#FF8C00;margin-bottom:12px}
+.section-title{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;color:#fff;letter-spacing:-1px;line-height:1.1}
+.about-section{padding:80px 0;background:#0a0a0f}
+
+.story-card{background:#111118;border:1px solid #1e1e2a;border-radius:24px;padding:44px;margin-bottom:50px}
+.story-text{color:#999;font-size:15px;line-height:1.9;font-weight:300}
+.story-text strong{color:#FF8C00;font-weight:700}
+
+.value-card{background:#111118;border:1px solid #1e1e2a;border-radius:20px;padding:30px 26px;height:100%;transition:all 0.4s}
+.value-card:hover{transform:translateY(-6px);border-color:rgba(255,140,0,0.3);box-shadow:0 15px 40px rgba(0,0,0,0.4)}
+.value-icon{width:54px;height:54px;border-radius:14px;background:rgba(255,140,0,0.1);display:flex;align-items:center;justify-content:center;color:#FF8C00;font-size:22px;margin-bottom:18px}
+.value-title{color:#fff;font-weight:700;font-size:1.05rem;margin-bottom:8px}
+.value-text{color:#666;font-size:13px;line-height:1.6}
+
+.founder-section{background:#111118;border:1px solid #1e1e2a;border-radius:24px;padding:50px;margin-top:60px}
+.founder-avatar{width:90px;height:90px;border-radius:20px;background:linear-gradient(135deg,#FF8C00,#FFB347);display:flex;align-items:center;justify-content:center;color:#000;font-weight:900;font-size:30px;flex-shrink:0}
+.founder-name{color:#fff;font-weight:800;font-size:1.4rem;margin-bottom:4px}
+.founder-role{color:#FF8C00;font-size:13px;font-weight:600;letter-spacing:0.5px;text-transform:uppercase;margin-bottom:16px}
+.founder-quote{color:#888;font-size:14.5px;line-height:1.8;font-style:italic;font-weight:300}
+
+.timeline-item{display:flex;gap:20px;margin-bottom:32px;position:relative}
+.timeline-dot{width:14px;height:14px;border-radius:50%;background:#FF8C00;flex-shrink:0;margin-top:4px;box-shadow:0 0 0 4px rgba(255,140,0,0.15)}
+.timeline-line{position:absolute;left:6px;top:18px;bottom:-32px;width:1px;background:#1e1e2a}
+.timeline-item:last-child .timeline-line{display:none}
+.timeline-title{color:#fff;font-weight:700;font-size:15px;margin-bottom:4px}
+.timeline-text{color:#666;font-size:13px;line-height:1.6}
+
+.cta-banner{background:linear-gradient(135deg,#1a1208,#0a0a0f);border:1px solid rgba(255,140,0,0.2);border-radius:24px;padding:50px 40px;text-align:center;margin-top:60px}
+
+.footer{background:#050508;padding:60px 0 24px;border-top:1px solid #1a1a25;text-align:center}
+.footer-link{color:#666;text-decoration:none;font-size:13px;transition:color 0.25s}
+.footer-link:hover{color:#FF8C00}
+.footer-logo{font-size:1.1rem;font-weight:900;background:linear-gradient(135deg,#FF8C00,#FFB347);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+.footer-text{color:#333;font-size:12px}
+.wa-float{position:fixed;bottom:28px;right:28px;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:26px;text-decoration:none;z-index:9999;box-shadow:0 4px 20px rgba(0,0,0,0.4);transition:all 0.3s}
+.wa-float:hover{background:#20ba5a;transform:scale(1.1)}
+@media(max-width:768px){.section-title{font-size:1.9rem}.story-card{padding:28px 22px}.founder-section{padding:32px 24px}.founder-section .d-flex{flex-direction:column;text-align:center;align-items:center !important}}
+</style>
+</head>
+<body>
+
+<a href="https://wa.me/923229952880" target="_blank" class="wa-float">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<nav class="nav-bar">
+  <div class="container d-flex justify-content-between align-items-center flex-wrap gap-3">
+    <a href="index.html" class="nav-logo" style="text-decoration:none">⚡ SR Digital World</a>
+    <div class="nav-links d-none d-lg-flex align-items-center gap-4">
+      <a href="index.html" class="nav-link-item">Home</a>
+      <a href="products.html" class="nav-link-item">Products</a>
+      <a href="pricing.html" class="nav-link-item">Pricing</a>
+      <a href="about.html" class="nav-link-item active">About</a>
+      <a href="faqs.html" class="nav-link-item">FAQs</a>
+      <a href="contact.html" class="nav-link-item">Contact</a>
+    </div>
+    <a href="https://wa.me/923229952880" target="_blank" style="background:#FF8C00;color:#000;padding:8px 20px;border-radius:100px;font-weight:700;font-size:13px;text-decoration:none;white-space:nowrap">
+      <i class="fa-brands fa-whatsapp" style="margin-right:6px"></i>Order on WhatsApp
+    </a>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="container" style="position:relative">
+    <div class="section-eyebrow">Our Story</div>
+    <h1 class="section-title">SR Digital World Ke Baray Mein</h1>
+    <p style="color:#666;font-size:15px;margin-top:14px;max-width:550px;margin-left:auto;margin-right:auto">Pakistan ke students aur creators ko premium digital tools tak asaan, affordable rasaai dene ka mission</p>
+  </div>
+</section>
+
+<section class="about-section">
+  <div class="container">
+
+    <!-- STORY -->
+    <div class="story-card">
+      <div class="section-eyebrow">Hamari Kahani</div>
+      <p class="story-text">
+        SR Digital World <strong>1-2 saal pehle</strong> ek simple idea ke saath shuru hua tha — Pakistan mein bohat se students aur young creators ke paas talent toh hai, lekin premium tools jaise Canva Pro, CapCut Pro aur VPN services ke liye international pricing afford karna mushkil hota hai.<br><br>
+        Hum ne decide kiya ke yeh gap fill karenge — <strong>genuine, verified subscriptions</strong> ko local, affordable rates par, seedha WhatsApp ke zariye, bina kisi complicated checkout process ke.<br><br>
+        Aaj SR Digital World <strong>1000+ se zyada orders</strong> deliver kar chuka hai — students, content creators, freelancers aur small businesses ko, jo apne creative aur professional kaam ke liye best tools use karna chahte hain bina apni jeb khali kiye.
+      </p>
+    </div>
+
+    <!-- VALUES -->
+    <div class="section-eyebrow text-center">What We Stand For</div>
+    <h2 class="section-title text-center mb-5">Hamari Values</h2>
+    <div class="row g-4 mb-5">
+      <div class="col-md-3 col-6">
+        <div class="value-card">
+          <div class="value-icon"><i class="fa-solid fa-bolt"></i></div>
+          <div class="value-title">Speed</div>
+          <div class="value-text">Order se delivery tak — sab kuch minutes mein, ghanton mein nahi.</div>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="value-card">
+          <div class="value-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="value-title">Trust</div>
+          <div class="value-text">Har subscription verified aur genuine — koi shortcuts nahi.</div>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="value-card">
+          <div class="value-icon"><i class="fa-solid fa-tag"></i></div>
+          <div class="value-title">Fair Pricing</div>
+          <div class="value-text">Student-friendly rates, bina hidden charges ke.</div>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="value-card">
+          <div class="value-icon"><i class="fa-solid fa-headset"></i></div>
+          <div class="value-title">Support</div>
+          <div class="value-text">24/7 WhatsApp par real insaan se baat — bots nahi.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TIMELINE + FOUNDER -->
+    <div class="row g-5 align-items-start">
+      <div class="col-lg-6">
+        <div class="section-eyebrow">Our Journey</div>
+        <h3 style="color:#fff;font-weight:800;font-size:1.6rem;margin-bottom:30px">Yahan Tak Ka Safar</h3>
+
+        <div class="timeline-item">
+          <div style="position:relative">
+            <div class="timeline-dot"></div>
+            <div class="timeline-line"></div>
+          </div>
+          <div>
+            <div class="timeline-title">Shuruwaat</div>
+            <div class="timeline-text">Chhote scale par Canva Pro reselling se shuru hua — Facebook aur WhatsApp ke zariye.</div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div style="position:relative">
+            <div class="timeline-dot"></div>
+            <div class="timeline-line"></div>
+          </div>
+          <div>
+            <div class="timeline-title">Expansion</div>
+            <div class="timeline-text">CapCut Pro, Surfshark VPN aur Gemini Pro add kiye — product range barhai customer demand par.</div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div>
+            <div class="timeline-title">Aaj</div>
+            <div class="timeline-text">1000+ orders, growing customer base, aur ek dedicated online storefront ke saath — SR Digital World Pakistan ka trusted digital tools partner ban chuka hai.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="founder-section">
+          <div class="d-flex gap-4 align-items-start mb-4">
+            <div class="founder-avatar">MS</div>
+            <div>
+              <div class="founder-name">Muhammad Saif Ullah</div>
+              <div class="founder-role">Founder, SR Digital World</div>
+            </div>
+          </div>
+          <p class="founder-quote">
+            "Maine SR Digital World isliye shuru kiya kyunke main khud ek student hoon, aur janta hoon ke quality tools tak access kitna zaroori hai — lekin pricing aksar barrier ban jaati hai. Hamara goal simple hai: har student aur creator ko woh tools afford karne dena jo unke kaam ko behtar bana sakein."
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-banner">
+      <h3 style="color:#fff;font-weight:800;font-size:1.5rem;margin-bottom:10px">Hamare Saath Judiye</h3>
+      <p style="color:#777;font-size:14px;margin-bottom:24px">Apna pehla order place karein aur khud farak mehsoos karein</p>
+      <a href="products.html" style="display:inline-flex;align-items:center;gap:8px;background:#FF8C00;color:#000;padding:13px 28px;border-radius:100px;font-weight:700;font-size:14px;text-decoration:none">
+        Products Dekhein <i class="fa-solid fa-arrow-right" style="font-size:12px"></i>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="row text-start g-4 mb-4">
+      <div class="col-md-4">
+        <div class="footer-logo">⚡ SR Digital World</div>
+        <p style="color:#555;font-size:13px;line-height:1.7;margin-top:8px">Pakistan ka #1 digital tools store. Premium subscriptions, best prices, instant delivery.</p>
+      </div>
+      <div class="col-md-4">
+        <div style="color:#fff;font-weight:700;font-size:13px;margin-bottom:12px;letter-spacing:0.5px">QUICK LINKS</div>
+        <div class="d-flex flex-column gap-2">
+          <a href="index.html" class="footer-link">Home</a>
+          <a href="products.html" class="footer-link">Products</a>
+          <a href="pricing.html" class="footer-link">Pricing</a>
+          <a href="about.html" class="footer-link">About Us</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div style="color:#fff;font-weight:700;font-size:13px;margin-bottom:12px;letter-spacing:0.5px">SUPPORT</div>
+        <div class="d-flex flex-column gap-2">
+          <a href="faqs.html" class="footer-link">FAQs</a>
+          <a href="contact.html" class="footer-link">Contact Us</a>
+          <a href="https://wa.me/923229952880" target="_blank" class="footer-link">WhatsApp Support</a>
+        </div>
+      </div>
+    </div>
+    <p class="footer-text" style="border-top:1px solid #1a1a25;padding-top:20px">© 2026 SR Digital World. All Rights Reserved. | 🇵🇰 Made in Pakistan</p>
+  </div>
+</footer>
+
+</body>
+</html>
