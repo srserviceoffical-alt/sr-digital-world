@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pricing | SR Digital World</title>
 <meta name="description" content="Sab digital tools ki transparent pricing — Canva Pro, CapCut Pro, Surfshark VPN, Gemini Pro. Best rates Pakistan mein.">
+<link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/3003/3003984.png"> 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
@@ -73,7 +74,13 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
 .modal-sub{font-size:13px;color:#555;margin-bottom:24px}
 .modal-product-chip{display:inline-block;background:rgba(255,140,0,0.1);color:#FF8C00;padding:6px 14px;border-radius:8px;font-size:14px;font-weight:700;margin-bottom:20px}
 .modal-input{width:100%;background:#0a0a0f;border:1px solid #2a2a35;color:#e8e8f0;padding:12px 16px;border-radius:10px;font-size:14px;font-family:'Inter',sans-serif;margin-bottom:12px;transition:border 0.2s;outline:none}
-.modal-input:focus{border-color:#FF8C00}
+/* Input Focus Hover Effect add kiya gaya hai */
+.modal-input:focus, .contact-input:focus, .contact-textarea:focus {
+    border-color: #FF8C00;
+    background-color: #222222;
+    box-shadow: 0 0 8px rgba(255, 140, 0, 0.3);
+    outline: none;
+}
 .modal-input::placeholder{color:#444}
 .modal-actions{display:flex;gap:10px;margin-top:6px}
 .btn-cancel{flex:1;padding:12px;background:transparent;border:1px solid #2a2a35;color:#666;border-radius:10px;cursor:pointer;font-family:'Inter',sans-serif;font-weight:600;font-size:14px;transition:all 0.2s}
@@ -92,14 +99,14 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
 
 <nav class="nav-bar">
   <div class="container d-flex justify-content-between align-items-center flex-wrap gap-3">
-    <a href="index.html" class="nav-logo" style="text-decoration:none">⚡ SR Digital World</a>
+    <a href="/" class="nav-logo" style="text-decoration:none">⚡ SR Digital World</a>
     <div class="nav-links d-none d-lg-flex align-items-center gap-4">
-      <a href="index.html" class="nav-link-item">Home</a>
-      <a href="products.html" class="nav-link-item">Products</a>
-      <a href="pricing.html" class="nav-link-item active">Pricing</a>
-      <a href="about.html" class="nav-link-item">About</a>
-      <a href="faqs.html" class="nav-link-item">FAQs</a>
-      <a href="contact.html" class="nav-link-item">Contact</a>
+      <a href="/" class="nav-link-item">Home</a>
+      <a href="products" class="nav-link-item">Products</a>
+      <a href="pricing" class="nav-link-item active">Pricing</a>
+      <a href="about" class="nav-link-item">About</a>
+      <a href="faqs" class="nav-link-item">FAQs</a>
+      <a href="contact" class="nav-link-item">Contact</a>
     </div>
     <a href="https://wa.me/923229952880" target="_blank" style="background:#FF8C00;color:#000;padding:8px 20px;border-radius:100px;font-weight:700;font-size:13px;text-decoration:none;white-space:nowrap">
       <i class="fa-brands fa-whatsapp" style="margin-right:6px"></i>Order on WhatsApp
@@ -119,7 +126,6 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
 <section class="pricing-section">
   <div class="container">
 
-    <!-- DESKTOP TABLE -->
     <div class="price-table-wrap desktop-table">
       <table class="price-table">
         <thead>
@@ -184,7 +190,6 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
       </table>
     </div>
 
-    <!-- MOBILE CARDS -->
     <div class="mobile-cards">
       <div class="mobile-price-card">
         <div class="mp-header">
@@ -236,7 +241,6 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
       </div>
     </div>
 
-    <!-- MINI FAQ -->
     <div class="faq-mini">
       <h4 style="color:#fff;font-weight:800;font-size:1.1rem;margin-bottom:6px">Pricing Se Related Sawalat</h4>
       <div class="faq-mini-item">
@@ -274,17 +278,17 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
       <div class="col-md-4">
         <div style="color:#fff;font-weight:700;font-size:13px;margin-bottom:12px;letter-spacing:0.5px">QUICK LINKS</div>
         <div class="d-flex flex-column gap-2">
-          <a href="index.html" class="footer-link">Home</a>
-          <a href="products.html" class="footer-link">Products</a>
-          <a href="pricing.html" class="footer-link">Pricing</a>
-          <a href="about.html" class="footer-link">About Us</a>
+          <a href="/" class="footer-link">Home</a>
+          <a href="products" class="footer-link">Products</a>
+          <a href="pricing" class="footer-link">Pricing</a>
+          <a href="about" class="footer-link">About Us</a>
         </div>
       </div>
       <div class="col-md-4">
         <div style="color:#fff;font-weight:700;font-size:13px;margin-bottom:12px;letter-spacing:0.5px">SUPPORT</div>
         <div class="d-flex flex-column gap-2">
-          <a href="faqs.html" class="footer-link">FAQs</a>
-          <a href="contact.html" class="footer-link">Contact Us</a>
+          <a href="faqs" class="footer-link">FAQs</a>
+          <a href="contact" class="footer-link">Contact Us</a>
           <a href="https://wa.me/923229952880" target="_blank" class="footer-link">WhatsApp Support</a>
         </div>
       </div>
@@ -315,8 +319,14 @@ function quickOrder(name){
   document.getElementById('mName').value='';
   document.getElementById('mPhone').value='';
   document.getElementById('modalOverlay').classList.add('open');
+  // Scroll fix add kiya gaya hai
+  document.body.style.overflow = 'hidden'; 
 }
-function closeModal(){document.getElementById('modalOverlay').classList.remove('open')}
+function closeModal(){
+  document.getElementById('modalOverlay').classList.remove('open');
+  // Scroll fix add kiya gaya hai
+  document.body.style.overflow = 'auto'; 
+}
 function closeOnBg(e){if(e.target===document.getElementById('modalOverlay'))closeModal()}
 function sendOrder(){
   const name=document.getElementById('mName').value.trim();
