@@ -43,7 +43,10 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
 .section-title{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;color:#fff;letter-spacing:-1px;line-height:1.1}
 .products-section{padding:90px 0;background:#0a0a0f}
 .product-card{background:#111118;border:1px solid #1e1e2a;border-radius:20px;padding:32px 28px;transition:all 0.4s;position:relative;overflow:hidden;height:100%}
-.product-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,140,0,0.04) 0%,transparent 60%);opacity:0;transition:opacity 0.4s}
+
+/* YAHAN FIX KIYA GAYA HAI: pointer-events: none; add kiya hai taake clicks block na hon */
+.product-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,140,0,0.04) 0%,transparent 60%);opacity:0;transition:opacity 0.4s;pointer-events:none;}
+
 .product-card:hover{border-color:rgba(255,140,0,0.35);transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,0.5)}
 .product-card:hover::before{opacity:1}
 .card-tag{display:inline-block;background:rgba(255,140,0,0.1);color:#FF8C00;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:6px;margin-bottom:20px}
@@ -52,13 +55,13 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
 .product-name{font-size:1.25rem;font-weight:700;color:#fff;margin-bottom:8px;letter-spacing:-0.3px}
 .product-desc{font-size:13px;color:#666;line-height:1.6;margin-bottom:24px}
 .dur-tabs{display:flex;gap:6px;margin-bottom:20px;flex-wrap:wrap}
-.dur-tab{background:transparent;border:1px solid #2a2a35;color:#666;padding:5px 12px;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;transition:all 0.25s;font-family:'Inter',sans-serif}
+.dur-tab{background:transparent;border:1px solid #2a2a35;color:#666;padding:5px 12px;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;transition:all 0.25s;font-family:'Inter',sans-serif;position:relative;z-index:2;} /* z-index for safety */
 .dur-tab:hover{border-color:#FF8C00;color:#FF8C00}
 .dur-tab.active{background:#FF8C00;color:#000;border-color:#FF8C00}
 .price-block{margin-bottom:24px}
 .price-amount{font-size:2rem;font-weight:900;color:#FF8C00;letter-spacing:-1px}
 .price-period{font-size:13px;color:#555;margin-left:4px}
-.order-btn{width:100%;padding:13px;background:transparent;border:1.5px solid #FF8C00;color:#FF8C00;border-radius:12px;font-weight:700;font-size:14px;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.3s;letter-spacing:0.3px;display:flex;align-items:center;justify-content:center;gap:8px}
+.order-btn{width:100%;padding:13px;background:transparent;border:1.5px solid #FF8C00;color:#FF8C00;border-radius:12px;font-weight:700;font-size:14px;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.3s;letter-spacing:0.3px;display:flex;align-items:center;justify-content:center;gap:8px;position:relative;z-index:2;} /* z-index for safety */
 .order-btn:hover{background:#FF8C00;color:#000;box-shadow:0 8px 24px rgba(255,140,0,0.3)}
 .features-section{padding:80px 0;background:#111118;border-top:1px solid #1a1a25}
 .feature-item{display:flex;gap:16px;align-items:flex-start;padding:20px}
@@ -83,7 +86,7 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
 .modal-sub{font-size:13px;color:#555;margin-bottom:24px}
 .modal-product-chip{display:inline-block;background:rgba(255,140,0,0.1);color:#FF8C00;padding:6px 14px;border-radius:8px;font-size:14px;font-weight:700;margin-bottom:20px}
 .modal-input{width:100%;background:#0a0a0f;border:1px solid #2a2a35;color:#e8e8f0;padding:12px 16px;border-radius:10px;font-size:14px;font-family:'Inter',sans-serif;margin-bottom:12px;transition:border 0.2s;outline:none}
-/* Input Focus Hover Effect add kiya gaya hai */
+/* Input Focus Hover Effect */
 .modal-input:focus, .contact-input:focus, .contact-textarea:focus {
     border-color: #FF8C00;
     background-color: #222222;
