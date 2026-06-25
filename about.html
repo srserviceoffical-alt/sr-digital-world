@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About Us | SR Digital World</title>
-<meta name="description" content="SR Digital World ki kahani - Pakistan ke students aur young creators ke liye premium digital tools, best prices par.">
+<meta name="description" content="The story of SR Digital World - Premium digital tools for students and young creators in Pakistan at the best prices.">
 <!-- Favicon add kiya gaya hai -->
 <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/3003/3003984.png"> 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -23,7 +23,22 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
 .page-hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 50% 50% at 50% 0%,rgba(255,140,0,0.1) 0%,transparent 70%)}
 .section-eyebrow{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#FF8C00;margin-bottom:12px}
 .section-title{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;color:#fff;letter-spacing:-1px;line-height:1.1}
-.about-section{padding:80px 0;background:#0a0a0f}
+.about-section{padding:50px 0 80px;background:#0a0a0f}
+
+/* LANGUAGE TOGGLE STYLES */
+.lang-toggle-wrap { display: flex; justify-content: center; margin-bottom: 40px; }
+.lang-toggle { background: #111118; border: 1px solid #1e1e2a; border-radius: 100px; padding: 5px; display: inline-flex; }
+.lang-btn { background: transparent; color: #888; border: none; padding: 10px 24px; border-radius: 100px; font-size: 13px; font-weight: 700; cursor: pointer; transition: all 0.3s; font-family: 'Inter', sans-serif; }
+.lang-btn.active { background: #FF8C00; color: #000; }
+.lang-en { display: inline; }
+.lang-ur { display: none; }
+div.lang-en { display: block; }
+div.lang-ur { display: none; }
+
+/* Jab ur-active class body par hogi tab UR dikhega EN chup jayega */
+body.ur-active .lang-en { display: none !important; }
+body.ur-active .lang-ur { display: inline !important; }
+body.ur-active div.lang-ur { display: block !important; }
 
 .story-card{background:#111118;border:1px solid #1e1e2a;border-radius:24px;padding:44px;margin-bottom:50px}
 .story-text{color:#999;font-size:15px;line-height:1.9;font-weight:300}
@@ -69,14 +84,14 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
 <nav class="nav-bar">
   <div class="container d-flex justify-content-between align-items-center flex-wrap gap-3">
     <!-- Navbar links clean kiye gaye hain -->
-    <a href="/" class="nav-logo" style="text-decoration:none">⚡ SR Digital World</a>
+    <a href="index.html" class="nav-logo" style="text-decoration:none">⚡ SR Digital World</a>
     <div class="nav-links d-none d-lg-flex align-items-center gap-4">
-      <a href="/" class="nav-link-item">Home</a>
-      <a href="products" class="nav-link-item">Products</a>
-      <a href="pricing" class="nav-link-item">Pricing</a>
-      <a href="about" class="nav-link-item active">About</a>
-      <a href="faqs" class="nav-link-item">FAQs</a>
-      <a href="contact" class="nav-link-item">Contact</a>
+      <a href="index.html" class="nav-link-item">Home</a>
+      <a href="products.html" class="nav-link-item">Products</a>
+      <a href="pricing.html" class="nav-link-item">Pricing</a>
+      <a href="about.html" class="nav-link-item active">About</a>
+      <a href="faqs.html" class="nav-link-item">FAQs</a>
+      <a href="contact.html" class="nav-link-item">Contact</a>
     </div>
     <a href="https://wa.me/923229952880" target="_blank" style="background:#FF8C00;color:#000;padding:8px 20px;border-radius:100px;font-weight:700;font-size:13px;text-decoration:none;white-space:nowrap">
       <i class="fa-brands fa-whatsapp" style="margin-right:6px"></i>Order on WhatsApp
@@ -87,55 +102,106 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
 <section class="page-hero">
   <div class="page-hero-bg"></div>
   <div class="container" style="position:relative">
-    <div class="section-eyebrow">Our Story</div>
-    <h1 class="section-title">SR Digital World Ke Baray Mein</h1>
-    <p style="color:#666;font-size:15px;margin-top:14px;max-width:550px;margin-left:auto;margin-right:auto">Pakistan ke students aur creators ko premium digital tools tak asaan, affordable rasaai dene ka mission</p>
+    <div class="section-eyebrow">
+      <span class="lang-en">Our Story</span>
+      <span class="lang-ur">Hamari Kahani</span>
+    </div>
+    <h1 class="section-title">
+      <span class="lang-en">About SR Digital World</span>
+      <span class="lang-ur">SR Digital World Ke Baray Mein</span>
+    </h1>
+    <p style="color:#666;font-size:15px;margin-top:14px;max-width:550px;margin-left:auto;margin-right:auto">
+      <span class="lang-en">A mission to provide students and creators in Pakistan with easy, affordable access to premium digital tools.</span>
+      <span class="lang-ur">Pakistan ke students aur creators ko premium digital tools tak asaan, affordable rasaai dene ka mission.</span>
+    </p>
   </div>
 </section>
 
 <section class="about-section">
   <div class="container">
 
+    <!-- LANGUAGE TOGGLE SWITCH -->
+    <div class="lang-toggle-wrap">
+      <div class="lang-toggle">
+        <button class="lang-btn active" id="btn-en" onclick="setLanguage('en')">English</button>
+        <button class="lang-btn" id="btn-ur" onclick="setLanguage('ur')">Roman Urdu</button>
+      </div>
+    </div>
+
     <!-- STORY -->
     <div class="story-card">
-      <div class="section-eyebrow">Hamari Kahani</div>
-      <p class="story-text">
+      <div class="section-eyebrow">
+        <span class="lang-en">Our Journey</span>
+        <span class="lang-ur">Hamari Kahani</span>
+      </div>
+      
+      <!-- English Text -->
+      <div class="story-text lang-en">
+        SR Digital World started <strong>1-2 years ago</strong> with a simple idea — many students and young creators in Pakistan have talent, but affording international pricing for premium tools like Canva Pro, CapCut Pro, and VPN services is difficult.<br><br>
+        We decided to fill this gap — by providing <strong>genuine, verified subscriptions</strong> at local, affordable rates, directly via WhatsApp, without any complicated checkout processes.<br><br>
+        Today, SR Digital World has successfully delivered <strong>over 1000+ orders</strong> — to students, content creators, freelancers, and small businesses who want to use the best tools for their creative and professional work without emptying their pockets.
+      </div>
+      
+      <!-- Roman Urdu Text -->
+      <div class="story-text lang-ur">
         SR Digital World <strong>1-2 saal pehle</strong> ek simple idea ke saath shuru hua tha — Pakistan mein bohat se students aur young creators ke paas talent toh hai, lekin premium tools jaise Canva Pro, CapCut Pro aur VPN services ke liye international pricing afford karna mushkil hota hai.<br><br>
         Hum ne decide kiya ke yeh gap fill karenge — <strong>genuine, verified subscriptions</strong> ko local, affordable rates par, seedha WhatsApp ke zariye, bina kisi complicated checkout process ke.<br><br>
         Aaj SR Digital World <strong>1000+ se zyada orders</strong> deliver kar chuka hai — students, content creators, freelancers aur small businesses ko, jo apne creative aur professional kaam ke liye best tools use karna chahte hain bina apni jeb khali kiye.
-      </p>
+      </div>
+
     </div>
 
     <!-- VALUES -->
-    <div class="section-eyebrow text-center">What We Stand For</div>
-    <h2 class="section-title text-center mb-5">Hamari Values</h2>
+    <div class="section-eyebrow text-center">
+      <span class="lang-en">What We Stand For</span>
+      <span class="lang-ur">What We Stand For</span>
+    </div>
+    <h2 class="section-title text-center mb-5">
+      <span class="lang-en">Our Values</span>
+      <span class="lang-ur">Hamari Values</span>
+    </h2>
     <div class="row g-4 mb-5">
       <div class="col-md-3 col-6">
         <div class="value-card">
           <div class="value-icon"><i class="fa-solid fa-bolt"></i></div>
           <div class="value-title">Speed</div>
-          <div class="value-text">Order se delivery tak — sab kuch minutes mein, ghanton mein nahi.</div>
+          <div class="value-text">
+            <span class="lang-en">From order to delivery — everything in minutes, not hours.</span>
+            <span class="lang-ur">Order se delivery tak — sab kuch minutes mein, ghanton mein nahi.</span>
+          </div>
         </div>
       </div>
       <div class="col-md-3 col-6">
         <div class="value-card">
           <div class="value-icon"><i class="fa-solid fa-shield-halved"></i></div>
           <div class="value-title">Trust</div>
-          <div class="value-text">Har subscription verified aur genuine — koi shortcuts nahi.</div>
+          <div class="value-text">
+            <span class="lang-en">Every subscription is verified and genuine — no shortcuts.</span>
+            <span class="lang-ur">Har subscription verified aur genuine — koi shortcuts nahi.</span>
+          </div>
         </div>
       </div>
       <div class="col-md-3 col-6">
         <div class="value-card">
           <div class="value-icon"><i class="fa-solid fa-tag"></i></div>
-          <div class="value-title">Fair Pricing</div>
-          <div class="value-text">Student-friendly rates, bina hidden charges ke.</div>
+          <div class="value-title">
+            <span class="lang-en">Fair Pricing</span>
+            <span class="lang-ur">Fair Pricing</span>
+          </div>
+          <div class="value-text">
+            <span class="lang-en">Student-friendly rates, with no hidden charges.</span>
+            <span class="lang-ur">Student-friendly rates, bina hidden charges ke.</span>
+          </div>
         </div>
       </div>
       <div class="col-md-3 col-6">
         <div class="value-card">
           <div class="value-icon"><i class="fa-solid fa-headset"></i></div>
           <div class="value-title">Support</div>
-          <div class="value-text">24/7 WhatsApp par real insaan se baat — bots nahi.</div>
+          <div class="value-text">
+            <span class="lang-en">Talk to a real person on WhatsApp 24/7 — no bots.</span>
+            <span class="lang-ur">24/7 WhatsApp par real insaan se baat — bots nahi.</span>
+          </div>
         </div>
       </div>
     </div>
@@ -143,8 +209,14 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
     <!-- TIMELINE + FOUNDER -->
     <div class="row g-5 align-items-start">
       <div class="col-lg-6">
-        <div class="section-eyebrow">Our Journey</div>
-        <h3 style="color:#fff;font-weight:800;font-size:1.6rem;margin-bottom:30px">Yahan Tak Ka Safar</h3>
+        <div class="section-eyebrow">
+          <span class="lang-en">Our Growth</span>
+          <span class="lang-ur">Our Journey</span>
+        </div>
+        <h3 style="color:#fff;font-weight:800;font-size:1.6rem;margin-bottom:30px">
+          <span class="lang-en">The Journey So Far</span>
+          <span class="lang-ur">Yahan Tak Ka Safar</span>
+        </h3>
 
         <div class="timeline-item">
           <div style="position:relative">
@@ -152,8 +224,14 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
             <div class="timeline-line"></div>
           </div>
           <div>
-            <div class="timeline-title">Shuruwaat</div>
-            <div class="timeline-text">Chhote scale par Canva Pro reselling se shuru hua — Facebook aur WhatsApp ke zariye.</div>
+            <div class="timeline-title">
+              <span class="lang-en">The Beginning</span>
+              <span class="lang-ur">Shuruwaat</span>
+            </div>
+            <div class="timeline-text">
+              <span class="lang-en">Started on a small scale by reselling Canva Pro — via Facebook and WhatsApp.</span>
+              <span class="lang-ur">Chhote scale par Canva Pro reselling se shuru hua — Facebook aur WhatsApp ke zariye.</span>
+            </div>
           </div>
         </div>
 
@@ -164,14 +242,23 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
           </div>
           <div>
             <div class="timeline-title">Expansion</div>
-            <div class="timeline-text">CapCut Pro, Surfshark VPN aur Gemini Pro add kiye — product range barhai customer demand par.</div>
+            <div class="timeline-text">
+              <span class="lang-en">Added CapCut Pro, Surfshark VPN, and Gemini Pro — expanding our product range based on customer demand.</span>
+              <span class="lang-ur">CapCut Pro, Surfshark VPN aur Gemini Pro add kiye — product range barhai customer demand par.</span>
+            </div>
           </div>
         </div>
 
         <div class="timeline-item">
           <div>
-            <div class="timeline-title">Aaj</div>
-            <div class="timeline-text">1000+ orders, growing customer base, aur ek dedicated online storefront ke saath — SR Digital World Pakistan ka trusted digital tools partner ban chuka hai.</div>
+            <div class="timeline-title">
+              <span class="lang-en">Today</span>
+              <span class="lang-ur">Aaj</span>
+            </div>
+            <div class="timeline-text">
+              <span class="lang-en">With 1000+ orders, a growing customer base, and a dedicated online storefront — SR Digital World has become Pakistan's trusted digital tools partner.</span>
+              <span class="lang-ur">1000+ orders, growing customer base, aur ek dedicated online storefront ke saath — SR Digital World Pakistan ka trusted digital tools partner ban chuka hai.</span>
+            </div>
           </div>
         </div>
       </div>
@@ -186,18 +273,26 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
             </div>
           </div>
           <p class="founder-quote">
-            "Maine SR Digital World isliye shuru kiya kyunke main khud ek student hoon, aur janta hoon ke quality tools tak access kitna zaroori hai — lekin pricing aksar barrier ban jaati hai. Hamara goal simple hai: har student aur creator ko woh tools afford karne dena jo unke kaam ko behtar bana sakein."
+            <span class="lang-en">"I started SR Digital World because I am a student myself, and I know how important access to quality tools is — but pricing often becomes a barrier. Our goal is simple: to allow every student and creator to afford the tools that can make their work better."</span>
+            <span class="lang-ur">"Maine SR Digital World isliye shuru kiya kyunke main khud ek student hoon, aur janta hoon ke quality tools tak access kitna zaroori hai — lekin pricing aksar barrier ban jaati hai. Hamara goal simple hai: har student aur creator ko woh tools afford karne dena jo unke kaam ko behtar bana sakein."</span>
           </p>
         </div>
       </div>
     </div>
 
     <div class="cta-banner">
-      <h3 style="color:#fff;font-weight:800;font-size:1.5rem;margin-bottom:10px">Hamare Saath Judiye</h3>
-      <p style="color:#777;font-size:14px;margin-bottom:24px">Apna pehla order place karein aur khud farak mehsoos karein</p>
-      <!-- Link clean kiya gaya hai -->
-      <a href="products" style="display:inline-flex;align-items:center;gap:8px;background:#FF8C00;color:#000;padding:13px 28px;border-radius:100px;font-weight:700;font-size:14px;text-decoration:none">
-        Products Dekhein <i class="fa-solid fa-arrow-right" style="font-size:12px"></i>
+      <h3 style="color:#fff;font-weight:800;font-size:1.5rem;margin-bottom:10px">
+        <span class="lang-en">Join Us</span>
+        <span class="lang-ur">Hamare Saath Judiye</span>
+      </h3>
+      <p style="color:#777;font-size:14px;margin-bottom:24px">
+        <span class="lang-en">Place your first order and feel the difference yourself</span>
+        <span class="lang-ur">Apna pehla order place karein aur khud farak mehsoos karein</span>
+      </p>
+      <a href="products.html" style="display:inline-flex;align-items:center;gap:8px;background:#FF8C00;color:#000;padding:13px 28px;border-radius:100px;font-weight:700;font-size:14px;text-decoration:none">
+        <span class="lang-en">View Products</span>
+        <span class="lang-ur">Products Dekhein</span> 
+        <i class="fa-solid fa-arrow-right" style="font-size:12px"></i>
       </a>
     </div>
 
@@ -213,19 +308,18 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
       </div>
       <div class="col-md-4">
         <div style="color:#fff;font-weight:700;font-size:13px;margin-bottom:12px;letter-spacing:0.5px">QUICK LINKS</div>
-        <!-- Footer links clean kiye gaye hain -->
         <div class="d-flex flex-column gap-2">
-          <a href="/" class="footer-link">Home</a>
-          <a href="products" class="footer-link">Products</a>
-          <a href="pricing" class="footer-link">Pricing</a>
-          <a href="about" class="footer-link">About Us</a>
+          <a href="index.html" class="footer-link">Home</a>
+          <a href="products.html" class="footer-link">Products</a>
+          <a href="pricing.html" class="footer-link">Pricing</a>
+          <a href="about.html" class="footer-link">About Us</a>
         </div>
       </div>
       <div class="col-md-4">
         <div style="color:#fff;font-weight:700;font-size:13px;margin-bottom:12px;letter-spacing:0.5px">SUPPORT</div>
         <div class="d-flex flex-column gap-2">
-          <a href="faqs" class="footer-link">FAQs</a>
-          <a href="contact" class="footer-link">Contact Us</a>
+          <a href="faqs.html" class="footer-link">FAQs</a>
+          <a href="contact.html" class="footer-link">Contact Us</a>
           <a href="https://wa.me/923229952880" target="_blank" class="footer-link">WhatsApp Support</a>
         </div>
       </div>
@@ -234,5 +328,19 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
   </div>
 </footer>
 
+<script>
+// Language Toggle Script
+function setLanguage(lang) {
+  if (lang === 'ur') {
+    document.body.classList.add('ur-active');
+    document.getElementById('btn-ur').classList.add('active');
+    document.getElementById('btn-en').classList.remove('active');
+  } else {
+    document.body.classList.remove('ur-active');
+    document.getElementById('btn-en').classList.add('active');
+    document.getElementById('btn-ur').classList.remove('active');
+  }
+}
+</script>
 </body>
 </html>
