@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SR Digital World | Premium Digital Tools Pakistan</title>
-<meta name="description" content="Pakistan ka #1 Digital Tools Store. Canva Pro, CapCut Pro, Surfshark VPN at best prices. Instant delivery via WhatsApp.">
-<!-- Favicon add kiya gaya hai -->
+<meta name="description" content="Pakistan's #1 Digital Tools Store. Canva Pro, CapCut Pro, Surfshark VPN at the best prices. Instant delivery via WhatsApp.">
+<!-- Favicon -->
 <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/3003/3003984.png"> 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -42,10 +42,10 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
 .section-eyebrow{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#FF8C00;margin-bottom:12px}
 .section-title{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;color:#fff;letter-spacing:-1px;line-height:1.1}
 .products-section{padding:90px 0;background:#0a0a0f}
-.product-card{background:#111118;border:1px solid #1e1e2a;border-radius:20px;padding:32px 28px;transition:all 0.4s;position:relative;overflow:hidden;height:100%}
 
-/* YAHAN FIX KIYA GAYA HAI: pointer-events: none; add kiya hai taake clicks block na hon */
-.product-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,140,0,0.04) 0%,transparent 60%);opacity:0;transition:opacity 0.4s;pointer-events:none;}
+/* Z-INDEX FIXES APPLIED HERE */
+.product-card{background:#111118;border:1px solid #1e1e2a;border-radius:20px;padding:32px 28px;transition:all 0.4s;position:relative;overflow:hidden;height:100%; z-index:1;}
+.product-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,140,0,0.04) 0%,transparent 60%);opacity:0;transition:opacity 0.4s; z-index:-1; pointer-events:none;}
 
 .product-card:hover{border-color:rgba(255,140,0,0.35);transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,0.5)}
 .product-card:hover::before{opacity:1}
@@ -55,14 +55,19 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
 .product-name{font-size:1.25rem;font-weight:700;color:#fff;margin-bottom:8px;letter-spacing:-0.3px}
 .product-desc{font-size:13px;color:#666;line-height:1.6;margin-bottom:24px}
 .dur-tabs{display:flex;gap:6px;margin-bottom:20px;flex-wrap:wrap}
-.dur-tab{background:transparent;border:1px solid #2a2a35;color:#666;padding:5px 12px;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;transition:all 0.25s;font-family:'Inter',sans-serif;position:relative;z-index:2;} /* z-index for safety */
+
+/* TABS BUTTON FIX (z-index:10) */
+.dur-tab{background:transparent;border:1px solid #2a2a35;color:#666;padding:5px 12px;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;transition:all 0.25s;font-family:'Inter',sans-serif; position:relative; z-index:10;}
 .dur-tab:hover{border-color:#FF8C00;color:#FF8C00}
 .dur-tab.active{background:#FF8C00;color:#000;border-color:#FF8C00}
 .price-block{margin-bottom:24px}
 .price-amount{font-size:2rem;font-weight:900;color:#FF8C00;letter-spacing:-1px}
 .price-period{font-size:13px;color:#555;margin-left:4px}
-.order-btn{width:100%;padding:13px;background:transparent;border:1.5px solid #FF8C00;color:#FF8C00;border-radius:12px;font-weight:700;font-size:14px;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.3s;letter-spacing:0.3px;display:flex;align-items:center;justify-content:center;gap:8px;position:relative;z-index:2;} /* z-index for safety */
+
+/* ORDER NOW BUTTON FIX (z-index:10) */
+.order-btn{width:100%;padding:13px;background:transparent;border:1.5px solid #FF8C00;color:#FF8C00;border-radius:12px;font-weight:700;font-size:14px;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.3s;letter-spacing:0.3px;display:flex;align-items:center;justify-content:center;gap:8px; position:relative; z-index:10;}
 .order-btn:hover{background:#FF8C00;color:#000;box-shadow:0 8px 24px rgba(255,140,0,0.3)}
+
 .features-section{padding:80px 0;background:#111118;border-top:1px solid #1a1a25}
 .feature-item{display:flex;gap:16px;align-items:flex-start;padding:20px}
 .feature-icon{width:44px;height:44px;border-radius:12px;background:rgba(255,140,0,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#FF8C00;font-size:20px}
@@ -110,15 +115,15 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
 
 <nav class="nav-bar">
   <div class="container d-flex justify-content-between align-items-center flex-wrap gap-3">
-    <!-- Navbar links clean kiye gaye hain -->
-    <a href="/" class="nav-logo" style="text-decoration:none">⚡ SR Digital World</a>
+    <!-- Navbar links fixed (.html added) -->
+    <a href="index.html" class="nav-logo" style="text-decoration:none">⚡ SR Digital World</a>
     <div class="nav-links d-none d-lg-flex align-items-center gap-4">
-      <a href="/" class="nav-link-item active">Home</a>
-      <a href="products" class="nav-link-item">Products</a>
-      <a href="pricing" class="nav-link-item">Pricing</a>
-      <a href="about" class="nav-link-item">About</a>
-      <a href="faqs" class="nav-link-item">FAQs</a>
-      <a href="contact" class="nav-link-item">Contact</a>
+      <a href="index.html" class="nav-link-item active">Home</a>
+      <a href="products.html" class="nav-link-item">Products</a>
+      <a href="pricing.html" class="nav-link-item">Pricing</a>
+      <a href="about.html" class="nav-link-item">About</a>
+      <a href="faqs.html" class="nav-link-item">FAQs</a>
+      <a href="contact.html" class="nav-link-item">Contact</a>
     </div>
     <a href="https://wa.me/923229952880" target="_blank" style="background:#FF8C00;color:#000;padding:8px 20px;border-radius:100px;font-weight:700;font-size:13px;text-decoration:none;white-space:nowrap">
       <i class="fa-brands fa-whatsapp" style="margin-right:6px"></i>Order on WhatsApp
@@ -127,7 +132,7 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
 </nav>
 
 <div class="ticker">
-  <span class="ticker-inner">⚡ Premium Digital Tools &nbsp;&nbsp;&nbsp; 🚀 Instant Delivery &nbsp;&nbsp;&nbsp; 🔒 100% Secure &nbsp;&nbsp;&nbsp; 🌟 24/7 Support &nbsp;&nbsp;&nbsp; 🇵🇰 Pakistan ka #1 Digital Store &nbsp;&nbsp;&nbsp; 💰 Best Prices Guaranteed &nbsp;&nbsp;&nbsp; ⚡ Premium Digital Tools &nbsp;&nbsp;&nbsp; 🚀 Instant Delivery &nbsp;&nbsp;&nbsp;</span>
+  <span class="ticker-inner">⚡ Premium Digital Tools &nbsp;&nbsp;&nbsp; 🚀 Instant Delivery &nbsp;&nbsp;&nbsp; 🔒 100% Secure &nbsp;&nbsp;&nbsp; 🌟 24/7 Support &nbsp;&nbsp;&nbsp; 🇵🇰 Pakistan's #1 Digital Store &nbsp;&nbsp;&nbsp; 💰 Best Prices Guaranteed &nbsp;&nbsp;&nbsp; ⚡ Premium Digital Tools &nbsp;&nbsp;&nbsp; 🚀 Instant Delivery &nbsp;&nbsp;&nbsp;</span>
 </div>
 
 <section class="hero">
@@ -142,7 +147,7 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
           <span class="accent">Lowest Prices.</span><br>
           <span style="color:#555;font-weight:300;font-size:0.7em;letter-spacing:-0.5px">Delivered Instantly.</span>
         </h1>
-        <p class="hero-sub">Canva Pro, CapCut Pro, Surfshark VPN aur bahut kuch — sirf WhatsApp par order karo, seconds mein milega.</p>
+        <p class="hero-sub">Canva Pro, CapCut Pro, Surfshark VPN, and much more — order via WhatsApp and get it in seconds.</p>
         <div class="d-flex flex-wrap gap-2">
           <button class="hero-cta" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
             <i class="fa-solid fa-bolt"></i> Explore Tools
@@ -175,9 +180,8 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
     <div class="text-center mb-5">
       <div class="section-eyebrow">Our Products</div>
       <h2 class="section-title">Premium Digital Tools</h2>
-      <p style="color:#555;font-size:15px;margin-top:12px;font-weight:300">WhatsApp par order karo, instantly milega</p>
-      <!-- View All Products link clean kiya gaya hai -->
-      <a href="products" style="display:inline-flex;align-items:center;gap:6px;color:#FF8C00;font-weight:700;font-size:14px;text-decoration:none;margin-top:16px;border:1px solid rgba(255,140,0,0.3);padding:8px 18px;border-radius:100px">
+      <p style="color:#555;font-size:15px;margin-top:12px;font-weight:300">Order on WhatsApp and get it instantly</p>
+      <a href="products.html" style="display:inline-flex;align-items:center;gap:6px;color:#FF8C00;font-weight:700;font-size:14px;text-decoration:none;margin-top:16px;border:1px solid rgba(255,140,0,0.3);padding:8px 18px;border-radius:100px">
         View All Products <i class="fa-solid fa-arrow-right" style="font-size:12px"></i>
       </a>
     </div>
@@ -187,7 +191,7 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
           <div class="card-tag">Design Tool</div>
           <div class="product-icon-fa" style="background:linear-gradient(135deg,#7D2AE8,#A855F7);color:white;font-size:26px;font-weight:900;letter-spacing:-1px">Cv</div>
           <div class="product-name">Canva Pro</div>
-          <p class="product-desc">Professional designs, premium templates, background remover aur bahut kuch. Students & creators ke liye perfect.</p>
+          <p class="product-desc">Professional designs, premium templates, background remover, and much more. Perfect for students and creators.</p>
           <div class="dur-tabs" id="tabs-canva">
             <button class="dur-tab active" onclick="setDur('canva','150','1 month',this)">1 Month</button>
             <button class="dur-tab" onclick="setDur('canva','200','3 months',this)">3 Months</button>
@@ -205,7 +209,7 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
           <div class="card-tag" style="background:rgba(255,140,0,0.15)">🔥 Popular</div>
           <div class="product-icon-fa" style="background:#000;color:white;font-size:22px;font-weight:900;letter-spacing:-1px">CC</div>
           <div class="product-name">CapCut Pro</div>
-          <p class="product-desc">AI video editing, premium effects, watermark-free export aur pro templates. Content creators ki first choice.</p>
+          <p class="product-desc">AI video editing, premium effects, watermark-free export, and pro templates. The first choice for content creators.</p>
           <div class="dur-tabs" id="tabs-capcut">
             <button class="dur-tab active" onclick="setDur('capcut','600','1 month',this)">1 Month</button>
             <button class="dur-tab" onclick="setDur('capcut','1000','2 months',this)">2 Months</button>
@@ -222,7 +226,7 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
           <div class="card-tag">Security</div>
           <div class="product-icon-fa"><i class="fa-solid fa-shield-halved"></i></div>
           <div class="product-name">Surfshark VPN</div>
-          <p class="product-desc">Unlimited devices, blazing fast speeds, geo-restrictions bypass karo. Pakistan se bahar ki websites easily access karo.</p>
+          <p class="product-desc">Unlimited devices, blazing fast speeds, bypass geo-restrictions. Easily access websites outside of Pakistan.</p>
           <div class="dur-tabs" id="tabs-surf">
             <button class="dur-tab active" onclick="setDur('surf','350','1 month',this)">1 Month</button>
             <button class="dur-tab" onclick="setDur('surf','600','2 months',this)">2 Months</button>
@@ -242,13 +246,13 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
   <div class="container">
     <div class="text-center mb-5">
       <div class="section-eyebrow">Why Choose Us</div>
-      <h2 class="section-title">SR Digital World Kyun?</h2>
+      <h2 class="section-title">Why SR Digital World?</h2>
     </div>
     <div class="row g-2">
-      <div class="col-md-6"><div class="feature-item"><div class="feature-icon"><i class="fa-solid fa-bolt"></i></div><div><div class="feature-title">Instant Delivery</div><div class="feature-text">Order karte hi minutes mein WhatsApp par credentials milte hain.</div></div></div></div>
-      <div class="col-md-6"><div class="feature-item"><div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div><div><div class="feature-title">100% Secure & Verified</div><div class="feature-text">Saare products original aur verified hain. Koi risk nahi.</div></div></div></div>
-      <div class="col-md-6"><div class="feature-item"><div class="feature-icon"><i class="fa-solid fa-headset"></i></div><div><div class="feature-title">24/7 Customer Support</div><div class="feature-text">Raat ho ya din, hum hamesha available hain WhatsApp par.</div></div></div></div>
-      <div class="col-md-6"><div class="feature-item"><div class="feature-icon"><i class="fa-solid fa-tag"></i></div><div><div class="feature-title">Pakistan ka Best Price</div><div class="feature-text">Market se kam daam par premium tools. Budget-friendly subscriptions.</div></div></div></div>
+      <div class="col-md-6"><div class="feature-item"><div class="feature-icon"><i class="fa-solid fa-bolt"></i></div><div><div class="feature-title">Instant Delivery</div><div class="feature-text">Receive credentials on WhatsApp within minutes of ordering.</div></div></div></div>
+      <div class="col-md-6"><div class="feature-item"><div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div><div><div class="feature-title">100% Secure & Verified</div><div class="feature-text">All products are original and verified. Zero risk.</div></div></div></div>
+      <div class="col-md-6"><div class="feature-item"><div class="feature-icon"><i class="fa-solid fa-headset"></i></div><div><div class="feature-title">24/7 Customer Support</div><div class="feature-text">Whether it's day or night, we are always available on WhatsApp.</div></div></div></div>
+      <div class="col-md-6"><div class="feature-item"><div class="feature-icon"><i class="fa-solid fa-tag"></i></div><div><div class="feature-title">Best Price in Pakistan</div><div class="feature-text">Premium tools at prices lower than the market. Budget-friendly subscriptions.</div></div></div></div>
     </div>
   </div>
 </section>
@@ -263,10 +267,10 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
       </div>
       <div class="col-lg-5">
         <div class="section-eyebrow">Watch & Learn</div>
-        <h2 class="section-title" style="margin-bottom:16px">Digital Future <span style="color:#FF8C00">Experience Karo</span></h2>
-        <p style="color:#555;font-size:15px;line-height:1.7;font-weight:300">SR Digital World ke saath apna creative aur professional journey shuru karo.</p>
+        <h2 class="section-title" style="margin-bottom:16px">Experience the <span style="color:#FF8C00">Digital Future</span></h2>
+        <p style="color:#555;font-size:15px;line-height:1.7;font-weight:300">Start your creative and professional journey with SR Digital World.</p>
         <a href="https://wa.me/923229952880" target="_blank" style="display:inline-flex;align-items:center;gap:8px;color:#FF8C00;font-weight:700;font-size:14px;text-decoration:none;margin-top:20px;border:1px solid rgba(255,140,0,0.3);padding:10px 20px;border-radius:100px">
-          <i class="fa-brands fa-whatsapp"></i> Order Karo Abhi →
+          <i class="fa-brands fa-whatsapp"></i> Order Now →
         </a>
       </div>
     </div>
@@ -278,23 +282,23 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
     <div class="row text-start g-4 mb-4">
       <div class="col-md-4">
         <div class="footer-logo">⚡ SR Digital World</div>
-        <p style="color:#555;font-size:13px;line-height:1.7;margin-top:8px">Pakistan ka #1 digital tools store. Premium subscriptions, best prices, instant delivery.</p>
+        <p style="color:#555;font-size:13px;line-height:1.7;margin-top:8px">Pakistan's #1 digital tools store. Premium subscriptions, best prices, instant delivery.</p>
       </div>
       <div class="col-md-4">
         <div style="color:#fff;font-weight:700;font-size:13px;margin-bottom:12px;letter-spacing:0.5px">QUICK LINKS</div>
-        <!-- Footer links clean kiye gaye hain -->
+        <!-- Footer links fixed (.html added) -->
         <div class="d-flex flex-column gap-2">
-          <a href="/" class="footer-link">Home</a>
-          <a href="products" class="footer-link">Products</a>
-          <a href="pricing" class="footer-link">Pricing</a>
-          <a href="about" class="footer-link">About Us</a>
+          <a href="index.html" class="footer-link">Home</a>
+          <a href="products.html" class="footer-link">Products</a>
+          <a href="pricing.html" class="footer-link">Pricing</a>
+          <a href="about.html" class="footer-link">About Us</a>
         </div>
       </div>
       <div class="col-md-4">
         <div style="color:#fff;font-weight:700;font-size:13px;margin-bottom:12px;letter-spacing:0.5px">SUPPORT</div>
         <div class="d-flex flex-column gap-2">
-          <a href="faqs" class="footer-link">FAQs</a>
-          <a href="contact" class="footer-link">Contact Us</a>
+          <a href="faqs.html" class="footer-link">FAQs</a>
+          <a href="contact.html" class="footer-link">Contact Us</a>
           <a href="https://wa.me/923229952880" target="_blank" class="footer-link">WhatsApp Support</a>
         </div>
       </div>
@@ -305,14 +309,14 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
 
 <div class="modal-overlay" id="modalOverlay" onclick="closeOnBg(event)">
   <div class="modal-box">
-    <div class="modal-title">Order Confirm Karo</div>
-    <div class="modal-sub">Details bharo, WhatsApp par order jayega</div>
+    <div class="modal-title">Confirm Your Order</div>
+    <div class="modal-sub">Fill in the details, your order will be sent via WhatsApp</div>
     <div class="modal-product-chip" id="modalChip">Canva Pro — Rs. 150</div>
-    <input type="text" class="modal-input" id="mName" placeholder="Aapka naam *">
-    <input type="tel" class="modal-input" id="mPhone" placeholder="WhatsApp number (03XXXXXXXXX) *">
+    <input type="text" class="modal-input" id="mName" placeholder="Your Name *">
+    <input type="tel" class="modal-input" id="mPhone" placeholder="WhatsApp Number (03XXXXXXXXX) *">
     <div class="modal-actions">
       <button class="btn-cancel" onclick="closeModal()">Cancel</button>
-      <button class="btn-send" onclick="sendOrder()"><i class="fa-brands fa-whatsapp" style="font-size:16px"></i> WhatsApp Par Bhejo</button>
+      <button class="btn-send" onclick="sendOrder()"><i class="fa-brands fa-whatsapp" style="font-size:16px"></i> Send on WhatsApp</button>
     </div>
   </div>
 </div>
@@ -346,8 +350,8 @@ function closeOnBg(e){if(e.target===document.getElementById('modalOverlay'))clos
 function sendOrder(){
   const name=document.getElementById('mName').value.trim();
   const phone=document.getElementById('mPhone').value.trim();
-  if(!name||!phone){alert('Naam aur number dono likhna zaroori hai!');return;}
-  const msg=`Assalam-o-Alaikum!\n\nMujhe order place karna hai:\n🛍️ *Product:* ${curProduct}\n💵 *Price:* ${curPrice}\n👤 *Name:* ${name}\n📞 *Phone:* ${phone}\n\n_SR Digital World website se order_`;
+  if(!name||!phone){alert('Name and number are required!');return;}
+  const msg=`Hello!\n\nI want to place an order:\n🛍️ *Product:* ${curProduct}\n💵 *Price:* ${curPrice}\n👤 *Name:* ${name}\n📞 *Phone:* ${phone}\n\n_Order from SR Digital World website_`;
   window.open('https://wa.me/923229952880?text='+encodeURIComponent(msg),'_blank');
   closeModal();
 }
