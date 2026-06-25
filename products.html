@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Products | SR Digital World</title>
-<meta name="description" content="Canva Pro, CapCut Pro, Surfshark VPN, Gemini aur bahut kuch — Pakistan ke best prices par. Instant delivery via WhatsApp.">
-<!-- Favicon add kiya gaya hai -->
+<meta name="description" content="Canva Pro, CapCut Pro, Surfshark VPN, Gemini and much more — at the best prices in Pakistan. Instant delivery via WhatsApp.">
+<!-- Favicon -->
 <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/3003/3003984.png"> 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -26,10 +26,13 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
 .products-section{padding:70px 0;background:#0a0a0f}
 .cat-label{font-size:13px;font-weight:700;color:#FF8C00;letter-spacing:1px;text-transform:uppercase;margin-bottom:24px;display:flex;align-items:center;gap:10px}
 .cat-label::after{content:'';flex:1;height:1px;background:#1a1a25}
-.product-card{background:#111118;border:1px solid #1e1e2a;border-radius:20px;padding:32px 28px;transition:all 0.4s;position:relative;overflow:hidden;height:100%}
-.product-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,140,0,0.04) 0%,transparent 60%);opacity:0;transition:opacity 0.4s}
+
+/* BUTTON CLICKS FIX (z-index and pointer-events applied) */
+.product-card{background:#111118;border:1px solid #1e1e2a;border-radius:20px;padding:32px 28px;transition:all 0.4s;position:relative;overflow:hidden;height:100%; z-index:1;}
+.product-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,140,0,0.04) 0%,transparent 60%);opacity:0;transition:opacity 0.4s; z-index:-1; pointer-events:none;}
 .product-card:hover{border-color:rgba(255,140,0,0.35);transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,0.5)}
 .product-card:hover::before{opacity:1}
+
 .card-tag{display:inline-block;background:rgba(255,140,0,0.1);color:#FF8C00;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:6px;margin-bottom:20px}
 .product-icon-fa{width:60px;height:60px;border-radius:16px;background:#1a1a24;display:flex;align-items:center;justify-content:center;margin-bottom:18px;font-size:28px;color:#FF8C00}
 .product-name{font-size:1.25rem;font-weight:700;color:#fff;margin-bottom:8px;letter-spacing:-0.3px}
@@ -38,14 +41,20 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
 .feat-list li{font-size:12.5px;color:#888;padding:5px 0;display:flex;align-items:center;gap:8px}
 .feat-list li i{color:#FF8C00;font-size:11px}
 .dur-tabs{display:flex;gap:6px;margin-bottom:20px;flex-wrap:wrap}
-.dur-tab{background:transparent;border:1px solid #2a2a35;color:#666;padding:5px 12px;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;transition:all 0.25s;font-family:'Inter',sans-serif}
+
+/* TABS FIX (z-index: 10) */
+.dur-tab{background:transparent;border:1px solid #2a2a35;color:#666;padding:5px 12px;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;transition:all 0.25s;font-family:'Inter',sans-serif; position:relative; z-index:10;}
 .dur-tab:hover{border-color:#FF8C00;color:#FF8C00}
 .dur-tab.active{background:#FF8C00;color:#000;border-color:#FF8C00}
+
 .price-block{margin-bottom:24px}
 .price-amount{font-size:2rem;font-weight:900;color:#FF8C00;letter-spacing:-1px}
 .price-period{font-size:13px;color:#555;margin-left:4px}
-.order-btn{width:100%;padding:13px;background:transparent;border:1.5px solid #FF8C00;color:#FF8C00;border-radius:12px;font-weight:700;font-size:14px;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.3s;letter-spacing:0.3px;display:flex;align-items:center;justify-content:center;gap:8px}
+
+/* BUTTON FIX (z-index: 10) */
+.order-btn{width:100%;padding:13px;background:transparent;border:1.5px solid #FF8C00;color:#FF8C00;border-radius:12px;font-weight:700;font-size:14px;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.3s;letter-spacing:0.3px;display:flex;align-items:center;justify-content:center;gap:8px; position:relative; z-index:10;}
 .order-btn:hover{background:#FF8C00;color:#000;box-shadow:0 8px 24px rgba(255,140,0,0.3)}
+
 .cta-banner{background:linear-gradient(135deg,#1a1208,#0a0a0f);border:1px solid rgba(255,140,0,0.2);border-radius:24px;padding:50px 40px;text-align:center;margin-top:30px}
 .footer{background:#050508;padding:60px 0 24px;border-top:1px solid #1a1a25;text-align:center}
 .footer-link{color:#666;text-decoration:none;font-size:13px;transition:color 0.25s}
@@ -62,7 +71,8 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
 .modal-sub{font-size:13px;color:#555;margin-bottom:24px}
 .modal-product-chip{display:inline-block;background:rgba(255,140,0,0.1);color:#FF8C00;padding:6px 14px;border-radius:8px;font-size:14px;font-weight:700;margin-bottom:20px}
 .modal-input{width:100%;background:#0a0a0f;border:1px solid #2a2a35;color:#e8e8f0;padding:12px 16px;border-radius:10px;font-size:14px;font-family:'Inter',sans-serif;margin-bottom:12px;transition:border 0.2s;outline:none}
-/* Input Focus Hover Effect add kiya gaya hai */
+
+/* Input Focus Hover Effect */
 .modal-input:focus, .contact-input:focus, .contact-textarea:focus {
     border-color: #FF8C00;
     background-color: #222222;
@@ -86,15 +96,15 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
 
 <nav class="nav-bar">
   <div class="container d-flex justify-content-between align-items-center flex-wrap gap-3">
-    <!-- Navbar links clean kiye gaye hain -->
-    <a href="/" class="nav-logo" style="text-decoration:none">⚡ SR Digital World</a>
+    <!-- Navbar links fixed (.html added) -->
+    <a href="index.html" class="nav-logo" style="text-decoration:none">⚡ SR Digital World</a>
     <div class="nav-links d-none d-lg-flex align-items-center gap-4">
-      <a href="/" class="nav-link-item">Home</a>
-      <a href="products" class="nav-link-item active">Products</a>
-      <a href="pricing" class="nav-link-item">Pricing</a>
-      <a href="about" class="nav-link-item">About</a>
-      <a href="faqs" class="nav-link-item">FAQs</a>
-      <a href="contact" class="nav-link-item">Contact</a>
+      <a href="index.html" class="nav-link-item">Home</a>
+      <a href="products.html" class="nav-link-item active">Products</a>
+      <a href="pricing.html" class="nav-link-item">Pricing</a>
+      <a href="about.html" class="nav-link-item">About</a>
+      <a href="faqs.html" class="nav-link-item">FAQs</a>
+      <a href="contact.html" class="nav-link-item">Contact</a>
     </div>
     <a href="https://wa.me/923229952880" target="_blank" style="background:#FF8C00;color:#000;padding:8px 20px;border-radius:100px;font-weight:700;font-size:13px;text-decoration:none;white-space:nowrap">
       <i class="fa-brands fa-whatsapp" style="margin-right:6px"></i>Order on WhatsApp
@@ -107,7 +117,7 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
   <div class="container" style="position:relative">
     <div class="section-eyebrow">Our Catalog</div>
     <h1 class="section-title">All Premium Tools</h1>
-    <p style="color:#666;font-size:15px;margin-top:14px;max-width:500px;margin-left:auto;margin-right:auto">Design, video editing, security aur AI — sab kuch ek jagah, best prices ke saath</p>
+    <p style="color:#666;font-size:15px;margin-top:14px;max-width:500px;margin-left:auto;margin-right:auto">Design, video editing, security, and AI — everything in one place, at the best prices.</p>
   </div>
 </section>
 
@@ -121,7 +131,7 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
           <div class="card-tag">Design Tool</div>
           <div class="product-icon-fa" style="background:linear-gradient(135deg,#7D2AE8,#A855F7);color:white;font-size:26px;font-weight:900">Cv</div>
           <div class="product-name">Canva Pro</div>
-          <p class="product-desc">Professional designs banane ka sabse aasaan tool — students, businesses aur content creators ke liye.</p>
+          <p class="product-desc">The easiest tool for creating professional designs — perfect for students, businesses, and content creators.</p>
           <ul class="feat-list">
             <li><i class="fa-solid fa-check"></i> 100M+ premium templates & images</li>
             <li><i class="fa-solid fa-check"></i> Background remover</li>
@@ -146,7 +156,7 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
           <div class="card-tag" style="background:rgba(255,140,0,0.15)">🔥 Popular</div>
           <div class="product-icon-fa" style="background:#000;color:white;font-size:22px;font-weight:900">CC</div>
           <div class="product-name">CapCut Pro</div>
-          <p class="product-desc">AI-powered video editing — Reels, TikToks aur YouTube Shorts ke liye sabse zyada use hone wala tool.</p>
+          <p class="product-desc">AI-powered video editing — the most widely used tool for Reels, TikToks, and YouTube Shorts.</p>
           <ul class="feat-list">
             <li><i class="fa-solid fa-check"></i> Watermark-free exports</li>
             <li><i class="fa-solid fa-check"></i> Premium effects & transitions</li>
@@ -170,7 +180,7 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
           <div class="card-tag">AI Assistant</div>
           <div class="product-icon-fa" style="background:linear-gradient(135deg,#4285F4,#34A853);color:white;font-size:24px"><i class="fa-solid fa-sparkles"></i></div>
           <div class="product-name">Gemini Pro</div>
-          <p class="product-desc">Google ka advanced AI assistant — content writing, research, coding aur studies ke liye perfect saathi.</p>
+          <p class="product-desc">Google's advanced AI assistant — the perfect companion for content writing, research, coding, and studies.</p>
           <ul class="feat-list">
             <li><i class="fa-solid fa-check"></i> Advanced AI reasoning</li>
             <li><i class="fa-solid fa-check"></i> Image & document analysis</li>
@@ -197,7 +207,7 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
           <div class="card-tag">Security</div>
           <div class="product-icon-fa"><i class="fa-solid fa-shield-halved"></i></div>
           <div class="product-name">Surfshark VPN</div>
-          <p class="product-desc">Unlimited devices par fast aur secure browsing. Geo-restrictions bypass karo, apni privacy protect karo.</p>
+          <p class="product-desc">Fast and secure browsing on unlimited devices. Bypass geo-restrictions and protect your privacy.</p>
           <ul class="feat-list">
             <li><i class="fa-solid fa-check"></i> Unlimited simultaneous devices</li>
             <li><i class="fa-solid fa-check"></i> No-logs policy</li>
@@ -218,10 +228,10 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
     </div>
 
     <div class="cta-banner">
-      <h3 style="color:#fff;font-weight:800;font-size:1.5rem;margin-bottom:10px">Apna Tool Nahi Mila?</h3>
-      <p style="color:#777;font-size:14px;margin-bottom:24px">WhatsApp par message karo — hum aur bhi tools provide karte hain</p>
+      <h3 style="color:#fff;font-weight:800;font-size:1.5rem;margin-bottom:10px">Couldn't Find Your Tool?</h3>
+      <p style="color:#777;font-size:14px;margin-bottom:24px">Message us on WhatsApp — we provide many other tools as well.</p>
       <a href="https://wa.me/923229952880" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:#FF8C00;color:#000;padding:13px 28px;border-radius:100px;font-weight:700;font-size:14px;text-decoration:none">
-        <i class="fa-brands fa-whatsapp"></i> WhatsApp Par Puchein
+        <i class="fa-brands fa-whatsapp"></i> Ask on WhatsApp
       </a>
     </div>
 
@@ -233,23 +243,23 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
     <div class="row text-start g-4 mb-4">
       <div class="col-md-4">
         <div class="footer-logo">⚡ SR Digital World</div>
-        <p style="color:#555;font-size:13px;line-height:1.7;margin-top:8px">Pakistan ka #1 digital tools store. Premium subscriptions, best prices, instant delivery.</p>
+        <p style="color:#555;font-size:13px;line-height:1.7;margin-top:8px">Pakistan's #1 digital tools store. Premium subscriptions, best prices, instant delivery.</p>
       </div>
       <div class="col-md-4">
         <div style="color:#fff;font-weight:700;font-size:13px;margin-bottom:12px;letter-spacing:0.5px">QUICK LINKS</div>
-        <!-- Footer links clean kiye gaye hain -->
+        <!-- Footer links fixed (.html added) -->
         <div class="d-flex flex-column gap-2">
-          <a href="/" class="footer-link">Home</a>
-          <a href="products" class="footer-link">Products</a>
-          <a href="pricing" class="footer-link">Pricing</a>
-          <a href="about" class="footer-link">About Us</a>
+          <a href="index.html" class="footer-link">Home</a>
+          <a href="products.html" class="footer-link">Products</a>
+          <a href="pricing.html" class="footer-link">Pricing</a>
+          <a href="about.html" class="footer-link">About Us</a>
         </div>
       </div>
       <div class="col-md-4">
         <div style="color:#fff;font-weight:700;font-size:13px;margin-bottom:12px;letter-spacing:0.5px">SUPPORT</div>
         <div class="d-flex flex-column gap-2">
-          <a href="faqs" class="footer-link">FAQs</a>
-          <a href="contact" class="footer-link">Contact Us</a>
+          <a href="faqs.html" class="footer-link">FAQs</a>
+          <a href="contact.html" class="footer-link">Contact Us</a>
           <a href="https://wa.me/923229952880" target="_blank" class="footer-link">WhatsApp Support</a>
         </div>
       </div>
@@ -260,14 +270,14 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
 
 <div class="modal-overlay" id="modalOverlay" onclick="closeOnBg(event)">
   <div class="modal-box">
-    <div class="modal-title">Order Confirm Karo</div>
-    <div class="modal-sub">Details bharo, WhatsApp par order jayega</div>
+    <div class="modal-title">Confirm Your Order</div>
+    <div class="modal-sub">Fill in the details, your order will be sent via WhatsApp</div>
     <div class="modal-product-chip" id="modalChip">Product — Rs. 0</div>
-    <input type="text" class="modal-input" id="mName" placeholder="Aapka naam *">
-    <input type="tel" class="modal-input" id="mPhone" placeholder="WhatsApp number (03XXXXXXXXX) *">
+    <input type="text" class="modal-input" id="mName" placeholder="Your Name *">
+    <input type="tel" class="modal-input" id="mPhone" placeholder="WhatsApp Number (03XXXXXXXXX) *">
     <div class="modal-actions">
       <button class="btn-cancel" onclick="closeModal()">Cancel</button>
-      <button class="btn-send" onclick="sendOrder()"><i class="fa-brands fa-whatsapp" style="font-size:16px"></i> WhatsApp Par Bhejo</button>
+      <button class="btn-send" onclick="sendOrder()"><i class="fa-brands fa-whatsapp" style="font-size:16px"></i> Send on WhatsApp</button>
     </div>
   </div>
 </div>
@@ -288,20 +298,20 @@ function openModal(name,cardId){
   document.getElementById('mName').value='';
   document.getElementById('mPhone').value='';
   document.getElementById('modalOverlay').classList.add('open');
-  // Scroll fix add kiya gaya hai
+  // Scroll fix
   document.body.style.overflow = 'hidden';
 }
 function closeModal(){
   document.getElementById('modalOverlay').classList.remove('open');
-  // Scroll fix add kiya gaya hai
+  // Scroll fix
   document.body.style.overflow = 'auto';
 }
 function closeOnBg(e){if(e.target===document.getElementById('modalOverlay'))closeModal()}
 function sendOrder(){
   const name=document.getElementById('mName').value.trim();
   const phone=document.getElementById('mPhone').value.trim();
-  if(!name||!phone){alert('Naam aur number dono likhna zaroori hai!');return;}
-  const msg=`Assalam-o-Alaikum!\n\nMujhe order place karna hai:\n🛍️ *Product:* ${curProduct}\n💵 *Price:* ${curPrice}\n👤 *Name:* ${name}\n📞 *Phone:* ${phone}\n\n_SR Digital World website se order_`;
+  if(!name||!phone){alert('Name and number are required!');return;}
+  const msg=`Hello!\n\nI want to place an order:\n🛍️ *Product:* ${curProduct}\n💵 *Price:* ${curPrice}\n👤 *Name:* ${name}\n📞 *Phone:* ${phone}\n\n_Order from SR Digital World website_`;
   window.open('https://wa.me/923229952880?text='+encodeURIComponent(msg),'_blank');
   closeModal();
 }
