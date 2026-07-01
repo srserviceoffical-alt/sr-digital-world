@@ -18,6 +18,18 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
 .nav-link-item:hover{color:#FF8C00}
 .nav-link-item.active{color:#FF8C00}
 .nav-link-item.active::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:2px;background:#FF8C00;border-radius:2px}
+
+/* MOBILE MENU RESPONSIVE STYLES */
+.menu-toggle { display: none; background: transparent; border: none; color: #FF8C00; font-size: 24px; cursor: pointer; }
+@media(max-width: 991px) {
+  .menu-toggle { display: block; }
+  .nav-links { display: none; width: 100%; flex-direction: column; background: #111118; padding: 20px; border-radius: 12px; border: 1px solid #1e1e2a; margin-top: 15px; gap: 15px !important; }
+  .nav-links.show-menu { display: flex !important; }
+}
+@media(min-width: 992px) {
+  .nav-links { display: flex !important; }
+}
+
 .page-hero{padding:70px 0 50px;background:#000;text-align:center;border-bottom:1px solid #1a1a25;position:relative;overflow:hidden}
 .page-hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 50% 50% at 50% 0%,rgba(255,140,0,0.1) 0%,transparent 70%)}
 .section-eyebrow{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#FF8C00;margin-bottom:12px}
@@ -50,7 +62,6 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
 .faq-lang-btn.active { background: rgba(255,140,0,0.1); color: #FF8C00; border-color: #FF8C00; }
 
 .cta-banner{background:linear-gradient(135deg,#1a1208,#0a0a0f);border:1px solid rgba(255,140,0,0.2);border-radius:24px;padding:50px 40px;text-align:center;margin-top:60px}
-
 .footer{background:#050508;padding:60px 0 24px;border-top:1px solid #1a1a25;text-align:center}
 .footer-link{color:#666;text-decoration:none;font-size:13px;transition:color 0.25s}
 .footer-link:hover{color:#FF8C00}
@@ -67,22 +78,8 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
   <i class="fa-brands fa-whatsapp"></i>
 </a>
 
-<nav class="nav-bar">
-  <div class="container d-flex justify-content-between align-items-center flex-wrap gap-3">
-    <a href="/" class="nav-logo" style="text-decoration:none">⚡ SR Digital World</a>
-    <div class="nav-links d-none d-lg-flex align-items-center gap-4">
-      <a href="/" class="nav-link-item">Home</a>
-      <a href="products" class="nav-link-item">Products</a>
-      <a href="pricing" class="nav-link-item">Pricing</a>
-      <a href="about" class="nav-link-item">About</a>
-      <a href="faqs" class="nav-link-item active">FAQs</a>
-      <a href="contact" class="nav-link-item">Contact</a>
-    </div>
-    <a href="https://wa.me/923229952880" target="_blank" style="background:#FF8C00;color:#000;padding:8px 20px;border-radius:100px;font-weight:700;font-size:13px;text-decoration:none;white-space:nowrap">
-      <i class="fa-brands fa-whatsapp" style="margin-right:6px"></i>Order on WhatsApp
-    </a>
-  </div>
-</nav>
+<!-- NAVBAR PLACEHOLDER -->
+<div id="navbar-placeholder"></div>
 
 <section class="page-hero">
   <div class="page-hero-bg"></div>
@@ -95,351 +92,93 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
 
 <section class="faqs-section">
   <div class="container">
-
     <div class="cat-tabs">
       <button class="cat-tab active" onclick="showCat('orders',this)">Orders & Delivery</button>
       <button class="cat-tab" onclick="showCat('payment',this)">Payment</button>
       <button class="cat-tab" onclick="showCat('products',this)">Products</button>
       <button class="cat-tab" onclick="showCat('support',this)">Support</button>
     </div>
-
     <div class="row justify-content-center">
       <div class="col-lg-9">
-
-        <!-- ORDERS -->
         <div class="faq-group active" id="cat-orders">
-          <!-- FAQ 1 -->
-          <div class="faq-item">
-            <div class="faq-q" onclick="toggleFaq(this)">
-              <span class="faq-q-text">
-                <span class="q-en">How to place an order?</span>
-                <span class="q-ur" style="display:none;">Order kaise place karein?</span>
-              </span>
-              <div class="faq-q-icon"><i class="fa-solid fa-plus"></i></div>
-            </div>
-            <div class="faq-a">
-              <div class="faq-a-inner">
-                <div class="faq-lang-mini">
-                  <button class="faq-lang-btn active" onclick="switchFaqLang(this, 'en', event)">English</button>
-                  <button class="faq-lang-btn" onclick="switchFaqLang(this, 'ur', event)">Roman Urdu</button>
-                </div>
-                <div class="a-en">Go to the Products or Pricing page, select your desired tool and duration, click "Order Now", enter your name and WhatsApp number — the message will automatically be sent to our WhatsApp.</div>
-                <div class="a-ur" style="display:none;">Products ya Pricing page par jayein, apna desired tool aur duration select karein, "Order Now" click karein, naam aur WhatsApp number dalein — message automatically WhatsApp par chala jayega.</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- FAQ 2 -->
-          <div class="faq-item">
-            <div class="faq-q" onclick="toggleFaq(this)">
-              <span class="faq-q-text">
-                <span class="q-en">How long does delivery take?</span>
-                <span class="q-ur" style="display:none;">Delivery kitni dair mein hoti hai?</span>
-              </span>
-              <div class="faq-q-icon"><i class="fa-solid fa-plus"></i></div>
-            </div>
-            <div class="faq-a">
-              <div class="faq-a-inner">
-                <div class="faq-lang-mini">
-                  <button class="faq-lang-btn active" onclick="switchFaqLang(this, 'en', event)">English</button>
-                  <button class="faq-lang-btn" onclick="switchFaqLang(this, 'ur', event)">Roman Urdu</button>
-                </div>
-                <div class="a-en">Once the payment is confirmed, account credentials are usually sent via WhatsApp within 10-30 minutes. It might take a little longer during peak hours.</div>
-                <div class="a-ur" style="display:none;">Payment confirm hote hi, usually 10-30 minutes ke andar account credentials WhatsApp par bhej diye jaate hain. Peak hours mein thoda time lag sakta hai.</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- FAQ 3 -->
-          <div class="faq-item">
-            <div class="faq-q" onclick="toggleFaq(this)">
-              <span class="faq-q-text">
-                <span class="q-en">How can I track my order?</span>
-                <span class="q-ur" style="display:none;">Order track kaise karein?</span>
-              </span>
-              <div class="faq-q-icon"><i class="fa-solid fa-plus"></i></div>
-            </div>
-            <div class="faq-a">
-              <div class="faq-a-inner">
-                <div class="faq-lang-mini">
-                  <button class="faq-lang-btn active" onclick="switchFaqLang(this, 'en', event)">English</button>
-                  <button class="faq-lang-btn" onclick="switchFaqLang(this, 'ur', event)">Roman Urdu</button>
-                </div>
-                <div class="a-en">After placing an order, WhatsApp is our single point of contact — you will receive all updates in that same chat.</div>
-                <div class="a-ur" style="display:none;">Order place karne ke baad WhatsApp hi single point of contact hai — wahi chat mein updates milte rehte hain.</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- FAQ 4 -->
-          <div class="faq-item">
-            <div class="faq-q" onclick="toggleFaq(this)">
-              <span class="faq-q-text">
-                <span class="q-en">Can an order be canceled?</span>
-                <span class="q-ur" style="display:none;">Kya order cancel ho sakta hai?</span>
-              </span>
-              <div class="faq-q-icon"><i class="fa-solid fa-plus"></i></div>
-            </div>
-            <div class="faq-a">
-              <div class="faq-a-inner">
-                <div class="faq-lang-mini">
-                  <button class="faq-lang-btn active" onclick="switchFaqLang(this, 'en', event)">English</button>
-                  <button class="faq-lang-btn" onclick="switchFaqLang(this, 'ur', event)">Roman Urdu</button>
-                </div>
-                <div class="a-en">Any order can be canceled for free before payment. After payment, cancellation must be discussed on WhatsApp.</div>
-                <div class="a-ur" style="display:none;">Payment se pehle koi bhi order free mein cancel ho sakta hai. Payment ke baad cancellation WhatsApp par discuss karni hogi.</div>
-              </div>
-            </div>
-          </div>
+          <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text"><span class="q-en">How to place an order?</span><span class="q-ur" style="display:none;">Order kaise place karein?</span></span><div class="faq-q-icon"><i class="fa-solid fa-plus"></i></div></div><div class="faq-a"><div class="faq-a-inner"><div class="faq-lang-mini"><button class="faq-lang-btn active" onclick="switchFaqLang(this, 'en', event)">English</button><button class="faq-lang-btn" onclick="switchFaqLang(this, 'ur', event)">Roman Urdu</button></div><div class="a-en">Go to the Products or Pricing page, select your desired tool and duration, click "Order Now", enter your name and WhatsApp number — the message will automatically be sent to our WhatsApp.</div><div class="a-ur" style="display:none;">Products ya Pricing page par jayein, apna desired tool aur duration select karein, "Order Now" click karein, naam aur WhatsApp number dalein — message automatically WhatsApp par chala jayega.</div></div></div></div>
+          <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text"><span class="q-en">How long does delivery take?</span><span class="q-ur" style="display:none;">Delivery kitni dair mein hoti hai?</span></span><div class="faq-q-icon"><i class="fa-solid fa-plus"></i></div></div><div class="faq-a"><div class="faq-a-inner"><div class="faq-lang-mini"><button class="faq-lang-btn active" onclick="switchFaqLang(this, 'en', event)">English</button><button class="faq-lang-btn" onclick="switchFaqLang(this, 'ur', event)">Roman Urdu</button></div><div class="a-en">Once the payment is confirmed, account credentials are usually sent via WhatsApp within 10-30 minutes. It might take a little longer during peak hours.</div><div class="a-ur" style="display:none;">Payment confirm hote hi, usually 10-30 minutes ke andar account credentials WhatsApp par bhej diye jaate hain. Peak hours mein thoda time lag sakta hai.</div></div></div></div>
+          <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text"><span class="q-en">How can I track my order?</span><span class="q-ur" style="display:none;">Order track kaise karein?</span></span><div class="faq-q-icon"><i class="fa-solid fa-plus"></i></div></div><div class="faq-a"><div class="faq-a-inner"><div class="faq-lang-mini"><button class="faq-lang-btn active" onclick="switchFaqLang(this, 'en', event)">English</button><button class="faq-lang-btn" onclick="switchFaqLang(this, 'ur', event)">Roman Urdu</button></div><div class="a-en">After placing an order, WhatsApp is our single point of contact — you will receive all updates in that same chat.</div><div class="a-ur" style="display:none;">Order place karne ke baad WhatsApp hi single point of contact hai — wahi chat mein updates milte rehte hain.</div></div></div></div>
+          <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text"><span class="q-en">Can an order be canceled?</span><span class="q-ur" style="display:none;">Kya order cancel ho sakta hai?</span></span><div class="faq-q-icon"><i class="fa-solid fa-plus"></i></div></div><div class="faq-a"><div class="faq-a-inner"><div class="faq-lang-mini"><button class="faq-lang-btn active" onclick="switchFaqLang(this, 'en', event)">English</button><button class="faq-lang-btn" onclick="switchFaqLang(this, 'ur', event)">Roman Urdu</button></div><div class="a-en">Any order can be canceled for free before payment. After payment, cancellation must be discussed on WhatsApp.</div><div class="a-ur" style="display:none;">Payment se pehle koi bhi order free mein cancel ho sakta hai. Payment ke baad cancellation WhatsApp par discuss karni hogi.</div></div></div></div>
         </div>
-
-        <!-- PAYMENT -->
         <div class="faq-group" id="cat-payment">
-          <!-- FAQ 5 -->
-          <div class="faq-item">
-            <div class="faq-q" onclick="toggleFaq(this)">
-              <span class="faq-q-text">
-                <span class="q-en">Which payment methods are accepted?</span>
-                <span class="q-ur" style="display:none;">Payment ke kaunse methods accept hote hain?</span>
-              </span>
-              <div class="faq-q-icon"><i class="fa-solid fa-plus"></i></div>
-            </div>
-            <div class="faq-a">
-              <div class="faq-a-inner">
-                <div class="faq-lang-mini">
-                  <button class="faq-lang-btn active" onclick="switchFaqLang(this, 'en', event)">English</button>
-                  <button class="faq-lang-btn" onclick="switchFaqLang(this, 'ur', event)">Roman Urdu</button>
-                </div>
-                <div class="a-en">We accept JazzCash, EasyPaisa, and Bank Transfers. You will receive payment details on WhatsApp after confirming your order.</div>
-                <div class="a-ur" style="display:none;">JazzCash, EasyPaisa aur Bank Transfer — sab accept hote hain. Order confirm hone ke baad WhatsApp par payment details mil jaati hain.</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- FAQ 6 -->
-          <div class="faq-item">
-            <div class="faq-q" onclick="toggleFaq(this)">
-              <span class="faq-q-text">
-                <span class="q-en">Is advance payment required?</span>
-                <span class="q-ur" style="display:none;">Kya advance payment zaroori hai?</span>
-              </span>
-              <div class="faq-q-icon"><i class="fa-solid fa-plus"></i></div>
-            </div>
-            <div class="faq-a">
-              <div class="faq-a-inner">
-                <div class="faq-lang-mini">
-                  <button class="faq-lang-btn active" onclick="switchFaqLang(this, 'en', event)">English</button>
-                  <button class="faq-lang-btn" onclick="switchFaqLang(this, 'ur', event)">Roman Urdu</button>
-                </div>
-                <div class="a-en">Yes, payment needs to be confirmed before delivery so that order processing can begin immediately.</div>
-                <div class="a-ur" style="display:none;">Haan, delivery se pehle payment confirm karni hoti hai taake order processing turant shuru ho sake.</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- FAQ 7 -->
-          <div class="faq-item">
-            <div class="faq-q" onclick="toggleFaq(this)">
-              <span class="faq-q-text">
-                <span class="q-en">Do you offer refunds?</span>
-                <span class="q-ur" style="display:none;">Kya refund milta hai?</span>
-              </span>
-              <div class="faq-q-icon"><i class="fa-solid fa-plus"></i></div>
-            </div>
-            <div class="faq-a">
-              <div class="faq-a-inner">
-                <div class="faq-lang-mini">
-                  <button class="faq-lang-btn active" onclick="switchFaqLang(this, 'en', event)">English</button>
-                  <button class="faq-lang-btn" onclick="switchFaqLang(this, 'ur', event)">Roman Urdu</button>
-                </div>
-                <div class="a-en">If there is a genuine issue with account access, we process a replacement or refund within 24 hours.</div>
-                <div class="a-ur" style="display:none;">Agar account access mein koi genuine issue ho toh hum 24 ghante ke andar replace ya refund process karte hain.</div>
-              </div>
-            </div>
-          </div>
+          <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text"><span class="q-en">Which payment methods are accepted?</span><span class="q-ur" style="display:none;">Payment ke kaunse methods accept hote hain?</span></span><div class="faq-q-icon"><i class="fa-solid fa-plus"></i></div></div><div class="faq-a"><div class="faq-a-inner"><div class="faq-lang-mini"><button class="faq-lang-btn active" onclick="switchFaqLang(this, 'en', event)">English</button><button class="faq-lang-btn" onclick="switchFaqLang(this, 'ur', event)">Roman Urdu</button></div><div class="a-en">We accept JazzCash, EasyPaisa, and Bank Transfers. You will receive payment details on WhatsApp after confirming your order.</div><div class="a-ur" style="display:none;">JazzCash, EasyPaisa aur Bank Transfer — sab accept hote hain. Order confirm hone ke baad WhatsApp par payment details mil jaati hain.</div></div></div></div>
+          <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text"><span class="q-en">Is advance payment required?</span><span class="q-ur" style="display:none;">Kya advance payment zaroori hai?</span></span><div class="faq-q-icon"><i class="fa-solid fa-plus"></i></div></div><div class="faq-a"><div class="faq-a-inner"><div class="faq-lang-mini"><button class="faq-lang-btn active" onclick="switchFaqLang(this, 'en', event)">English</button><button class="faq-lang-btn" onclick="switchFaqLang(this, 'ur', event)">Roman Urdu</button></div><div class="a-en">Yes, payment needs to be confirmed before delivery so that order processing can begin immediately.</div><div class="a-ur" style="display:none;">Haan, delivery se pehle payment confirm karni hoti hai taake order processing turant shuru ho sake.</div></div></div></div>
+          <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text"><span class="q-en">Do you offer refunds?</span><span class="q-ur" style="display:none;">Kya refund milta hai?</span></span><div class="faq-q-icon"><i class="fa-solid fa-plus"></i></div></div><div class="faq-a"><div class="faq-a-inner"><div class="faq-lang-mini"><button class="faq-lang-btn active" onclick="switchFaqLang(this, 'en', event)">English</button><button class="faq-lang-btn" onclick="switchFaqLang(this, 'ur', event)">Roman Urdu</button></div><div class="a-en">If there is a genuine issue with account access, we process a replacement or refund within 24 hours.</div><div class="a-ur" style="display:none;">Agar account access mein koi genuine issue ho toh hum 24 ghante ke andar replace ya refund process karte hain.</div></div></div></div>
         </div>
-
-        <!-- PRODUCTS -->
         <div class="faq-group" id="cat-products">
-          <!-- FAQ 8 -->
-          <div class="faq-item">
-            <div class="faq-q" onclick="toggleFaq(this)">
-              <span class="faq-q-text">
-                <span class="q-en">Are these subscriptions genuine or shared?</span>
-                <span class="q-ur" style="display:none;">Yeh subscriptions genuine hain ya shared?</span>
-              </span>
-              <div class="faq-q-icon"><i class="fa-solid fa-plus"></i></div>
-            </div>
-            <div class="faq-a">
-              <div class="faq-a-inner">
-                <div class="faq-lang-mini">
-                  <button class="faq-lang-btn active" onclick="switchFaqLang(this, 'en', event)">English</button>
-                  <button class="faq-lang-btn" onclick="switchFaqLang(this, 'ur', event)">Roman Urdu</button>
-                </div>
-                <div class="a-en">All subscriptions are verified and original — we do not provide any fake or cracked versions.</div>
-                <div class="a-ur" style="display:none;">Sab subscriptions verified aur original hain — koi fake ya cracked versions nahi diye jaate.</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- FAQ 9 -->
-          <div class="faq-item">
-            <div class="faq-q" onclick="toggleFaq(this)">
-              <span class="faq-q-text">
-                <span class="q-en">What happens after the subscription expires?</span>
-                <span class="q-ur" style="display:none;">Subscription expire hone ke baad kya hoga?</span>
-              </span>
-              <div class="faq-q-icon"><i class="fa-solid fa-plus"></i></div>
-            </div>
-            <div class="faq-a">
-              <div class="faq-a-inner">
-                <div class="faq-lang-mini">
-                  <button class="faq-lang-btn active" onclick="switchFaqLang(this, 'en', event)">English</button>
-                  <button class="faq-lang-btn" onclick="switchFaqLang(this, 'ur', event)">Roman Urdu</button>
-                </div>
-                <div class="a-en">You can contact us on WhatsApp for renewal — you will need to place a new order with your preferred duration.</div>
-                <div class="a-ur" style="display:none;">Aap WhatsApp par renewal ke liye contact kar sakte hain — naya order place karna hoga apne preferred duration ke saath.</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- FAQ 10 -->
-          <div class="faq-item">
-            <div class="faq-q" onclick="toggleFaq(this)">
-              <span class="faq-q-text">
-                <span class="q-en">Can I get a tool that is not on the list?</span>
-                <span class="q-ur" style="display:none;">Kya koi aur tool bhi mil sakta hai jo list mein nahi hai?</span>
-              </span>
-              <div class="faq-q-icon"><i class="fa-solid fa-plus"></i></div>
-            </div>
-            <div class="faq-a">
-              <div class="faq-a-inner">
-                <div class="faq-lang-mini">
-                  <button class="faq-lang-btn active" onclick="switchFaqLang(this, 'en', event)">English</button>
-                  <button class="faq-lang-btn" onclick="switchFaqLang(this, 'ur', event)">Roman Urdu</button>
-                </div>
-                <div class="a-en">Message us on WhatsApp with your requirement — if it's available, we will definitely provide it.</div>
-                <div class="a-ur" style="display:none;">WhatsApp par message karein apni requirement ke saath — agar available hua toh hum zaroor provide karenge.</div>
-              </div>
-            </div>
-          </div>
+          <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text"><span class="q-en">Are these subscriptions genuine or shared?</span><span class="q-ur" style="display:none;">Yeh subscriptions genuine hain ya shared?</span></span><div class="faq-q-icon"><i class="fa-solid fa-plus"></i></div></div><div class="faq-a"><div class="faq-a-inner"><div class="faq-lang-mini"><button class="faq-lang-btn active" onclick="switchFaqLang(this, 'en', event)">English</button><button class="faq-lang-btn" onclick="switchFaqLang(this, 'ur', event)">Roman Urdu</button></div><div class="a-en">All subscriptions are verified and original — we do not provide any fake or cracked versions.</div><div class="a-ur" style="display:none;">Sab subscriptions verified aur original hain — koi fake ya cracked versions nahi diye jaate.</div></div></div></div>
+          <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text"><span class="q-en">What happens after the subscription expires?</span><span class="q-ur" style="display:none;">Subscription expire hone ke baad kya hoga?</span></span><div class="faq-q-icon"><i class="fa-solid fa-plus"></i></div></div><div class="faq-a"><div class="faq-a-inner"><div class="faq-lang-mini"><button class="faq-lang-btn active" onclick="switchFaqLang(this, 'en', event)">English</button><button class="faq-lang-btn" onclick="switchFaqLang(this, 'ur', event)">Roman Urdu</button></div><div class="a-en">You can contact us on WhatsApp for renewal — you will need to place a new order with your preferred duration.</div><div class="a-ur" style="display:none;">Aap WhatsApp par renewal ke liye contact kar sakte hain — naya order place karna hoga apne preferred duration ke saath.</div></div></div></div>
+          <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text"><span class="q-en">Can I get a tool that is not on the list?</span><span class="q-ur" style="display:none;">Kya koi aur tool bhi mil sakta hai jo list mein nahi hai?</span></span><div class="faq-q-icon"><i class="fa-solid fa-plus"></i></div></div><div class="faq-a"><div class="faq-a-inner"><div class="faq-lang-mini"><button class="faq-lang-btn active" onclick="switchFaqLang(this, 'en', event)">English</button><button class="faq-lang-btn" onclick="switchFaqLang(this, 'ur', event)">Roman Urdu</button></div><div class="a-en">Message us on WhatsApp with your requirement — if it's available, we will definitely provide it.</div><div class="a-ur" style="display:none;">WhatsApp par message karein apni requirement ke saath — agar available hua toh hum zaroor provide karenge.</div></div></div></div>
         </div>
-
-        <!-- SUPPORT -->
         <div class="faq-group" id="cat-support">
-          <!-- FAQ 11 -->
-          <div class="faq-item">
-            <div class="faq-q" onclick="toggleFaq(this)">
-              <span class="faq-q-text">
-                <span class="q-en">When is support available?</span>
-                <span class="q-ur" style="display:none;">Support kab available hota hai?</span>
-              </span>
-              <div class="faq-q-icon"><i class="fa-solid fa-plus"></i></div>
-            </div>
-            <div class="faq-a">
-              <div class="faq-a-inner">
-                <div class="faq-lang-mini">
-                  <button class="faq-lang-btn active" onclick="switchFaqLang(this, 'en', event)">English</button>
-                  <button class="faq-lang-btn" onclick="switchFaqLang(this, 'ur', event)">Roman Urdu</button>
-                </div>
-                <div class="a-en">24/7 — whether it's day or night, send us a message on WhatsApp and you'll usually get a reply within 30 minutes.</div>
-                <div class="a-ur" style="display:none;">24/7 — raat ho ya din, WhatsApp par message bhejein aur usually 30 minutes ke andar reply milta hai.</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- FAQ 12 -->
-          <div class="faq-item">
-            <div class="faq-q" onclick="toggleFaq(this)">
-              <span class="faq-q-text">
-                <span class="q-en">What should I do if there's a problem with my account?</span>
-                <span class="q-ur" style="display:none;">Agar account mein problem aa jaye toh kya karein?</span>
-              </span>
-              <div class="faq-q-icon"><i class="fa-solid fa-plus"></i></div>
-            </div>
-            <div class="faq-a">
-              <div class="faq-a-inner">
-                <div class="faq-lang-mini">
-                  <button class="faq-lang-btn active" onclick="switchFaqLang(this, 'en', event)">English</button>
-                  <button class="faq-lang-btn" onclick="switchFaqLang(this, 'ur', event)">Roman Urdu</button>
-                </div>
-                <div class="a-en">Message us immediately on WhatsApp with your order details — we will resolve it or replace the account as soon as possible.</div>
-                <div class="a-ur" style="display:none;">Turant WhatsApp par order details ke saath message karein — hum jald se jald resolve karenge ya replace kar denge.</div>
-              </div>
-            </div>
-          </div>
+          <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text"><span class="q-en">When is support available?</span><span class="q-ur" style="display:none;">Support kab available hota hai?</span></span><div class="faq-q-icon"><i class="fa-solid fa-plus"></i></div></div><div class="faq-a"><div class="faq-a-inner"><div class="faq-lang-mini"><button class="faq-lang-btn active" onclick="switchFaqLang(this, 'en', event)">English</button><button class="faq-lang-btn" onclick="switchFaqLang(this, 'ur', event)">Roman Urdu</button></div><div class="a-en">24/7 — whether it's day or night, send us a message on WhatsApp and you'll usually get a reply within 30 minutes.</div><div class="a-ur" style="display:none;">24/7 — raat ho ya din, WhatsApp par message bhejein aur usually 30 minutes ke andar reply milta hai.</div></div></div></div>
+          <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text"><span class="q-en">What should I do if there's a problem with my account?</span><span class="q-ur" style="display:none;">Agar account mein problem aa jaye toh kya karein?</span></span><div class="faq-q-icon"><i class="fa-solid fa-plus"></i></div></div><div class="faq-a"><div class="faq-a-inner"><div class="faq-lang-mini"><button class="faq-lang-btn active" onclick="switchFaqLang(this, 'en', event)">English</button><button class="faq-lang-btn" onclick="switchFaqLang(this, 'ur', event)">Roman Urdu</button></div><div class="a-en">Message us immediately on WhatsApp with your order details — we will resolve it or replace the account as soon as possible.</div><div class="a-ur" style="display:none;">Turant WhatsApp par order details ke saath message karein — hum jald se jald resolve karenge ya replace kar denge.</div></div></div></div>
         </div>
-
       </div>
     </div>
-
     <div class="cta-banner">
       <h3 style="color:#fff;font-weight:800;font-size:1.5rem;margin-bottom:10px">Couldn't Find Your Answer?</h3>
       <p style="color:#777;font-size:14px;margin-bottom:24px">We are here to help — ask us directly on WhatsApp</p>
-      <a href="https://wa.me/923229952880" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:#FF8C00;color:#000;padding:13px 28px;border-radius:100px;font-weight:700;font-size:14px;text-decoration:none">
-        <i class="fa-brands fa-whatsapp"></i> Ask on WhatsApp
-      </a>
+      <a href="https://wa.me/923229952880" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:#FF8C00;color:#000;padding:13px 28px;border-radius:100px;font-weight:700;font-size:14px;text-decoration:none"><i class="fa-brands fa-whatsapp"></i> Ask on WhatsApp</a>
     </div>
-
   </div>
 </section>
 
 <footer class="footer">
   <div class="container">
     <div class="row text-start g-4 mb-4">
-      <div class="col-md-4">
-        <div class="footer-logo">⚡ SR Digital World</div>
-        <p style="color:#555;font-size:13px;line-height:1.7;margin-top:8px">Pakistan's #1 digital tools store. Premium subscriptions, best prices, instant delivery.</p>
-      </div>
-      <div class="col-md-4">
-        <div style="color:#fff;font-weight:700;font-size:13px;margin-bottom:12px;letter-spacing:0.5px">QUICK LINKS</div>
-        <div class="d-flex flex-column gap-2">
-          <a href="/" class="footer-link">Home</a>
-          <a href="products" class="footer-link">Products</a>
-          <a href="pricing" class="footer-link">Pricing</a>
-          <a href="about" class="footer-link">About Us</a>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div style="color:#fff;font-weight:700;font-size:13px;margin-bottom:12px;letter-spacing:0.5px">SUPPORT</div>
-        <div class="d-flex flex-column gap-2">
-          <a href="faqs" class="footer-link">FAQs</a>
-          <a href="contact" class="footer-link">Contact Us</a>
-          <a href="https://wa.me/923229952880" target="_blank" class="footer-link">WhatsApp Support</a>
-        </div>
-      </div>
+      <div class="col-md-4"><div class="footer-logo">⚡ SR Digital World</div><p style="color:#555;font-size:13px;line-height:1.7;margin-top:8px">Pakistan's #1 digital tools store. Premium subscriptions, best prices, instant delivery.</p></div>
+      <div class="col-md-4"><div style="color:#fff;font-weight:700;font-size:13px;margin-bottom:12px;letter-spacing:0.5px">QUICK LINKS</div><div class="d-flex flex-column gap-2"><a href="index.html" class="footer-link">Home</a><a href="products.html" class="footer-link">Products</a><a href="pricing.html" class="footer-link">Pricing</a><a href="about.html" class="footer-link">About Us</a></div></div>
+      <div class="col-md-4"><div style="color:#fff;font-weight:700;font-size:13px;margin-bottom:12px;letter-spacing:0.5px">SUPPORT</div><div class="d-flex flex-column gap-2"><a href="faqs.html" class="footer-link">FAQs</a><a href="contact.html" class="footer-link">Contact Us</a><a href="https://wa.me/923229952880" target="_blank" class="footer-link">WhatsApp Support</a></div></div>
     </div>
     <p class="footer-text" style="border-top:1px solid #1a1a25;padding-top:20px">© 2026 SR Digital World. All Rights Reserved. | 🇵🇰 Made in Pakistan</p>
   </div>
 </footer>
 
 <script>
-// Main FAQ Accordion logic
+// Navbar and Menu Logic
+fetch('navbar.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('navbar-placeholder').innerHTML = data;
+    let currentUrl = window.location.pathname.split('/').pop();
+    if(currentUrl === '') currentUrl = 'index.html';
+    let navLinks = document.querySelectorAll('.nav-link-item');
+    navLinks.forEach(link => {
+      if(link.getAttribute('href') === currentUrl) link.classList.add('active');
+      else link.classList.remove('active');
+    });
+  });
+
+function toggleMobileMenu() {
+  let menu = document.getElementById('mobileMenu');
+  if(menu) menu.classList.toggle('show-menu');
+}
+
+// FAQ Logic
 function toggleFaq(el){
   const item=el.parentElement;
   const wasOpen=item.classList.contains('open');
   item.parentElement.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
   if(!wasOpen){item.classList.add('open');}
 }
-
-// FAQ Category Tabs logic
 function showCat(cat,btn){
   document.querySelectorAll('.cat-tab').forEach(t=>t.classList.remove('active'));
   btn.classList.add('active');
   document.querySelectorAll('.faq-group').forEach(g=>g.classList.remove('active'));
   document.getElementById('cat-'+cat).classList.add('active');
 }
-
-// Individual FAQ Language Switcher Logic
 function switchFaqLang(btn, lang, event) {
-  event.stopPropagation(); // Prevents the accordion from closing when the button is clicked
+  event.stopPropagation();
   const faqItem = btn.closest('.faq-item');
-  
-  // Toggle active class on buttons
   faqItem.querySelectorAll('.faq-lang-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  
-  // Toggle the visible language for Question and Answer
   if (lang === 'en') {
     faqItem.querySelector('.q-en').style.display = 'inline';
     faqItem.querySelector('.q-ur').style.display = 'none';
