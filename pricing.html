@@ -18,6 +18,18 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
 .nav-link-item:hover{color:#FF8C00}
 .nav-link-item.active{color:#FF8C00}
 .nav-link-item.active::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:2px;background:#FF8C00;border-radius:2px}
+
+/* MOBILE MENU RESPONSIVE STYLES */
+.menu-toggle { display: none; background: transparent; border: none; color: #FF8C00; font-size: 24px; cursor: pointer; }
+@media(max-width: 991px) {
+  .menu-toggle { display: block; }
+  .nav-links { display: none; width: 100%; flex-direction: column; background: #111118; padding: 20px; border-radius: 12px; border: 1px solid #1e1e2a; margin-top: 15px; gap: 15px !important; }
+  .nav-links.show-menu { display: flex !important; }
+}
+@media(min-width: 992px) {
+  .nav-links { display: flex !important; }
+}
+
 .page-hero{padding:70px 0 50px;background:#000;text-align:center;border-bottom:1px solid #1a1a25;position:relative;overflow:hidden}
 .page-hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 50% 50% at 50% 0%,rgba(255,140,0,0.1) 0%,transparent 70%)}
 .section-eyebrow{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#FF8C00;margin-bottom:12px}
@@ -74,13 +86,7 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
 .modal-sub{font-size:13px;color:#555;margin-bottom:24px}
 .modal-product-chip{display:inline-block;background:rgba(255,140,0,0.1);color:#FF8C00;padding:6px 14px;border-radius:8px;font-size:14px;font-weight:700;margin-bottom:20px}
 .modal-input{width:100%;background:#0a0a0f;border:1px solid #2a2a35;color:#e8e8f0;padding:12px 16px;border-radius:10px;font-size:14px;font-family:'Inter',sans-serif;margin-bottom:12px;transition:border 0.2s;outline:none}
-/* Input Focus Hover Effect */
-.modal-input:focus, .contact-input:focus, .contact-textarea:focus {
-    border-color: #FF8C00;
-    background-color: #222222;
-    box-shadow: 0 0 8px rgba(255, 140, 0, 0.3);
-    outline: none;
-}
+.modal-input:focus, .contact-input:focus, .contact-textarea:focus { border-color: #FF8C00; background-color: #222222; box-shadow: 0 0 8px rgba(255, 140, 0, 0.3); outline: none; }
 .modal-input::placeholder{color:#444}
 .modal-actions{display:flex;gap:10px;margin-top:6px}
 .btn-cancel{flex:1;padding:12px;background:transparent;border:1px solid #2a2a35;color:#666;border-radius:10px;cursor:pointer;font-family:'Inter',sans-serif;font-weight:600;font-size:14px;transition:all 0.2s}
@@ -97,23 +103,8 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
   <i class="fa-brands fa-whatsapp"></i>
 </a>
 
-<nav class="nav-bar">
-  <div class="container d-flex justify-content-between align-items-center flex-wrap gap-3">
-    <!-- Navbar links fixed (.html added) -->
-    <a href="index.html" class="nav-logo" style="text-decoration:none">⚡ SR Digital World</a>
-    <div class="nav-links d-none d-lg-flex align-items-center gap-4">
-      <a href="index.html" class="nav-link-item">Home</a>
-      <a href="products.html" class="nav-link-item">Products</a>
-      <a href="pricing.html" class="nav-link-item active">Pricing</a>
-      <a href="about.html" class="nav-link-item">About</a>
-      <a href="faqs.html" class="nav-link-item">FAQs</a>
-      <a href="contact.html" class="nav-link-item">Contact</a>
-    </div>
-    <a href="https://wa.me/923229952880" target="_blank" style="background:#FF8C00;color:#000;padding:8px 20px;border-radius:100px;font-weight:700;font-size:13px;text-decoration:none;white-space:nowrap">
-      <i class="fa-brands fa-whatsapp" style="margin-right:6px"></i>Order on WhatsApp
-    </a>
-  </div>
-</nav>
+<!-- NAVBAR PLACEHOLDER (Menu yahan khud load hoga) -->
+<div id="navbar-placeholder"></div>
 
 <section class="page-hero">
   <div class="page-hero-bg"></div>
@@ -281,7 +272,6 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
       </div>
       <div class="col-md-4">
         <div style="color:#fff;font-weight:700;font-size:13px;margin-bottom:12px;letter-spacing:0.5px">QUICK LINKS</div>
-        <!-- Footer links fixed (.html added) -->
         <div class="d-flex flex-column gap-2">
           <a href="index.html" class="footer-link">Home</a>
           <a href="products.html" class="footer-link">Products</a>
@@ -317,6 +307,33 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
 </div>
 
 <script>
+// --- NAVBAR SCRIPT START ---
+fetch('navbar.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('navbar-placeholder').innerHTML = data;
+    
+    let currentUrl = window.location.pathname.split('/').pop();
+    if(currentUrl === '') currentUrl = 'index.html';
+    
+    let navLinks = document.querySelectorAll('.nav-link-item');
+    navLinks.forEach(link => {
+      if(link.getAttribute('href') === currentUrl) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  });
+
+function toggleMobileMenu() {
+  let menu = document.getElementById('mobileMenu');
+  if(menu) {
+    menu.classList.toggle('show-menu');
+  }
+}
+// --- NAVBAR SCRIPT END ---
+
 let curProduct='';
 function quickOrder(name){
   curProduct=name;
@@ -324,12 +341,10 @@ function quickOrder(name){
   document.getElementById('mName').value='';
   document.getElementById('mPhone').value='';
   document.getElementById('modalOverlay').classList.add('open');
-  // Scroll fix add kiya gaya hai
   document.body.style.overflow = 'hidden'; 
 }
 function closeModal(){
   document.getElementById('modalOverlay').classList.remove('open');
-  // Scroll fix add kiya gaya hai
   document.body.style.overflow = 'auto'; 
 }
 function closeOnBg(e){if(e.target===document.getElementById('modalOverlay'))closeModal()}
