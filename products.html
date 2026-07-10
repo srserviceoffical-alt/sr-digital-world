@@ -5,9 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Products | SR Digital World</title>
 <meta name="description" content="Canva Pro, CapCut Pro, Surfshark VPN, Gemini and much more — at the best prices in Pakistan. Instant delivery via WhatsApp.">
-<!-- Favicon -->
 <link rel="icon" type="image/png" href="https://drive.google.com/thumbnail?id=1u0VNmKGzMIuxk0bxZMqAgWCU4G5OiTtU&sz=w256">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 <style>
@@ -39,22 +38,21 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
 .cat-label{font-size:13px;font-weight:700;color:#FF8C00;letter-spacing:1px;text-transform:uppercase;margin-bottom:24px;display:flex;align-items:center;gap:10px}
 .cat-label::after{content:'';flex:1;height:1px;background:#1a1a25}
 
-/* BUTTON CLICKS FIX */
-.product-card{background:#111118;border:1px solid #1e1e2a;border-radius:20px;padding:32px 28px;transition:all 0.4s;position:relative;overflow:hidden;height:100%; z-index:1;}
+/* PRODUCT CARD */
+.product-card{background:#111118;border:1px solid #1e1e2a;border-radius:20px;padding:32px 28px;transition:all 0.4s;position:relative;overflow:hidden;height:100%; z-index:1; display: flex; flex-direction: column;}
 .product-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,140,0,0.04) 0%,transparent 60%);opacity:0;transition:opacity 0.4s; z-index:-1; pointer-events:none;}
 .product-card:hover{border-color:rgba(255,140,0,0.35);transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,0.5)}
 .product-card:hover::before{opacity:1}
 
-.card-tag{display:inline-block;background:rgba(255,140,0,0.1);color:#FF8C00;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:6px;margin-bottom:20px}
+.card-tag{display:inline-block;background:rgba(255,140,0,0.1);color:#FF8C00;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:6px;margin-bottom:20px; width: max-content;}
 .product-icon{display:block;width:60px;height:60px;border-radius:16px;margin-bottom:18px;object-fit:cover;background:#1a1a24;}
 .product-name{font-size:1.25rem;font-weight:700;color:#fff;margin-bottom:8px;letter-spacing:-0.3px}
-.product-desc{font-size:13px;color:#666;line-height:1.6;margin-bottom:18px}
+.product-desc{font-size:13px;color:#666;line-height:1.6;margin-bottom:18px; flex-grow: 1;}
 .feat-list{list-style:none;margin-bottom:24px}
 .feat-list li{font-size:12.5px;color:#888;padding:5px 0;display:flex;align-items:center;gap:8px}
 .feat-list li i{color:#FF8C00;font-size:11px}
 .dur-tabs{display:flex;gap:6px;margin-bottom:20px;flex-wrap:wrap}
 
-/* TABS FIX (z-index: 10) */
 .dur-tab{background:transparent;border:1px solid #2a2a35;color:#666;padding:5px 12px;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;transition:all 0.25s;font-family:'Inter',sans-serif; position:relative; z-index:10;}
 .dur-tab:hover{border-color:#FF8C00;color:#FF8C00}
 .dur-tab.active{background:#FF8C00;color:#000;border-color:#FF8C00}
@@ -63,8 +61,11 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
 .price-amount{font-size:2rem;font-weight:900;color:#FF8C00;letter-spacing:-1px}
 .price-period{font-size:13px;color:#555;margin-left:4px}
 
-/* BUTTON FIX (z-index: 10) */
-.order-btn{width:100%;padding:13px;background:transparent;border:1.5px solid #FF8C00;color:#FF8C00;border-radius:12px;font-weight:700;font-size:14px;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.3s;letter-spacing:0.3px;display:flex;align-items:center;justify-content:center;gap:8px; position:relative; z-index:10;}
+/* BUTTONS */
+.btn-group-custom { display: flex; flex-direction: column; gap: 10px; margin-top: auto; }
+.details-btn{width:100%;padding:12px;background:#1a1a24;border:1px solid #2a2a35;color:#fff;border-radius:12px;font-weight:600;font-size:14px;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.3s; position:relative; z-index:10;}
+.details-btn:hover{background:#2a2a35;border-color:#444;}
+.order-btn{width:100%;padding:12px;background:transparent;border:1.5px solid #FF8C00;color:#FF8C00;border-radius:12px;font-weight:700;font-size:14px;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.3s;display:flex;align-items:center;justify-content:center;gap:8px; position:relative; z-index:10;}
 .order-btn:hover{background:#FF8C00;color:#000;box-shadow:0 8px 24px rgba(255,140,0,0.3)}
 
 .cta-banner{background:linear-gradient(135deg,#1a1208,#0a0a0f);border:1px solid rgba(255,140,0,0.2);border-radius:24px;padding:50px 40px;text-align:center;margin-top:30px}
@@ -73,39 +74,39 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
 .footer-link:hover{color:#FF8C00}
 .footer-logo{font-size:1.1rem;font-weight:900;background:linear-gradient(135deg,#FF8C00,#FFB347);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
 .footer-text{color:#333;font-size:12px}
-.wa-float{position:fixed;bottom:28px;right:28px;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:26px;text-decoration:none;z-index:9999;box-shadow:0 4px 20px rgba(0,0,0,0.4);transition:all 0.3s}
-.wa-float:hover{background:#20ba5a;transform:scale(1.1)}
+
+/* MODALS */
 .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9998;align-items:center;justify-content:center;backdrop-filter:blur(4px)}
 .modal-overlay.open{display:flex}
-.modal-box{background:#111118;border:1px solid rgba(255,140,0,0.25);border-radius:24px;padding:32px;width:90%;max-width:420px;animation:slideUp 0.3s ease}
+.modal-box{background:#111118;border:1px solid rgba(255,140,0,0.25);border-radius:24px;padding:32px;width:90%;max-width:420px;animation:slideUp 0.3s ease; max-height: 90vh; overflow-y: auto;}
+/* Hide scrollbar for clean look */
+.modal-box::-webkit-scrollbar { width: 6px; }
+.modal-box::-webkit-scrollbar-thumb { background: #2a2a35; border-radius: 10px; }
+
 @keyframes slideUp{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
 .modal-title{font-size:1.2rem;font-weight:800;color:#fff;margin-bottom:4px}
-.modal-sub{font-size:13px;color:#555;margin-bottom:24px}
+.modal-sub{font-size:13px;color:#555;margin-bottom:20px}
 .modal-product-chip{display:inline-block;background:rgba(255,140,0,0.1);color:#FF8C00;padding:6px 14px;border-radius:8px;font-size:14px;font-weight:700;margin-bottom:20px}
 .modal-input{width:100%;background:#0a0a0f;border:1px solid #2a2a35;color:#e8e8f0;padding:12px 16px;border-radius:10px;font-size:14px;font-family:'Inter',sans-serif;margin-bottom:12px;transition:border 0.2s;outline:none}
-
-.modal-input:focus, .contact-input:focus, .contact-textarea:focus {
-  border-color: #FF8C00;
-  background-color: #222222;
-  box-shadow: 0 0 8px rgba(255, 140, 0, 0.3);
-  outline: none;
-}
-.modal-input::placeholder{color:#444}
+.modal-input:focus{border-color: #FF8C00;background-color: #222222;box-shadow: 0 0 8px rgba(255, 140, 0, 0.3);}
 .modal-actions{display:flex;gap:10px;margin-top:6px}
 .btn-cancel{flex:1;padding:12px;background:transparent;border:1px solid #2a2a35;color:#666;border-radius:10px;cursor:pointer;font-family:'Inter',sans-serif;font-weight:600;font-size:14px;transition:all 0.2s}
 .btn-cancel:hover{border-color:#444;color:#999}
 .btn-send{flex:2;padding:12px;background:#FF8C00;border:none;color:#000;border-radius:10px;cursor:pointer;font-family:'Inter',sans-serif;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;gap:8px;transition:all 0.3s}
 .btn-send:hover{background:#FFB347}
+
+/* Details Modal Specific */
+.details-content { font-size: 13.5px; color: #aaa; line-height: 1.6; margin-bottom: 24px; }
+.details-content ul { padding-left: 20px; margin-top: 10px; }
+.details-content li { margin-bottom: 8px; }
+.details-content strong { color: #fff; }
+.warranty-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(37, 211, 102, 0.1); color: #25D366; padding: 6px 12px; border-radius: 6px; font-size: 12px; font-weight: 700; margin-bottom: 15px;}
+
 @media(max-width:768px){.section-title{font-size:1.9rem}}
 </style>
 </head>
 <body>
 
-<a href="https://wa.me/923229952880" target="_blank" class="wa-float">
-  <i class="fa-brands fa-whatsapp"></i>
-</a>
-
-<!-- NAVBAR PLACEHOLDER (Menu yahan khud load hoga) -->
 <div id="navbar-placeholder"></div>
 
 <section class="page-hero">
@@ -122,19 +123,12 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
 
     <div class="cat-label"><i class="fa-solid fa-palette"></i> Design & Creativity</div>
     <div class="row g-4 mb-5">
-      <!-- Canva Pro -->
       <div class="col-lg-4 col-md-6">
         <div class="product-card">
           <div class="card-tag">Design Tool</div>
           <img class="product-icon" src="https://drive.google.com/thumbnail?id=1al_cZ6SEJcSkvab2NR979_KK7qtZlb3R&sz=w500" alt="Canva Pro">
           <div class="product-name">Canva Pro</div>
           <p class="product-desc">The easiest tool for creating professional designs — perfect for students, businesses, and content creators.</p>
-          <ul class="feat-list">
-            <li><i class="fa-solid fa-check"></i> 100M+ premium templates & images</li>
-            <li><i class="fa-solid fa-check"></i> Background remover</li>
-            <li><i class="fa-solid fa-check"></i> Brand kit & magic resize</li>
-            <li><i class="fa-solid fa-check"></i> Unlimited downloads</li>
-          </ul>
           <div class="dur-tabs" id="tabs-canva">
             <button class="dur-tab active" onclick="setDur('canva','100','1 month',this)">1 Month</button>
             <button class="dur-tab" onclick="setDur('canva','150','3 months',this)">3 Months</button>
@@ -144,23 +138,19 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
             <span class="price-amount" id="p-canva">Rs. 100</span>
             <span class="price-period" id="d-canva">/ 1 month</span>
           </div>
-          <button class="order-btn" onclick="openModal('Canva Pro','canva')"><i class="fa-brands fa-whatsapp"></i> Order Now</button>
+          <div class="btn-group-custom">
+            <button class="details-btn" onclick="openDetails('Canva Pro')">More Details</button>
+            <button class="order-btn" onclick="openOrder('Canva Pro','canva')"><i class="fa-brands fa-whatsapp"></i> Order Now</button>
+          </div>
         </div>
       </div>
 
-      <!-- CapCut Pro -->
       <div class="col-lg-4 col-md-6">
         <div class="product-card" style="border-color:rgba(255,140,0,0.15)">
           <div class="card-tag" style="background:rgba(255,140,0,0.15)">🔥 Popular</div>
           <img class="product-icon" src="https://drive.google.com/thumbnail?id=1ZZuogZD6ExCfQ4j1Hg3Dm9a9CDvYLcZf&sz=w500" alt="CapCut Pro">
           <div class="product-name">CapCut Pro</div>
           <p class="product-desc">AI-powered video editing — the most widely used tool for Reels, TikToks, and YouTube Shorts.</p>
-          <ul class="feat-list">
-            <li><i class="fa-solid fa-check"></i> Watermark-free exports</li>
-            <li><i class="fa-solid fa-check"></i> Premium effects & transitions</li>
-            <li><i class="fa-solid fa-check"></i> AI background removal</li>
-            <li><i class="fa-solid fa-check"></i> 4K export quality</li>
-          </ul>
           <div class="dur-tabs" id="tabs-capcut">
             <button class="dur-tab active" onclick="setDur('capcut','899','1 month',this)">1 Month</button>
           </div>
@@ -168,23 +158,19 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
             <span class="price-amount" id="p-capcut">Rs. 899</span>
             <span class="price-period" id="d-capcut">/ 1 month</span>
           </div>
-          <button class="order-btn" onclick="openModal('CapCut Pro','capcut')"><i class="fa-brands fa-whatsapp"></i> Order Now</button>
+          <div class="btn-group-custom">
+            <button class="details-btn" onclick="openDetails('CapCut Pro')">More Details</button>
+            <button class="order-btn" onclick="openOrder('CapCut Pro','capcut')"><i class="fa-brands fa-whatsapp"></i> Order Now</button>
+          </div>
         </div>
       </div>
 
-      <!-- Gemini Pro -->
       <div class="col-lg-4 col-md-6">
         <div class="product-card">
           <div class="card-tag">AI Assistant</div>
           <img class="product-icon" src="https://drive.google.com/thumbnail?id=1pYWVrh90lbUq1M7ea9UiGz0BdO0MrQXn&sz=w500" alt="Gemini Pro">
           <div class="product-name">Gemini Pro</div>
           <p class="product-desc">Google's advanced AI assistant — the perfect companion for content writing, research, coding, and studies.</p>
-          <ul class="feat-list">
-            <li><i class="fa-solid fa-check"></i> Advanced AI reasoning</li>
-            <li><i class="fa-solid fa-check"></i> Image & document analysis</li>
-            <li><i class="fa-solid fa-check"></i> Priority access, fast responses</li>
-            <li><i class="fa-solid fa-check"></i> 2TB Google storage included</li>
-          </ul>
           <div class="dur-tabs" id="tabs-gemini">
             <button class="dur-tab active" onclick="setDur('gemini','300','1 month',this)">1 Month</button>
             <button class="dur-tab" onclick="setDur('gemini','500','2 months',this)">2 Months</button>
@@ -193,26 +179,22 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
             <span class="price-amount" id="p-gemini">Rs. 300</span>
             <span class="price-period" id="d-gemini">/ 1 month</span>
           </div>
-          <button class="order-btn" onclick="openModal('Gemini Pro','gemini')"><i class="fa-brands fa-whatsapp"></i> Order Now</button>
+          <div class="btn-group-custom">
+            <button class="details-btn" onclick="openDetails('Gemini Pro')">More Details</button>
+            <button class="order-btn" onclick="openOrder('Gemini Pro','gemini')"><i class="fa-brands fa-whatsapp"></i> Order Now</button>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="cat-label"><i class="fa-solid fa-shield-halved"></i> Security & Privacy</div>
     <div class="row g-4 mb-5">
-      <!-- Surfshark VPN -->
       <div class="col-lg-4 col-md-6">
         <div class="product-card">
           <div class="card-tag">Security</div>
           <img class="product-icon" src="https://drive.google.com/thumbnail?id=1a7HxDteDn7nl2z47F6IpMzrsxUWMgm_C&sz=w500" alt="Surfshark VPN">
           <div class="product-name">Surfshark VPN</div>
           <p class="product-desc">Fast and secure browsing on unlimited devices. Bypass geo-restrictions and protect your privacy.</p>
-          <ul class="feat-list">
-            <li><i class="fa-solid fa-check"></i> Unlimited simultaneous devices</li>
-            <li><i class="fa-solid fa-check"></i> No-logs policy</li>
-            <li><i class="fa-solid fa-check"></i> 100+ country servers</li>
-            <li><i class="fa-solid fa-check"></i> Ad & malware blocker</li>
-          </ul>
           <div class="dur-tabs" id="tabs-surf">
             <button class="dur-tab active" onclick="setDur('surf','350','1 month',this)">1 Month</button>
             <button class="dur-tab" onclick="setDur('surf','600','2 months',this)">2 Months</button>
@@ -221,52 +203,33 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
             <span class="price-amount" id="p-surf">Rs. 350</span>
             <span class="price-period" id="d-surf">/ 1 month</span>
           </div>
-          <button class="order-btn" onclick="openModal('Surfshark VPN','surf')"><i class="fa-brands fa-whatsapp"></i> Order Now</button>
+          <div class="btn-group-custom">
+            <button class="details-btn" onclick="openDetails('Surfshark VPN')">More Details</button>
+            <button class="order-btn" onclick="openOrder('Surfshark VPN','surf')"><i class="fa-brands fa-whatsapp"></i> Order Now</button>
+          </div>
         </div>
       </div>
-    </div>
-
-    <div class="cta-banner">
-      <h3 style="color:#fff;font-weight:800;font-size:1.5rem;margin-bottom:10px">Couldn't Find Your Tool?</h3>
-      <p style="color:#777;font-size:14px;margin-bottom:24px">Message us on WhatsApp — we provide many other tools as well.</p>
-      <a href="https://wa.me/923229952880" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:#FF8C00;color:#000;padding:13px 28px;border-radius:100px;font-weight:700;font-size:14px;text-decoration:none">
-        <i class="fa-brands fa-whatsapp"></i> Ask on WhatsApp
-      </a>
     </div>
 
   </div>
 </section>
 
-<footer class="footer">
-  <div class="container">
-    <div class="row text-start g-4 mb-4">
-      <div class="col-md-4">
-        <div class="footer-logo">⚡ SR Digital World</div>
-        <p style="color:#555;font-size:13px;line-height:1.7;margin-top:8px">Pakistan's #1 digital tools store. Premium subscriptions, best prices, instant delivery.</p>
+<div class="modal-overlay" id="detailsModal" onclick="closeOnBg(event, 'detailsModal')">
+  <div class="modal-box">
+    <div class="modal-title" id="detTitle">Product Name</div>
+    <div class="warranty-badge"><i class="fa-solid fa-shield-check"></i> Full Warranty Supported</div>
+    
+    <div class="details-content" id="detContent">
       </div>
-      <div class="col-md-4">
-        <div style="color:#fff;font-weight:700;font-size:13px;margin-bottom:12px;letter-spacing:0.5px">QUICK LINKS</div>
-        <div class="d-flex flex-column gap-2">
-          <a href="index.html" class="footer-link">Home</a>
-          <a href="products.html" class="footer-link">Products</a>
-          <a href="pricing.html" class="footer-link">Pricing</a>
-          <a href="about.html" class="footer-link">About Us</a>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div style="color:#fff;font-weight:700;font-size:13px;margin-bottom:12px;letter-spacing:0.5px">SUPPORT</div>
-        <div class="d-flex flex-column gap-2">
-          <a href="faqs.html" class="footer-link">FAQs</a>
-          <a href="contact.html" class="footer-link">Contact Us</a>
-          <a href="https://wa.me/923229952880" target="_blank" class="footer-link">WhatsApp Support</a>
-        </div>
-      </div>
-    </div>
-    <p class="footer-text" style="border-top:1px solid #1a1a25;padding-top:20px">© 2026 SR Digital World. All Rights Reserved. | 🇵🇰 Made in Pakistan</p>
-  </div>
-</footer>
 
-<div class="modal-overlay" id="modalOverlay" onclick="closeOnBg(event)">
+    <div class="modal-actions">
+      <button class="btn-cancel" onclick="closeModal('detailsModal')">Back</button>
+      <button class="btn-send" onclick="proceedToOrderFromDetails()"><i class="fa-brands fa-whatsapp"></i> Order Now</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="orderModal" onclick="closeOnBg(event, 'orderModal')">
   <div class="modal-box">
     <div class="modal-title">Confirm Your Order</div>
     <div class="modal-sub">Fill in the details, your order will be sent via WhatsApp</div>
@@ -274,69 +237,92 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
     <input type="text" class="modal-input" id="mName" placeholder="Your Name *">
     <input type="tel" class="modal-input" id="mPhone" placeholder="WhatsApp Number (03XXXXXXXXX) *">
     <div class="modal-actions">
-      <button class="btn-cancel" onclick="closeModal()">Cancel</button>
+      <button class="btn-cancel" onclick="closeModal('orderModal')">Cancel</button>
       <button class="btn-send" onclick="sendOrder()"><i class="fa-brands fa-whatsapp" style="font-size:16px"></i> Send on WhatsApp</button>
     </div>
   </div>
 </div>
 
 <script>
-// --- NAVBAR SCRIPT START ---
-fetch('navbar.html')
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById('navbar-placeholder').innerHTML = data;
-    
-    let currentUrl = window.location.pathname.split('/').pop();
-    if(currentUrl === '') currentUrl = 'index.html';
-    
-    let navLinks = document.querySelectorAll('.nav-link-item');
-    navLinks.forEach(link => {
-      if(link.getAttribute('href') === currentUrl) {
-        link.classList.add('active');
-      } else {
-        link.classList.remove('active');
-      }
-    });
-  });
+// Navbar Fetch
+fetch('navbar.html').then(response => response.text()).then(data => { document.getElementById('navbar-placeholder').innerHTML = data; });
 
-function toggleMobileMenu() {
-  let menu = document.getElementById('mobileMenu');
-  if(menu) {
-    menu.classList.toggle('show-menu');
-  }
-}
-// --- NAVBAR SCRIPT END ---
+// Variables
+let curProduct = '', curPrice = '', curCardId = '';
 
-let curProduct='',curPrice='';
-function setDur(card,price,label,btn){
-  var tabs=document.getElementById('tabs-'+card).querySelectorAll('.dur-tab');
-  for(var i=0;i<tabs.length;i++){tabs[i].classList.remove('active');}
+// Tab Pricing Logic
+function setDur(card, price, label, btn) {
+  let tabs = document.getElementById('tabs-'+card).querySelectorAll('.dur-tab');
+  tabs.forEach(t => t.classList.remove('active'));
   btn.classList.add('active');
-  document.getElementById('p-'+card).textContent='Rs. '+price;
-  document.getElementById('d-'+card).textContent='/ '+label;
+  document.getElementById('p-'+card).textContent = 'Rs. ' + price;
+  document.getElementById('d-'+card).textContent = '/ ' + label;
 }
-function openModal(name,cardId){
-  curProduct=name;
-  curPrice=document.getElementById('p-'+cardId).textContent;
-  document.getElementById('modalChip').textContent=name+' — '+curPrice;
-  document.getElementById('mName').value='';
-  document.getElementById('mPhone').value='';
-  document.getElementById('modalOverlay').classList.add('open');
+
+// Open Details Modal
+function openDetails(productName) {
+  document.getElementById('detTitle').textContent = productName;
+  let content = "";
+  
+  if(productName === 'Canva Pro') {
+content = "🎓 Private Canva EDU Account<br>🗓️ Validity: As Per Purchased Plan<br>🛡️ Warranty: As Per Purchased Plan<br><br><strong>✨ Features</strong><ul><li>English + Urdu + Arabic Fonts</li><li>Canva AI (AI Image Generator)</li><li>Premium Features Unlocked (BG Remover, Resize, Magic Studio, Source Link, Unlimited Templates & Fonts, Stock Photos, Videos & Elements)</li><li>All Projects are 100% Private</li><li>Works on: Windows | Mac | Linux | Mobile</li></ul><strong>📌 How to Use</strong><ul><li>This is a Private Canva EDU Account.</li><li>Use the account responsibly and follow Canva's Terms of Service.</li><li>If you face any issue, contact the admin before making any changes.</li></ul><strong>📋 Warranty Rules</strong><ul><li>Warranty is valid only according to the purchased plan.</li><li>Replacement is provided only if the Canva EDU Premium access is removed during the active warranty period.</li><li>No replacement will be provided after the warranty period has expired.</li><li>If Canva removes EDU access due to its own system updates during the active warranty period, a replacement account will be provided.</li><li>1 Month Plan: Warranty is provided day-to-day throughout the active plan.</li><li>3 Months & 6 Months Plans: Warranty is provided month-to-month throughout the active plan.</li></ul>";    curCardId = 'canva';
+  } else if(productName === 'CapCut Pro') {
+content = "🔐 Private Account<br>🗓️ Validity: 1 Month<br>🛡️ 25 Days Replacement Warranty<br><br><strong>📌 How to Use</strong><ul><li>Login In Only 2 Devices (1 Mobile and 1 Pc)</li><li>Don't Login and Logout account again n again</li><li>Copy The Login Credentials Correctly. If You Get Wrong pass or mail. Just contact admin. Don't try again n again wrong. It will cause Maximum Attempts issue. And we will not provide any warranty or replacement of it</li></ul><strong>📋 Warranty Rules</strong><ul><li>Warranty Accepted Only If Account Goes Non Pro</li><li>Warranty Not Accepted If Account Gets Maximum Attempts Of Number</li></ul>";    curCardId = 'capcut';
+  } else if(productName === 'Gemini Pro') {
+content = "<strong>✨ Gemini Pro</strong><ul><li>✅ Full Access to Gemini Advanced</li><li>✅ 5TB Premium Cloud Storage</li><li>✅ AI Image Generation Included</li><li>✅ Video Understanding & Analysis</li><li>✅ Use AI in Docs, Gmail & Sheets</li><li>✅ Google Photos Premium Tools</li><li>✅ 100% Private & Secure Workspace</li></ul><strong>📋 Warranty Rules</strong><ul><li>Warranty is provided according to the purchased plan.</li><li>Replacement will only be provided if the account loses Gemini Advanced/Google AI Premium access during the active warranty period.</li><li>No replacement will be provided after the warranty period has expired.</li></ul>";    curCardId = 'gemini';
+  } else if(productName === 'Surfshark VPN') {
+content = "<strong>🛡️ Surfshark VPN</strong><ul><li>✅ Premium Surfshark VPN Account</li><li>✅ 30 Days Validity</li><li>✅ 30 Days Replacement Warranty</li><li>✅ 1 Device Only</li><li>✅ Fast & Secure Browsing</li><li>✅ Access Global Content & Streaming</li></ul><strong>📌 Important Information</strong><ul><li>This account is for 1 device only.</li><li>If you need access on multiple devices, please contact the Admin before purchasing.</li></ul><strong>📋 Warranty Rules</strong><ul><li>30 Days Replacement Warranty is included with this plan.</li><li>Warranty is valid only if the subscription expires or is removed before the plan ends.</li><li>Warranty does NOT cover VPN connection issues. VPN connectivity may vary because VPN services are frequently restricted or blocked in Pakistan, and connection quality can differ by location, ISP, or server.</li><li>If one server does not connect, try another available server or protocol.</li><li>No replacement will be provided for issues caused by user misuse, unauthorized changes, or account sharing.</li></ul>";    curCardId = 'surf';
+  }
+
+  document.getElementById('detContent').innerHTML = content;
+  curProduct = productName;
+  
+  document.getElementById('detailsModal').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
-function closeModal(){
-  document.getElementById('modalOverlay').classList.remove('open');
+
+// Proceed to Order from Details Modal
+function proceedToOrderFromDetails() {
+  closeModal('detailsModal');
+  openOrder(curProduct, curCardId);
+}
+
+// Open Order Modal
+function openOrder(name, cardId) {
+  curProduct = name;
+  curCardId = cardId;
+  curPrice = document.getElementById('p-'+cardId).textContent;
+  
+  document.getElementById('modalChip').textContent = name + ' — ' + curPrice;
+  document.getElementById('mName').value = '';
+  document.getElementById('mPhone').value = '';
+  
+  document.getElementById('orderModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+// Universal Close Modal
+function closeModal(modalId) {
+  document.getElementById(modalId).classList.remove('open');
   document.body.style.overflow = 'auto';
 }
-function closeOnBg(e){if(e.target===document.getElementById('modalOverlay'))closeModal()}
-function sendOrder(){
-  const name=document.getElementById('mName').value.trim();
-  const phone=document.getElementById('mPhone').value.trim();
-  if(!name||!phone){alert('Name and number are required!');return;}
-  const msg=`Hello!\n\nI want to place an order:\n🛍️ *Product:* ${curProduct}\n💵 *Price:* ${curPrice}\n👤 *Name:* ${name}\n📞 *Phone:* ${phone}\n\n_Order from SR Digital World website_`;
-  window.open('https://wa.me/923229952880?text='+encodeURIComponent(msg),'_blank');
-  closeModal();
+
+// Close on Background Click
+function closeOnBg(e, modalId) {
+  if(e.target === document.getElementById(modalId)) {
+    closeModal(modalId);
+  }
+}
+
+// Send Order via WhatsApp
+function sendOrder() {
+  const name = document.getElementById('mName').value.trim();
+  const phone = document.getElementById('mPhone').value.trim();
+  if(!name || !phone) { alert('Name and number are required!'); return; }
+  
+  const msg = `Hello!\n\nI want to place an order:\n🛍️ *Product:* ${curProduct}\n💵 *Price:* ${curPrice}\n👤 *Name:* ${name}\n📞 *Phone:* ${phone}\n\n_Order from SR Digital World website_`;
+  window.open('https://wa.me/923229952880?text='+encodeURIComponent(msg), '_blank');
+  closeModal('orderModal');
 }
 </script>
 </body>
