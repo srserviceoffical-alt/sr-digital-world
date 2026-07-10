@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SR Digital World | Premium Digital Tools Pakistan</title>
 <meta name="description" content="Pakistan's #1 Digital Tools Store. Canva Pro, CapCut Pro, Surfshark VPN at the best prices. Instant delivery via WhatsApp.">
+<!-- Favicon -->
 <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/3003/3003984.png"> 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -12,6 +13,7 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:hidden}
+html { scroll-behavior: smooth; }
 .nav-bar{background:rgba(10,10,15,0.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,140,0,0.15);padding:16px 0;position:sticky;top:0;z-index:1000}
 .nav-logo{font-size:1.4rem;font-weight:900;background:linear-gradient(135deg,#FF8C00,#FFB347);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-0.5px}
 .nav-link-item{color:#999;text-decoration:none;font-size:14px;font-weight:600;transition:color 0.25s;position:relative;padding:4px 0}
@@ -58,8 +60,8 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
 .product-card:hover{border-color:rgba(255,140,0,0.35);transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,0.5)}
 .product-card:hover::before{opacity:1}
 .card-tag{display:inline-block;background:rgba(255,140,0,0.1);color:#FF8C00;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:6px;margin-bottom:20px}
-.product-icon{width:60px;height:60px;border-radius:16px;margin-bottom:18px;object-fit:contain;background:#1a1a24;padding:8px}
-.product-icon-fa{width:60px;height:60px;border-radius:16px;background:#1a1a24;display:flex;align-items:center;justify-content:center;margin-bottom:18px;font-size:28px;color:#FF8C00}
+/* DISPLAY:BLOCK ADD KIYA GAYA HAI TAAKAY IMAGE TAG KE NEECHAY AAYE */
+.product-icon{display:block;width:60px;height:60px;border-radius:16px;margin-bottom:18px;object-fit:cover;background:#1a1a24;}
 .product-name{font-size:1.25rem;font-weight:700;color:#fff;margin-bottom:8px;letter-spacing:-0.3px}
 .product-desc{font-size:13px;color:#666;line-height:1.6;margin-bottom:24px}
 .dur-tabs{display:flex;gap:6px;margin-bottom:20px;flex-wrap:wrap}
@@ -110,6 +112,7 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
   <i class="fa-brands fa-whatsapp"></i>
 </a>
 
+<!-- NAVBAR PLACEHOLDER -->
 <div id="navbar-placeholder"></div>
 
 <div class="ticker">
@@ -130,6 +133,7 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
         </h1>
         <p class="hero-sub">Canva Pro, CapCut Pro, Surfshark VPN, and much more — order via WhatsApp and get it in seconds.</p>
         <div class="d-flex flex-wrap gap-2">
+          <!-- HERO BUTTONS -->
           <a href="#products" class="hero-cta">
             <i class="fa-solid fa-bolt"></i> Explore Tools
           </a>
@@ -167,10 +171,12 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
       </a>
     </div>
     <div class="row g-4">
+      <!-- Canva Pro -->
       <div class="col-lg-4 col-md-6">
         <div class="product-card">
           <div class="card-tag">Design Tool</div>
-          <div class="product-icon-fa" style="background:linear-gradient(135deg,#7D2AE8,#A855F7);color:white;font-size:26px;font-weight:900;letter-spacing:-1px">Cv</div>
+          <!-- Image Tag Fixed -->
+          <img class="product-icon" src="https://drive.google.com/thumbnail?id=1al_cZ6SEJcSkvab2NR979_KK7qtZlb3R&sz=w500" alt="Canva Pro Icon">
           <div class="product-name">Canva Pro</div>
           <p class="product-desc">Professional designs, premium templates, background remover, and much more. Perfect for students and creators.</p>
           <div class="dur-tabs" id="tabs-canva">
@@ -185,13 +191,12 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
           <button class="order-btn" onclick="openModal('Canva Pro','canva')"><i class="fa-brands fa-whatsapp"></i> Order Now</button>
         </div>
       </div>
+      <!-- CapCut Pro -->
       <div class="col-lg-4 col-md-6">
         <div class="product-card" style="border-color:rgba(255,140,0,0.15)">
           <div class="card-tag" style="background:rgba(255,140,0,0.15)">🔥 Popular</div>
-<img class="product-icon-fa"
-     src="https://drive.google.com/thumbnail?id=1ZZuogZD6ExCfQ4j1Hg3Dm9a9CDvYLcZf&sz=w500"
-     alt="Icon"
-     style="width:100%;height:100%;object-fit:cover;">
+          <!-- Image Tag Fixed -->
+          <img class="product-icon" src="https://drive.google.com/thumbnail?id=1ZZuogZD6ExCfQ4j1Hg3Dm9a9CDvYLcZf&sz=w500" alt="CapCut Pro Icon">
           <div class="product-name">CapCut Pro</div>
           <p class="product-desc">AI video editing, premium effects, watermark-free export, and pro templates. The first choice for content creators.</p>
           <div class="dur-tabs" id="tabs-capcut">
@@ -204,10 +209,12 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
           <button class="order-btn" onclick="openModal('CapCut Pro','capcut')"><i class="fa-brands fa-whatsapp"></i> Order Now</button>
         </div>
       </div>
+      <!-- Surfshark VPN -->
       <div class="col-lg-4 col-md-6">
         <div class="product-card">
           <div class="card-tag">Security</div>
-          <div class="product-icon-fa"><i class="fa-solid fa-shield-halved"></i></div>
+          <!-- Image Tag Fixed -->
+          <img class="product-icon" src="https://drive.google.com/thumbnail?id=1a7HxDteDn7nl2z47F6IpMzrsxUWMgm_C&sz=w500" alt="Surfshark VPN Icon">
           <div class="product-name">Surfshark VPN</div>
           <p class="product-desc">Unlimited devices, blazing fast speeds, bypass geo-restrictions. Easily access websites outside of Pakistan.</p>
           <div class="dur-tabs" id="tabs-surf">
