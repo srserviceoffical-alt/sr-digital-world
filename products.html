@@ -46,7 +46,7 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
 .product-card:hover::before{opacity:1}
 
 .card-tag{display:inline-block;background:rgba(255,140,0,0.1);color:#FF8C00;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:6px;margin-bottom:20px}
-.product-icon-fa{width:60px;height:60px;border-radius:16px;background:#1a1a24;display:flex;align-items:center;justify-content:center;margin-bottom:18px;font-size:28px;color:#FF8C00}
+.product-icon{display:block;width:60px;height:60px;border-radius:16px;margin-bottom:18px;object-fit:cover;background:#1a1a24;}
 .product-name{font-size:1.25rem;font-weight:700;color:#fff;margin-bottom:8px;letter-spacing:-0.3px}
 .product-desc{font-size:13px;color:#666;line-height:1.6;margin-bottom:18px}
 .feat-list{list-style:none;margin-bottom:24px}
@@ -85,10 +85,10 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
 .modal-input{width:100%;background:#0a0a0f;border:1px solid #2a2a35;color:#e8e8f0;padding:12px 16px;border-radius:10px;font-size:14px;font-family:'Inter',sans-serif;margin-bottom:12px;transition:border 0.2s;outline:none}
 
 .modal-input:focus, .contact-input:focus, .contact-textarea:focus {
-    border-color: #FF8C00;
-    background-color: #222222;
-    box-shadow: 0 0 8px rgba(255, 140, 0, 0.3);
-    outline: none;
+  border-color: #FF8C00;
+  background-color: #222222;
+  box-shadow: 0 0 8px rgba(255, 140, 0, 0.3);
+  outline: none;
 }
 .modal-input::placeholder{color:#444}
 .modal-actions{display:flex;gap:10px;margin-top:6px}
@@ -122,10 +122,11 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
 
     <div class="cat-label"><i class="fa-solid fa-palette"></i> Design & Creativity</div>
     <div class="row g-4 mb-5">
+      <!-- Canva Pro -->
       <div class="col-lg-4 col-md-6">
         <div class="product-card">
           <div class="card-tag">Design Tool</div>
-          <div class="product-icon-fa" style="background:linear-gradient(135deg,#7D2AE8,#A855F7);color:white;font-size:26px;font-weight:900">Cv</div>
+          <img class="product-icon" src="https://drive.google.com/thumbnail?id=1al_cZ6SEJcSkvab2NR979_KK7qtZlb3R&sz=w500" alt="Canva Pro">
           <div class="product-name">Canva Pro</div>
           <p class="product-desc">The easiest tool for creating professional designs — perfect for students, businesses, and content creators.</p>
           <ul class="feat-list">
@@ -135,22 +136,23 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
             <li><i class="fa-solid fa-check"></i> Unlimited downloads</li>
           </ul>
           <div class="dur-tabs" id="tabs-canva">
-            <button class="dur-tab active" onclick="setDur('canva','150','1 month',this)">1 Month</button>
-            <button class="dur-tab" onclick="setDur('canva','200','3 months',this)">3 Months</button>
-            <button class="dur-tab" onclick="setDur('canva','300','6 months',this)">6 Months</button>
+            <button class="dur-tab active" onclick="setDur('canva','100','1 month',this)">1 Month</button>
+            <button class="dur-tab" onclick="setDur('canva','150','3 months',this)">3 Months</button>
+            <button class="dur-tab" onclick="setDur('canva','250','6 months',this)">6 Months</button>
           </div>
           <div class="price-block">
-            <span class="price-amount" id="p-canva">Rs. 150</span>
+            <span class="price-amount" id="p-canva">Rs. 100</span>
             <span class="price-period" id="d-canva">/ 1 month</span>
           </div>
           <button class="order-btn" onclick="openModal('Canva Pro','canva')"><i class="fa-brands fa-whatsapp"></i> Order Now</button>
         </div>
       </div>
 
+      <!-- CapCut Pro -->
       <div class="col-lg-4 col-md-6">
         <div class="product-card" style="border-color:rgba(255,140,0,0.15)">
           <div class="card-tag" style="background:rgba(255,140,0,0.15)">🔥 Popular</div>
-          <div class="product-icon-fa" style="background:#000;color:white;font-size:22px;font-weight:900">CC</div>
+          <img class="product-icon" src="https://drive.google.com/thumbnail?id=1ZZuogZD6ExCfQ4j1Hg3Dm9a9CDvYLcZf&sz=w500" alt="CapCut Pro">
           <div class="product-name">CapCut Pro</div>
           <p class="product-desc">AI-powered video editing — the most widely used tool for Reels, TikToks, and YouTube Shorts.</p>
           <ul class="feat-list">
@@ -160,21 +162,21 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
             <li><i class="fa-solid fa-check"></i> 4K export quality</li>
           </ul>
           <div class="dur-tabs" id="tabs-capcut">
-            <button class="dur-tab active" onclick="setDur('capcut','600','1 month',this)">1 Month</button>
-            <button class="dur-tab" onclick="setDur('capcut','1000','2 months',this)">2 Months</button>
+            <button class="dur-tab active" onclick="setDur('capcut','899','1 month',this)">1 Month</button>
           </div>
           <div class="price-block">
-            <span class="price-amount" id="p-capcut">Rs. 600</span>
+            <span class="price-amount" id="p-capcut">Rs. 899</span>
             <span class="price-period" id="d-capcut">/ 1 month</span>
           </div>
           <button class="order-btn" onclick="openModal('CapCut Pro','capcut')"><i class="fa-brands fa-whatsapp"></i> Order Now</button>
         </div>
       </div>
 
+      <!-- Gemini Pro -->
       <div class="col-lg-4 col-md-6">
         <div class="product-card">
           <div class="card-tag">AI Assistant</div>
-          <div class="product-icon-fa" style="background:linear-gradient(135deg,#4285F4,#34A853);color:white;font-size:24px"><i class="fa-solid fa-sparkles"></i></div>
+          <img class="product-icon" src="https://drive.google.com/thumbnail?id=1pYWVrh90lbUq1M7ea9UiGz0BdO0MrQXn&sz=w500" alt="Gemini Pro">
           <div class="product-name">Gemini Pro</div>
           <p class="product-desc">Google's advanced AI assistant — the perfect companion for content writing, research, coding, and studies.</p>
           <ul class="feat-list">
@@ -184,11 +186,11 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
             <li><i class="fa-solid fa-check"></i> 2TB Google storage included</li>
           </ul>
           <div class="dur-tabs" id="tabs-gemini">
-            <button class="dur-tab active" onclick="setDur('gemini','500','1 month',this)">1 Month</button>
-            <button class="dur-tab" onclick="setDur('gemini','1300','3 months',this)">3 Months</button>
+            <button class="dur-tab active" onclick="setDur('gemini','300','1 month',this)">1 Month</button>
+            <button class="dur-tab" onclick="setDur('gemini','500','2 months',this)">2 Months</button>
           </div>
           <div class="price-block">
-            <span class="price-amount" id="p-gemini">Rs. 500</span>
+            <span class="price-amount" id="p-gemini">Rs. 300</span>
             <span class="price-period" id="d-gemini">/ 1 month</span>
           </div>
           <button class="order-btn" onclick="openModal('Gemini Pro','gemini')"><i class="fa-brands fa-whatsapp"></i> Order Now</button>
@@ -198,10 +200,11 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
 
     <div class="cat-label"><i class="fa-solid fa-shield-halved"></i> Security & Privacy</div>
     <div class="row g-4 mb-5">
+      <!-- Surfshark VPN -->
       <div class="col-lg-4 col-md-6">
         <div class="product-card">
           <div class="card-tag">Security</div>
-          <div class="product-icon-fa"><i class="fa-solid fa-shield-halved"></i></div>
+          <img class="product-icon" src="https://drive.google.com/thumbnail?id=1a7HxDteDn7nl2z47F6IpMzrsxUWMgm_C&sz=w500" alt="Surfshark VPN">
           <div class="product-name">Surfshark VPN</div>
           <p class="product-desc">Fast and secure browsing on unlimited devices. Bypass geo-restrictions and protect your privacy.</p>
           <ul class="feat-list">
