@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 <nav class="nav-bar">
   <div class="container d-flex justify-content-between align-items-center flex-wrap gap-3">
     <a href="index.html" class="nav-logo" style="text-decoration:none">⚡ SR Digital World</a>
@@ -113,4 +115,34 @@
       menu.classList.toggle('show-menu');
     }
   }
+
+  // ==============================================================
+  // AUTO-HIGHLIGHT SCRIPT (Yeh script khud check karegi kon sa page open hai)
+  // ==============================================================
+  function highlightActiveMenu() {
+    let path = window.location.pathname;
+    let page = path.split("/").pop(); // URL se page ka naam nikalna
+    if (page === "" || page === "/") page = "index.html"; // Default page
+
+    // Pehle sab buttons se active color hata do
+    let links = document.querySelectorAll('.nav-link-item');
+    links.forEach(link => link.classList.remove('active'));
+
+    // Jo page open hai, us button par active color laga do
+    links.forEach(link => {
+      if (link.getAttribute('href') === page) {
+        link.classList.add('active');
+      }
+    });
+
+    // Agar CV Writing ya FB Followers open hai, toh 'Services' ko orange karo
+    if (page === "cv-writing.html" || page === "facebook-followers.html") {
+      let serviceMenu = document.querySelector('.dropdown > .nav-link-item');
+      if (serviceMenu) serviceMenu.classList.add('active');
+    }
+  }
+  
+  highlightActiveMenu();
 </script>
+
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onload="highlightActiveMenu()" style="display:none;">
