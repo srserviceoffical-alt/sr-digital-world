@@ -1,5 +1,8 @@
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 <nav class="nav-bar">
-  <div class="container d-flex justify-content-between align-items-center flex-wrap gap-3">
+  <div class="container d-flex justify-content-between align-items-center flex-wrap gap-3" style="max-width: 1320px; margin: 0 auto; padding: 0 15px;">
     <a href="index.html" class="nav-logo" style="text-decoration:none">⚡ SR Digital World</a>
     
     <button class="menu-toggle" onclick="toggleMobileMenu()">
@@ -8,7 +11,6 @@
 
     <div class="nav-links align-items-center gap-4" id="mobileMenu">
       <a href="index.html" class="nav-link-item">Home</a>
-      
       <a href="products.html" class="nav-link-item">Products</a>
 
       <div class="dropdown">
@@ -20,15 +22,13 @@
       </div>
 
       <a href="pricing.html" class="nav-link-item">Pricing</a>
-      
       <a href="pro-apks.html" class="nav-link-item">Pro APKs</a>
-      
       <a href="about.html" class="nav-link-item">About</a>
       <a href="faqs.html" class="nav-link-item">FAQs</a>
       <a href="contact.html" class="nav-link-item">Contact</a>
     </div>
     
-    <a href="https://wa.me/923229952880" target="_blank" style="background:#FF8C00;color:#000;padding:8px 20px;border-radius:100px;font-weight:700;font-size:13px;text-decoration:none;white-space:nowrap">
+    <a href="https://wa.me/923229952880" target="_blank" style="background:#FF8C00;color:#000;padding:8px 20px;border-radius:100px;font-weight:700;font-size:13px;text-decoration:none;white-space:nowrap" class="order-wa-btn">
       <i class="fa-brands fa-whatsapp" style="margin-right:6px"></i>Order on WhatsApp
     </a>
   </div>
@@ -41,69 +41,160 @@
 
 <style>
   /* ========================================= */
-  /* MISSING NAVBAR BASE DESIGN ADDED HERE     */
+  /* BULLETPROOF NAVBAR DESIGN                 */
   /* ========================================= */
-  .nav-bar{background:rgba(10,10,15,0.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,140,0,0.15);padding:16px 0;position:sticky;top:0;z-index:1000}
-  .nav-logo{font-size:1.4rem;font-weight:900;background:linear-gradient(135deg,#FF8C00,#FFB347);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-0.5px}
-  .nav-link-item{color:#999;text-decoration:none;font-size:14px;font-weight:600;transition:color 0.25s;position:relative;padding:4px 0}
-  .nav-link-item:hover{color:#FF8C00}
-  .nav-link-item.active{color:#FF8C00}
-  .nav-link-item.active::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:2px;background:#FF8C00;border-radius:2px}
+  
+  /* Resetting navbar scope to ensure it works on completely blank pages */
+  .nav-bar * { font-family: 'Inter', sans-serif !important; box-sizing: border-box !important; }
+  
+  .nav-bar {
+    background: rgba(10,10,15,0.95) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border-bottom: 1px solid rgba(255,140,0,0.15) !important;
+    padding: 16px 0 !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+    width: 100% !important;
+    display: block !important;
+  }
+  
+  .nav-logo {
+    font-size: 1.4rem !important;
+    font-weight: 900 !important;
+    background: linear-gradient(135deg,#FF8C00,#FFB347) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    letter-spacing: -0.5px !important;
+  }
+  
+  .nav-link-item {
+    color: #999 !important;
+    text-decoration: none !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    transition: color 0.25s !important;
+    position: relative !important;
+    padding: 4px 0 !important;
+    display: inline-block !important;
+  }
+  
+  .nav-link-item:hover { color: #FF8C00 !important; }
+  .nav-link-item.active { color: #FF8C00 !important; }
+  .nav-link-item.active::after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: -4px !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 2px !important;
+    background: #FF8C00 !important;
+    border-radius: 2px !important;
+  }
+
+  .nav-links { display: flex !important; margin: 0 !important; padding: 0 !important; }
+  
+  /* Flexbox Utilities (in case Bootstrap isn't loaded properly on new page) */
+  .d-flex { display: flex !important; }
+  .justify-content-between { justify-content: space-between !important; }
+  .align-items-center { align-items: center !important; }
+  .flex-wrap { flex-wrap: wrap !important; }
+  .gap-3 { gap: 1rem !important; }
+  .gap-4 { gap: 1.5rem !important; }
 
   /* MOBILE MENU BUTTON AND LAYOUT STYLES */
-  .menu-toggle { display: none; background: transparent; border: none; color: #FF8C00; font-size: 24px; cursor: pointer; }
+  .menu-toggle { display: none !important; background: transparent !important; border: none !important; color: #FF8C00 !important; font-size: 24px !important; cursor: pointer !important; }
+  
   @media(max-width: 991px) {
-    .menu-toggle { display: block; }
-    .nav-links { display: none; width: 100%; flex-direction: column; background: #111118; padding: 20px; border-radius: 12px; border: 1px solid #1e1e2a; margin-top: 15px; gap: 15px !important; }
+    .menu-toggle { display: block !important; }
+    .nav-links { 
+      display: none !important; 
+      width: 100% !important; 
+      flex-direction: column !important; 
+      background: #111118 !important; 
+      padding: 20px !important; 
+      border-radius: 12px !important; 
+      border: 1px solid #1e1e2a !important; 
+      margin-top: 15px !important; 
+      gap: 15px !important; 
+      align-items: flex-start !important;
+    }
     .nav-links.show-menu { display: flex !important; }
-  }
-  @media(min-width: 992px) {
-    .nav-links { display: flex !important; }
+    .order-wa-btn { display: none !important; } /* Hide order button on small screens to save space if needed, or remove this line */
   }
 
   /* DROPDOWN STYLES */
-  .dropdown { position: relative; display: inline-block; }
-  .dropdown-content { display: none; position: absolute; top: 100%; left: 0; background-color: #111118; min-width: 220px; border: 1px solid #1e1e2a; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); z-index: 1050; padding: 10px 0; flex-direction: column; overflow: hidden; }
-  .dropdown:hover .dropdown-content { display: flex; }
-  .dropdown-content a { color: #999; padding: 12px 20px; text-decoration: none; font-size: 14px; font-weight: 600; transition: all 0.25s; border-left: 3px solid transparent; }
-  .dropdown-content a:hover { color: #FF8C00; background-color: rgba(255,140,0,0.05); border-left-color: #FF8C00; }
+  .dropdown { position: relative !important; display: inline-block !important; }
+  .dropdown-content { 
+    display: none !important; 
+    position: absolute !important; 
+    top: 100% !important; 
+    left: 0 !important; 
+    background-color: #111118 !important; 
+    min-width: 220px !important; 
+    border: 1px solid #1e1e2a !important; 
+    border-radius: 12px !important; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important; 
+    z-index: 1050 !important; 
+    padding: 10px 0 !important; 
+    flex-direction: column !important; 
+    overflow: hidden !important; 
+  }
+  .dropdown:hover .dropdown-content { display: flex !important; }
+  .dropdown-content a { 
+    color: #999 !important; 
+    padding: 12px 20px !important; 
+    text-decoration: none !important; 
+    font-size: 14px !important; 
+    font-weight: 600 !important; 
+    transition: all 0.25s !important; 
+    border-left: 3px solid transparent !important; 
+    display: block !important;
+  }
+  .dropdown-content a:hover { 
+    color: #FF8C00 !important; 
+    background-color: rgba(255,140,0,0.05) !important; 
+    border-left-color: #FF8C00 !important; 
+  }
   
   @media(max-width: 991px) {
-    .dropdown-content { position: static; box-shadow: none; border: none; background: transparent; padding: 0 0 0 15px; margin-top: 5px; }
-    .dropdown:hover .dropdown-content { display: none; } 
+    .dropdown-content { position: static !important; box-shadow: none !important; border: none !important; background: transparent !important; padding: 0 0 0 15px !important; margin-top: 5px !important; }
+    .dropdown:hover .dropdown-content { display: none !important; } 
     .dropdown-content.show-mobile { display: flex !important; } 
     .dropdown .nav-link-item { padding-bottom: 4px !important; }
   }
 
   /* Follow Channel Button Styles */
   .channel-float {
-    position: fixed;
-    bottom: 28px;
-    left: 28px; 
-    background: #111b14; 
-    border: 1px solid #1f5c2f;
-    padding: 10px 20px;
-    border-radius: 50px; 
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    z-index: 9999; 
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-    transition: all 0.3s ease;
+    position: fixed !important;
+    bottom: 28px !important;
+    left: 28px !important; 
+    background: #111b14 !important; 
+    border: 1px solid #1f5c2f !important;
+    padding: 10px 20px !important;
+    border-radius: 50px !important; 
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    text-decoration: none !important;
+    z-index: 9999 !important; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5) !important;
+    transition: all 0.3s ease !important;
+    font-family: 'Inter', sans-serif !important;
   }
   
   .channel-float:hover {
-    background: #1a2e20;
-    transform: translateY(-3px); 
-    border-color: #25D366;
+    background: #1a2e20 !important;
+    transform: translateY(-3px) !important; 
+    border-color: #25D366 !important;
   }
 
   @media(max-width: 768px) {
     .channel-float {
-      bottom: 20px;
-      left: 20px;
-      padding: 8px 16px;
+      bottom: 20px !important;
+      left: 20px !important;
+      padding: 8px 16px !important;
     }
   }
 </style>
@@ -116,7 +207,7 @@
     }
   }
 
-  // MISSING MOBILE MENU TOGGLE FUNCTION ADDED HERE
+  // Mobile Menu Toggle Function
   function toggleMobileMenu() {
     let menu = document.getElementById('mobileMenu');
     if(menu) {
