@@ -56,25 +56,44 @@
 </section>
 
 <script>
+// ========================================================
+// REFINED NAVBAR LOADING & HIGHLIGHT SCRIPT
+// ========================================================
 fetch('navbar.html')
   .then(response => response.text())
   .then(data => {
     document.getElementById('navbar-placeholder').innerHTML = data;
-    setTimeout(() => {
-      let currentUrl = window.location.pathname.split('/').pop();
-      if(currentUrl === '') currentUrl = 'index.html';
-      let navLinks = document.querySelectorAll('.nav-link-item');
-      navLinks.forEach(link => {
-        if(link.getAttribute('href') === currentUrl) {
-          link.classList.add('active');
-        }
-      });
-    }, 100);
+    
+    // Highlight Active Page
+    let currentUrl = window.location.pathname.split('/').pop();
+    if(currentUrl === '') currentUrl = 'index.html';
+    
+    let navLinks = document.querySelectorAll('.nav-link-item');
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if(link.getAttribute('href') === currentUrl) {
+        link.classList.add('active');
+      }
+    });
+
+    // Khaas tor par Facebook Followers page ke liye "Services" ko active karna
+    if (currentUrl === "cv-writing.html" || currentUrl === "facebook-followers.html") {
+      let serviceMenu = document.querySelector('.dropdown > .nav-link-item');
+      if(serviceMenu) serviceMenu.classList.add('active');
+    }
   });
 
+// Mobile Menu & Dropdown Functions
 function toggleMobileMenu() {
   let menu = document.getElementById('mobileMenu');
   if(menu) menu.classList.toggle('show-menu');
+}
+
+function toggleDropdown() {
+  if(window.innerWidth <= 991) {
+    let drop = document.getElementById("servicesDropdown");
+    if(drop) drop.classList.toggle("show-mobile");
+  }
 }
 </script>
 </body>
