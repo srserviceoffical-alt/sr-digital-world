@@ -9,15 +9,19 @@
     <div class="nav-links align-items-center gap-4" id="mobileMenu">
       <a href="index.html" class="nav-link-item">Home</a>
       
+      <!-- MENU KI TARTEEB THEEK KI GAYI: Products pehle, Services baad mein -->
+      <a href="products.html" class="nav-link-item">Products</a>
+
+      <!-- SERVICES DROPDOWN -->
       <div class="dropdown">
-        <a href="javascript:void(0)" class="nav-link-item" onclick="toggleDropdown()">Services <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 4px;"></i></a>
+        <!-- 'padding-bottom' add ki gayi hai taake dropdown gayab na ho -->
+        <a href="javascript:void(0)" class="nav-link-item" style="padding-bottom: 20px;" onclick="toggleDropdown()">Services <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 4px;"></i></a>
         <div class="dropdown-content" id="servicesDropdown">
           <a href="cv-writing.html">CV Writing</a>
           <a href="facebook-followers.html">Facebook Followers</a>
-          </div>
+        </div>
       </div>
 
-      <a href="products.html" class="nav-link-item">Products</a>
       <a href="pricing.html" class="nav-link-item">Pricing</a>
       <a href="about.html" class="nav-link-item">About</a>
       <a href="faqs.html" class="nav-link-item">FAQs</a>
@@ -30,9 +34,17 @@
   </div>
 </nav>
 
+<!-- FOLLOW CHANNEL FLOATING BUTTON -->
+<a href="https://whatsapp.com/channel/0029VbAPUCnAu3aQFeeBVT0g" target="_blank" class="channel-float">
+  <i class="fa-brands fa-whatsapp" style="color: #25D366; font-size: 18px;"></i>
+  <span style="font-weight: 600; font-size: 14px; color: #ffffff;">Follow Channel</span>
+</a>
+
+<!-- Injecting styles directly via navbar for universal application -->
 <style>
   .dropdown { position: relative; display: inline-block; }
-  .dropdown-content { display: none; position: absolute; top: 100%; left: 0; background-color: #111118; min-width: 220px; border: 1px solid #1e1e2a; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); z-index: 1050; padding: 10px 0; flex-direction: column; overflow: hidden; margin-top: 15px;}
+  /* Margin-top ko hataya gaya aur top: 100% rakha gaya taake menu direct button ke neechay jude */
+  .dropdown-content { display: none; position: absolute; top: 100%; left: 0; background-color: #111118; min-width: 220px; border: 1px solid #1e1e2a; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); z-index: 1050; padding: 10px 0; flex-direction: column; overflow: hidden; }
   .dropdown:hover .dropdown-content { display: flex; }
   .dropdown-content a { color: #999; padding: 12px 20px; text-decoration: none; font-size: 14px; font-weight: 600; transition: all 0.25s; border-left: 3px solid transparent; }
   .dropdown-content a:hover { color: #FF8C00; background-color: rgba(255,140,0,0.05); border-left-color: #FF8C00; }
@@ -41,6 +53,41 @@
     .dropdown-content { position: static; box-shadow: none; border: none; background: transparent; padding: 0 0 0 15px; margin-top: 5px; }
     .dropdown:hover .dropdown-content { display: none; } /* Disable hover expansion on mobile */
     .dropdown-content.show-mobile { display: flex !important; } /* Handle mobile via tap */
+    
+    /* Mobile mein padding theek karne ke liye */
+    .dropdown .nav-link-item { padding-bottom: 4px !important; }
+  }
+
+  /* Follow Channel Button Styles */
+  .channel-float {
+    position: fixed;
+    bottom: 28px;
+    left: 28px; 
+    background: #111b14; 
+    border: 1px solid #1f5c2f;
+    padding: 10px 20px;
+    border-radius: 50px; 
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    z-index: 9999; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    transition: all 0.3s ease;
+  }
+  
+  .channel-float:hover {
+    background: #1a2e20;
+    transform: translateY(-3px); 
+    border-color: #25D366;
+  }
+
+  @media(max-width: 768px) {
+    .channel-float {
+      bottom: 20px;
+      left: 20px;
+      padding: 8px 16px;
+    }
   }
 </style>
 
