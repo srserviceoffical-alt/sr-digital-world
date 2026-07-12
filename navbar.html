@@ -40,6 +40,28 @@
 </a>
 
 <style>
+  /* ========================================= */
+  /* MISSING NAVBAR BASE DESIGN ADDED HERE     */
+  /* ========================================= */
+  .nav-bar{background:rgba(10,10,15,0.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,140,0,0.15);padding:16px 0;position:sticky;top:0;z-index:1000}
+  .nav-logo{font-size:1.4rem;font-weight:900;background:linear-gradient(135deg,#FF8C00,#FFB347);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-0.5px}
+  .nav-link-item{color:#999;text-decoration:none;font-size:14px;font-weight:600;transition:color 0.25s;position:relative;padding:4px 0}
+  .nav-link-item:hover{color:#FF8C00}
+  .nav-link-item.active{color:#FF8C00}
+  .nav-link-item.active::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:2px;background:#FF8C00;border-radius:2px}
+
+  /* MOBILE MENU BUTTON AND LAYOUT STYLES */
+  .menu-toggle { display: none; background: transparent; border: none; color: #FF8C00; font-size: 24px; cursor: pointer; }
+  @media(max-width: 991px) {
+    .menu-toggle { display: block; }
+    .nav-links { display: none; width: 100%; flex-direction: column; background: #111118; padding: 20px; border-radius: 12px; border: 1px solid #1e1e2a; margin-top: 15px; gap: 15px !important; }
+    .nav-links.show-menu { display: flex !important; }
+  }
+  @media(min-width: 992px) {
+    .nav-links { display: flex !important; }
+  }
+
+  /* DROPDOWN STYLES */
   .dropdown { position: relative; display: inline-block; }
   .dropdown-content { display: none; position: absolute; top: 100%; left: 0; background-color: #111118; min-width: 220px; border: 1px solid #1e1e2a; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); z-index: 1050; padding: 10px 0; flex-direction: column; overflow: hidden; }
   .dropdown:hover .dropdown-content { display: flex; }
@@ -87,9 +109,18 @@
 </style>
 
 <script>
+  // Mobile Dropdown Function
   function toggleDropdown() {
     if(window.innerWidth <= 991) {
       document.getElementById("servicesDropdown").classList.toggle("show-mobile");
+    }
+  }
+
+  // MISSING MOBILE MENU TOGGLE FUNCTION ADDED HERE
+  function toggleMobileMenu() {
+    let menu = document.getElementById('mobileMenu');
+    if(menu) {
+      menu.classList.toggle('show-menu');
     }
   }
 </script>
