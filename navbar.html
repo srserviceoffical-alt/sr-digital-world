@@ -8,6 +8,15 @@
 
     <div class="nav-links align-items-center gap-4" id="mobileMenu">
       <a href="index.html" class="nav-link-item">Home</a>
+      
+      <div class="dropdown">
+        <a href="javascript:void(0)" class="nav-link-item" onclick="toggleDropdown()">Services <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 4px;"></i></a>
+        <div class="dropdown-content" id="servicesDropdown">
+          <a href="cv-writing.html">CV Writing</a>
+          <a href="facebook-followers.html">Facebook Followers</a>
+          </div>
+      </div>
+
       <a href="products.html" class="nav-link-item">Products</a>
       <a href="pricing.html" class="nav-link-item">Pricing</a>
       <a href="about.html" class="nav-link-item">About</a>
@@ -20,3 +29,25 @@
     </a>
   </div>
 </nav>
+
+<style>
+  .dropdown { position: relative; display: inline-block; }
+  .dropdown-content { display: none; position: absolute; top: 100%; left: 0; background-color: #111118; min-width: 220px; border: 1px solid #1e1e2a; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); z-index: 1050; padding: 10px 0; flex-direction: column; overflow: hidden; margin-top: 15px;}
+  .dropdown:hover .dropdown-content { display: flex; }
+  .dropdown-content a { color: #999; padding: 12px 20px; text-decoration: none; font-size: 14px; font-weight: 600; transition: all 0.25s; border-left: 3px solid transparent; }
+  .dropdown-content a:hover { color: #FF8C00; background-color: rgba(255,140,0,0.05); border-left-color: #FF8C00; }
+  
+  @media(max-width: 991px) {
+    .dropdown-content { position: static; box-shadow: none; border: none; background: transparent; padding: 0 0 0 15px; margin-top: 5px; }
+    .dropdown:hover .dropdown-content { display: none; } /* Disable hover expansion on mobile */
+    .dropdown-content.show-mobile { display: flex !important; } /* Handle mobile via tap */
+  }
+</style>
+
+<script>
+  function toggleDropdown() {
+    if(window.innerWidth <= 991) {
+      document.getElementById("servicesDropdown").classList.toggle("show-mobile");
+    }
+  }
+</script>
