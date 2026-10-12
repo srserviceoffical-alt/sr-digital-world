@@ -99,6 +99,17 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
 .btn-send:hover{background:#FFB347}
 @media(max-width:768px){.section-title{font-size:1.9rem}.desktop-table{display:none}}
 @media(min-width:769px){.mobile-cards{display:none}}
+
+.plist-cat{display:flex;align-items:center;gap:10px;color:#FF8C00;font-weight:800;font-size:1.05rem;margin:34px 0 14px}
+.plist-cat:first-of-type{margin-top:6px}
+.plist{display:flex;flex-direction:column;gap:10px}
+.plist-row{display:flex;align-items:center;gap:14px;background:#111118;border:1px solid #1e1e2a;border-radius:14px;padding:12px 16px}
+.plist-icon{width:46px;height:46px;border-radius:12px;flex-shrink:0}
+.plist-info{flex:1;min-width:0}
+.plist-name{color:#fff;font-weight:700;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.plist-plan{color:#888;font-size:12px}
+.plist-price{color:#FF8C00;font-weight:800;font-size:17px;white-space:nowrap}
+@media(max-width:576px){.plist-row{gap:10px;padding:10px 12px}.plist-icon{width:38px;height:38px}.plist-name{font-size:13px}.plist-price{font-size:14px}}
 </style>
 </head>
 <body>
@@ -115,201 +126,227 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
   <div class="container" style="position:relative">
     <div class="section-eyebrow">Transparent Pricing</div>
     <h1 class="section-title">Simple, Honest Rates</h1>
-    <p style="color:#666;font-size:15px;margin-top:14px;max-width:500px;margin-left:auto;margin-right:auto">No hidden charges — pay exactly what you see. Select your plan below.</p>
+    <p style="color:#666;font-size:15px;margin-top:14px;max-width:500px;margin-left:auto;margin-right:auto">No hidden charges — pay exactly what you see. All plans at a glance.</p>
   </div>
 </section>
 
 <section class="pricing-section">
   <div class="container">
 
-    <!-- DESKTOP TABLE -->
-    <div class="price-table-wrap desktop-table">
-      <table class="price-table">
-        <thead>
-          <tr>
-            <th>Product</th>
-            <th>1 Month</th>
-            <th>2-3 Months</th>
-            <th>6 Months</th>
-            <th>Order</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Canva Pro -->
-          <tr>
-            <td>
-              <div class="ptable-product">
-                <img class="ptable-icon" src="https://drive.google.com/thumbnail?id=1al_cZ6SEJcSkvab2NR979_KK7qtZlb3R&sz=w500" alt="Canva">
-                <span class="ptable-name">Canva Pro</span>
-              </div>
-            </td>
-            <td>
-              <label class="plan-radio-label">
-                <input type="radio" name="plan-canva" value="1 Month - Rs. 100" checked>
-                <span class="price-tag">Rs. 100</span>
-              </label>
-            </td>
-            <td>
-              <label class="plan-radio-label">
-                <input type="radio" name="plan-canva" value="3 Months - Rs. 150">
-                <span class="price-tag">Rs. 150</span>
-              </label>
-            </td>
-            <td>
-              <label class="plan-radio-label">
-                <input type="radio" name="plan-canva" value="6 Months - Rs. 250">
-                <span class="price-tag">Rs. 250</span> <span class="best-badge">BEST</span>
-              </label>
-            </td>
-            <td><button class="mini-order-btn" onclick="quickOrder('Canva Pro', 'plan-canva')">Order Now</button></td>
-          </tr>
-          
-          <!-- CapCut Pro -->
-          <tr>
-            <td>
-              <div class="ptable-product">
-                <img class="ptable-icon" src="https://drive.google.com/thumbnail?id=1ZZuogZD6ExCfQ4j1Hg3Dm9a9CDvYLcZf&sz=w500" alt="CapCut">
-                <span class="ptable-name">CapCut Pro</span>
-              </div>
-            </td>
-            <td>
-              <label class="plan-radio-label">
-                <input type="radio" name="plan-capcut" value="1 Month - Rs. 899" checked>
-                <span class="price-tag">Rs. 899</span>
-              </label>
-            </td>
-            <td>—</td>
-            <td>—</td>
-            <td><button class="mini-order-btn" onclick="quickOrder('CapCut Pro', 'plan-capcut')">Order Now</button></td>
-          </tr>
-
-          <!-- Gemini Pro -->
-          <tr>
-            <td>
-              <div class="ptable-product">
-                <img class="ptable-icon" src="https://drive.google.com/thumbnail?id=1pYWVrh90lbUq1M7ea9UiGz0BdO0MrQXn&sz=w500" alt="Gemini">
-                <span class="ptable-name">Gemini Pro</span>
-              </div>
-            </td>
-            <td>
-              <label class="plan-radio-label">
-                <input type="radio" name="plan-gemini" value="1 Month - Rs. 300" checked>
-                <span class="price-tag">Rs. 300</span>
-              </label>
-            </td>
-            <td>
-              <label class="plan-radio-label">
-                <input type="radio" name="plan-gemini" value="2 Months - Rs. 500">
-                <span class="price-tag">Rs. 500</span> <span class="best-badge">BEST</span>
-              </label>
-            </td>
-            <td>—</td>
-            <td><button class="mini-order-btn" onclick="quickOrder('Gemini Pro', 'plan-gemini')">Order Now</button></td>
-          </tr>
-
-          <!-- Surfshark VPN -->
-          <tr>
-            <td>
-              <div class="ptable-product">
-                <img class="ptable-icon" src="https://drive.google.com/thumbnail?id=1a7HxDteDn7nl2z47F6IpMzrsxUWMgm_C&sz=w500" alt="Surfshark">
-                <span class="ptable-name">Surfshark VPN</span>
-              </div>
-            </td>
-            <td>
-              <label class="plan-radio-label">
-                <input type="radio" name="plan-surf" value="1 Month - Rs. 350" checked>
-                <span class="price-tag">Rs. 350</span>
-              </label>
-            </td>
-            <td>
-              <label class="plan-radio-label">
-                <input type="radio" name="plan-surf" value="2 Months - Rs. 600">
-                <span class="price-tag">Rs. 600</span> <span class="best-badge">BEST</span>
-              </label>
-            </td>
-            <td>—</td>
-            <td><button class="mini-order-btn" onclick="quickOrder('Surfshark VPN', 'plan-surf')">Order Now</button></td>
-          </tr>
-        </tbody>
-      </table>
+        <div class="plist-cat"><i class="fa-solid fa-palette"></i> Design & Creativity</div>
+    <div class="plist">
+      <div class="plist-row">
+        <img class="plist-icon" src="images/canva.svg" alt="Canva Pro">
+        <div class="plist-info">
+          <div class="plist-name">Canva Pro</div>
+          <div class="plist-plan">1 Month</div>
+        </div>
+        <div class="plist-price">Rs. 149</div>
+        <button class="mini-order-btn" onclick="orderPlan('Canva Pro','1 Month - Rs. 149')">Order Now</button>
+      </div>
+      <div class="plist-row">
+        <img class="plist-icon" src="images/canva.svg" alt="Canva Pro">
+        <div class="plist-info">
+          <div class="plist-name">Canva Pro</div>
+          <div class="plist-plan">Lifetime</div>
+        </div>
+        <div class="plist-price">Rs. 199</div>
+        <button class="mini-order-btn" onclick="orderPlan('Canva Pro','Lifetime - Rs. 199')">Order Now</button>
+      </div>
+      <div class="plist-row">
+        <img class="plist-icon" src="images/capcut.svg" alt="CapCut Pro">
+        <div class="plist-info">
+          <div class="plist-name">CapCut Pro</div>
+          <div class="plist-plan">1 Month</div>
+        </div>
+        <div class="plist-price">Rs. 650</div>
+        <button class="mini-order-btn" onclick="orderPlan('CapCut Pro','1 Month - Rs. 650')">Order Now</button>
+      </div>
+      <div class="plist-row">
+        <img class="plist-icon" src="images/capcut.svg" alt="CapCut Pro">
+        <div class="plist-info">
+          <div class="plist-name">CapCut Pro</div>
+          <div class="plist-plan">7 Days</div>
+        </div>
+        <div class="plist-price">Rs. 200</div>
+        <button class="mini-order-btn" onclick="orderPlan('CapCut Pro','7 Days - Rs. 200')">Order Now</button>
+      </div>
+      <div class="plist-row">
+        <img class="plist-icon" src="images/gemini.svg" alt="Gemini Pro">
+        <div class="plist-info">
+          <div class="plist-name">Gemini Pro</div>
+          <div class="plist-plan">18 Months</div>
+        </div>
+        <div class="plist-price">Rs. 999</div>
+        <button class="mini-order-btn" onclick="orderPlan('Gemini Pro','18 Months - Rs. 999')">Order Now</button>
+      </div>
+      <div class="plist-row">
+        <img class="plist-icon" src="images/adobe.svg" alt="Adobe Express Premium">
+        <div class="plist-info">
+          <div class="plist-name">Adobe Express Premium</div>
+          <div class="plist-plan">12 Months</div>
+        </div>
+        <div class="plist-price">Rs. 750</div>
+        <button class="mini-order-btn" onclick="orderPlan('Adobe Express Premium','12 Months - Rs. 750')">Order Now</button>
+      </div>
+      <div class="plist-row">
+        <img class="plist-icon" src="images/figma.svg" alt="Figma Pro Education">
+        <div class="plist-info">
+          <div class="plist-name">Figma Pro Education</div>
+          <div class="plist-plan">2 Years</div>
+        </div>
+        <div class="plist-price">Rs. 2200</div>
+        <button class="mini-order-btn" onclick="orderPlan('Figma Pro Education','2 Years - Rs. 2200')">Order Now</button>
+      </div>
+      <div class="plist-row">
+        <img class="plist-icon" src="images/framer.svg" alt="Framer Basic">
+        <div class="plist-info">
+          <div class="plist-name">Framer Basic</div>
+          <div class="plist-plan">12 Months</div>
+        </div>
+        <div class="plist-price">Rs. 2000</div>
+        <button class="mini-order-btn" onclick="orderPlan('Framer Basic','12 Months - Rs. 2000')">Order Now</button>
+      </div>
     </div>
-
-    <!-- MOBILE CARDS -->
-    <div class="mobile-cards">
-      <!-- Canva Pro Mobile -->
-      <div class="mobile-price-card">
-        <div class="mp-header">
-          <img class="ptable-icon" src="https://drive.google.com/thumbnail?id=1al_cZ6SEJcSkvab2NR979_KK7qtZlb3R&sz=w500" alt="Canva">
-          <span class="ptable-name" style="font-size:16px">Canva Pro</span>
+    <div class="plist-cat"><i class="fa-solid fa-shield-halved"></i> Security & Privacy</div>
+    <div class="plist">
+      <div class="plist-row">
+        <img class="plist-icon" src="images/surf.svg" alt="Surfshark VPN">
+        <div class="plist-info">
+          <div class="plist-name">Surfshark VPN</div>
+          <div class="plist-plan">1 Month</div>
         </div>
-        <div class="mp-rows">
-          <label class="mp-row" style="cursor:pointer">
-            <span class="mp-row-label"><input type="radio" name="mplan-canva" value="1 Month - Rs. 100" checked> 1 Month</span>
-            <span class="mp-price">Rs. 100</span>
-          </label>
-          <label class="mp-row" style="cursor:pointer">
-            <span class="mp-row-label"><input type="radio" name="mplan-canva" value="3 Months - Rs. 150"> 3 Months</span>
-            <span class="mp-price">Rs. 150</span>
-          </label>
-          <label class="mp-row" style="cursor:pointer">
-            <span class="mp-row-label"><input type="radio" name="mplan-canva" value="6 Months - Rs. 250"> 6 Months</span>
-            <span class="mp-price">Rs. 250</span>
-          </label>
-        </div>
-        <button class="mini-order-btn" style="width:100%;padding:12px" onclick="quickOrder('Canva Pro', 'mplan-canva')">Order Now</button>
+        <div class="plist-price">Rs. 300</div>
+        <button class="mini-order-btn" onclick="orderPlan('Surfshark VPN','1 Month - Rs. 300')">Order Now</button>
       </div>
-
-      <!-- CapCut Pro Mobile -->
-      <div class="mobile-price-card">
-        <div class="mp-header">
-          <img class="ptable-icon" src="https://drive.google.com/thumbnail?id=1ZZuogZD6ExCfQ4j1Hg3Dm9a9CDvYLcZf&sz=w500" alt="CapCut">
-          <span class="ptable-name" style="font-size:16px">CapCut Pro</span>
+      <div class="plist-row">
+        <img class="plist-icon" src="images/nordvpn.svg" alt="NordVPN Basic">
+        <div class="plist-info">
+          <div class="plist-name">NordVPN Basic</div>
+          <div class="plist-plan">3 Months</div>
         </div>
-        <div class="mp-rows">
-          <label class="mp-row" style="cursor:pointer">
-            <span class="mp-row-label"><input type="radio" name="mplan-capcut" value="1 Month - Rs. 899" checked> 1 Month</span>
-            <span class="mp-price">Rs. 899</span>
-          </label>
-        </div>
-        <button class="mini-order-btn" style="width:100%;padding:12px" onclick="quickOrder('CapCut Pro', 'mplan-capcut')">Order Now</button>
+        <div class="plist-price">Rs. 1800</div>
+        <button class="mini-order-btn" onclick="orderPlan('NordVPN Basic','3 Months - Rs. 1800')">Order Now</button>
       </div>
-
-      <!-- Gemini Pro Mobile -->
-      <div class="mobile-price-card">
-        <div class="mp-header">
-          <img class="ptable-icon" src="https://drive.google.com/thumbnail?id=1pYWVrh90lbUq1M7ea9UiGz0BdO0MrQXn&sz=w500" alt="Gemini">
-          <span class="ptable-name" style="font-size:16px">Gemini Pro</span>
+    </div>
+    <div class="plist-cat"><i class="fa-solid fa-robot"></i> AI Tools</div>
+    <div class="plist">
+      <div class="plist-row">
+        <img class="plist-icon" src="images/quillbot.svg" alt="Quillbot Premium">
+        <div class="plist-info">
+          <div class="plist-name">Quillbot Premium</div>
+          <div class="plist-plan">1 Month</div>
         </div>
-        <div class="mp-rows">
-          <label class="mp-row" style="cursor:pointer">
-            <span class="mp-row-label"><input type="radio" name="mplan-gemini" value="1 Month - Rs. 300" checked> 1 Month</span>
-            <span class="mp-price">Rs. 300</span>
-          </label>
-          <label class="mp-row" style="cursor:pointer">
-            <span class="mp-row-label"><input type="radio" name="mplan-gemini" value="2 Months - Rs. 500"> 2 Months</span>
-            <span class="mp-price">Rs. 500</span>
-          </label>
-        </div>
-        <button class="mini-order-btn" style="width:100%;padding:12px" onclick="quickOrder('Gemini Pro', 'mplan-gemini')">Order Now</button>
+        <div class="plist-price">Rs. 1200</div>
+        <button class="mini-order-btn" onclick="orderPlan('Quillbot Premium','1 Month - Rs. 1200')">Order Now</button>
       </div>
-
-      <!-- Surfshark VPN Mobile -->
-      <div class="mobile-price-card">
-        <div class="mp-header">
-          <img class="ptable-icon" src="https://drive.google.com/thumbnail?id=1a7HxDteDn7nl2z47F6IpMzrsxUWMgm_C&sz=w500" alt="Surfshark">
-          <span class="ptable-name" style="font-size:16px">Surfshark VPN</span>
+      <div class="plist-row">
+        <img class="plist-icon" src="images/lovable.svg" alt="Lovable Pro Lite">
+        <div class="plist-info">
+          <div class="plist-name">Lovable Pro Lite</div>
+          <div class="plist-plan">12 Months</div>
         </div>
-        <div class="mp-rows">
-          <label class="mp-row" style="cursor:pointer">
-            <span class="mp-row-label"><input type="radio" name="mplan-surf" value="1 Month - Rs. 350" checked> 1 Month</span>
-            <span class="mp-price">Rs. 350</span>
-          </label>
-          <label class="mp-row" style="cursor:pointer">
-            <span class="mp-row-label"><input type="radio" name="mplan-surf" value="2 Months - Rs. 600"> 2 Months</span>
-            <span class="mp-price">Rs. 600</span>
-          </label>
+        <div class="plist-price">Rs. 3000</div>
+        <button class="mini-order-btn" onclick="orderPlan('Lovable Pro Lite','12 Months - Rs. 3000')">Order Now</button>
+      </div>
+    </div>
+    <div class="plist-cat"><i class="fa-solid fa-tv"></i> Streaming & Entertainment</div>
+    <div class="plist">
+      <div class="plist-row">
+        <img class="plist-icon" src="images/netflix.svg" alt="Netflix 4K UHD">
+        <div class="plist-info">
+          <div class="plist-name">Netflix 4K UHD</div>
+          <div class="plist-plan">1 Month</div>
         </div>
-        <button class="mini-order-btn" style="width:100%;padding:12px" onclick="quickOrder('Surfshark VPN', 'mplan-surf')">Order Now</button>
+        <div class="plist-price">Rs. 300</div>
+        <button class="mini-order-btn" onclick="orderPlan('Netflix 4K UHD','1 Month - Rs. 300')">Order Now</button>
+      </div>
+      <div class="plist-row">
+        <img class="plist-icon" src="images/ytpremium.svg" alt="YouTube Premium">
+        <div class="plist-info">
+          <div class="plist-name">YouTube Premium</div>
+          <div class="plist-plan">3 Months</div>
+        </div>
+        <div class="plist-price">Rs. 1500</div>
+        <button class="mini-order-btn" onclick="orderPlan('YouTube Premium','3 Months - Rs. 1500')">Order Now</button>
+      </div>
+      <div class="plist-row">
+        <img class="plist-icon" src="images/applemusic.svg" alt="Apple Music">
+        <div class="plist-info">
+          <div class="plist-name">Apple Music</div>
+          <div class="plist-plan">5 Months</div>
+        </div>
+        <div class="plist-price">Rs. 600</div>
+        <button class="mini-order-btn" onclick="orderPlan('Apple Music','5 Months - Rs. 600')">Order Now</button>
+      </div>
+    </div>
+    <div class="plist-cat"><i class="fa-solid fa-briefcase"></i> Productivity & Office</div>
+    <div class="plist">
+      <div class="plist-row">
+        <img class="plist-icon" src="images/office365.svg" alt="Microsoft Office 365">
+        <div class="plist-info">
+          <div class="plist-name">Microsoft Office 365</div>
+          <div class="plist-plan">12 Months</div>
+        </div>
+        <div class="plist-price">Rs. 1000</div>
+        <button class="mini-order-btn" onclick="orderPlan('Microsoft Office 365','12 Months - Rs. 1000')">Order Now</button>
+      </div>
+      <div class="plist-row">
+        <img class="plist-icon" src="images/notion.svg" alt="Notion Education Plus">
+        <div class="plist-info">
+          <div class="plist-name">Notion Education Plus</div>
+          <div class="plist-plan">12 Months</div>
+        </div>
+        <div class="plist-price">Rs. 1000</div>
+        <button class="mini-order-btn" onclick="orderPlan('Notion Education Plus','12 Months - Rs. 1000')">Order Now</button>
+      </div>
+      <div class="plist-row">
+        <img class="plist-icon" src="images/ilovepdf.svg" alt="iLovePDF Premium">
+        <div class="plist-info">
+          <div class="plist-name">iLovePDF Premium</div>
+          <div class="plist-plan">12 Months</div>
+        </div>
+        <div class="plist-price">Rs. 600</div>
+        <button class="mini-order-btn" onclick="orderPlan('iLovePDF Premium','12 Months - Rs. 600')">Order Now</button>
+      </div>
+    </div>
+    <div class="plist-cat"><i class="fa-solid fa-graduation-cap"></i> Learning & Career</div>
+    <div class="plist">
+      <div class="plist-row">
+        <img class="plist-icon" src="images/coursera.svg" alt="Coursera Plus">
+        <div class="plist-info">
+          <div class="plist-name">Coursera Plus</div>
+          <div class="plist-plan">12 Months</div>
+        </div>
+        <div class="plist-price">Rs. 1000</div>
+        <button class="mini-order-btn" onclick="orderPlan('Coursera Plus','12 Months - Rs. 1000')">Order Now</button>
+      </div>
+      <div class="plist-row">
+        <img class="plist-icon" src="images/udemy.svg" alt="Udemy Personal Plan">
+        <div class="plist-info">
+          <div class="plist-name">Udemy Personal Plan</div>
+          <div class="plist-plan">1 Month</div>
+        </div>
+        <div class="plist-price">Rs. 800</div>
+        <button class="mini-order-btn" onclick="orderPlan('Udemy Personal Plan','1 Month - Rs. 800')">Order Now</button>
+      </div>
+      <div class="plist-row">
+        <img class="plist-icon" src="images/duolingo.svg" alt="Super Duolingo">
+        <div class="plist-info">
+          <div class="plist-name">Super Duolingo</div>
+          <div class="plist-plan">1 Year</div>
+        </div>
+        <div class="plist-price">Rs. 700</div>
+        <button class="mini-order-btn" onclick="orderPlan('Super Duolingo','1 Year - Rs. 700')">Order Now</button>
+      </div>
+      <div class="plist-row">
+        <img class="plist-icon" src="images/linkedin.svg" alt="LinkedIn Premium">
+        <div class="plist-info">
+          <div class="plist-name">LinkedIn Premium</div>
+          <div class="plist-plan">3 Months</div>
+        </div>
+        <div class="plist-price">Rs. 800</div>
+        <button class="mini-order-btn" onclick="orderPlan('LinkedIn Premium','3 Months - Rs. 800')">Order Now</button>
       </div>
     </div>
 
@@ -415,24 +452,14 @@ function toggleMobileMenu() {
 let curProduct = '';
 let curSelectedPlan = '';
 
-function quickOrder(name, radioGroupName){
+function orderPlan(name, plan){
   curProduct = name;
-  
-  // Find which radio button is checked in the selected group
-  let selectedRadio = document.querySelector(`input[name="${radioGroupName}"]:checked`);
-  if (selectedRadio) {
-    curSelectedPlan = selectedRadio.value;
-  } else {
-    curSelectedPlan = "Default Plan";
-  }
-
-  // Update modal chip to show product and selected plan
-  document.getElementById('modalChip').textContent = `${name} — ${curSelectedPlan}`;
+  curSelectedPlan = plan;
+  document.getElementById('modalChip').textContent = name + ' \u2014 ' + plan;
   document.getElementById('mName').value = '';
   document.getElementById('mPhone').value = '';
-  
   document.getElementById('modalOverlay').classList.add('open');
-  document.body.style.overflow = 'hidden'; 
+  document.body.style.overflow = 'hidden';
 }
 
 function closeModal(){
