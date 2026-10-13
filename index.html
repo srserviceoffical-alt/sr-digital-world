@@ -151,6 +151,7 @@ html { scroll-behavior: smooth; }
 @media(hover:none){.review-card:hover{transform:none;box-shadow:none}}
 
 .hidden-review{display:none}
+#reviewsGrid.expanded .hidden-review{display:block}
 .reviews-more-btn{background:transparent;border:1.5px solid rgba(255,140,0,.5);color:#FF8C00;font-weight:700;font-size:14px;padding:12px 32px;border-radius:100px;cursor:pointer;transition:all .25s;font-family:'Inter',sans-serif}
 .reviews-more-btn:hover{background:rgba(255,140,0,.12);border-color:#FF8C00}
 .reviews-more-btn i{margin-left:6px;font-size:12px}
@@ -324,7 +325,7 @@ html { scroll-behavior: smooth; }
       <h2 class="section-title">What Our Customers Say</h2>
       <p style="color:#666;font-size:14px;margin-top:12px;max-width:520px;margin-left:auto;margin-right:auto">Real reviews from real buyers — join hundreds of happy customers</p>
     </div>
-    <div class="row g-3">
+    <div class="row g-3" id="reviewsGrid">
 <div class="col-md-4">
         <div class="review-card">
           <div class="review-head">
@@ -721,10 +722,10 @@ function copyPay(id, btn){
 </script>
 <script>
 function toggleReviews(btn){
-  var open = btn.getAttribute('data-open') === '1';
-  document.querySelectorAll('.hidden-review').forEach(function(c){ c.style.display = open ? 'none' : ''; });
-  btn.setAttribute('data-open', open ? '0' : '1');
-  btn.innerHTML = open ? 'Show More Reviews <i class="fa-solid fa-chevron-down"></i>' : 'Show Less <i class="fa-solid fa-chevron-up"></i>';
+  var grid = document.getElementById('reviewsGrid');
+  var open = grid.classList.toggle('expanded');
+  btn.setAttribute('data-open', open ? '1' : '0');
+  btn.innerHTML = open ? 'Show Less <i class="fa-solid fa-chevron-up"></i>' : 'Show More Reviews <i class="fa-solid fa-chevron-down"></i>';
 }
 </script>
 </body>
