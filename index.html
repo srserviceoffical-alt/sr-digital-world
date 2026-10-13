@@ -114,6 +114,25 @@ html { scroll-behavior: smooth; }
 .pay-value{color:#FF8C00;font-weight:800;font-size:16px;letter-spacing:0.5px;word-break:break-all}
 .copy-btn{background:rgba(255,140,0,0.12);border:1px solid rgba(255,140,0,0.35);color:#FF8C00;font-size:12px;font-weight:700;padding:7px 14px;border-radius:100px;cursor:pointer;white-space:nowrap;transition:all 0.2s}
 .copy-btn:hover{background:rgba(255,140,0,0.28)}
+
+/* ===== SR visual polish: section rhythm ===== */
+.products-section,.features-section,.video-section,.pay-section,.about-section,.contact-section,.faqs-section,.warranty-section{border-top:1px solid rgba(255,255,255,.045)}
+.features-section,.contact-section,.warranty-section{background:#0c0c14}
+.about-section,.faqs-section{background:#0a0a10}
+
+/* ===== SR visual polish: card glow ===== */
+.product-card{transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
+.product-card:hover{transform:translateY(-6px);box-shadow:0 14px 34px rgba(255,140,0,.13);border-color:rgba(255,140,0,.5)}
+@media(hover:none){.product-card:hover{transform:none;box-shadow:none}}
+
+/* ===== SR visual polish: gradient CTA buttons ===== */
+.order-btn{background:linear-gradient(135deg,#FFB347,#FF8C00 55%,#FF6B00);border:none;color:#201304;box-shadow:0 4px 16px rgba(255,140,0,.28);transition:transform .25s ease,box-shadow .25s ease}
+.order-btn:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(255,140,0,.42);color:#000}
+.order-btn i{margin-right:6px}
+
+.btn-send{background:linear-gradient(135deg,#FFB347,#FF8C00 55%,#FF6B00);box-shadow:0 4px 16px rgba(255,140,0,.28);transition:transform .25s ease,box-shadow .25s ease}
+.btn-send:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(255,140,0,.4)}
+
 </style>
 </head>
 <body>
