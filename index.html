@@ -65,6 +65,19 @@ html { scroll-behavior: smooth; }
 .hero-stat{background:linear-gradient(135deg,rgba(255,255,255,.12),rgba(255,255,255,.04));backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.2);border-radius:16px;padding:12px 20px;box-shadow:inset 0 1px 0 rgba(255,255,255,.18)}
 .hero-stat-num{font-size:1.4rem}
 @media(max-width:991px){.go1{width:220px;height:220px}.go2,.go3{display:none}}
+.hero-title .accent{background:linear-gradient(120deg,#FF8C00,#FFB347,#ff6b00,#FF8C00)!important;background-size:220% auto!important;-webkit-background-clip:text!important;background-clip:text!important;-webkit-text-fill-color:transparent;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:220% center}}
+#typedAccent{border-right:3px solid #FF8C00;padding-right:6px;animation:caret 1.05s step-end infinite}
+@keyframes caret{50%{border-color:transparent}}
+#heroParticles{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.hero-visual{transition:transform .25s ease-out;will-change:transform}
+.logo-marquee{overflow:hidden;padding:24px 0;background:#08080d;border-top:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05)}
+.marquee-track{display:flex;width:max-content;animation:mqscroll 38s linear infinite;align-items:center}
+.logo-marquee:hover .marquee-track{animation-play-state:paused}
+.mq-item{display:flex;align-items:center;opacity:.7;transition:opacity .2s;margin:0 24px;flex-shrink:0}
+.mq-item:hover{opacity:1}
+.mq-item img{height:36px;width:auto;max-width:130px;object-fit:contain}
+@keyframes mqscroll{to{transform:translateX(-50%)}}
 .hero-stats{display:flex;gap:36px;margin-top:36px;flex-wrap:wrap}
 .hero-stat-num{font-size:1.6rem;font-weight:800;color:#fff}
 .hero-stat-num::first-letter{color:#FF8C00}
@@ -224,6 +237,7 @@ html { scroll-behavior: smooth; }
 </div>
 
 <section class="hero">
+  <canvas id="heroParticles"></canvas>
   <div class="hero-bg"></div>
   <div class="glow-orb"></div>
   <div class="glass-orb go1"></div>
@@ -235,7 +249,7 @@ html { scroll-behavior: smooth; }
         <div class="hero-badge">🇵🇰 Pakistan's #1 Digital Store</div>
         <h1 class="hero-title">
           Premium Tools.<br>
-          <span class="accent">Lowest Prices.</span><br>
+          <span class="accent" id="typedAccent">Lowest Prices.</span><br>
           <span style="color:#555;font-weight:300;font-size:0.7em;letter-spacing:-0.5px">Delivered Instantly.</span>
         </h1>
         <p class="hero-sub">Canva Pro, CapCut Pro, Surfshark VPN, and much more — order via WhatsApp and get it in seconds.</p>
@@ -273,6 +287,7 @@ html { scroll-behavior: smooth; }
     </div>
   </div>
 </section>
+<div class="logo-marquee"><div class="marquee-track"><a class="mq-item" href="/products/"><img src="/images/canva.png" alt="Canva Pro" loading="lazy"></a><a class="mq-item" href="/products/"><img src="/images/capcut.jpg" alt="CapCut Pro" loading="lazy"></a><a class="mq-item" href="/products/"><img src="/images/gemini.jpg" alt="Gemini Pro" loading="lazy"></a><a class="mq-item" href="/products/"><img src="/images/adobe.png" alt="Adobe Express Premium" loading="lazy"></a><a class="mq-item" href="/products/"><img src="/images/figma.png" alt="Figma Pro Education" loading="lazy"></a><a class="mq-item" href="/products/"><img src="/images/framer.png" alt="Framer Basic" loading="lazy"></a><a class="mq-item" href="/products/"><img src="/images/surf.png" alt="Surfshark VPN" loading="lazy"></a><a class="mq-item" href="/products/"><img src="/images/nordvpn.png" alt="NordVPN Basic" loading="lazy"></a><a class="mq-item" href="/products/"><img src="/images/quillbot.jpg" alt="Quillbot Premium" loading="lazy"></a><a class="mq-item" href="/products/"><img src="/images/lovable.jpg" alt="Lovable Pro Lite" loading="lazy"></a><a class="mq-item" href="/products/"><img src="/images/netflix.png" alt="Netflix 4K UHD" loading="lazy"></a><a class="mq-item" href="/products/"><img src="/images/ytpremium.png" alt="YouTube Premium" loading="lazy"></a><a class="mq-item" href="/products/"><img src="/images/applemusic.jpg" alt="Apple Music" loading="lazy"></a><a class="mq-item" href="/products/"><img src="/images/office365.png" alt="Microsoft Office 365" loading="lazy"></a><a class="mq-item" href="/products/"><img src="/images/notion.png" alt="Notion Education Plus" loading="lazy"></a><a class="mq-item" href="/products/"><img src="/images/ilovepdf.png" alt="iLovePDF Premium" loading="lazy"></a><a class="mq-item" href="/products/"><img src="/images/coursera.png" alt="Coursera Plus" loading="lazy"></a><a class="mq-item" href="/products/"><img src="/images/udemy.png" alt="Udemy Personal Plan" loading="lazy"></a><a class="mq-item" href="/products/"><img src="/images/duolingo.png" alt="Super Duolingo" loading="lazy"></a><a class="mq-item" href="/products/"><img src="/images/linkedin.jpg" alt="LinkedIn Premium" loading="lazy"></a><a class="mq-item" href="/products/"><img src="/images/canva.png" alt="Canva Pro" loading="lazy"></a><a class="mq-item" href="/products/"><img src="/images/capcut.jpg" alt="CapCut Pro" loading="lazy"></a><a class="mq-item" href="/products/"><img src="/images/gemini.jpg" alt="Gemini Pro" loading="lazy"></a><a class="mq-item" href="/products/"><img src="/images/adobe.png" alt="Adobe Express Premium" loading="lazy"></a><a class="mq-item" href="/products/"><img src="/images/figma.png" alt="Figma Pro Education" loading="lazy"></a><a class="mq-item" href="/products/"><img src="/images/framer.png" alt="Framer Basic" loading="lazy"></a><a class="mq-item" href="/products/"><img src="/images/surf.png" alt="Surfshark VPN" loading="lazy"></a><a class="mq-item" href="/products/"><img src="/images/nordvpn.png" alt="NordVPN Basic" loading="lazy"></a><a class="mq-item" href="/products/"><img src="/images/quillbot.jpg" alt="Quillbot Premium" loading="lazy"></a><a class="mq-item" href="/products/"><img src="/images/lovable.jpg" alt="Lovable Pro Lite" loading="lazy"></a><a class="mq-item" href="/products/"><img src="/images/netflix.png" alt="Netflix 4K UHD" loading="lazy"></a><a class="mq-item" href="/products/"><img src="/images/ytpremium.png" alt="YouTube Premium" loading="lazy"></a><a class="mq-item" href="/products/"><img src="/images/applemusic.jpg" alt="Apple Music" loading="lazy"></a><a class="mq-item" href="/products/"><img src="/images/office365.png" alt="Microsoft Office 365" loading="lazy"></a><a class="mq-item" href="/products/"><img src="/images/notion.png" alt="Notion Education Plus" loading="lazy"></a><a class="mq-item" href="/products/"><img src="/images/ilovepdf.png" alt="iLovePDF Premium" loading="lazy"></a><a class="mq-item" href="/products/"><img src="/images/coursera.png" alt="Coursera Plus" loading="lazy"></a><a class="mq-item" href="/products/"><img src="/images/udemy.png" alt="Udemy Personal Plan" loading="lazy"></a><a class="mq-item" href="/products/"><img src="/images/duolingo.png" alt="Super Duolingo" loading="lazy"></a><a class="mq-item" href="/products/"><img src="/images/linkedin.jpg" alt="LinkedIn Premium" loading="lazy"></a></div></div>
 
 <div class="stats-strip">
   <div class="container">
@@ -857,6 +872,62 @@ function openProof(src){var lb=document.getElementById('proofLightbox');lb.query
 function closeProof(){document.getElementById('proofLightbox').classList.remove('open');document.body.style.overflow='';}
 function toggleProof(btn){var g=document.getElementById('proofGrid');var open=g.classList.toggle('expanded');btn.innerHTML=open?'Show Less <i class="fa-solid fa-chevron-up"></i>':'Show All Screenshots <i class="fa-solid fa-chevron-down"></i>';}
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeProof();});
+</script>
+
+<script>
+(function(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  /* typing headline */
+  var el = document.getElementById('typedAccent');
+  if(el){
+    var phrases = ['Lowest Prices.', 'Instant Delivery.', '4999+ Orders Done.'];
+    var pi = 0, ci = phrases[0].length, del = false;
+    (function tick(){
+      if(!del){ del = true; setTimeout(tick, 2000); return; }
+      ci--;
+      if(ci <= 0){ ci = 0; pi = (pi+1)%phrases.length; del = false;
+        el.textContent = '';
+        setTimeout(function typeIn(){
+          ci++;
+          el.textContent = phrases[pi].substring(0, ci);
+          if(ci < phrases[pi].length) setTimeout(typeIn, 60); else setTimeout(tick, 2000);
+        }, 350);
+        return;
+      }
+      el.textContent = phrases[pi].substring(0, ci);
+      setTimeout(tick, 32);
+    })();
+  }
+  /* 3D tilt on hero visual */
+  var hv = document.querySelector('.hero-visual');
+  if(hv && window.matchMedia('(hover:hover)').matches){
+    var zone = hv.closest('.row') || hv;
+    zone.addEventListener('mousemove', function(e){
+      var r = hv.getBoundingClientRect();
+      var x = (e.clientX - r.left)/r.width - .5, y = (e.clientY - r.top)/r.height - .5;
+      hv.style.transform = 'perspective(1000px) rotateY(' + (x*10).toFixed(2) + 'deg) rotateX(' + (-y*10).toFixed(2) + 'deg)';
+    });
+    zone.addEventListener('mouseleave', function(){ hv.style.transform = 'perspective(1000px)'; });
+  }
+  /* floating particles */
+  var c = document.getElementById('heroParticles');
+  if(c){
+    var ctx = c.getContext('2d'), W, H, ps = [];
+    function resize(){ var r = c.parentElement.getBoundingClientRect(); W = c.width = r.width; H = c.height = r.height; }
+    resize(); window.addEventListener('resize', resize);
+    for(var i=0;i<55;i++) ps.push({x:Math.random(), y:Math.random(), r:Math.random()*2+.6, s:Math.random()*.0006+.0002, o:Math.random()*.5+.15, ph:Math.random()*6.28});
+    (function anim(t){
+      ctx.clearRect(0,0,W,H);
+      for(var k=0;k<ps.length;k++){ var p = ps[k];
+        p.y -= p.s; if(p.y < -.02){ p.y = 1.02; p.x = Math.random(); }
+        var tw = p.o*(0.6+0.4*Math.sin(t/900+p.ph));
+        ctx.beginPath(); ctx.arc(p.x*W, p.y*H, p.r, 0, 6.28);
+        ctx.fillStyle = 'rgba(255,150,40,' + tw.toFixed(3) + ')'; ctx.fill();
+      }
+      requestAnimationFrame(anim);
+    })(0);
+  }
+})();
 </script>
 </body>
 </html>
