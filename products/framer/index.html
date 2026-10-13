@@ -5,7 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Framer Basic | SR Digital World</title>
 <meta name="description" content="Framer Basic - Build &amp; publish professional websites with zero code — custom domain, CMS &amp; SEO tools.">
-<link rel="icon" type="image/png" href="https://drive.google.com/thumbnail?id=1u0VNmKGzMIuxk0bxZMqAgWCU4G5OiTtU&sz=w256">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SR Digital World">
+<meta property="og:title" content="Framer Basic | SR Digital World">
+<meta property="og:description" content="Framer Basic - Build &amp;amp; publish professional websites with zero code — custom domain, CMS &amp;amp; SEO tools.">
+<meta property="og:image" content="https://www.srdigitalworld.shop//images/framer.png">
+<meta property="og:url" content="https://www.srdigitalworld.shop/products/framer/">
+<link rel="icon" type="image/png" href="/images/favicon.png">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
@@ -268,7 +274,8 @@ function selPlan(i, el){
   el.classList.add('active');
   document.getElementById('pdPrice').textContent = 'Rs. ' + PLANS[i][0];
   document.getElementById('pdDur').textContent = '/ ' + PLANS[i][1];
-  updOrder();
+  if(PLANS.length<2){document.querySelector('.pd-plans-label').style.display='none';document.querySelector('.pd-plans').style.display='none';}
+updOrder();
 }
 function updOrder(){
   const msg = 'Assalam-o-Alaikum! I want to order ' + PNAME + ' (' + PLANS[curPlan][1] + ' - Rs. ' + PLANS[curPlan][0] + ') from SR Digital World.';
