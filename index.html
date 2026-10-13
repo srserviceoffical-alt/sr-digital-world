@@ -138,6 +138,18 @@ html { scroll-behavior: smooth; }
 .hero-bg,.glow-orb{pointer-events:none}
 .hero .container{position:relative;z-index:1}
 
+.reviews-section{padding:70px 0;background:#0c0c14;border-top:1px solid rgba(255,255,255,.045)}
+.review-card{background:#111118;border:1px solid #1e1e2a;border-radius:16px;padding:24px;height:100%;transition:transform .3s ease,box-shadow .3s ease}
+.review-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(255,140,0,.1)}
+.review-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.review-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#FFB347,#FF6B00);color:#1a1005;font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.review-name{color:#fff;font-weight:700;font-size:14px}
+.review-stars{color:#FF8C00;font-size:12px;letter-spacing:3px}
+.review-text{color:#bbb;font-size:13.5px;line-height:1.7;font-style:italic;margin:0 0 14px}
+.review-tag{color:#25D366;font-size:12px;font-weight:600}
+.review-tag i{margin-right:5px}
+@media(hover:none){.review-card:hover{transform:none;box-shadow:none}}
+
 </style>
 </head>
 <body>
@@ -295,6 +307,96 @@ html { scroll-behavior: smooth; }
         <a href="https://wa.me/923229952880" target="_blank" style="display:inline-flex;align-items:center;gap:8px;color:#FF8C00;font-weight:700;font-size:14px;text-decoration:none;margin-top:20px;border:1px solid rgba(255,140,0,0.3);padding:10px 20px;border-radius:100px">
           <i class="fa-brands fa-whatsapp"></i> Order Now →
         </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews-section">
+  <div class="container">
+    <div class="text-center mb-4">
+      <div class="section-eyebrow">Customer Reviews</div>
+      <h2 class="section-title">What Our Customers Say</h2>
+      <p style="color:#666;font-size:14px;margin-top:12px;max-width:520px;margin-left:auto;margin-right:auto">Real reviews from real buyers — join hundreds of happy customers</p>
+    </div>
+    <div class="row g-3">
+      <div class="col-md-4">
+        <div class="review-card">
+          <div class="review-head">
+            <div class="review-avatar">RC</div>
+            <div>
+              <div class="review-name">Rafaqat Cheema</div>
+              <div class="review-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="review-text">"Recommended, 100% working. Reply in seconds. Thanks!"</p>
+          <div class="review-tag"><i class="fa-solid fa-circle-check"></i> Verified Buyer</div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="review-card">
+          <div class="review-head">
+            <div class="review-avatar">HA</div>
+            <div>
+              <div class="review-name">Hassan Ali</div>
+              <div class="review-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="review-text">"The process was smooth, the team was professional. Highly recommended!"</p>
+          <div class="review-tag"><i class="fa-solid fa-circle-check"></i> Verified Buyer</div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="review-card">
+          <div class="review-head">
+            <div class="review-avatar">MN</div>
+            <div>
+              <div class="review-name">Mian Noorullah</div>
+              <div class="review-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="review-text">"Thank you for quickly responding and giving Canva Pro access urgently. Best service!"</p>
+          <div class="review-tag"><i class="fa-solid fa-circle-check"></i> Verified Buyer</div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="review-card">
+          <div class="review-head">
+            <div class="review-avatar">SH</div>
+            <div>
+              <div class="review-name">S Ain Haider</div>
+              <div class="review-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="review-text">"MashaAllah, behtreen Canva mil gaya aur bonus bhi diya. JazakAllah!"</p>
+          <div class="review-tag"><i class="fa-solid fa-circle-check"></i> Verified Buyer</div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="review-card">
+          <div class="review-head">
+            <div class="review-avatar">CR</div>
+            <div>
+              <div class="review-name">Chaudhary Rafay</div>
+              <div class="review-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="review-text">"Good and fast service after payment. Highly recommend!"</p>
+          <div class="review-tag"><i class="fa-solid fa-circle-check"></i> Verified Buyer</div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="review-card">
+          <div class="review-head">
+            <div class="review-avatar">NA</div>
+            <div>
+              <div class="review-name">Naveed Ahmed</div>
+              <div class="review-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="review-text">"Agar link mein koi kharabi ho to free mein sahi kar ke dete hain. Good service!"</p>
+          <div class="review-tag"><i class="fa-solid fa-circle-check"></i> Verified Buyer</div>
+        </div>
       </div>
     </div>
   </div>
