@@ -11,20 +11,10 @@
     <div class="nav-links align-items-center gap-4" id="mobileMenu">
       <a href="index.html" class="nav-link-item">Home</a>
       <a href="products.html" class="nav-link-item">Products</a>
-
-      <div class="dropdown">
-        <a href="javascript:void(0)" class="nav-link-item" style="padding-bottom: 20px;" onclick="toggleDropdown()">Services <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 4px;"></i></a>
-        <div class="dropdown-content" id="servicesDropdown">
-          <a href="cv-writing.html">CV Writing</a>
-          <a href="facebook-followers.html">Facebook Followers</a>
-        </div>
-      </div>
-
-      <a href="pricing.html" class="nav-link-item">Pricing</a>
-      <a href="pro-apks.html" class="nav-link-item">Pro APKs</a>
-      <a href="about.html" class="nav-link-item">About</a>
       <a href="faqs.html" class="nav-link-item">FAQs</a>
+      <a href="pro-apks.html" class="nav-link-item">Pro APKs</a>
       <a href="warranty.html" class="nav-link-item">Warranty</a>
+      <a href="about.html" class="nav-link-item">About</a>
       <a href="contact.html" class="nav-link-item">Contact</a>
     </div>
     
@@ -104,12 +94,6 @@
 </style>
 
 <script>
-  function toggleDropdown() {
-    if(window.innerWidth <= 991) {
-      document.getElementById("servicesDropdown").classList.toggle("show-mobile");
-    }
-  }
-
   function toggleMobileMenu() {
     let menu = document.getElementById('mobileMenu');
     if(menu) {
@@ -136,11 +120,6 @@
       }
     });
 
-    // Agar CV Writing ya FB Followers open hai, toh 'Services' ko orange karo
-    if (page === "cv-writing.html" || page === "facebook-followers.html") {
-      let serviceMenu = document.querySelector('.dropdown > .nav-link-item');
-      if (serviceMenu) serviceMenu.classList.add('active');
-    }
   }
   
   highlightActiveMenu();
