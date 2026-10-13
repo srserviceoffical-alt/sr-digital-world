@@ -55,6 +55,16 @@ html { scroll-behavior: smooth; }
 .hero-cta:hover{background:#FFB347;transform:translateY(-2px);box-shadow:0 10px 30px rgba(255,140,0,0.4)}
 .hero-cta-ghost{display:inline-flex;align-items:center;gap:8px;background:transparent;color:#FF8C00;padding:14px 28px;border-radius:100px;font-weight:600;font-size:15px;border:1px solid rgba(255,140,0,0.4);text-decoration:none;transition:all 0.3s;cursor:pointer;margin-left:12px}
 .hero-cta-ghost:hover{background:rgba(255,140,0,0.08);color:#FFB347}
+.glass-orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.5;pointer-events:none;z-index:0}
+.go1{width:340px;height:340px;top:-90px;right:6%;background:radial-gradient(circle,rgba(255,140,0,.35),transparent 70%)}
+.go2{width:260px;height:260px;bottom:-70px;left:32%;background:radial-gradient(circle,rgba(255,80,0,.28),transparent 70%)}
+.go3{width:200px;height:200px;top:38%;left:4%;background:radial-gradient(circle,rgba(255,180,80,.22),transparent 70%)}
+.float-chip{background:rgba(255,255,255,.07)!important;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.14)!important}
+.hero-phone{background:rgba(20,20,32,.55)!important;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.12)!important}
+.hp-head{background:rgba(255,255,255,.05)!important}
+.hero-stat{background:rgba(255,255,255,.05);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:12px 20px}
+.hero-stat-num{font-size:1.4rem}
+@media(max-width:991px){.go1{width:220px;height:220px}.go2,.go3{display:none}}
 .hero-stats{display:flex;gap:36px;margin-top:36px;flex-wrap:wrap}
 .hero-stat-num{font-size:1.6rem;font-weight:800;color:#fff}
 .hero-stat-num::first-letter{color:#FF8C00}
@@ -216,6 +226,9 @@ html { scroll-behavior: smooth; }
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="glow-orb"></div>
+  <div class="glass-orb go1"></div>
+  <div class="glass-orb go2"></div>
+  <div class="glass-orb go3"></div>
   <div class="container py-5">
     <div class="row align-items-center">
       <div class="col-lg-7">
