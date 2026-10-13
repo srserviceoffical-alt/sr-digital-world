@@ -104,6 +104,16 @@ html { scroll-behavior: smooth; }
 .btn-send{flex:2;padding:12px;background:#FF8C00;border:none;color:#000;border-radius:10px;cursor:pointer;font-family:'Inter',sans-serif;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;gap:8px;transition:all 0.3s}
 .btn-send:hover{background:#FFB347}
 @media(max-width:768px){.hero-title{font-size:2.5rem}.stat-divider{display:none}.hero-cta-ghost{margin-left:0;margin-top:10px}}
+.pay-section{padding:70px 0;background:#0a0a0f;border-top:1px solid #1a1a25}
+.pay-card{background:#111118;border:1px solid #1e1e2a;border-radius:16px;padding:20px;height:100%}
+.pay-badge{color:#fff;font-weight:800;font-size:12px;padding:6px 14px;border-radius:100px;letter-spacing:0.3px}
+.pay-holder{color:#bbb;font-size:14px;margin:14px 0 10px}
+.pay-holder i{color:#FF8C00;margin-right:6px}
+.pay-row{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.pay-label{color:#666;font-size:11px;text-transform:uppercase;letter-spacing:1px}
+.pay-value{color:#FF8C00;font-weight:800;font-size:16px;letter-spacing:0.5px;word-break:break-all}
+.copy-btn{background:rgba(255,140,0,0.12);border:1px solid rgba(255,140,0,0.35);color:#FF8C00;font-size:12px;font-weight:700;padding:7px 14px;border-radius:100px;cursor:pointer;white-space:nowrap;transition:all 0.2s}
+.copy-btn:hover{background:rgba(255,140,0,0.28)}
 </style>
 </head>
 <body>
@@ -266,6 +276,78 @@ html { scroll-behavior: smooth; }
   </div>
 </section>
 
+<section class="pay-section">
+  <div class="container">
+    <div class="text-center mb-4">
+      <div class="section-eyebrow">Easy & Secure</div>
+      <h2 class="section-title">Payment Methods</h2>
+      <p style="color:#666;font-size:14px;margin-top:12px;max-width:560px;margin-left:auto;margin-right:auto">Order on WhatsApp, pay with any method below, then send your payment screenshot on WhatsApp for instant delivery</p>
+    </div>
+    <div class="row g-3">
+      <div class="col-lg-4 col-md-6">
+        <div class="pay-card">
+          <span class="pay-badge" style="background:#ED1C24">JazzCash</span>
+          <div class="pay-holder"><i class="fa-regular fa-user"></i> Muhammad Saif Ullah</div>
+          <div class="pay-row">
+            <div><div class="pay-label">Account Number</div><div class="pay-value" id="pay-jazz">03229952880</div></div>
+            <button class="copy-btn" onclick="copyPay('pay-jazz',this)"><i class="fa-regular fa-copy"></i> Copy</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="pay-card">
+          <span class="pay-badge" style="background:#43B02A">Easypaisa</span>
+          <div class="pay-holder"><i class="fa-regular fa-user"></i> Muhammad Saif Ullah</div>
+          <div class="pay-row">
+            <div><div class="pay-label">Account Number</div><div class="pay-value" id="pay-easy">03229952880</div></div>
+            <button class="copy-btn" onclick="copyPay('pay-easy',this)"><i class="fa-regular fa-copy"></i> Copy</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="pay-card">
+          <span class="pay-badge" style="background:#00C48C">Sadapay</span>
+          <div class="pay-holder"><i class="fa-regular fa-user"></i> Muhammad Saif Ullah</div>
+          <div class="pay-row">
+            <div><div class="pay-label">Account Number</div><div class="pay-value" id="pay-sada">03229952880</div></div>
+            <button class="copy-btn" onclick="copyPay('pay-sada',this)"><i class="fa-regular fa-copy"></i> Copy</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="pay-card">
+          <span class="pay-badge" style="background:#7B5EA7">Nayapay</span>
+          <div class="pay-holder"><i class="fa-regular fa-user"></i> Muhammad Saif Ullah</div>
+          <div class="pay-row">
+            <div><div class="pay-label">Account Number</div><div class="pay-value" id="pay-naya">03229952880</div></div>
+            <button class="copy-btn" onclick="copyPay('pay-naya',this)"><i class="fa-regular fa-copy"></i> Copy</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="pay-card">
+          <span class="pay-badge" style="background:#00579B">Allied Bank</span>
+          <div class="pay-holder"><i class="fa-regular fa-user"></i> Muhammad Saif Ullah</div>
+          <div class="pay-row">
+            <div><div class="pay-label">IBAN</div><div class="pay-value" id="pay-abl">PK08ABPA0010091217220013</div></div>
+            <button class="copy-btn" onclick="copyPay('pay-abl',this)"><i class="fa-regular fa-copy"></i> Copy</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="pay-card">
+          <span class="pay-badge" style="background:#F0B90B">Binance</span>
+          <div class="pay-holder"><i class="fa-regular fa-user"></i> Muhammad Saif Ullah</div>
+          <div class="pay-row">
+            <div><div class="pay-label">Binance ID</div><div class="pay-value" id="pay-binance">787457221</div></div>
+            <button class="copy-btn" onclick="copyPay('pay-binance',this)"><i class="fa-regular fa-copy"></i> Copy</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer class="footer">
   <div class="container">
     <div class="row text-start g-4 mb-4">
@@ -285,7 +367,7 @@ html { scroll-behavior: smooth; }
       <div class="col-md-4">
         <div style="color:#fff;font-weight:700;font-size:13px;margin-bottom:12px;letter-spacing:0.5px">SUPPORT</div>
         <div class="d-flex flex-column gap-2">
-          <a href="faqs.html" class="footer-link">FAQs</a>
+          <a href="faqs.html" class="footer-link">FAQs</a><a href="warranty.html" class="footer-link">Warranty</a>
           <a href="contact.html" class="footer-link">Contact Us</a>
           <a href="https://wa.me/923229952880" target="_blank" class="footer-link">WhatsApp Support</a>
         </div>
@@ -367,6 +449,24 @@ function sendOrder(){
   const msg=`Hello!\n\nI want to place an order:\n🛍️ *Product:* ${curProduct}\n💵 *Price:* ${curPrice}\n👤 *Name:* ${name}\n📞 *Phone:* ${phone}\n\n_Order from SR Digital World website_`;
   window.open('https://wa.me/923229952880?text='+encodeURIComponent(msg),'_blank');
   closeModal();
+}
+</script>
+<script>
+function copyPay(id, btn){
+  var t = document.getElementById(id).textContent.trim();
+  var done = function(){
+    var o = btn.innerHTML;
+    btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied';
+    setTimeout(function(){ btn.innerHTML = o; }, 1600);
+  };
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(t).then(done).catch(function(){ done(); });
+  } else {
+    var ta = document.createElement('textarea');
+    ta.value = t; document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); } catch(e){}
+    ta.remove(); done();
+  }
 }
 </script>
 </body>
