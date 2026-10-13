@@ -126,7 +126,7 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
 .order-btn:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(255,140,0,.42);color:#000}
 .order-btn i{margin-right:6px}
 
-</style>
+.pd-pay{background:rgba(255,140,0,.05);border:1px solid rgba(255,140,0,.25);border-radius:14px;padding:16px 18px;margin-bottom:22px}.pd-pay-title{font-weight:800;color:#FFB347;font-size:15px;margin-bottom:6px}.pd-pay-title i{margin-right:6px}.pd-pay-item{padding:10px 0;border-top:1px solid rgba(255,255,255,.07)}.pd-pay-method{font-weight:700;color:#fff;font-size:14px}.pd-pay-name{color:#999;font-size:12.5px;margin-top:3px}.pd-pay-name i{margin-right:4px}.pd-pay-num{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:6px}.pd-pay-num span{font-family:ui-monospace,monospace;font-size:15px;color:#FFB347;letter-spacing:.5px;word-break:break-all}.pd-copy{background:rgba(255,140,0,.12);border:1px solid rgba(255,140,0,.4);color:#FFB347;border-radius:8px;padding:5px 12px;font-size:12px;font-weight:700;cursor:pointer;flex-shrink:0}.pd-copy:hover{background:rgba(255,140,0,.25)}.pd-pay-note{color:#888;font-size:12px;margin-top:10px;line-height:1.6}</style>
 
 <style>
 .pd-wrap{max-width:1100px;margin:0 auto;padding:0 16px}
@@ -196,7 +196,27 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
         <h1 class="pd-name">Coursera Plus</h1>
         <div class="pd-stars">★★★★★<span>4.9/5 · Verified reviews</span></div>
         <p class="pd-desc">Thousands of courses &amp; professional certificates from top universities.</p>
-        <div class="pd-plans-label">Select Plan:</div>
+                <div class="pd-pay">
+          <div class="pd-pay-title"><i class="fa-solid fa-wallet"></i> Payment Methods</div>
+          <div class="pd-pay-item">
+            <div class="pd-pay-method">JazzCash / Easypaisa / Sadapay / Nayapay</div>
+            <div class="pd-pay-name"><i class="fa-regular fa-user"></i> Muhammad Saif Ullah</div>
+            <div class="pd-pay-num"><span>03229952880</span><button class="pd-copy" onclick="copyPdPay('03229952880',this)"><i class="fa-regular fa-copy"></i> Copy</button></div>
+          </div>
+          <div class="pd-pay-item">
+            <div class="pd-pay-method">Allied Bank</div>
+            <div class="pd-pay-name"><i class="fa-regular fa-user"></i> Muhammad Saif Ullah</div>
+            <div class="pd-pay-num"><span>PK08ABPA0010091217220013</span><button class="pd-copy" onclick="copyPdPay('PK08ABPA0010091217220013',this)"><i class="fa-regular fa-copy"></i> Copy</button></div>
+          </div>
+          <div class="pd-pay-item">
+            <div class="pd-pay-method">Binance</div>
+            <div class="pd-pay-name"><i class="fa-regular fa-user"></i> Muhammad Saif Ullah</div>
+            <div class="pd-pay-num"><span>787457221</span><button class="pd-copy" onclick="copyPdPay('787457221',this)"><i class="fa-regular fa-copy"></i> Copy</button></div>
+          </div>
+          <div class="pd-pay-note">Pay with any method above, then send your payment screenshot on WhatsApp for instant delivery.</div>
+        </div>
+        <script>function copyPdPay(t,b){if(navigator.clipboard){navigator.clipboard.writeText(t).then(function(){var o=b.innerHTML;b.innerHTML='Copied \u2713';setTimeout(function(){b.innerHTML=o},1500)})}}</script>
+<div class="pd-plans-label">Select Plan:</div>
         <div class="pd-plans"><button class="pd-plan active" onclick="selPlan(0,this)">Rs. 1000<small>12 months</small></button></div>
         <div class="pd-price"><span id="pdPrice">Rs. 1000</span> <span id="pdDur">/ 12 months</span></div>
         <div class="pd-actions">
