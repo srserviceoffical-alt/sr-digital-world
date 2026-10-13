@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pro APKs | SR Digital World</title>
+<meta name="description" content="Download Latest Pro APKs For Free. Modded Video Editors, Photo Editors, and Premium Apps.">
+<link rel="icon" type="image/png" href="https://drive.google.com/thumbnail?id=1u0VNmKGzMIuxk0bxZMqAgWCU4G5OiTtU&sz=w256">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<style>
+/* CORE STYLES */
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:hidden}
+
+/* PAGE HEADER */
+.page-hero{padding:60px 0 40px;background:#000;text-align:center;border-bottom:1px solid #1a1a25;position:relative;overflow:hidden}
+.page-hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 50% 50% at 50% 0%,rgba(255,140,0,0.1) 0%,transparent 70%)}
+.hero-icon{font-size: 50px; color: #FF8C00; margin-bottom: 15px;}
+.section-title{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;color:#fff;letter-spacing:-1px;line-height:1.1; margin-bottom: 10px;}
+.section-sub{color:#FF8C00;font-size:15px;font-weight:600;letter-spacing:0.5px;}
+
+/* SEARCH BAR */
+.search-container{max-width: 500px; margin: 30px auto 0; position: relative;}
+.search-input{width: 100%; background: #222222; border: 1px solid #333; color: #fff; padding: 14px 20px 14px 45px; border-radius: 12px; font-size: 14px; outline: none; transition: 0.3s;}
+.search-input:focus{border-color: #FF8C00; box-shadow: 0 0 10px rgba(255,140,0,0.2);}
+.search-icon{position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #888;}
+
+/* CATEGORY TAGS */
+.tags-container{display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin: 30px 0 40px;}
+.filter-tag{background: #111118; border: 1px solid #222222; color: #999; padding: 8px 20px; border-radius: 50px; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.3s; display: flex; align-items: center; gap: 8px;}
+.filter-tag:hover{border-color: #FF8C00; color: #fff; background: #222222;}
+.filter-tag.active{background: #FF8C00; color: #000; border-color: #FF8C00;}
+
+/* APP CARDS GRID */
+.apk-grid{display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; padding-bottom: 70px;}
+.apk-card{background: #111118; border: 1px solid #222222; border-radius: 16px; padding: 25px; transition: all 0.3s; display: flex; flex-direction: column; height: 100%;}
+.apk-card:hover{border-color: rgba(255,140,0,0.5); transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0,0,0,0.4); background: #222222;}
+.app-header{display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 15px;}
+.app-icon{width: 70px; height: 70px; border-radius: 16px; object-fit: cover; margin-bottom: 15px; background: #222222; padding: 5px;}
+.app-title{font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 6px;}
+.app-desc{font-size: 12.5px; color: #888; line-height: 1.5; margin-bottom: 15px; text-align: center; flex-grow: 1;}
+.app-cat-badge{display: inline-block; background: rgba(255,140,0,0.1); color: #FF8C00; font-size: 10px; font-weight: 700; padding: 4px 10px; border-radius: 6px; margin-bottom: 15px; text-align: center; align-self: center;}
+
+/* CARD BUTTONS */
+.card-actions{display: flex; gap: 10px; margin-top: auto;}
+.btn-download{flex: 4; background: transparent; border: 1px solid #FF8C00; color: #FF8C00; padding: 10px; border-radius: 10px; font-weight: 700; font-size: 13px; cursor: pointer; transition: all 0.3s; display: flex; justify-content: center; align-items: center; gap: 8px; text-decoration: none;}
+.btn-download:hover{background: #FF8C00; color: #000;}
+.btn-share{flex: 1; background: #222222; border: 1px solid #333; color: #aaa; border-radius: 10px; cursor: pointer; transition: 0.3s; display: flex; justify-content: center; align-items: center;}
+.btn-share:hover{background: #333; color: #fff;}
+
+/* SHARE MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9998;align-items:center;justify-content:center;backdrop-filter:blur(4px)}
+.modal-overlay.open{display:flex}
+.modal-box{background:#111118;border:1px solid #FF8C00;border-radius:20px;padding:30px;width:90%;max-width:400px;text-align:center; position:relative;}
+.close-modal{position:absolute; top:15px; right:20px; color:#666; font-size:20px; cursor:pointer;}
+.close-modal:hover{color:#fff;}
+.share-title{font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:8px}
+.share-sub{font-size:13px;color:#888;margin-bottom:20px}
+.copy-box{display:flex;background:#222222;border:1px solid #333;border-radius:10px;overflow:hidden;margin-bottom:20px;}
+.copy-input{flex:1;background:transparent;border:none;color:#aaa;padding:12px 15px;font-size:12px;outline:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.copy-btn{background:#FF8C00;border:none;color:#000;padding:0 20px;font-weight:700;font-size:13px;cursor:pointer;transition:0.3s;}
+.copy-btn:hover{background:#FFB347;}
+
+/* No Results Message */
+.no-results { text-align: center; color: #888; padding: 40px; display: none; width: 100%; grid-column: 1 / -1; }
+
+@media(max-width:768px){ .apk-grid{grid-template-columns: 1fr;} .tags-container{justify-content: flex-start; overflow-x: auto; padding-bottom: 10px; flex-wrap: nowrap; -webkit-overflow-scrolling: touch;} .filter-tag{white-space: nowrap;} }
+.wa-float{position:fixed;bottom:28px;right:28px;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:26px;text-decoration:none;z-index:9999;box-shadow:0 4px 20px rgba(0,0,0,0.4);transition:all 0.3s}
+.wa-float:hover{background:#20ba5a;transform:scale(1.1)}
+
+/* ===== SR visual polish: section rhythm ===== */
+.products-section,.features-section,.video-section,.pay-section,.about-section,.contact-section,.faqs-section,.warranty-section{border-top:1px solid rgba(255,255,255,.045)}
+.features-section,.contact-section,.warranty-section{background:#0c0c14}
+.about-section,.faqs-section{background:#0a0a10}
+
+.btn-download{background:linear-gradient(135deg,#FFB347,#FF8C00 55%,#FF6B00);border:none;color:#201304;box-shadow:0 4px 16px rgba(255,140,0,.28);transition:transform .25s ease,box-shadow .25s ease}
+.btn-download:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(255,140,0,.42);color:#000}
+
+</style>
+</head>
+<body>
+
+<a href="https://wa.me/923229952880" target="_blank" class="wa-float">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<div id="navbar-placeholder"></div>
+
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="container" style="position:relative">
+    <div class="hero-icon"><i class="fa-solid fa-crown"></i></div>
+    <h1 class="section-title">PRO APKS</h1>
+    <div class="section-sub">Download Latest Modded & Pro APKs For Free</div>
+    
+    <div class="search-container">
+      <i class="fa-solid fa-search search-icon"></i>
+      <input type="text" class="search-input" id="searchInput" placeholder="Search apps by name or category..." onkeyup="filterApps()">
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="tags-container" id="filterTags">
+    <div class="filter-tag active" onclick="setFilter('All', this)">All Apps</div>
+    <div class="filter-tag" onclick="setFilter('Video Editors', this)"><i class="fa-solid fa-video"></i> Video Editors</div>
+    <div class="filter-tag" onclick="setFilter('Photo Editors', this)"><i class="fa-solid fa-image"></i> Photo Editors</div>
+    <div class="filter-tag" onclick="setFilter('Entertaining', this)"><i class="fa-solid fa-music"></i> Entertaining</div>
+    <div class="filter-tag" onclick="setFilter('Productivity', this)"><i class="fa-solid fa-briefcase"></i> Productivity</div>
+  </div>
+
+  <div class="apk-grid" id="appsGrid">
+    
+    <!-- 1. CapCut -->
+    <div class="apk-card" data-category="Video Editors">
+      <div class="app-header">
+        <img src="https://drive.google.com/thumbnail?id=1ZZuogZD6ExCfQ4j1Hg3Dm9a9CDvYLcZf&sz=w200" alt="CapCut" class="app-icon">
+        <div class="app-title">CapCut Pro By (SR)</div>
+      </div>
+      <div class="app-desc">Best video editor for Reels and TikToks. Pro features unlocked, no watermark.</div>
+      <div class="app-cat-badge"><i class="fa-solid fa-video"></i> Video Editors</div>
+      <div class="card-actions">
+        <a href="https://www.mediafire.com/folder/u1p9cb7l5rif4/Capcut" target="_blank" class="btn-download" onclick="smartDownload(event, this, 'https://www.mediafire.com/folder/u1p9cb7l5rif4/Capcut')"><i class="fa-solid fa-download"></i> Download</a>
+        <button class="btn-share" onclick="openShareModal('CapCut Pro')"><i class="fa-solid fa-share-nodes"></i></button>
+      </div>
+    </div>
+
+    <!-- 2. KineMaster -->
+    <div class="apk-card" data-category="Video Editors">
+      <div class="app-header">
+        <img src="https://drive.google.com/thumbnail?id=1WZ6mLnPcpOEXrdXnrBZt9Cyrb5uFkEm4&sz=w200" alt="KineMaster" class="app-icon">
+        <div class="app-title">KineMaster Pro By (SR)</div>
+      </div>
+      <div class="app-desc">Professional video editing tool with multi-layer support and premium assets unlocked.</div>
+      <div class="app-cat-badge"><i class="fa-solid fa-video"></i> Video Editors</div>
+      <div class="card-actions">
+        <a href="https://www.mediafire.com/folder/y5qzgkc08fzzw/KineMaster" target="_blank" class="btn-download" onclick="smartDownload(event, this, 'https://www.mediafire.com/folder/y5qzgkc08fzzw/KineMaster')"><i class="fa-solid fa-download"></i> Download</a>
+        <button class="btn-share" onclick="openShareModal('KineMaster Pro')"><i class="fa-solid fa-share-nodes"></i></button>
+      </div>
+    </div>
+
+    <!-- 3. Alight Motion -->
+    <div class="apk-card" data-category="Video Editors">
+      <div class="app-header">
+        <img src="https://drive.google.com/thumbnail?id=1_n8WToU__uvR6i31hp7oJSwHC6g8Id5g&sz=w200" alt="Alight Motion" class="app-icon">
+        <div class="app-title">Alight Motion Pro By (SR)</div>
+      </div>
+      <div class="app-desc">Top motion graphics and animation app. Pro transitions and XML support enabled.</div>
+      <div class="app-cat-badge"><i class="fa-solid fa-video"></i> Video Editors</div>
+      <div class="card-actions">
+        <a href="https://www.mediafire.com/folder/8ezthhrqv9wxd/Alight+Motion" target="_blank" class="btn-download" onclick="smartDownload(event, this, 'https://www.mediafire.com/folder/8ezthhrqv9wxd/Alight+Motion')"><i class="fa-solid fa-download"></i> Download</a>
+        <button class="btn-share" onclick="openShareModal('Alight Motion Pro')"><i class="fa-solid fa-share-nodes"></i></button>
+      </div>
+    </div>
+
+    <!-- 4. PicsArt -->
+    <div class="apk-card" data-category="Photo Editors">
+      <div class="app-header">
+        <img src="https://drive.google.com/thumbnail?id=1sTNGJmVJiAQF4f4_VIqc29CvMYj6LItg&sz=w200" alt="PicsArt" class="app-icon">
+        <div class="app-title">PicsArt Gold By (SR)</div>
+      </div>
+      <div class="app-desc">The ultimate photo editor and collage maker. Gold membership and premium fonts unlocked.</div>
+      <div class="app-cat-badge"><i class="fa-solid fa-image"></i> Photo Editors</div>
+      <div class="card-actions">
+        <a href="https://www.mediafire.com/folder/zvs96n10x5589/PicsArt" target="_blank" class="btn-download" onclick="smartDownload(event, this, 'https://www.mediafire.com/folder/zvs96n10x5589/PicsArt')"><i class="fa-solid fa-download"></i> Download</a>
+        <button class="btn-share" onclick="openShareModal('PicsArt Gold')"><i class="fa-solid fa-share-nodes"></i></button>
+      </div>
+    </div>
+
+    <!-- 5. Lightroom -->
+    <div class="apk-card" data-category="Photo Editors">
+      <div class="app-header">
+        <img src="https://drive.google.com/thumbnail?id=18gACD9mHIw0i6EKIMvUeRo-LP3OUvpdx&sz=w200" alt="Lightroom" class="app-icon">
+        <div class="app-title">Lightroom Premium By (SR)</div>
+      </div>
+      <div class="app-desc">Professional color grading and preset support. Premium masking and healing tools unlocked.</div>
+      <div class="app-cat-badge"><i class="fa-solid fa-image"></i> Photo Editors</div>
+      <div class="card-actions">
+        <a href="https://www.mediafire.com/folder/dakzz6qbs6psm/Lightroom" target="_blank" class="btn-download" onclick="smartDownload(event, this, 'https://www.mediafire.com/folder/dakzz6qbs6psm/Lightroom')"><i class="fa-solid fa-download"></i> Download</a>
+        <button class="btn-share" onclick="openShareModal('Lightroom Premium')"><i class="fa-solid fa-share-nodes"></i></button>
+      </div>
+    </div>
+
+    <!-- 6. InShot -->
+    <div class="apk-card" data-category="Video Editors">
+      <div class="app-header">
+        <img src="https://drive.google.com/thumbnail?id=15qR1TFMyXOzVbAAC4iOQ8QRaWwBiizut&sz=w200" alt="InShot" class="app-icon">
+        <div class="app-title">InShot Pro By (SR)</div>
+      </div>
+      <div class="app-desc">Quick and easy video & photo editor. Pro filters, effects, and no watermark.</div>
+      <div class="app-cat-badge"><i class="fa-solid fa-video"></i> Video Editors</div>
+      <div class="card-actions">
+        <a href="https://www.mediafire.com/folder/ywu5fe2y50zcs/InShot" target="_blank" class="btn-download" onclick="smartDownload(event, this, 'https://www.mediafire.com/folder/ywu5fe2y50zcs/InShot')"><i class="fa-solid fa-download"></i> Download</a>
+        <button class="btn-share" onclick="openShareModal('InShot Pro')"><i class="fa-solid fa-share-nodes"></i></button>
+      </div>
+    </div>
+
+    <!-- 7. VN Editor -->
+    <div class="apk-card" data-category="Video Editors">
+      <div class="app-header">
+        <img src="https://drive.google.com/thumbnail?id=1IiyG2XRkmzMIYlSqyi4ESl8-ZPPOZuP2&sz=w200" alt="VN Editor" class="app-icon">
+        <div class="app-title">VN Editor Pro By (SR)</div>
+      </div>
+      <div class="app-desc">VlogNow is a powerful video maker for beginners and pros. Ad-free pro version.</div>
+      <div class="app-cat-badge"><i class="fa-solid fa-video"></i> Video Editors</div>
+      <div class="card-actions">
+        <a href="https://www.mediafire.com/folder/024q1vsw6vrvu/VN" target="_blank" class="btn-download" onclick="smartDownload(event, this, 'https://www.mediafire.com/folder/024q1vsw6vrvu/VN')"><i class="fa-solid fa-download"></i> Download</a>
+        <button class="btn-share" onclick="openShareModal('VN Editor Pro')"><i class="fa-solid fa-share-nodes"></i></button>
+      </div>
+    </div>
+
+    <!-- 8. Shotify (Spotify) -->
+    <div class="apk-card" data-category="Entertaining">
+      <div class="app-header">
+        <img src="https://drive.google.com/thumbnail?id=1dob-BU1fEGa6YP9sPnFY4pOleIT7pA9d&sz=w200" alt="Shotify" class="app-icon">
+        <div class="app-title">Shotify Premium By (SR)</div>
+      </div>
+      <div class="app-desc">Listen to your favorite music and podcasts ad-free. Premium offline listening enabled.</div>
+      <div class="app-cat-badge"><i class="fa-solid fa-music"></i> Entertaining</div>
+      <div class="card-actions">
+        <a href="https://www.mediafire.com/folder/sacm1emb1qx62/Shotify" target="_blank" class="btn-download" onclick="smartDownload(event, this, 'https://www.mediafire.com/folder/sacm1emb1qx62/Shotify')"><i class="fa-solid fa-download"></i> Download</a>
+        <button class="btn-share" onclick="openShareModal('Shotify Premium')"><i class="fa-solid fa-share-nodes"></i></button>
+      </div>
+    </div>
+
+    <!-- 9. Filmora -->
+    <div class="apk-card" data-category="Video Editors">
+      <div class="app-header">
+        <img src="https://drive.google.com/thumbnail?id=1VZzecE5IzfS8mFfAf_Bu70YsQZ4qCN53&sz=w200" alt="Filmora" class="app-icon">
+        <div class="app-title">Filmora Pro By (SR)</div>
+      </div>
+      <div class="app-desc">Easy-to-use video editor with rich templates and AI features. Pro version unlocked.</div>
+      <div class="app-cat-badge"><i class="fa-solid fa-video"></i> Video Editors</div>
+      <div class="card-actions">
+        <a href="https://www.mediafire.com/folder/emz6rw98g1m4a/Filmora" target="_blank" class="btn-download" onclick="smartDownload(event, this, 'https://www.mediafire.com/folder/emz6rw98g1m4a/Filmora')"><i class="fa-solid fa-download"></i> Download</a>
+        <button class="btn-share" onclick="openShareModal('Filmora Pro')"><i class="fa-solid fa-share-nodes"></i></button>
+      </div>
+    </div>
+
+    <!-- 10. CamScanner -->
+    <div class="apk-card" data-category="Productivity">
+      <div class="app-header">
+        <img src="https://drive.google.com/thumbnail?id=1_d_AoWiyoW-I4_pcseF1aXIB3JhrQzef&sz=w200" alt="CamScanner" class="app-icon">
+        <div class="app-title">CamScanner Pro By (SR)</div>
+      </div>
+      <div class="app-desc">Turn your device into a powerful portable scanner. Gold features and no watermark.</div>
+      <div class="app-cat-badge"><i class="fa-solid fa-briefcase"></i> Productivity</div>
+      <div class="card-actions">
+        <a href="https://www.mediafire.com/folder/h4740qoe26pwo/CamScanner" target="_blank" class="btn-download" onclick="smartDownload(event, this, 'https://www.mediafire.com/folder/h4740qoe26pwo/CamScanner')"><i class="fa-solid fa-download"></i> Download</a>
+        <button class="btn-share" onclick="openShareModal('CamScanner Pro')"><i class="fa-solid fa-share-nodes"></i></button>
+      </div>
+    </div>
+
+    <div id="noResults" class="no-results">
+      <i class="fa-solid fa-ghost" style="font-size: 30px; margin-bottom: 10px; display: block;"></i>
+      <h4>No apps found matching your search.</h4>
+    </div>
+
+  </div>
+</div>
+
+<div class="modal-overlay" id="shareModal" onclick="closeOnBg(event, 'shareModal')">
+  <div class="modal-box">
+    <i class="fa-solid fa-times close-modal" onclick="closeModal('shareModal')"></i>
+    <div class="share-title" id="shareTitle">Share "App Name"</div>
+    <div class="share-sub">Share this app with your friends!</div>
+    
+    <div class="copy-box">
+      <input type="text" class="copy-input" id="shareLinkInput" readonly value="https://srdigitalworld.shop/pro-apks.html">
+      <button class="copy-btn" onclick="copyShareLink()"><i class="fa-solid fa-copy"></i> Copy</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ==========================================
+// 1. NAVBAR LOAD, HIGHLIGHT KAREIN (Mobile support ke sath)
+// ==========================================
+fetch('/navbar.html')
+  .then(response => response.text())
+  .then(data => { 
+    document.getElementById('navbar-placeholder').innerHTML = data; 
+    
+    // Page load hone par highlight logic
+    let segs = window.location.pathname.split('/').filter(s => s);
+      let top = segs[0] || 'index';
+      let navLinks = document.querySelectorAll('.nav-link-item');
+      navLinks.forEach(link => {
+        let href = link.getAttribute('href') || '';
+        let hseg = href.split('/').filter(s => s)[0] || 'index';
+        if(hseg === top) { link.classList.add('active'); }
+        else { link.classList.remove('active'); }
+      });
+});
+
+// ==========================================
+// 2. MOBILE MENU & DROPDOWN FUNCTIONS
+// ==========================================
+function toggleMobileMenu() {
+  let menu = document.getElementById('mobileMenu');
+  if(menu) {
+    menu.classList.toggle('show-menu');
+  }
+}
+
+function toggleDropdown() {
+  if(window.innerWidth <= 991) {
+    let drop = document.getElementById("servicesDropdown");
+    if(drop) drop.classList.toggle("show-mobile");
+  }
+}
+
+let currentFilter = 'All';
+
+// Filter by Tags
+function setFilter(category, btnElement) {
+  let buttons = document.querySelectorAll('.filter-tag');
+  buttons.forEach(btn => btn.classList.remove('active'));
+  btnElement.classList.add('active');
+  
+  currentFilter = category;
+  applyFilters();
+}
+
+// Search by Text
+function filterApps() {
+  applyFilters();
+}
+
+// Main Filtering Logic
+function applyFilters() {
+  let searchInput = document.getElementById('searchInput').value.toLowerCase();
+  let cards = document.querySelectorAll('.apk-card');
+  let visibleCount = 0;
+
+  cards.forEach(card => {
+    let title = card.querySelector('.app-title').textContent.toLowerCase();
+    let desc = card.querySelector('.app-desc').textContent.toLowerCase();
+    let cardCat = card.getAttribute('data-category');
+    
+    let matchesSearch = title.includes(searchInput) || desc.includes(searchInput) || cardCat.toLowerCase().includes(searchInput);
+    let matchesCategory = (currentFilter === 'All') || (cardCat === currentFilter);
+
+    if (matchesSearch && matchesCategory) {
+      card.style.display = "flex";
+      visibleCount++;
+    } else {
+      card.style.display = "none";
+    }
+  });
+
+  document.getElementById('noResults').style.display = (visibleCount === 0) ? "block" : "none";
+}
+
+// Share Modal Logic
+function openShareModal(appName) {
+  document.getElementById('shareTitle').textContent = `Share "${appName}"`;
+  document.getElementById('shareModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(id) {
+  document.getElementById(id).classList.remove('open');
+  document.body.style.overflow = 'auto';
+}
+
+function closeOnBg(e, id) {
+  if (e.target === document.getElementById(id)) { closeModal(id); }
+}
+
+function copyShareLink() {
+  let copyText = document.getElementById("shareLinkInput");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); 
+  navigator.clipboard.writeText(copyText.value);
+  
+  let btn = document.querySelector('.copy-btn');
+  btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+  setTimeout(() => { btn.innerHTML = '<i class="fa-solid fa-copy"></i> Copy'; }, 2000);
+}
+
+// ==========================================
+// 3. SMART DOWNLOAD LOGIC (Adsterra Integration)
+// ==========================================
+function smartDownload(event, buttonElement, realDownloadLink) {
+  event.preventDefault(); 
+
+  let isClicked = buttonElement.getAttribute("data-clicked");
+
+  if (isClicked !== "true") {
+    // 1ST CLICK: OPEN ADSTERRA DIRECT LINK
+    let adLink = "https://www.effectivecpmnetwork.com/sz4ymn5s?key=b8c82ecf7f60668af0895ea069d29f86"; 
+    window.open(adLink, '_blank');
+
+    // Make the button look professional and indicate it's ready for the real download
+    buttonElement.setAttribute("data-clicked", "true");
+    buttonElement.innerHTML = '<i class="fa-solid fa-unlock"></i> Click Again';
+    buttonElement.style.background = "#25D366"; // Green color to show "Go"
+    buttonElement.style.color = "#000";
+    buttonElement.style.borderColor = "#25D366";
+
+    // Change text slightly after a short delay
+    setTimeout(() => {
+      buttonElement.innerHTML = '<i class="fa-solid fa-download"></i> Download Ready';
+    }, 2500);
+
+  } else {
+    // 2ND CLICK: OPEN REAL MEDIAFIRE LINK
+    window.open(realDownloadLink, '_blank');
+    
+    // Resetting button for future clicks
+    buttonElement.setAttribute("data-clicked", "false"); 
+    buttonElement.innerHTML = '<i class="fa-solid fa-download"></i> Download';
+    buttonElement.style.background = "transparent";
+    buttonElement.style.color = "#FF8C00";
+    buttonElement.style.borderColor = "#FF8C00";
+  }
+}
+</script>
+
+<!-- Adsterra Social Bar Code (Popunder removed to stop ads on category clicks) -->
+<script type='text/javascript' src='//pl30327570.effectivecpmnetwork.com/40/c6/ef/40c6efc207ecd8ad1f6be56f2ffb8101.js'></script>
+
+</body>
+</html>
