@@ -133,6 +133,11 @@ html { scroll-behavior: smooth; }
 .btn-send{background:linear-gradient(135deg,#FFB347,#FF8C00 55%,#FF6B00);box-shadow:0 4px 16px rgba(255,140,0,.28);transition:transform .25s ease,box-shadow .25s ease}
 .btn-send:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(255,140,0,.4)}
 
+
+/* ===== hero click fix: decorative overlays must not block buttons ===== */
+.hero-bg,.glow-orb{pointer-events:none}
+.hero .container{position:relative;z-index:1}
+
 </style>
 </head>
 <body>
