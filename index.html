@@ -55,6 +55,26 @@ html { scroll-behavior: smooth; }
 .hero-cta:hover{background:#FFB347;transform:translateY(-2px);box-shadow:0 10px 30px rgba(255,140,0,0.4)}
 .hero-cta-ghost{display:inline-flex;align-items:center;gap:8px;background:transparent;color:#FF8C00;padding:14px 28px;border-radius:100px;font-weight:600;font-size:15px;border:1px solid rgba(255,140,0,0.4);text-decoration:none;transition:all 0.3s;cursor:pointer;margin-left:12px}
 .hero-cta-ghost:hover{background:rgba(255,140,0,0.08);color:#FFB347}
+.hero-stats{display:flex;gap:36px;margin-top:36px;flex-wrap:wrap}
+.hero-stat-num{font-size:1.6rem;font-weight:800;color:#fff}
+.hero-stat-num::first-letter{color:#FF8C00}
+.hero-stat-label{font-size:12px;color:#777;margin-top:2px;letter-spacing:.4px}
+.hero-visual{position:relative;height:480px}
+.hero-phone{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:250px;background:#0e0e16;border:1px solid #2a2a3a;border-radius:28px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.55),0 0 60px rgba(255,140,0,.12)}
+.hp-head{display:flex;align-items:center;gap:10px;background:#111118;padding:14px;color:#fff;border-bottom:1px solid #1e1e2a}
+.hp-head i{color:#25D366;font-size:26px}
+.hp-head b{font-size:13px;display:block}.hp-head small{color:#25D366;font-size:11px}
+.hp-chat{padding:16px 12px;display:flex;flex-direction:column;gap:10px;background:radial-gradient(ellipse at 50% 0%,rgba(255,140,0,.06),transparent 70%)}
+.hp-msg{font-size:12px;line-height:1.55;padding:10px 12px;border-radius:14px;max-width:88%}
+.hp-msg.in{background:#1c1c28;color:#ddd;align-self:flex-start;border-bottom-left-radius:4px}
+.hp-msg.out{background:rgba(255,140,0,.16);border:1px solid rgba(255,140,0,.35);color:#ffd9a8;align-self:flex-end;border-bottom-right-radius:4px}
+.float-chip{position:absolute;display:flex;align-items:center;gap:8px;background:rgba(17,17,24,.92);border:1px solid #2a2a3a;border-radius:100px;padding:8px 14px 8px 8px;text-decoration:none;box-shadow:0 12px 30px rgba(0,0,0,.5);animation:floaty 5s ease-in-out infinite;z-index:2}
+.float-chip img{width:34px;height:34px;border-radius:50%;object-fit:cover;background:#fff}
+.float-chip span{color:#FF8C00;font-weight:800;font-size:13px}
+.fc1{top:6%;left:2%;animation-delay:0s}.fc2{top:22%;right:0;animation-delay:1.2s}
+.fc3{bottom:24%;left:0;animation-delay:2.1s}.fc4{bottom:8%;right:4%;animation-delay:3s}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@media(max-width:991px){.hero-visual{height:420px;margin-top:20px}.hero-stats{gap:24px}}
 .stats-strip{background:#111118;border-top:1px solid #1a1a25;border-bottom:1px solid #1a1a25;padding:36px 0}
 .stat-item{text-align:center;padding:0 20px}
 .stat-num{font-size:2rem;font-weight:900;color:#FF8C00;letter-spacing:-1px}
@@ -214,6 +234,27 @@ html { scroll-behavior: smooth; }
           <a href="https://wa.me/923229952880" target="_blank" class="hero-cta-ghost">
             <i class="fa-brands fa-whatsapp"></i> Chat with Us
           </a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><div class="hero-stat-num">4999+</div><div class="hero-stat-label">Orders Done</div></div>
+          <div class="hero-stat"><div class="hero-stat-num">4.9★</div><div class="hero-stat-label">Customer Rating</div></div>
+          <div class="hero-stat"><div class="hero-stat-num">~2 min</div><div class="hero-stat-label">Avg. Delivery</div></div>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="hero-visual">
+          <a href="/products/canva/" class="float-chip fc1"><img src="/images/canva.png" alt="Canva Pro"><span>Rs 149</span></a>
+          <a href="/products/netflix/" class="float-chip fc2"><img src="/images/netflix.png" alt="Netflix 4K"><span>Rs 300</span></a>
+          <a href="/products/capcut/" class="float-chip fc3"><img src="/images/capcut.jpg" alt="CapCut Pro"><span>Rs 650</span></a>
+          <a href="/products/ytpremium/" class="float-chip fc4"><img src="/images/ytpremium.png" alt="YouTube Premium"><span>Rs 1,500</span></a>
+          <div class="hero-phone">
+            <div class="hp-head"><i class="fa-brands fa-whatsapp"></i><div><b>SR Digital World</b><small>online</small></div></div>
+            <div class="hp-chat">
+              <div class="hp-msg in">Assalam-o-Alaikum! Canva Pro chahiye 🙋</div>
+              <div class="hp-msg out">Walaikum Assalam! ✅ Ho gaya — 1 Month Rs 149. Gmail bhejein, pehle activation phir payment 👍</div>
+              <div class="hp-msg in">Done! Pro active ho gaya 🔥</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
