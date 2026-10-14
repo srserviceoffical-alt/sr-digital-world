@@ -34,8 +34,22 @@
 .products-section,.features-section,.video-section,.pay-section,.about-section,.contact-section,.faqs-section,.warranty-section{border-top:1px solid rgba(18,22,43,.045)}.features-section,.contact-section,.warranty-section{background:var(--bg)}.about-section,.faqs-section{background:var(--bg)}/* ===== SR visual polish: card glow ===== */
 .product-card{transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}.product-card:hover{transform:translateY(-6px);box-shadow:0 14px 34px rgba(250,146,11,.13);border-color:rgba(250,146,11,.5)}
 @media(hover:none){.product-card:hover{transform:none;box-shadow:none}}/* ===== SR visual polish: gradient CTA buttons ===== */
-.order-btn{background:var(--cta);border:none;color:#201304;box-shadow:0 4px 16px rgba(250,146,11,.28);transition:transform .25s ease,box-shadow .25s ease}.order-btn:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(250,146,11,.42);color:#fff}.order-btn i{margin-right:6px}/* ===== light-theme global additions ===== */
-.product-card:hover,.review-card:hover,.pay-card:hover{transform:translateY(-6px);border-color:var(--primary) !important;box-shadow:0 12px 32px rgba(20,24,60,.12)}.hero-cta,.pd-order,.order-btn,.combo-order,.wiki-btn:not(.ghost),.copy-btn{box-shadow:0 4px 14px rgba(22,163,74,.35)}.hero-cta:hover,.pd-order:hover,.order-btn:hover,.combo-order:hover,.wiki-btn:not(.ghost):hover{background:var(--cta-hover) !important;color:#fff !important}
+.order-btn{background:var(--cta);border:none;color:#201304;box-shadow:0 4px 16px rgba(250,146,11,.28);transition:transform .25s ease,box-shadow .25s ease}.order-btn:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(250,146,11,.42);color:#fff}.order-btn i{margin-right:6px}
+/* ===== light-theme global additions ===== */
+.product-card:hover,.review-card:hover,.pay-card:hover{transform:translateY(-6px);border-color:var(--primary)!important;box-shadow:0 12px 32px rgba(20,24,60,.12)}
+.hero-cta,.pd-order,.order-btn,.combo-order,.wiki-btn:not(.ghost),.copy-btn{box-shadow:0 4px 14px rgba(22,163,74,.35)}
+.hero-cta:hover,.pd-order:hover,.order-btn:hover,.combo-order:hover,.wiki-btn:not(.ghost):hover{background:var(--cta-hover)!important;color:#fff!important}
+/* ===== navbar force-light (beats cached navbar.html styles) ===== */
+#navbar-placeholder .nav-bar{background:rgba(255,255,255,.95)!important;border-bottom:1px solid var(--border)!important}
+#navbar-placeholder .nav-logo{background:linear-gradient(135deg,var(--primary),var(--accent))!important;-webkit-background-clip:text!important;-webkit-text-fill-color:transparent!important}
+#navbar-placeholder .nav-link-item{color:var(--text-muted)!important}
+#navbar-placeholder .nav-link-item:hover,#navbar-placeholder .nav-link-item.active{color:var(--primary)!important}
+#navbar-placeholder .menu-toggle{color:var(--primary)!important}
+#navbar-placeholder .nav-links{background:var(--card)!important;border-color:var(--border)!important}
+#navbar-placeholder .dropdown-content{background:var(--card)!important;border:1px solid var(--border)!important;box-shadow:0 10px 30px rgba(20,24,60,.12)!important}
+#navbar-placeholder .dropdown-content a{color:var(--text-muted)!important}
+#navbar-placeholder .dropdown-content a:hover{color:var(--primary)!important;background:rgba(250,146,11,.06)!important}
+#navbar-placeholder .channel-float{background:var(--card)!important;border:1px solid var(--border)!important}
 </style>
 </head>
 <body>
@@ -500,7 +514,7 @@
 
 <script>
 // --- NAVBAR SCRIPT START ---
-fetch('/navbar.html')
+fetch('/navbar.html?v=2')
   .then(response => response.text())
   .then(data => {
     document.getElementById('navbar-placeholder').innerHTML = data;
