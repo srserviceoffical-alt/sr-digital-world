@@ -217,7 +217,7 @@ body{background:#0a0a0f;color:#e8e8f0;font-family:'Inter',sans-serif;overflow-x:
         </details>
         <script>function copyPdPay(t,b){if(navigator.clipboard){navigator.clipboard.writeText(t).then(function(){var o=b.innerHTML;b.innerHTML='Copied \u2713';setTimeout(function(){b.innerHTML=o},1500)})}}</script>
 <div class="pd-plans-label">Select Plan:</div>
-        <div class="pd-plans"><button class="pd-plan active" onclick="selPlan(0,this)">Rs. 300<small>1 month</small></button></div>
+        <div class="pd-plans"><button class="pd-plan active" onclick="selPlan(0,this)">Rs. 300<small>1 month</small></button><button class="pd-plan" onclick="selPlan(1,this)">Rs. 500<small>2 months</small></button></div>
         <div class="pd-price"><span id="pdPrice">Rs. 300</span> <span id="pdDur">/ 1 month</span></div>
         <div class="pd-actions">
           <a class="pd-order" id="pdOrder" href="#" target="_blank"><i class="fa-brands fa-whatsapp"></i> Order Now</a>
@@ -296,7 +296,7 @@ function toggleMobileMenu() {
 }
 
 const PNAME = "Surfshark VPN";
-const PLANS = [["300", "1 month"]];
+const PLANS = [["300", "1 month"], ["500", "2 months"]];
 let curPlan = 0;
 function selPlan(i, el){
   curPlan = i;
