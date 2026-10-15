@@ -38,13 +38,13 @@
 .js .rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;transition-delay:calc(var(--rd,0)*80ms)}
 .js .rv.in{opacity:1;transform:none}
 /* tool marquee: continuous row, pauses on hover */
-.tool-marquee{background:#fff;border-bottom:1px solid var(--border);overflow:hidden;padding:12px 0}
+.tool-marquee{background:#fff;border-bottom:1px solid var(--border);overflow:hidden;padding:14px 0}
 .tool-marquee-track{display:inline-flex;width:max-content;animation:tmScroll 45s linear infinite}
 .tool-marquee:hover .tool-marquee-track{animation-play-state:paused}
 .tm-group{display:inline-flex;align-items:center;gap:26px;padding-right:26px;white-space:nowrap}
-.tm-group a{color:#454545;font-size:14px;font-weight:700;text-decoration:none;white-space:nowrap}
+.tm-group a{color:#454545;font-size:16px;font-weight:700;text-decoration:none;white-space:nowrap}
 .tm-group a:hover{color:var(--primary-text)}
-.tm-sep{color:var(--primary);font-size:10px}
+.tm-sep{color:var(--primary);font-size:11px}
 @keyframes tmScroll{to{transform:translateX(-50%)}}
 /* ===== SR visual polish: gradient CTA buttons ===== */
 .btn-send{background:linear-gradient(135deg,var(--accent),var(--primary) 55%,var(--primary));box-shadow:0 4px 16px rgba(250,146,11,.28);transition:transform .25s ease,box-shadow .25s ease}.btn-send:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(250,146,11,.4)}/* ===== hero click fix: decorative overlays must not block buttons ===== */
@@ -217,6 +217,16 @@ body{padding-bottom:68px}
 <div class="ticker">
   <span class="ticker-inner">⚡ Premium Digital Tools &nbsp;&nbsp;&nbsp; 🚀 Instant Delivery &nbsp;&nbsp;&nbsp; 🔒 100% Secure &nbsp;&nbsp;&nbsp; 🌟 24/7 Support &nbsp;&nbsp;&nbsp; 🇵🇰 Pakistan's #1 Digital Store &nbsp;&nbsp;&nbsp; 💰 Best Prices Guaranteed &nbsp;&nbsp;&nbsp; ⚡ Premium Digital Tools &nbsp;&nbsp;&nbsp; 🚀 Instant Delivery &nbsp;&nbsp;&nbsp;</span>
 </div>
+<div class="tool-marquee" aria-label="All tools">
+  <div class="tool-marquee-track">
+    <div class="tm-group">
+      <a href="/products/canva/">Canva</a><span class="tm-sep">✦</span><a href="/products/capcut/">CapCut</a><span class="tm-sep">✦</span><a href="/products/gemini/">Gemini</a><span class="tm-sep">✦</span><a href="/products/adobe/">Adobe Express</a><span class="tm-sep">✦</span><a href="/products/figma/">Figma</a><span class="tm-sep">✦</span><a href="/products/framer/">Framer</a><span class="tm-sep">✦</span><a href="/products/surf/">Surfshark</a><span class="tm-sep">✦</span><a href="/products/nordvpn/">NordVPN</a><span class="tm-sep">✦</span><a href="/products/quillbot/">Quillbot</a><span class="tm-sep">✦</span><a href="/products/lovable/">Lovable</a><span class="tm-sep">✦</span><a href="/products/netflix/">Netflix</a><span class="tm-sep">✦</span><a href="/products/ytpremium/">YouTube</a><span class="tm-sep">✦</span><a href="/products/applemusic/">Apple Music</a><span class="tm-sep">✦</span><a href="/products/office365/">Microsoft</a><span class="tm-sep">✦</span><a href="/products/notion/">Notion</a><span class="tm-sep">✦</span><a href="/products/ilovepdf/">iLovePDF</a><span class="tm-sep">✦</span><a href="/products/coursera/">Coursera</a><span class="tm-sep">✦</span><a href="/products/udemy/">Udemy</a><span class="tm-sep">✦</span><a href="/products/duolingo/">Duolingo</a><span class="tm-sep">✦</span><a href="/products/linkedin/">LinkedIn</a><span class="tm-sep">✦</span>
+    </div>
+    <div class="tm-group" aria-hidden="true">
+      <a href="/products/canva/" tabindex="-1">Canva</a><span class="tm-sep">✦</span><a href="/products/capcut/" tabindex="-1">CapCut</a><span class="tm-sep">✦</span><a href="/products/gemini/" tabindex="-1">Gemini</a><span class="tm-sep">✦</span><a href="/products/adobe/" tabindex="-1">Adobe Express</a><span class="tm-sep">✦</span><a href="/products/figma/" tabindex="-1">Figma</a><span class="tm-sep">✦</span><a href="/products/framer/" tabindex="-1">Framer</a><span class="tm-sep">✦</span><a href="/products/surf/" tabindex="-1">Surfshark</a><span class="tm-sep">✦</span><a href="/products/nordvpn/" tabindex="-1">NordVPN</a><span class="tm-sep">✦</span><a href="/products/quillbot/" tabindex="-1">Quillbot</a><span class="tm-sep">✦</span><a href="/products/lovable/" tabindex="-1">Lovable</a><span class="tm-sep">✦</span><a href="/products/netflix/" tabindex="-1">Netflix</a><span class="tm-sep">✦</span><a href="/products/ytpremium/" tabindex="-1">YouTube</a><span class="tm-sep">✦</span><a href="/products/applemusic/" tabindex="-1">Apple Music</a><span class="tm-sep">✦</span><a href="/products/office365/" tabindex="-1">Microsoft</a><span class="tm-sep">✦</span><a href="/products/notion/" tabindex="-1">Notion</a><span class="tm-sep">✦</span><a href="/products/ilovepdf/" tabindex="-1">iLovePDF</a><span class="tm-sep">✦</span><a href="/products/coursera/" tabindex="-1">Coursera</a><span class="tm-sep">✦</span><a href="/products/udemy/" tabindex="-1">Udemy</a><span class="tm-sep">✦</span><a href="/products/duolingo/" tabindex="-1">Duolingo</a><span class="tm-sep">✦</span><a href="/products/linkedin/" tabindex="-1">LinkedIn</a><span class="tm-sep">✦</span>
+    </div>
+  </div>
+</div>
 
 
 <div class="stats-strip">
@@ -229,17 +239,6 @@ body{padding-bottom:68px}
       <div class="col stat-item rv" style="--rd:2"><div class="stat-num">100%</div><div class="stat-label">Secure</div></div>
       <div class="col-auto stat-divider d-none d-md-block"></div>
       <div class="col stat-item rv" style="--rd:3"><div class="stat-num">⚡ Fast</div><div class="stat-label">Instant Delivery</div></div>
-    </div>
-  </div>
-</div>
-
-<div class="tool-marquee" aria-label="All tools">
-  <div class="tool-marquee-track">
-    <div class="tm-group">
-      <a href="/products/canva/">Canva</a><span class="tm-sep">✦</span><a href="/products/capcut/">CapCut</a><span class="tm-sep">✦</span><a href="/products/gemini/">Gemini</a><span class="tm-sep">✦</span><a href="/products/adobe/">Adobe Express</a><span class="tm-sep">✦</span><a href="/products/figma/">Figma</a><span class="tm-sep">✦</span><a href="/products/framer/">Framer</a><span class="tm-sep">✦</span><a href="/products/surf/">Surfshark</a><span class="tm-sep">✦</span><a href="/products/nordvpn/">NordVPN</a><span class="tm-sep">✦</span><a href="/products/quillbot/">Quillbot</a><span class="tm-sep">✦</span><a href="/products/lovable/">Lovable</a><span class="tm-sep">✦</span><a href="/products/netflix/">Netflix</a><span class="tm-sep">✦</span><a href="/products/ytpremium/">YouTube</a><span class="tm-sep">✦</span><a href="/products/applemusic/">Apple Music</a><span class="tm-sep">✦</span><a href="/products/office365/">Microsoft</a><span class="tm-sep">✦</span><a href="/products/notion/">Notion</a><span class="tm-sep">✦</span><a href="/products/ilovepdf/">iLovePDF</a><span class="tm-sep">✦</span><a href="/products/coursera/">Coursera</a><span class="tm-sep">✦</span><a href="/products/udemy/">Udemy</a><span class="tm-sep">✦</span><a href="/products/duolingo/">Duolingo</a><span class="tm-sep">✦</span><a href="/products/linkedin/">LinkedIn</a><span class="tm-sep">✦</span>
-    </div>
-    <div class="tm-group" aria-hidden="true">
-      <a href="/products/canva/" tabindex="-1">Canva</a><span class="tm-sep">✦</span><a href="/products/capcut/" tabindex="-1">CapCut</a><span class="tm-sep">✦</span><a href="/products/gemini/" tabindex="-1">Gemini</a><span class="tm-sep">✦</span><a href="/products/adobe/" tabindex="-1">Adobe Express</a><span class="tm-sep">✦</span><a href="/products/figma/" tabindex="-1">Figma</a><span class="tm-sep">✦</span><a href="/products/framer/" tabindex="-1">Framer</a><span class="tm-sep">✦</span><a href="/products/surf/" tabindex="-1">Surfshark</a><span class="tm-sep">✦</span><a href="/products/nordvpn/" tabindex="-1">NordVPN</a><span class="tm-sep">✦</span><a href="/products/quillbot/" tabindex="-1">Quillbot</a><span class="tm-sep">✦</span><a href="/products/lovable/" tabindex="-1">Lovable</a><span class="tm-sep">✦</span><a href="/products/netflix/" tabindex="-1">Netflix</a><span class="tm-sep">✦</span><a href="/products/ytpremium/" tabindex="-1">YouTube</a><span class="tm-sep">✦</span><a href="/products/applemusic/" tabindex="-1">Apple Music</a><span class="tm-sep">✦</span><a href="/products/office365/" tabindex="-1">Microsoft</a><span class="tm-sep">✦</span><a href="/products/notion/" tabindex="-1">Notion</a><span class="tm-sep">✦</span><a href="/products/ilovepdf/" tabindex="-1">iLovePDF</a><span class="tm-sep">✦</span><a href="/products/coursera/" tabindex="-1">Coursera</a><span class="tm-sep">✦</span><a href="/products/udemy/" tabindex="-1">Udemy</a><span class="tm-sep">✦</span><a href="/products/duolingo/" tabindex="-1">Duolingo</a><span class="tm-sep">✦</span><a href="/products/linkedin/" tabindex="-1">LinkedIn</a><span class="tm-sep">✦</span>
     </div>
   </div>
 </div>
