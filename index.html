@@ -64,7 +64,10 @@
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--border);box-shadow:0 2px 10px rgba(20,24,60,.06);color:var(--text);padding:8px 18px;border-radius:100px;font-size:13px;font-weight:600;margin-bottom:20px}
 .hero-badge i{color:var(--cta)}
 .hero-title{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:900;line-height:1.05;letter-spacing:-2px;color:var(--text);margin-bottom:16px}
-.hero-title .accent{background:linear-gradient(120deg,var(--primary),var(--accent));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero-title .accent{background:linear-gradient(120deg,var(--primary),var(--accent));background-size:220% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:220% center}}
+#typedAccent{border-right:3px solid var(--primary);padding-right:6px;animation:caret 1.05s step-end infinite}
+@keyframes caret{50%{border-color:transparent}}
 .hero-sub{font-size:1.1rem;color:var(--text-muted);line-height:1.7;max-width:520px;margin-bottom:28px;font-weight:300}
 .hero-cta{display:inline-flex;align-items:center;gap:10px;background:var(--cta);color:#fff;box-shadow:0 8px 24px rgba(21,128,61,.30);padding:14px 28px;border-radius:100px;font-weight:700;font-size:15px;text-decoration:none;transition:transform .3s ease,box-shadow .3s ease;border:none;cursor:pointer}
 .hero-cta:hover{transform:translateY(-2px)}
@@ -83,56 +86,47 @@
 .proof-text{font-size:14px;color:var(--text-muted)}
 .proof-text strong{color:var(--text)}
 .proof-text .star{color:var(--gold)}
-/* bento grid */
-.hero-visual{position:relative;z-index:1}
-.hero-bento{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.bento-card{background:rgba(255,255,255,.72);backdrop-filter:blur(14px) saturate(160%);-webkit-backdrop-filter:blur(14px) saturate(160%);border:1px solid rgba(255,255,255,.9);box-shadow:0 8px 24px rgba(20,24,60,.10);border-radius:18px;padding:20px 14px;display:flex;flex-direction:column;align-items:center;gap:8px;text-decoration:none;text-align:center;transition:transform .25s ease,box-shadow .25s ease}
-.bento-card:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(20,24,60,.14)}
-.bento-card img{width:56px;height:56px;object-fit:contain}
-.bento-name{font-size:14px;font-weight:700;color:var(--text);line-height:1.3}
-.bento-price{font-size:13px;font-weight:800;color:var(--primary-text);margin-top:2px}
-.bento-order{font-size:11px;font-weight:700;color:#fff;background:var(--cta);padding:6px 18px;border-radius:100px;margin-top:4px}
-/* floating chips: max 3, light glass, slow */
-.float-chip{position:absolute;display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.72);backdrop-filter:blur(14px) saturate(160%);-webkit-backdrop-filter:blur(14px) saturate(160%);border:1px solid rgba(255,255,255,.9);box-shadow:0 8px 24px rgba(20,24,60,.10);border-radius:100px;padding:8px 14px 8px 8px;text-decoration:none;z-index:2;animation:floaty 7s ease-in-out infinite}
+/* light-theme chip + phone overrides */
+.float-chip{background:linear-gradient(135deg,rgba(18,22,43,.16),rgba(18,22,43,.05)) !important;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(18,22,43,.28) !important;box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 8px 24px rgba(20,24,60,.12) !important}
+.hero-phone{background:linear-gradient(160deg,rgba(40,40,60,.72),rgba(16,16,26,.62))!important;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.22)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 30px 80px rgba(0,0,0,.55),0 0 60px rgba(255,140,0,.12)!important}
+.hp-head{background:rgba(255,255,255,.05)!important}
+.hero-visual{position:relative;height:480px;z-index:1}
+.hero-phone{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:250px;background:#0e0e16;border:1px solid #2a2a3a;border-radius:28px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.55),0 0 60px rgba(255,140,0,.12)}
+.hp-head{display:flex;align-items:center;gap:10px;background:#111118;padding:14px;color:#fff;border-bottom:1px solid #1e1e2a}
+.hp-head i{color:#25D366;font-size:26px}
+.hp-head b{font-size:13px;display:block}
+.hp-head small{color:#25D366;font-size:11px}
+.hp-chat{padding:16px 12px;display:flex;flex-direction:column;gap:10px;background:radial-gradient(ellipse at 50% 0%,rgba(255,140,0,.06),transparent 70%)}
+.hp-msg{font-size:12px;line-height:1.55;padding:10px 12px;border-radius:14px;max-width:88%}
+.hp-msg.in{background:#1c1c28;color:#ddd;align-self:flex-start;border-bottom-left-radius:4px}
+.hp-msg.out{background:rgba(255,140,0,.16);border:1px solid rgba(255,140,0,.35);color:#ffd9a8;align-self:flex-end;border-bottom-right-radius:4px}
+.float-chip{position:absolute;display:flex;align-items:center;gap:8px;background:rgba(17,17,24,.92);border:1px solid var(--border);border-radius:100px;padding:8px 14px 8px 8px;text-decoration:none;box-shadow:0 8px 24px rgba(20,24,60,.12);animation:floaty 5s ease-in-out infinite;z-index:2}
 .float-chip img{width:34px;height:34px;border-radius:50%;object-fit:cover;background:#fff}
-.float-chip span{color:var(--primary-text);font-weight:800;font-size:13px}
-.fc1{top:-4%;left:-2%}
-.fc2{top:8%;right:-3%;animation-delay:2.3s}
-.fc3{bottom:-3%;left:6%;animation-delay:4.6s}
-@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-/* brand strip */
-.brand-strip{background:var(--bg);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:20px 0}
-.brand-row{display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap}
-.brand-strip img{height:30px;width:auto;filter:grayscale(1);opacity:.6;transition:filter .25s ease,opacity .25s ease}
-.brand-strip img:hover{filter:none;opacity:1}
+.float-chip span{color:var(--primary);font-weight:800;font-size:13px}
+.fc1{top:6%;left:2%;animation-delay:0s}
+.fc2{top:22%;right:0;animation-delay:1.2s}
+.fc3{bottom:24%;left:0;animation-delay:2.1s}
+.fc4{bottom:8%;right:4%;animation-delay:3s}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+.ticker{background:linear-gradient(90deg,var(--primary),var(--accent));padding:8px 0;overflow:hidden;white-space:nowrap}
+.ticker-inner{display:inline-block;animation:tick 20s linear infinite;font-size:13px;font-weight:600;color:#fff;letter-spacing:0.5px}
+@keyframes tick{0%{transform:translateX(100vw)}100%{transform:translateX(-100%)}}
 /* sticky mobile order bar */
 .hero-sticky-bar{display:none}
-/* entrance */
-@keyframes heroFadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-.hero [data-hero]{opacity:0;animation:heroFadeUp .6s ease forwards}
-.hero [data-hero="d1"]{animation-delay:.08s}
-.hero [data-hero="d2"]{animation-delay:.16s}
-.hero [data-hero="d3"]{animation-delay:.24s}
-.hero [data-hero="d4"]{animation-delay:.32s}
-.hero [data-hero="d5"]{animation-delay:.4s}
-.hero [data-hero="d6"]{animation-delay:.48s}
 /* responsive */
-@media(max-width:991px){.go1{width:220px;height:220px}.go2{display:none}.hero-visual{margin-top:28px}}
+@media(max-width:991px){.go1{width:220px;height:220px}.go2{display:none}.hero-visual{height:420px;margin-top:28px}}
 @media(max-width:768px){
 .hero{padding:56px 0 40px}
 .hero-title{font-size:2.5rem}
 .hero-cta-ghost{margin-left:0}
 .float-chip{animation:none}
-.fc1{top:-14px;left:0}.fc2{top:-14px;right:0}.fc3{display:none}
-.hero-bento{gap:10px}
-.bento-card{padding:16px 10px}
 .hero-sticky-bar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:9990;background:var(--cta);color:#fff;align-items:center;justify-content:center;gap:10px;padding:14px 16px calc(14px + env(safe-area-inset-bottom,0px));font-weight:700;font-size:16px;text-decoration:none;box-shadow:0 -4px 20px rgba(20,24,60,.15)}
 .hero-sticky-bar:hover{color:#fff}
 #modalOverlay.open ~ .hero-sticky-bar{display:none}
 .wa-float{display:none}
 body{padding-bottom:68px}
 }
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero [data-hero]{animation:none;opacity:1}.float-chip{animation:none}.hero-cta:hover,.hero-cta-ghost:hover,.bento-card:hover{transform:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.ticker-inner,.float-chip,.hero-title .accent,#typedAccent{animation:none}.hero-cta:hover,.hero-cta-ghost:hover{transform:none}}
 
 </style>
 
@@ -156,13 +150,14 @@ body{padding-bottom:68px}
   <div class="container py-5">
     <div class="row align-items-center">
       <div class="col-lg-7">
-        <div class="hero-badge" data-hero="d1"><i class="fa-solid fa-circle-check"></i> Trusted by 4999+ customers</div>
-        <h1 class="hero-title" data-hero="d2">
-          Premium tools,<br>
-          <span class="accent">Pakistani prices.</span>
+        <div class="hero-badge"><i class="fa-solid fa-circle-check"></i> Trusted by 4999+ customers</div>
+        <h1 class="hero-title">
+          Premium Tools.<br>
+          <span class="accent" id="typedAccent">Lowest Prices.</span><br>
+          <span style="color:var(--text-muted);font-weight:300;font-size:0.7em;letter-spacing:-0.5px">Delivered Instantly.</span>
         </h1>
-        <p class="hero-sub" data-hero="d3">Canva, CapCut, Netflix, YouTube Premium and more - order on WhatsApp and get delivery in minutes.</p>
-        <div class="d-flex flex-wrap gap-2" data-hero="d4">
+        <p class="hero-sub">Canva, CapCut, Netflix, YouTube Premium and more - order on WhatsApp and get delivery in minutes.</p>
+        <div class="d-flex flex-wrap gap-2">
           <a href="https://wa.me/923229952880" target="_blank" class="hero-cta">
             <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
           </a>
@@ -170,14 +165,14 @@ body{padding-bottom:68px}
             View Prices
           </a>
         </div>
-        <div class="hero-trust" data-hero="d5">
+        <div class="hero-trust">
           <span><i class="fa-solid fa-bolt"></i>~2 min delivery</span>
           <span class="trust-sep">|</span>
           <span><i class="fa-solid fa-shield-halved"></i><a href="/warranty/">Warranty</a> included</span>
           <span class="trust-sep">|</span>
           <span><i class="fa-solid fa-headset"></i>24/7 support</span>
         </div>
-        <div class="hero-proof" data-hero="d6">
+        <div class="hero-proof">
           <div class="proof-avatars">
             <span class="proof-avatar" style="background:#FFE8CC;color:#B45309">RC</span>
             <span class="proof-avatar" style="background:#D6F5E3;color:#15803D">HA</span>
@@ -188,45 +183,26 @@ body{padding-bottom:68px}
         </div>
       </div>
       <div class="col-lg-5">
-        <div class="hero-visual" data-hero="d3">
-          <div class="hero-bento">
-            <a href="/products/canva/" class="bento-card">
-              <img width="128" height="128" src="/images/canva.webp" alt="Canva EDU Pro" loading="lazy">
-              <div><div class="bento-name">Canva EDU Pro</div><div class="bento-price">Rs 149</div></div>
-              <span class="bento-order">Order</span>
-            </a>
-            <a href="/products/netflix/" class="bento-card">
-              <img width="128" height="128" src="/images/netflix.webp" alt="Netflix 4K" loading="lazy">
-              <div><div class="bento-name">Netflix 4K</div><div class="bento-price">Rs 350</div></div>
-              <span class="bento-order">Order</span>
-            </a>
-            <a href="/products/capcut/" class="bento-card">
-              <img width="128" height="128" src="/images/capcut.webp" alt="CapCut Pro" loading="lazy">
-              <div><div class="bento-name">CapCut Pro</div><div class="bento-price">Rs 650</div></div>
-              <span class="bento-order">Order</span>
-            </a>
-            <a href="/products/ytpremium/" class="bento-card">
-              <img width="128" height="128" src="/images/ytpremium.webp" alt="YouTube Premium" loading="lazy">
-              <div><div class="bento-name">YouTube Premium</div><div class="bento-price">Rs 1,500</div></div>
-              <span class="bento-order">Order</span>
-            </a>
+        <div class="hero-visual">
+          <a href="/products/canva/" class="float-chip fc1"><img width="128" height="128" src="/images/canva.webp" alt="Canva EDU Pro"><span>Rs 149</span></a>
+          <a href="/products/netflix/" class="float-chip fc2"><img width="128" height="128" src="/images/netflix.webp" alt="Netflix 4K"><span>Rs 350</span></a>
+          <a href="/products/capcut/" class="float-chip fc3"><img width="128" height="128" src="/images/capcut.webp" alt="CapCut Pro"><span>Rs 650</span></a>
+          <a href="/products/ytpremium/" class="float-chip fc4"><img width="128" height="128" src="/images/ytpremium.webp" alt="YouTube Premium"><span>Rs 1,500</span></a>
+          <div class="hero-phone">
+            <div class="hp-head"><i class="fa-brands fa-whatsapp"></i><div><b>SR Digital World</b><small>online</small></div></div>
+            <div class="hp-chat">
+              <div class="hp-msg in">Assalam-o-Alaikum! Canva EDU Pro chahiye 🙋</div>
+              <div class="hp-msg out">Walaikum Assalam! ✅ Ho gaya — 1 Month Rs 149. Gmail bhejein, pehle activation phir payment 👍</div>
+              <div class="hp-msg in">Done! Pro active ho gaya 🔥</div>
+            </div>
           </div>
-          <a href="/products/canva/" class="float-chip fc1"><img width="128" height="128" src="/images/canva.webp" alt="Canva EDU Pro" loading="lazy"><span>Rs 149</span></a>
-          <a href="/products/netflix/" class="float-chip fc2"><img width="128" height="128" src="/images/netflix.webp" alt="Netflix 4K" loading="lazy"><span>Rs 350</span></a>
-          <a href="/products/capcut/" class="float-chip fc3"><img width="128" height="128" src="/images/capcut.webp" alt="CapCut Pro" loading="lazy"><span>Rs 650</span></a>
         </div>
       </div>
     </div>
   </div>
 </section>
-<div class="brand-strip">
-  <div class="container brand-row">
-    <img src="/images/canva.webp" alt="Canva" loading="lazy">
-    <img src="/images/netflix.webp" alt="Netflix" loading="lazy">
-    <img src="/images/capcut.webp" alt="CapCut" loading="lazy">
-    <img src="/images/ytpremium.webp" alt="YouTube Premium" loading="lazy">
-    <img src="/images/gemini.webp" alt="Gemini" loading="lazy">
-  </div>
+<div class="ticker">
+  <span class="ticker-inner">⚡ Premium Digital Tools &nbsp;&nbsp;&nbsp; 🚀 Instant Delivery &nbsp;&nbsp;&nbsp; 🔒 100% Secure &nbsp;&nbsp;&nbsp; 🌟 24/7 Support &nbsp;&nbsp;&nbsp; 🇵🇰 Pakistan's #1 Digital Store &nbsp;&nbsp;&nbsp; 💰 Best Prices Guaranteed &nbsp;&nbsp;&nbsp; ⚡ Premium Digital Tools &nbsp;&nbsp;&nbsp; 🚀 Instant Delivery &nbsp;&nbsp;&nbsp;</span>
 </div>
 
 
@@ -838,6 +814,31 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeProof()
 
 
 
+<script>
+/* typing headline */
+(function(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var el = document.getElementById('typedAccent');
+  if(!el) return;
+  var phrases = ['Lowest Prices.', 'Instant Delivery.', '4999+ Orders Done.'];
+  var pi = 0, ci = phrases[0].length, del = false;
+  (function tick(){
+    if(!del){ del = true; setTimeout(tick, 2000); return; }
+    ci--;
+    if(ci <= 0){ ci = 0; pi = (pi+1)%phrases.length; del = false;
+      el.textContent = '';
+      setTimeout(function typeIn(){
+        ci++;
+        el.textContent = phrases[pi].substring(0, ci);
+        if(ci < phrases[pi].length) setTimeout(typeIn, 60); else setTimeout(tick, 2000);
+      }, 350);
+      return;
+    }
+    el.textContent = phrases[pi].substring(0, ci);
+    setTimeout(tick, 32);
+  })();
+})();
+</script>
 <script>
 function annTick(){
   var now=new Date(), end=new Date('2026-10-26T23:59:59+05:00');
