@@ -23,6 +23,8 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;overf
 .dur-tab{background:transparent;border:1px solid var(--border);color:var(--text-muted);padding:5px 12px;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;transition:all 0.25s;font-family:'Inter',sans-serif; position:relative; z-index:10}
 .dur-tab:hover{border-color:var(--primary);color:var(--primary)}
 .dur-tab.active{background:var(--primary);color:var(--text);border-color:var(--primary)}
+.dur-tab:disabled{opacity:.55;cursor:not-allowed}
+.dur-tab:disabled:hover{border-color:var(--border);color:var(--text-muted)}
 .price-block{margin-bottom:24px}
 .price-amount{font-size:2rem;font-weight:900;color:var(--primary-text);letter-spacing:-1px}
 .price-period{font-size:13px;color:var(--text-muted);margin-left:4px}
