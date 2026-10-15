@@ -150,58 +150,83 @@ body{padding-bottom:68px}
 <div id="navbar-placeholder"></div>
 
 <section class="hero">
-  <canvas id="heroParticles"></canvas>
   <div class="hero-bg"></div>
-  <div class="glow-orb"></div>
   <div class="glass-orb go1"></div>
   <div class="glass-orb go2"></div>
-  <div class="glass-orb go3"></div>
   <div class="container py-5">
     <div class="row align-items-center">
       <div class="col-lg-7">
-        <div class="hero-badge">🇵🇰 Pakistan's #1 Digital Store</div>
-        <h1 class="hero-title">
-          Premium Tools.<br>
-          <span class="accent" id="typedAccent">Lowest Prices.</span><br>
-          <span style="color:var(--text-muted);font-weight:300;font-size:0.7em;letter-spacing:-0.5px">Delivered Instantly.</span>
+        <div class="hero-badge" data-hero="d1"><i class="fa-solid fa-circle-check"></i> Trusted by 4999+ customers</div>
+        <h1 class="hero-title" data-hero="d2">
+          Premium tools,<br>
+          <span class="accent">Pakistani prices.</span>
         </h1>
-        <p class="hero-sub">Canva EDU Pro, CapCut Pro, Surfshark VPN, and much more — order via WhatsApp and get it in seconds.</p>
-        <div class="d-flex flex-wrap gap-2">
-          <!-- HERO BUTTONS -->
-          <a href="#products" class="hero-cta">
-            <i class="fa-solid fa-bolt"></i> Explore Tools
+        <p class="hero-sub" data-hero="d3">Canva, CapCut, Netflix, YouTube Premium and more - order on WhatsApp and get delivery in minutes.</p>
+        <div class="d-flex flex-wrap gap-2" data-hero="d4">
+          <a href="https://wa.me/923229952880" target="_blank" class="hero-cta">
+            <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
           </a>
-          <a href="https://wa.me/923229952880" target="_blank" class="hero-cta-ghost">
-            <i class="fa-brands fa-whatsapp"></i> Chat with Us
+          <a href="#products" class="hero-cta-ghost">
+            View Prices
           </a>
         </div>
-        <div class="hero-stats">
-          <div class="hero-stat"><div class="hero-stat-num">4999+</div><div class="hero-stat-label">Orders Done</div></div>
-          <div class="hero-stat"><div class="hero-stat-num">4.9★</div><div class="hero-stat-label">Customer Rating</div></div>
-          <div class="hero-stat"><div class="hero-stat-num">~2 min</div><div class="hero-stat-label">Avg. Delivery</div></div>
+        <div class="hero-trust" data-hero="d5">
+          <span><i class="fa-solid fa-bolt"></i>~2 min delivery</span>
+          <span class="trust-sep">|</span>
+          <span><i class="fa-solid fa-shield-halved"></i><a href="/warranty/">Warranty</a> included</span>
+          <span class="trust-sep">|</span>
+          <span><i class="fa-solid fa-headset"></i>24/7 support</span>
+        </div>
+        <div class="hero-proof" data-hero="d6">
+          <div class="proof-avatars">
+            <span class="proof-avatar" style="background:#FFE8CC;color:#B45309">RC</span>
+            <span class="proof-avatar" style="background:#D6F5E3;color:#15803D">HA</span>
+            <span class="proof-avatar" style="background:#DBEAFE;color:#1D4ED8">MN</span>
+            <span class="proof-avatar" style="background:#F3E8FF;color:#7C3AED">SH</span>
+          </div>
+          <div class="proof-text"><strong>4.9 <span class="star">&starf;</span></strong> rating &nbsp;&middot;&nbsp; <strong>4999+</strong> orders</div>
         </div>
       </div>
       <div class="col-lg-5">
-        <div class="hero-visual">
-          <a href="/products/canva/" class="float-chip fc1"><img width="128" height="128" src="/images/canva.webp" alt="Canva EDU Pro"><span>Rs 149</span></a>
-          <a href="/products/netflix/" class="float-chip fc2"><img width="128" height="128" src="/images/netflix.webp" alt="Netflix 4K"><span>Rs 350</span></a>
-          <a href="/products/capcut/" class="float-chip fc3"><img width="128" height="128" src="/images/capcut.webp" alt="CapCut Pro"><span>Rs 650</span></a>
-          <a href="/products/ytpremium/" class="float-chip fc4"><img width="128" height="128" src="/images/ytpremium.webp" alt="YouTube Premium"><span>Rs 1,500</span></a>
-          <div class="hero-phone">
-            <div class="hp-head"><i class="fa-brands fa-whatsapp"></i><div><b>SR Digital World</b><small>online</small></div></div>
-            <div class="hp-chat">
-              <div class="hp-msg in">Assalam-o-Alaikum! Canva EDU Pro chahiye 🙋</div>
-              <div class="hp-msg out">Walaikum Assalam! ✅ Ho gaya — 1 Month Rs 149. Gmail bhejein, pehle activation phir payment 👍</div>
-              <div class="hp-msg in">Done! Pro active ho gaya 🔥</div>
-            </div>
+        <div class="hero-visual" data-hero="d3">
+          <div class="hero-bento">
+            <a href="/products/canva/" class="bento-card">
+              <img width="128" height="128" src="/images/canva.webp" alt="Canva EDU Pro" loading="lazy">
+              <div><div class="bento-name">Canva EDU Pro</div><div class="bento-price">Rs 149</div></div>
+              <span class="bento-order">Order</span>
+            </a>
+            <a href="/products/netflix/" class="bento-card">
+              <img width="128" height="128" src="/images/netflix.webp" alt="Netflix 4K" loading="lazy">
+              <div><div class="bento-name">Netflix 4K</div><div class="bento-price">Rs 350</div></div>
+              <span class="bento-order">Order</span>
+            </a>
+            <a href="/products/capcut/" class="bento-card">
+              <img width="128" height="128" src="/images/capcut.webp" alt="CapCut Pro" loading="lazy">
+              <div><div class="bento-name">CapCut Pro</div><div class="bento-price">Rs 650</div></div>
+              <span class="bento-order">Order</span>
+            </a>
+            <a href="/products/ytpremium/" class="bento-card">
+              <img width="128" height="128" src="/images/ytpremium.webp" alt="YouTube Premium" loading="lazy">
+              <div><div class="bento-name">YouTube Premium</div><div class="bento-price">Rs 1,500</div></div>
+              <span class="bento-order">Order</span>
+            </a>
           </div>
+          <a href="/products/canva/" class="float-chip fc1"><img width="128" height="128" src="/images/canva.webp" alt="Canva EDU Pro" loading="lazy"><span>Rs 149</span></a>
+          <a href="/products/netflix/" class="float-chip fc2"><img width="128" height="128" src="/images/netflix.webp" alt="Netflix 4K" loading="lazy"><span>Rs 350</span></a>
+          <a href="/products/capcut/" class="float-chip fc3"><img width="128" height="128" src="/images/capcut.webp" alt="CapCut Pro" loading="lazy"><span>Rs 650</span></a>
         </div>
       </div>
     </div>
   </div>
 </section>
-<div class="ticker">
-  <span class="ticker-inner">⚡ Premium Digital Tools &nbsp;&nbsp;&nbsp; 🚀 Instant Delivery &nbsp;&nbsp;&nbsp; 🔒 100% Secure &nbsp;&nbsp;&nbsp; 🌟 24/7 Support &nbsp;&nbsp;&nbsp; 🇵🇰 Pakistan's #1 Digital Store &nbsp;&nbsp;&nbsp; 💰 Best Prices Guaranteed &nbsp;&nbsp;&nbsp; ⚡ Premium Digital Tools &nbsp;&nbsp;&nbsp; 🚀 Instant Delivery &nbsp;&nbsp;&nbsp;</span>
+<div class="brand-strip">
+  <div class="container brand-row">
+    <img src="/images/canva.webp" alt="Canva" loading="lazy">
+    <img src="/images/netflix.webp" alt="Netflix" loading="lazy">
+    <img src="/images/capcut.webp" alt="CapCut" loading="lazy">
+    <img src="/images/ytpremium.webp" alt="YouTube Premium" loading="lazy">
+    <img src="/images/gemini.webp" alt="Gemini" loading="lazy">
+  </div>
 </div>
 
 
@@ -717,6 +742,7 @@ body{padding-bottom:68px}
     </div>
   </div>
 </div>
+<a href="https://wa.me/923229952880" target="_blank" class="hero-sticky-bar"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
