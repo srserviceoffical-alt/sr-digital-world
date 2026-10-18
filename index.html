@@ -24,10 +24,7 @@
 <link rel="stylesheet" href="/css/style.css">
 <style>html{ scroll-behavior:smooth}/* MOBILE MENU RESPONSIVE STYLES */
 
-
 .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 70% 40%,rgba(250,146,11,0.12) 0%,transparent 70%),radial-gradient(ellipse 40% 60% at 20% 70%,rgba(255,100,0,0.07) 0%,transparent 60%)}.hero-title{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:900;line-height:1.05;letter-spacing:-2px;color:var(--text);margin-bottom:16px}.hero-title .accent{background:linear-gradient(120deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent}.hero-sub{font-size:1.1rem;color:var(--text-muted);line-height:1.7;max-width:500px;margin-bottom:32px;font-weight:300}
-
-
 
 .stats-strip{background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:36px 0}.stat-item{text-align:center;padding:0 20px}.stat-num{font-size:2rem;font-weight:900;color:var(--primary-text);letter-spacing:-1px}.stat-label{font-size:11px;color:var(--text-muted);font-weight:600;letter-spacing:1.5px;text-transform:uppercase;margin-top:4px}.stat-divider{width:1px;background:linear-gradient(to bottom,transparent,var(--bg-soft),transparent);height:50px;align-self:center}.products-section{padding:90px 0;background:var(--bg)}.product-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:32px 28px;transition:all 0.4s;position:relative;overflow:hidden;height:100%; z-index:1}.card-tag{display:inline-block;background:rgba(250,146,11,0.1);color:var(--primary-text);font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:6px;margin-bottom:20px}/* DISPLAY:BLOCK ADD KIYA GAYA HAI TAAKAY IMAGE TAG KE NEECHAY AAYE */
 .product-desc{font-size:13px;color:var(--text-muted);line-height:1.6;margin-bottom:24px}.order-btn{width:100%;padding:13px;background:var(--cta);border:none;color:#fff;box-shadow:0 4px 14px rgba(21,128,61,.35);border-radius:12px;font-weight:700;font-size:14px;cursor:pointer;font-family:'Inter',sans-serif;transition:transform .25s ease,box-shadow .25s ease;letter-spacing:0.3px;display:flex;align-items:center;justify-content:center;gap:8px; position:relative; z-index:10}.features-section{padding:80px 0;background:var(--bg-soft);border-top:1px solid var(--border)}.feature-item{display:flex;gap:16px;align-items:flex-start;padding:20px}.feature-icon{width:44px;height:44px;border-radius:12px;background:rgba(250,146,11,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--primary);font-size:20px}.feature-title{font-size:15px;font-weight:700;color:var(--text);margin-bottom:4px}.feature-text{font-size:13px;color:var(--text-muted);line-height:1.6}.video-section{padding:80px 0;background:var(--bg);border-top:1px solid var(--border)}.video-frame{border-radius:20px;overflow:hidden;border:1px solid var(--border);aspect-ratio:16/9;position:relative}.video-frame iframe{width:100%;height:100%;position:absolute;inset:0}.video-play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:78px;height:78px;border-radius:50%;background:rgba(250,146,11,.95);display:flex;align-items:center;justify-content:center;color:var(--text);font-size:28px;box-shadow:0 8px 30px rgba(250,146,11,.45);transition:transform .2s}.video-play-btn:hover{transform:translate(-50%,-50%) scale(1.08)}.modal-box{background:var(--card);border:1px solid rgba(250,146,11,0.25);border-radius:24px;padding:32px;width:90%;max-width:420px;animation:slideUp 0.3s ease}.modal-input:focus, .contact-input:focus, .contact-textarea:focus{ border-color:var(--primary); background-color:var(--bg-soft); box-shadow:0 0 8px rgba(255, 140, 0, 0.3); outline:none}
@@ -48,8 +45,8 @@
 @keyframes tmScroll{to{transform:translateX(-50%)}}
 /* ===== SR visual polish: gradient CTA buttons ===== */
 .btn-send{background:linear-gradient(135deg,var(--accent),var(--primary) 55%,var(--primary));box-shadow:0 4px 16px rgba(250,146,11,.28);transition:transform .25s ease,box-shadow .25s ease}.btn-send:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(250,146,11,.4)}/* ===== hero click fix: decorative overlays must not block buttons ===== */
-.reviews-section{padding:70px 0;background:var(--bg-soft);border-top:1px solid rgba(18,22,43,.045)}.review-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;height:100%;display:flex;flex-direction:column;transition:transform .3s ease,box-shadow .3s ease}.review-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(250,146,11,.1)}.review-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}.review-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--primary));color:#1a1005;font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center;flex-shrink:0}.review-name{color:var(--text);font-weight:700;font-size:14px}.review-stars{color:var(--gold);font-size:12px;letter-spacing:3px}.review-text{color:var(--text-muted);font-size:13.5px;line-height:1.7;font-style:italic;margin:0 0 14px}.review-tag{color:#25D366;font-size:12px;font-weight:600;margin-top:auto;padding-top:12px}.review-tag i{margin-right:5px}
-@media(hover:none){.review-card:hover{transform:none;box-shadow:none}}.hidden-review{display:none}#reviewsGrid.expanded .hidden-review{display:block}.reviews-more-btn{background:transparent;border:1.5px solid rgba(250,146,11,.5);color:var(--primary);font-weight:700;font-size:14px;padding:12px 32px;border-radius:100px;cursor:pointer;transition:all .25s;font-family:'Inter',sans-serif}.reviews-more-btn:hover{background:rgba(250,146,11,.12);border-color:var(--primary)}.reviews-more-btn i{margin-left:6px;font-size:12px}.proof-title{color:var(--text);font-size:22px;font-weight:800;margin:0}.proof-sub{color:var(--text-muted);font-size:13px;margin:8px 0 0}.proof-item img{width:100%;height:220px;object-fit:cover;object-position:top;border-radius:12px;border:1px solid var(--border);cursor:zoom-in;transition:transform .25s,box-shadow .25s}.proof-item img:hover{transform:scale(1.04);box-shadow:0 8px 24px rgba(250,146,11,.15)}.hidden-proof{display:none}#proofGrid.expanded .hidden-proof{display:block}.proof-lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;z-index:10000;padding:16px;cursor:zoom-out}.proof-lightbox.open{display:flex}.proof-lightbox img{max-width:100%;max-height:92vh;border-radius:12px}.combo-sub b{color:var(--primary)}.combo-rule span{color:var(--primary);font-weight:800}.combo-tool img{width:44px;height:44px;object-fit:contain;border-radius:10px}.combo-tool.selected .combo-order:hover{color:#fff;transform:scale(1.03)}.combo-bundle img{width:90px;height:112px;object-fit:cover;border-radius:10px;flex-shrink:0}.combo-bundle div{color:var(--text-muted);font-size:13.5px;line-height:1.7}.combo-bundle b{color:var(--text)}.combo-bundle span{color:var(--cta);font-weight:700}.ann-section{background:radial-gradient(ellipse 80% 70% at 50% 8%,#FFE0B8 0%,#FFF7ED 55%,#FFEFDB 100%);padding:80px 0;position:relative;overflow:hidden}
+
+.combo-sub b{color:var(--primary)}.combo-rule span{color:var(--primary);font-weight:800}.combo-tool img{width:44px;height:44px;object-fit:contain;border-radius:10px}.combo-tool.selected .combo-order:hover{color:#fff;transform:scale(1.03)}.combo-bundle img{width:90px;height:112px;object-fit:cover;border-radius:10px;flex-shrink:0}.combo-bundle div{color:var(--text-muted);font-size:13.5px;line-height:1.7}.combo-bundle b{color:var(--text)}.combo-bundle span{color:var(--cta);font-weight:700}.ann-section{background:radial-gradient(ellipse 80% 70% at 50% 8%,#FFE0B8 0%,#FFF7ED 55%,#FFEFDB 100%);padding:80px 0;position:relative;overflow:hidden}
 .ann-card{max-width:780px;margin:0 auto;text-align:center;background:linear-gradient(#ffffff,#ffffff) padding-box,linear-gradient(135deg,#FA920B,#FF3B30,#FA920B) border-box;border:2px solid transparent;border-radius:26px;padding:46px 34px;box-shadow:0 30px 80px rgba(250,146,11,.28),0 6px 20px rgba(0,0,0,.06);position:relative}
 .ann-badge{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(90deg,#FF3B30,#FF6B00);color:#fff;font-size:12px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;padding:8px 20px;border-radius:100px;margin-bottom:18px;box-shadow:0 6px 20px rgba(255,59,48,.35)}
 .ann-dot{width:8px;height:8px;border-radius:50%;background:#fff;animation:blink 1.2s ease-in-out infinite}
@@ -62,19 +59,9 @@
 @keyframes pulseRing{0%{box-shadow:0 0 0 0 rgba(21,128,61,.45)}70%{box-shadow:0 0 0 16px rgba(21,128,61,0)}100%{box-shadow:0 0 0 0 rgba(21,128,61,0)}}.ann-order:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(21,128,61,.35);color:#fff}.ann-details{display:inline-flex;align-items:center;gap:8px;border:1.5px solid rgba(250,146,11,.5);color:var(--primary);font-weight:700;font-size:15px;padding:13px 30px;border-radius:100px;text-decoration:none;margin:6px 8px 0}.ann-details:hover{background:rgba(250,146,11,.1)}
 /* ===== light-theme global additions ===== */
 
-
-
 /* ===== navbar force-light (beats cached navbar.html styles) ===== */
 
-
-
 #navbar-placeholder .nav-link-item:hover,#navbar-placeholder 
-
-
-
-
-
-
 
 /* ===== HERO REDESIGN (light) ===== */
 .hero{display:flex;align-items:center;position:relative;overflow:hidden;background:var(--bg);padding:72px 0}
@@ -195,6 +182,9 @@ body{padding-bottom:68px}
           <a href="#products" class="hero-cta-ghost">
             View Prices
           </a>
+          <a href="/reviews/" class="hero-cta-ghost">
+            <i class="fa-solid fa-star"></i> Customer Reviews
+          </a>
         </div>
         <div class="hero-trust" data-h style="--hd:4">
           <span><i class="fa-solid fa-bolt"></i>~2 min delivery</span>
@@ -246,7 +236,6 @@ body{padding-bottom:68px}
   </div>
 </div>
 
-
 <div class="stats-strip">
   <div class="container">
     <div class="row justify-content-center align-items-center g-0">
@@ -284,11 +273,11 @@ body{padding-bottom:68px}
 <section class="products-section" id="products">
   <div class="container">
     <div class="text-center mb-5 rv">
-      <div class="section-eyebrow">Our Products</div>
+      <div class="section-eyebrow">Our Tools</div>
       <h2 class="section-title">Premium Digital Tools</h2>
       <p style="color:var(--text-muted);font-size:15px;margin-top:12px;font-weight:300">Order on WhatsApp and get it instantly</p>
       <a href="/products/" style="display:inline-flex;align-items:center;gap:6px;color:var(--primary);font-weight:700;font-size:14px;text-decoration:none;margin-top:16px;border:1px solid rgba(255,140,0,0.3);padding:8px 18px;border-radius:100px">
-        View All Products <i class="fa-solid fa-arrow-right" style="font-size:12px"></i>
+        View All Tools <i class="fa-solid fa-arrow-right" style="font-size:12px"></i>
       </a>
     </div>
     <div class="row g-4">
@@ -394,258 +383,6 @@ body{padding-bottom:68px}
   </div>
 </section>
 
-<section class="reviews-section">
-  <div class="container">
-    <div class="text-center mb-4 rv">
-      <div class="section-eyebrow">Customer Reviews</div>
-      <h2 class="section-title">What Our Customers Say</h2>
-      <p style="color:var(--text-muted);font-size:14px;margin-top:12px;max-width:520px;margin-left:auto;margin-right:auto">Real reviews from real buyers — join hundreds of happy customers</p>
-    </div>
-    <div class="row g-3 rv" id="reviewsGrid">
-<div class="col-md-4">
-        <div class="review-card">
-          <div class="review-head">
-            <div class="review-avatar">RC</div>
-            <div>
-              <div class="review-name">Rafaqat Cheema</div>
-              <div class="review-stars">★★★★★</div>
-            </div>
-          </div>
-          <p class="review-text">"Recommended, 100% working. Reply in seconds. Thanks!"</p>
-          <div class="review-tag"><i class="fa-solid fa-circle-check"></i> Verified Buyer</div>
-        </div>
-      </div>
-<div class="col-md-4">
-        <div class="review-card">
-          <div class="review-head">
-            <div class="review-avatar">HA</div>
-            <div>
-              <div class="review-name">Hassan Ali</div>
-              <div class="review-stars">★★★★★</div>
-            </div>
-          </div>
-          <p class="review-text">"The process was smooth, the team was professional. Highly recommended!"</p>
-          <div class="review-tag"><i class="fa-solid fa-circle-check"></i> Verified Buyer</div>
-        </div>
-      </div>
-<div class="col-md-4">
-        <div class="review-card">
-          <div class="review-head">
-            <div class="review-avatar">MN</div>
-            <div>
-              <div class="review-name">Mian Noorullah</div>
-              <div class="review-stars">★★★★★</div>
-            </div>
-          </div>
-          <p class="review-text">"Thank you for quickly responding and giving Canva EDU Pro access urgently. Best service!"</p>
-          <div class="review-tag"><i class="fa-solid fa-circle-check"></i> Verified Buyer</div>
-        </div>
-      </div>
-<div class="col-md-4">
-        <div class="review-card">
-          <div class="review-head">
-            <div class="review-avatar">SH</div>
-            <div>
-              <div class="review-name">S Ain Haider</div>
-              <div class="review-stars">★★★★★</div>
-            </div>
-          </div>
-          <p class="review-text">"MashaAllah, behtreen Canva mil gaya aur bonus bhi diya. JazakAllah!"</p>
-          <div class="review-tag"><i class="fa-solid fa-circle-check"></i> Verified Buyer</div>
-        </div>
-      </div>
-<div class="col-md-4">
-        <div class="review-card">
-          <div class="review-head">
-            <div class="review-avatar">CR</div>
-            <div>
-              <div class="review-name">Chaudhary Rafay</div>
-              <div class="review-stars">★★★★★</div>
-            </div>
-          </div>
-          <p class="review-text">"Good and fast service after payment. Highly recommend!"</p>
-          <div class="review-tag"><i class="fa-solid fa-circle-check"></i> Verified Buyer</div>
-        </div>
-      </div>
-<div class="col-md-4">
-        <div class="review-card">
-          <div class="review-head">
-            <div class="review-avatar">NA</div>
-            <div>
-              <div class="review-name">Naveed Ahmed</div>
-              <div class="review-stars">★★★★★</div>
-            </div>
-          </div>
-          <p class="review-text">"Agar link mein koi kharabi ho to free mein sahi kar ke dete hain. Good service!"</p>
-          <div class="review-tag"><i class="fa-solid fa-circle-check"></i> Verified Buyer</div>
-        </div>
-      </div>
-<div class="col-md-4 hidden-review">
-        <div class="review-card">
-          <div class="review-head">
-            <div class="review-avatar">AM</div>
-            <div>
-              <div class="review-name">Abdulrehman Mani</div>
-              <div class="review-stars">★★★★★</div>
-            </div>
-          </div>
-          <p class="review-text">"Got bonus with Canva EDU Pro in just Rs. 200. Great service!"</p>
-          <div class="review-tag"><i class="fa-solid fa-circle-check"></i> Verified Buyer</div>
-        </div>
-      </div>
-<div class="col-md-4 hidden-review">
-        <div class="review-card">
-          <div class="review-head">
-            <div class="review-avatar">TB</div>
-            <div>
-              <div class="review-name">Tariq Bhatti</div>
-              <div class="review-stars">★★★★★</div>
-            </div>
-          </div>
-          <p class="review-text">"Purchased it, successfully delivered."</p>
-          <div class="review-tag"><i class="fa-solid fa-circle-check"></i> Verified Buyer</div>
-        </div>
-      </div>
-<div class="col-md-4 hidden-review">
-        <div class="review-card">
-          <div class="review-head">
-            <div class="review-avatar">MA</div>
-            <div>
-              <div class="review-name">M Ayaan</div>
-              <div class="review-stars">★★★★★</div>
-            </div>
-          </div>
-          <p class="review-text">"Recommended! Canva EDU Pro ke sath bonus bhi milta hai. Good service!"</p>
-          <div class="review-tag"><i class="fa-solid fa-circle-check"></i> Verified Buyer</div>
-        </div>
-      </div>
-<div class="col-md-4 hidden-review">
-        <div class="review-card">
-          <div class="review-head">
-            <div class="review-avatar">MS</div>
-            <div>
-              <div class="review-name">Mehtab SQ</div>
-              <div class="review-stars">★★★★★</div>
-            </div>
-          </div>
-          <p class="review-text">"Recommended, 100% working. Reply in seconds. Thank you so much!"</p>
-          <div class="review-tag"><i class="fa-solid fa-circle-check"></i> Verified Buyer</div>
-        </div>
-      </div>
-<div class="col-md-4 hidden-review">
-        <div class="review-card">
-          <div class="review-head">
-            <div class="review-avatar">SL</div>
-            <div>
-              <div class="review-name">Salman Latif</div>
-              <div class="review-stars">★★★★★</div>
-            </div>
-          </div>
-          <p class="review-text">"Just bought this service. Excellent and trusted service. JazakAllah!"</p>
-          <div class="review-tag"><i class="fa-solid fa-circle-check"></i> Verified Buyer</div>
-        </div>
-      </div>
-<div class="col-md-4 hidden-review">
-        <div class="review-card">
-          <div class="review-head">
-            <div class="review-avatar">HR</div>
-            <div>
-              <div class="review-name">Haseeb Rj</div>
-              <div class="review-stars">★★★★★</div>
-            </div>
-          </div>
-          <p class="review-text">"Highly recommend! Trusted seller. Thank you!"</p>
-          <div class="review-tag"><i class="fa-solid fa-circle-check"></i> Verified Buyer</div>
-        </div>
-      </div>
-<div class="col-md-4 hidden-review">
-        <div class="review-card">
-          <div class="review-head">
-            <div class="review-avatar">MM</div>
-            <div>
-              <div class="review-name">Muhammad Muneeb Ch</div>
-              <div class="review-stars">★★★★★</div>
-            </div>
-          </div>
-          <p class="review-text">"Very good service, and bonus template free!"</p>
-          <div class="review-tag"><i class="fa-solid fa-circle-check"></i> Verified Buyer</div>
-        </div>
-      </div>
-<div class="col-md-4 hidden-review">
-        <div class="review-card">
-          <div class="review-head">
-            <div class="review-avatar">AK</div>
-            <div>
-              <div class="review-name">Amjid Khan Niazi</div>
-              <div class="review-stars">★★★★★</div>
-            </div>
-          </div>
-          <p class="review-text">"Good service and great man! Highly recommended."</p>
-          <div class="review-tag"><i class="fa-solid fa-circle-check"></i> Verified Buyer</div>
-        </div>
-      </div>
-<div class="col-md-4 hidden-review">
-        <div class="review-card">
-          <div class="review-head">
-            <div class="review-avatar">MS</div>
-            <div>
-              <div class="review-name">Maryam Srl</div>
-              <div class="review-stars">★★★★★</div>
-            </div>
-          </div>
-          <p class="review-text">"Good service and real. Thank you!"</p>
-          <div class="review-tag"><i class="fa-solid fa-circle-check"></i> Verified Buyer</div>
-        </div>
-      </div>
-    </div>
-      <div class="text-center mt-4">
-      <button class="reviews-more-btn" id="reviewsMoreBtn" data-open="0" onclick="toggleReviews(this)">Show More Reviews <i class="fa-solid fa-chevron-down"></i></button>
-    </div>
-    <div class="text-center mt-5 mb-3 rv">
-      <h3 class="proof-title">Screenshot Proof</h3>
-      <p class="proof-sub">Real WhatsApp &amp; Facebook chats from our customers — tap any screenshot to view</p>
-    </div>
-    <div class="row g-2 rv" id="proofGrid">
-<div class="col-6 col-md-3 proof-item"><img width="560" height="1160" src="/images/reviews/review-01.webp" alt="Customer review screenshot 1" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item"><img width="560" height="1151" src="/images/reviews/review-02.webp" alt="Customer review screenshot 2" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item"><img width="560" height="1157" src="/images/reviews/review-03.webp" alt="Customer review screenshot 3" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item"><img width="560" height="1151" src="/images/reviews/review-04.webp" alt="Customer review screenshot 4" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item"><img width="560" height="995" src="/images/reviews/review-05.webp" alt="Customer review screenshot 5" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item"><img width="560" height="1160" src="/images/reviews/review-06.webp" alt="Customer review screenshot 6" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item"><img width="560" height="995" src="/images/reviews/review-07.webp" alt="Customer review screenshot 7" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item"><img width="560" height="1160" src="/images/reviews/review-08.webp" alt="Customer review screenshot 8" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="1166" src="/images/reviews/review-09.webp" alt="Customer review screenshot 9" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="1160" src="/images/reviews/review-10.webp" alt="Customer review screenshot 10" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="995" src="/images/reviews/review-11.webp" alt="Customer review screenshot 11" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="1154" src="/images/reviews/review-12.webp" alt="Customer review screenshot 12" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="995" src="/images/reviews/review-13.webp" alt="Customer review screenshot 13" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="1151" src="/images/reviews/review-14.webp" alt="Customer review screenshot 14" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="995" src="/images/reviews/review-15.webp" alt="Customer review screenshot 15" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="995" src="/images/reviews/review-16.webp" alt="Customer review screenshot 16" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="995" src="/images/reviews/review-17.webp" alt="Customer review screenshot 17" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="1151" src="/images/reviews/review-18.webp" alt="Customer review screenshot 18" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="1154" src="/images/reviews/review-19.webp" alt="Customer review screenshot 19" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="1151" src="/images/reviews/review-20.webp" alt="Customer review screenshot 20" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="995" src="/images/reviews/review-21.webp" alt="Customer review screenshot 21" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="995" src="/images/reviews/review-22.webp" alt="Customer review screenshot 22" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="1154" src="/images/reviews/review-23.webp" alt="Customer review screenshot 23" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="995" src="/images/reviews/review-24.webp" alt="Customer review screenshot 24" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="995" src="/images/reviews/review-25.webp" alt="Customer review screenshot 25" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="1151" src="/images/reviews/review-26.webp" alt="Customer review screenshot 26" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="995" src="/images/reviews/review-27.webp" alt="Customer review screenshot 27" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="995" src="/images/reviews/review-28.webp" alt="Customer review screenshot 28" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="995" src="/images/reviews/review-29.webp" alt="Customer review screenshot 29" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="1164" src="/images/reviews/review-30.webp" alt="Customer review screenshot 30" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="995" src="/images/reviews/review-31.webp" alt="Customer review screenshot 31" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="1154" src="/images/reviews/review-32.webp" alt="Customer review screenshot 32" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="995" src="/images/reviews/review-33.webp" alt="Customer review screenshot 33" loading="lazy" onclick="openProof(this.src)"></div>
-    </div>
-    <div class="text-center mt-4">
-      <button class="reviews-more-btn" id="proofMoreBtn" onclick="toggleProof(this)">Show All Screenshots <i class="fa-solid fa-chevron-down"></i></button>
-    </div>
-</div>
-</section>
-
 <section class="pay-section">
   <div class="container">
     <div class="text-center mb-4 rv">
@@ -729,7 +466,7 @@ body{padding-bottom:68px}
         <div style="color:var(--text);font-weight:700;font-size:13px;margin-bottom:12px;letter-spacing:0.5px">QUICK LINKS</div>
         <div class="d-flex flex-column gap-2">
           <a href="/" class="footer-link">Home</a>
-          <a href="/products/" class="footer-link">Products</a>
+          <a href="/products/" class="footer-link">Tools</a>
           <a href="/about/" class="footer-link">About Us</a>
         </div>
       </div>
@@ -837,23 +574,6 @@ function copyPay(id, btn){
   }
 }
 </script>
-<script>
-function toggleReviews(btn){
-  var grid = document.getElementById('reviewsGrid');
-  var open = grid.classList.toggle('expanded');
-  btn.setAttribute('data-open', open ? '1' : '0');
-  btn.innerHTML = open ? 'Show Less <i class="fa-solid fa-chevron-up"></i>' : 'Show More Reviews <i class="fa-solid fa-chevron-down"></i>';
-}
-</script>
-<div class="proof-lightbox" id="proofLightbox" onclick="closeProof()"><img src="" alt="Review screenshot"></div>
-<script>
-function openProof(src){var lb=document.getElementById('proofLightbox');lb.querySelector('img').src=src;lb.classList.add('open');document.body.style.overflow='hidden';}
-function closeProof(){document.getElementById('proofLightbox').classList.remove('open');document.body.style.overflow='';}
-function toggleProof(btn){var g=document.getElementById('proofGrid');var open=g.classList.toggle('expanded');btn.innerHTML=open?'Show Less <i class="fa-solid fa-chevron-up"></i>':'Show All Screenshots <i class="fa-solid fa-chevron-down"></i>';}
-document.addEventListener('keydown',function(e){if(e.key==='Escape')closeProof();});
-</script>
-
-
 
 <script>
 /* typing headline */

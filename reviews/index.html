@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Customer Reviews | SR Digital World</title>
+<link rel="canonical" href="https://www.srdigitalworld.shop/reviews/">
+<meta name="description" content="Real customer reviews of SR Digital World — 4.9 star rated with 4999+ orders. See text reviews and WhatsApp screenshot proofs from happy buyers.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SR Digital World">
+<meta property="og:title" content="Customer Reviews | SR Digital World">
+<meta property="og:description" content="Real customer reviews of SR Digital World — 4.9 star rated with 4999+ orders.">
+<meta property="og:image" content="https://www.srdigitalworld.shop/images/og-banner.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://www.srdigitalworld.shop/images/og-banner.jpg">
+<meta property="og:url" content="https://www.srdigitalworld.shop/reviews/">
+<link rel="icon" type="image/png" href="/images/favicon.png">
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<style>
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text)}
+.page-hero{padding:70px 0 40px;background:var(--bg);text-align:center;position:relative;overflow:hidden}
+.page-hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 50% 50% at 50% 0%,rgba(250,146,11,0.1) 0%,transparent 70%)}
+/* ===== hero click fix: decorative overlays must not block buttons ===== */
+.reviews-section{padding:70px 0;background:var(--bg-soft);border-top:1px solid rgba(18,22,43,.045)}
+.review-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;height:100%;display:flex;flex-direction:column;transition:transform .3s ease,box-shadow .3s ease}
+.review-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(250,146,11,.1)}
+.review-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.review-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--primary));color:#1a1005;font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.review-name{color:var(--text);font-weight:700;font-size:14px}
+.review-stars{color:var(--gold);font-size:12px;letter-spacing:3px}
+.review-text{color:var(--text-muted);font-size:13.5px;line-height:1.7;font-style:italic;margin:0 0 14px}
+.review-tag{color:#25D366;font-size:12px;font-weight:600;margin-top:auto;padding-top:12px}
+.review-tag i{margin-right:5px}
+.review-card:hover{transform:none;box-shadow:none}
+.hidden-review{display:none}
+#reviewsGrid.expanded .hidden-review{display:block}
+.reviews-more-btn{background:transparent;border:1.5px solid rgba(250,146,11,.5);color:var(--primary);font-weight:700;font-size:14px;padding:12px 32px;border-radius:100px;cursor:pointer;transition:all .25s;font-family:'Inter',sans-serif}
+.reviews-more-btn:hover{background:rgba(250,146,11,.12);border-color:var(--primary)}
+.reviews-more-btn i{margin-left:6px;font-size:12px}
+.proof-title{color:var(--text);font-size:22px;font-weight:800;margin:0}
+.proof-sub{color:var(--text-muted);font-size:13px;margin:8px 0 0}
+.proof-item img{width:100%;height:220px;object-fit:cover;object-position:top;border-radius:12px;border:1px solid var(--border);cursor:zoom-in;transition:transform .25s,box-shadow .25s}
+.proof-item img:hover{transform:scale(1.04);box-shadow:0 8px 24px rgba(250,146,11,.15)}
+.hidden-proof{display:none}
+#proofGrid.expanded .hidden-proof{display:block}
+.proof-lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;z-index:10000;padding:16px;cursor:zoom-out}
+.proof-lightbox.open{display:flex}
+.proof-lightbox img{max-width:100%;max-height:92vh;border-radius:12px}
+.js .rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;transition-delay:calc(var(--rd,0)*80ms)}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}}
+@media(max-width:768px){.section-title{font-size:1.9rem}}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+
+<a href="https://wa.me/923229952880" target="_blank" class="wa-float">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<!-- NAVBAR PLACEHOLDER -->
+<div id="navbar-placeholder"></div>
+
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="container" style="position:relative">
+    <div class="section-eyebrow">Customer Reviews</div>
+    <h1 class="section-title">What Our Customers Say</h1>
+    <p style="color:var(--text-muted);font-size:15px;margin-top:12px">Real reviews from real buyers — 4.9&#9733; rated with 4999+ orders</p>
+  </div>
+</section>
+
+<section class="reviews-section">
+  <div class="container">
+    <div class="text-center mb-4 rv">
+      <div class="section-eyebrow">Customer Reviews</div>
+      <h2 class="section-title">What Our Customers Say</h2>
+      <p style="color:var(--text-muted);font-size:14px;margin-top:12px;max-width:520px;margin-left:auto;margin-right:auto">Real reviews from real buyers — join hundreds of happy customers</p>
+    </div>
+    <div class="row g-3 rv" id="reviewsGrid">
+<div class="col-md-4">
+        <div class="review-card">
+          <div class="review-head">
+            <div class="review-avatar">RC</div>
+            <div>
+              <div class="review-name">Rafaqat Cheema</div>
+              <div class="review-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="review-text">"Recommended, 100% working. Reply in seconds. Thanks!"</p>
+          <div class="review-tag"><i class="fa-solid fa-circle-check"></i> Verified Buyer</div>
+        </div>
+      </div>
+<div class="col-md-4">
+        <div class="review-card">
+          <div class="review-head">
+            <div class="review-avatar">HA</div>
+            <div>
+              <div class="review-name">Hassan Ali</div>
+              <div class="review-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="review-text">"The process was smooth, the team was professional. Highly recommended!"</p>
+          <div class="review-tag"><i class="fa-solid fa-circle-check"></i> Verified Buyer</div>
+        </div>
+      </div>
+<div class="col-md-4">
+        <div class="review-card">
+          <div class="review-head">
+            <div class="review-avatar">MN</div>
+            <div>
+              <div class="review-name">Mian Noorullah</div>
+              <div class="review-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="review-text">"Thank you for quickly responding and giving Canva EDU Pro access urgently. Best service!"</p>
+          <div class="review-tag"><i class="fa-solid fa-circle-check"></i> Verified Buyer</div>
+        </div>
+      </div>
+<div class="col-md-4">
+        <div class="review-card">
+          <div class="review-head">
+            <div class="review-avatar">SH</div>
+            <div>
+              <div class="review-name">S Ain Haider</div>
+              <div class="review-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="review-text">"MashaAllah, behtreen Canva mil gaya aur bonus bhi diya. JazakAllah!"</p>
+          <div class="review-tag"><i class="fa-solid fa-circle-check"></i> Verified Buyer</div>
+        </div>
+      </div>
+<div class="col-md-4">
+        <div class="review-card">
+          <div class="review-head">
+            <div class="review-avatar">CR</div>
+            <div>
+              <div class="review-name">Chaudhary Rafay</div>
+              <div class="review-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="review-text">"Good and fast service after payment. Highly recommend!"</p>
+          <div class="review-tag"><i class="fa-solid fa-circle-check"></i> Verified Buyer</div>
+        </div>
+      </div>
+<div class="col-md-4">
+        <div class="review-card">
+          <div class="review-head">
+            <div class="review-avatar">NA</div>
+            <div>
+              <div class="review-name">Naveed Ahmed</div>
+              <div class="review-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="review-text">"Agar link mein koi kharabi ho to free mein sahi kar ke dete hain. Good service!"</p>
+          <div class="review-tag"><i class="fa-solid fa-circle-check"></i> Verified Buyer</div>
+        </div>
+      </div>
+<div class="col-md-4 hidden-review">
+        <div class="review-card">
+          <div class="review-head">
+            <div class="review-avatar">AM</div>
+            <div>
+              <div class="review-name">Abdulrehman Mani</div>
+              <div class="review-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="review-text">"Got bonus with Canva EDU Pro in just Rs. 200. Great service!"</p>
+          <div class="review-tag"><i class="fa-solid fa-circle-check"></i> Verified Buyer</div>
+        </div>
+      </div>
+<div class="col-md-4 hidden-review">
+        <div class="review-card">
+          <div class="review-head">
+            <div class="review-avatar">TB</div>
+            <div>
+              <div class="review-name">Tariq Bhatti</div>
+              <div class="review-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="review-text">"Purchased it, successfully delivered."</p>
+          <div class="review-tag"><i class="fa-solid fa-circle-check"></i> Verified Buyer</div>
+        </div>
+      </div>
+<div class="col-md-4 hidden-review">
+        <div class="review-card">
+          <div class="review-head">
+            <div class="review-avatar">MA</div>
+            <div>
+              <div class="review-name">M Ayaan</div>
+              <div class="review-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="review-text">"Recommended! Canva EDU Pro ke sath bonus bhi milta hai. Good service!"</p>
+          <div class="review-tag"><i class="fa-solid fa-circle-check"></i> Verified Buyer</div>
+        </div>
+      </div>
+<div class="col-md-4 hidden-review">
+        <div class="review-card">
+          <div class="review-head">
+            <div class="review-avatar">MS</div>
+            <div>
+              <div class="review-name">Mehtab SQ</div>
+              <div class="review-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="review-text">"Recommended, 100% working. Reply in seconds. Thank you so much!"</p>
+          <div class="review-tag"><i class="fa-solid fa-circle-check"></i> Verified Buyer</div>
+        </div>
+      </div>
+<div class="col-md-4 hidden-review">
+        <div class="review-card">
+          <div class="review-head">
+            <div class="review-avatar">SL</div>
+            <div>
+              <div class="review-name">Salman Latif</div>
+              <div class="review-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="review-text">"Just bought this service. Excellent and trusted service. JazakAllah!"</p>
+          <div class="review-tag"><i class="fa-solid fa-circle-check"></i> Verified Buyer</div>
+        </div>
+      </div>
+<div class="col-md-4 hidden-review">
+        <div class="review-card">
+          <div class="review-head">
+            <div class="review-avatar">HR</div>
+            <div>
+              <div class="review-name">Haseeb Rj</div>
+              <div class="review-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="review-text">"Highly recommend! Trusted seller. Thank you!"</p>
+          <div class="review-tag"><i class="fa-solid fa-circle-check"></i> Verified Buyer</div>
+        </div>
+      </div>
+<div class="col-md-4 hidden-review">
+        <div class="review-card">
+          <div class="review-head">
+            <div class="review-avatar">MM</div>
+            <div>
+              <div class="review-name">Muhammad Muneeb Ch</div>
+              <div class="review-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="review-text">"Very good service, and bonus template free!"</p>
+          <div class="review-tag"><i class="fa-solid fa-circle-check"></i> Verified Buyer</div>
+        </div>
+      </div>
+<div class="col-md-4 hidden-review">
+        <div class="review-card">
+          <div class="review-head">
+            <div class="review-avatar">AK</div>
+            <div>
+              <div class="review-name">Amjid Khan Niazi</div>
+              <div class="review-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="review-text">"Good service and great man! Highly recommended."</p>
+          <div class="review-tag"><i class="fa-solid fa-circle-check"></i> Verified Buyer</div>
+        </div>
+      </div>
+<div class="col-md-4 hidden-review">
+        <div class="review-card">
+          <div class="review-head">
+            <div class="review-avatar">MS</div>
+            <div>
+              <div class="review-name">Maryam Srl</div>
+              <div class="review-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="review-text">"Good service and real. Thank you!"</p>
+          <div class="review-tag"><i class="fa-solid fa-circle-check"></i> Verified Buyer</div>
+        </div>
+      </div>
+    </div>
+      <div class="text-center mt-4">
+      <button class="reviews-more-btn" id="reviewsMoreBtn" data-open="0" onclick="toggleReviews(this)">Show More Reviews <i class="fa-solid fa-chevron-down"></i></button>
+    </div>
+    <div class="text-center mt-5 mb-3 rv">
+      <h3 class="proof-title">Screenshot Proof</h3>
+      <p class="proof-sub">Real WhatsApp &amp; Facebook chats from our customers — tap any screenshot to view</p>
+    </div>
+    <div class="row g-2 rv" id="proofGrid">
+<div class="col-6 col-md-3 proof-item"><img width="560" height="1160" src="/images/reviews/review-01.webp" alt="Customer review screenshot 1" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="col-6 col-md-3 proof-item"><img width="560" height="1151" src="/images/reviews/review-02.webp" alt="Customer review screenshot 2" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="col-6 col-md-3 proof-item"><img width="560" height="1157" src="/images/reviews/review-03.webp" alt="Customer review screenshot 3" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="col-6 col-md-3 proof-item"><img width="560" height="1151" src="/images/reviews/review-04.webp" alt="Customer review screenshot 4" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="col-6 col-md-3 proof-item"><img width="560" height="995" src="/images/reviews/review-05.webp" alt="Customer review screenshot 5" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="col-6 col-md-3 proof-item"><img width="560" height="1160" src="/images/reviews/review-06.webp" alt="Customer review screenshot 6" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="col-6 col-md-3 proof-item"><img width="560" height="995" src="/images/reviews/review-07.webp" alt="Customer review screenshot 7" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="col-6 col-md-3 proof-item"><img width="560" height="1160" src="/images/reviews/review-08.webp" alt="Customer review screenshot 8" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="1166" src="/images/reviews/review-09.webp" alt="Customer review screenshot 9" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="1160" src="/images/reviews/review-10.webp" alt="Customer review screenshot 10" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="995" src="/images/reviews/review-11.webp" alt="Customer review screenshot 11" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="1154" src="/images/reviews/review-12.webp" alt="Customer review screenshot 12" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="995" src="/images/reviews/review-13.webp" alt="Customer review screenshot 13" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="1151" src="/images/reviews/review-14.webp" alt="Customer review screenshot 14" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="995" src="/images/reviews/review-15.webp" alt="Customer review screenshot 15" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="995" src="/images/reviews/review-16.webp" alt="Customer review screenshot 16" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="995" src="/images/reviews/review-17.webp" alt="Customer review screenshot 17" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="1151" src="/images/reviews/review-18.webp" alt="Customer review screenshot 18" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="1154" src="/images/reviews/review-19.webp" alt="Customer review screenshot 19" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="1151" src="/images/reviews/review-20.webp" alt="Customer review screenshot 20" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="995" src="/images/reviews/review-21.webp" alt="Customer review screenshot 21" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="995" src="/images/reviews/review-22.webp" alt="Customer review screenshot 22" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="1154" src="/images/reviews/review-23.webp" alt="Customer review screenshot 23" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="995" src="/images/reviews/review-24.webp" alt="Customer review screenshot 24" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="995" src="/images/reviews/review-25.webp" alt="Customer review screenshot 25" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="1151" src="/images/reviews/review-26.webp" alt="Customer review screenshot 26" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="995" src="/images/reviews/review-27.webp" alt="Customer review screenshot 27" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="995" src="/images/reviews/review-28.webp" alt="Customer review screenshot 28" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="995" src="/images/reviews/review-29.webp" alt="Customer review screenshot 29" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="1164" src="/images/reviews/review-30.webp" alt="Customer review screenshot 30" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="995" src="/images/reviews/review-31.webp" alt="Customer review screenshot 31" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="1154" src="/images/reviews/review-32.webp" alt="Customer review screenshot 32" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="995" src="/images/reviews/review-33.webp" alt="Customer review screenshot 33" loading="lazy" onclick="openProof(this.src)"></div>
+    </div>
+    <div class="text-center mt-4">
+      <button class="reviews-more-btn" id="proofMoreBtn" onclick="toggleProof(this)">Show All Screenshots <i class="fa-solid fa-chevron-down"></i></button>
+    </div>
+</div>
+</section>
+
+<div class="proof-lightbox" id="proofLightbox" onclick="closeProof()"><img src="" alt="Review screenshot"></div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="row text-start g-4 mb-4">
+      <div class="col-md-4">
+        <div class="footer-logo">⚡ SR Digital World</div>
+        <p style="color:var(--text-muted);font-size:13px;line-height:1.7;margin-top:8px">Pakistan's #1 digital tools store. Premium subscriptions, best prices, instant delivery.</p>
+      </div>
+      <div class="col-md-4">
+        <div style="color:var(--text);font-weight:700;font-size:13px;margin-bottom:12px;letter-spacing:0.5px">QUICK LINKS</div>
+        <div class="d-flex flex-column gap-2">
+          <a href="/" class="footer-link">Home</a>
+          <a href="/products/" class="footer-link">Tools</a>
+          <a href="/about/" class="footer-link">About Us</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div style="color:var(--text);font-weight:700;font-size:13px;margin-bottom:12px;letter-spacing:0.5px">SUPPORT</div>
+        <div class="d-flex flex-column gap-2">
+          <a href="/faqs/" class="footer-link">FAQs</a><a href="/warranty/" class="footer-link">Warranty</a>
+          <a href="/contact/" class="footer-link">Contact Us</a>
+          <a href="https://wa.me/923229952880" target="_blank" class="footer-link">WhatsApp Support</a>
+        </div>
+      </div>
+    </div>
+    <p class="footer-text" style="border-top:1px solid var(--border);padding-top:20px">© 2026 SR Digital World. All Rights Reserved. | 🇵🇰 Made in Pakistan</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+// --- NAVBAR SCRIPT START ---
+fetch('/navbar.html?v=2')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('navbar-placeholder').innerHTML = data;
+    let segs = window.location.pathname.split('/').filter(s => s);
+    let top = segs[0] || 'index';
+    let navLinks = document.querySelectorAll('.nav-link-item');
+    navLinks.forEach(link => {
+      let href = link.getAttribute('href') || '';
+      let hseg = href.split('/').filter(s => s)[0] || 'index';
+      if(hseg === top) { link.classList.add('active'); }
+      else { link.classList.remove('active'); }
+    });
+  });
+</script>
+<script>
+function toggleReviews(btn){
+  var grid = document.getElementById('reviewsGrid');
+  var open = grid.classList.toggle('expanded');
+  btn.setAttribute('data-open', open ? '1' : '0');
+  btn.innerHTML = open ? 'Show Less <i class="fa-solid fa-chevron-up"></i>' : 'Show More Reviews <i class="fa-solid fa-chevron-down"></i>';
+}
+</script>
+<script>
+function openProof(src){var lb=document.getElementById('proofLightbox');lb.querySelector('img').src=src;lb.classList.add('open');document.body.style.overflow='hidden';}
+function closeProof(){document.getElementById('proofLightbox').classList.remove('open');document.body.style.overflow='';}
+function toggleProof(btn){var g=document.getElementById('proofGrid');var open=g.classList.toggle('expanded');btn.innerHTML=open?'Show Less <i class="fa-solid fa-chevron-up"></i>':'Show All Screenshots <i class="fa-solid fa-chevron-down"></i>';}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeProof();});
+</script>
+<script>
+/* scroll reveal */
+(function(){
+  var els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)||window.matchMedia('(prefers-reduced-motion: reduce)').matches){els.forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>
