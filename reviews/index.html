@@ -44,10 +44,16 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text)}
 .reviews-more-btn i{margin-left:6px;font-size:12px}
 .proof-title{color:var(--text);font-size:22px;font-weight:800;margin:0}
 .proof-sub{color:var(--text-muted);font-size:13px;margin:8px 0 0}
-.proof-item img{width:100%;height:220px;object-fit:cover;object-position:top;border-radius:12px;border:1px solid var(--border);cursor:zoom-in;transition:transform .25s,box-shadow .25s}
-.proof-item img:hover{transform:scale(1.04);box-shadow:0 8px 24px rgba(250,146,11,.15)}
-.hidden-proof{display:none}
-#proofGrid.expanded .hidden-proof{display:block}
+.proof-carousel{overflow:hidden;position:relative;cursor:grab;touch-action:pan-y;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.proof-carousel.is-dragging{cursor:grabbing}
+.proof-track{display:flex;gap:14px;width:max-content;will-change:transform}
+.proof-slide{flex:0 0 auto}
+.proof-slide img{height:300px;width:auto;border-radius:12px;border:1px solid var(--border);cursor:zoom-in;user-select:none;-webkit-user-select:none;pointer-events:auto}
+@media(max-width:576px){.proof-slide img{height:230px}}
+
+
+
+
 .proof-lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;z-index:10000;padding:16px;cursor:zoom-out}
 .proof-lightbox.open{display:flex}
 .proof-lightbox img{max-width:100%;max-height:92vh;border-radius:12px}
@@ -285,46 +291,45 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text)}
     </div>
     <div class="text-center mt-5 mb-3 rv">
       <h3 class="proof-title">Screenshot Proof</h3>
-      <p class="proof-sub">Real WhatsApp &amp; Facebook chats from our customers — tap any screenshot to view</p>
+      <p class="proof-sub">Real WhatsApp &amp; Facebook chats from our customers — drag to scroll, tap any screenshot to view</p>
     </div>
-    <div class="row g-2 rv" id="proofGrid">
-<div class="col-6 col-md-3 proof-item"><img width="560" height="1160" src="/images/reviews/review-01.webp" alt="Customer review screenshot 1" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item"><img width="560" height="1151" src="/images/reviews/review-02.webp" alt="Customer review screenshot 2" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item"><img width="560" height="1157" src="/images/reviews/review-03.webp" alt="Customer review screenshot 3" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item"><img width="560" height="1151" src="/images/reviews/review-04.webp" alt="Customer review screenshot 4" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item"><img width="560" height="995" src="/images/reviews/review-05.webp" alt="Customer review screenshot 5" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item"><img width="560" height="1160" src="/images/reviews/review-06.webp" alt="Customer review screenshot 6" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item"><img width="560" height="995" src="/images/reviews/review-07.webp" alt="Customer review screenshot 7" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item"><img width="560" height="1160" src="/images/reviews/review-08.webp" alt="Customer review screenshot 8" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="1166" src="/images/reviews/review-09.webp" alt="Customer review screenshot 9" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="1160" src="/images/reviews/review-10.webp" alt="Customer review screenshot 10" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="995" src="/images/reviews/review-11.webp" alt="Customer review screenshot 11" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="1154" src="/images/reviews/review-12.webp" alt="Customer review screenshot 12" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="995" src="/images/reviews/review-13.webp" alt="Customer review screenshot 13" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="1151" src="/images/reviews/review-14.webp" alt="Customer review screenshot 14" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="995" src="/images/reviews/review-15.webp" alt="Customer review screenshot 15" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="995" src="/images/reviews/review-16.webp" alt="Customer review screenshot 16" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="995" src="/images/reviews/review-17.webp" alt="Customer review screenshot 17" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="1151" src="/images/reviews/review-18.webp" alt="Customer review screenshot 18" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="1154" src="/images/reviews/review-19.webp" alt="Customer review screenshot 19" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="1151" src="/images/reviews/review-20.webp" alt="Customer review screenshot 20" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="995" src="/images/reviews/review-21.webp" alt="Customer review screenshot 21" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="995" src="/images/reviews/review-22.webp" alt="Customer review screenshot 22" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="1154" src="/images/reviews/review-23.webp" alt="Customer review screenshot 23" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="995" src="/images/reviews/review-24.webp" alt="Customer review screenshot 24" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="995" src="/images/reviews/review-25.webp" alt="Customer review screenshot 25" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="1151" src="/images/reviews/review-26.webp" alt="Customer review screenshot 26" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="995" src="/images/reviews/review-27.webp" alt="Customer review screenshot 27" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="995" src="/images/reviews/review-28.webp" alt="Customer review screenshot 28" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="995" src="/images/reviews/review-29.webp" alt="Customer review screenshot 29" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="1164" src="/images/reviews/review-30.webp" alt="Customer review screenshot 30" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="995" src="/images/reviews/review-31.webp" alt="Customer review screenshot 31" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="1154" src="/images/reviews/review-32.webp" alt="Customer review screenshot 32" loading="lazy" onclick="openProof(this.src)"></div>
-<div class="col-6 col-md-3 proof-item hidden-proof"><img width="560" height="995" src="/images/reviews/review-33.webp" alt="Customer review screenshot 33" loading="lazy" onclick="openProof(this.src)"></div>
-    </div>
-    <div class="text-center mt-4">
-      <button class="reviews-more-btn" id="proofMoreBtn" onclick="toggleProof(this)">Show All Screenshots <i class="fa-solid fa-chevron-down"></i></button>
-    </div>
+    <div class="proof-carousel rv" id="proofCarousel">
+<div class="proof-track" id="proofTrack">
+<div class="proof-slide"><img draggable="false" src="/images/reviews/review-01.webp" alt="Customer review screenshot 1" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="proof-slide"><img draggable="false" src="/images/reviews/review-02.webp" alt="Customer review screenshot 2" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="proof-slide"><img draggable="false" src="/images/reviews/review-03.webp" alt="Customer review screenshot 3" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="proof-slide"><img draggable="false" src="/images/reviews/review-04.webp" alt="Customer review screenshot 4" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="proof-slide"><img draggable="false" src="/images/reviews/review-05.webp" alt="Customer review screenshot 5" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="proof-slide"><img draggable="false" src="/images/reviews/review-06.webp" alt="Customer review screenshot 6" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="proof-slide"><img draggable="false" src="/images/reviews/review-07.webp" alt="Customer review screenshot 7" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="proof-slide"><img draggable="false" src="/images/reviews/review-08.webp" alt="Customer review screenshot 8" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="proof-slide"><img draggable="false" src="/images/reviews/review-09.webp" alt="Customer review screenshot 9" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="proof-slide"><img draggable="false" src="/images/reviews/review-10.webp" alt="Customer review screenshot 10" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="proof-slide"><img draggable="false" src="/images/reviews/review-11.webp" alt="Customer review screenshot 11" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="proof-slide"><img draggable="false" src="/images/reviews/review-12.webp" alt="Customer review screenshot 12" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="proof-slide"><img draggable="false" src="/images/reviews/review-13.webp" alt="Customer review screenshot 13" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="proof-slide"><img draggable="false" src="/images/reviews/review-14.webp" alt="Customer review screenshot 14" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="proof-slide"><img draggable="false" src="/images/reviews/review-15.webp" alt="Customer review screenshot 15" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="proof-slide"><img draggable="false" src="/images/reviews/review-16.webp" alt="Customer review screenshot 16" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="proof-slide"><img draggable="false" src="/images/reviews/review-17.webp" alt="Customer review screenshot 17" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="proof-slide"><img draggable="false" src="/images/reviews/review-18.webp" alt="Customer review screenshot 18" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="proof-slide"><img draggable="false" src="/images/reviews/review-19.webp" alt="Customer review screenshot 19" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="proof-slide"><img draggable="false" src="/images/reviews/review-20.webp" alt="Customer review screenshot 20" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="proof-slide"><img draggable="false" src="/images/reviews/review-21.webp" alt="Customer review screenshot 21" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="proof-slide"><img draggable="false" src="/images/reviews/review-22.webp" alt="Customer review screenshot 22" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="proof-slide"><img draggable="false" src="/images/reviews/review-23.webp" alt="Customer review screenshot 23" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="proof-slide"><img draggable="false" src="/images/reviews/review-24.webp" alt="Customer review screenshot 24" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="proof-slide"><img draggable="false" src="/images/reviews/review-25.webp" alt="Customer review screenshot 25" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="proof-slide"><img draggable="false" src="/images/reviews/review-26.webp" alt="Customer review screenshot 26" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="proof-slide"><img draggable="false" src="/images/reviews/review-27.webp" alt="Customer review screenshot 27" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="proof-slide"><img draggable="false" src="/images/reviews/review-28.webp" alt="Customer review screenshot 28" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="proof-slide"><img draggable="false" src="/images/reviews/review-29.webp" alt="Customer review screenshot 29" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="proof-slide"><img draggable="false" src="/images/reviews/review-30.webp" alt="Customer review screenshot 30" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="proof-slide"><img draggable="false" src="/images/reviews/review-31.webp" alt="Customer review screenshot 31" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="proof-slide"><img draggable="false" src="/images/reviews/review-32.webp" alt="Customer review screenshot 32" loading="lazy" onclick="openProof(this.src)"></div>
+<div class="proof-slide"><img draggable="false" src="/images/reviews/review-33.webp" alt="Customer review screenshot 33" loading="lazy" onclick="openProof(this.src)"></div>
+</div>
+</div>
 </div>
 </section>
 
@@ -387,8 +392,44 @@ function toggleReviews(btn){
 <script>
 function openProof(src){var lb=document.getElementById('proofLightbox');lb.querySelector('img').src=src;lb.classList.add('open');document.body.style.overflow='hidden';}
 function closeProof(){document.getElementById('proofLightbox').classList.remove('open');document.body.style.overflow='';}
-function toggleProof(btn){var g=document.getElementById('proofGrid');var open=g.classList.toggle('expanded');btn.innerHTML=open?'Show Less <i class="fa-solid fa-chevron-up"></i>':'Show All Screenshots <i class="fa-solid fa-chevron-down"></i>';}
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeProof();});
+</script>
+<script>
+/* screenshot carousel: auto-scroll like competitor, drag + hover pause */
+(function(){
+  var car=document.getElementById('proofCarousel'); if(!car) return;
+  var track=document.getElementById('proofTrack'); if(!track) return;
+  track.innerHTML+=track.innerHTML;
+  var reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var paused=false, dragging=false, moved=false, offset=0, last=performance.now();
+  var startX=0, lastX=0, speed=0.04;
+  function half(){return track.scrollWidth/2;}
+  function norm(){var h=half(); if(!h) return; while(offset>=h)offset-=h; while(offset<0)offset+=h;}
+  function render(){track.style.transform='translate3d(-'+offset+'px,0,0)';}
+  function tick(now){
+    var dt=Math.min(50,now-last); last=now;
+    if(!paused&&!dragging&&!reduceMotion){offset+=speed*dt;norm();render();}
+    requestAnimationFrame(tick);
+  }
+  car.addEventListener('pointerdown',function(e){
+    dragging=true; moved=false; startX=lastX=e.clientX; paused=true;
+    car.classList.add('is-dragging');
+    try{car.setPointerCapture(e.pointerId);}catch(_){}
+  });
+  car.addEventListener('pointermove',function(e){
+    if(!dragging)return;
+    var dx=e.clientX-lastX; lastX=e.clientX;
+    if(Math.abs(e.clientX-startX)>8)moved=true;
+    offset-=dx; norm(); render();
+  });
+  function endDrag(){if(!dragging)return; dragging=false; paused=false; car.classList.remove('is-dragging'); last=performance.now();}
+  car.addEventListener('pointerup',endDrag);
+  car.addEventListener('pointercancel',endDrag);
+  car.addEventListener('mouseenter',function(){paused=true;});
+  car.addEventListener('mouseleave',function(){if(!dragging){paused=false;endDrag();}});
+  car.addEventListener('click',function(e){if(moved){e.stopPropagation();e.preventDefault();moved=false;}},true);
+  requestAnimationFrame(tick);
+})();
 </script>
 <script>
 /* scroll reveal */
