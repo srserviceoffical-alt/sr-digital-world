@@ -1,14 +1,14 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <nav class="nav-bar">
-  <div class="container d-flex justify-content-between align-items-center flex-wrap gap-3">
+  <div class="container d-flex justify-content-between align-items-center gap-3 nav-inner">
     <a href="/" class="nav-logo" style="text-decoration:none">SR Digital World</a>
-    
+
     <button class="menu-toggle" onclick="toggleMobileMenu()">
       <i class="fa-solid fa-bars"></i>
     </button>
 
-    <div class="nav-links align-items-center gap-4" id="mobileMenu">
+    <div class="nav-links align-items-center" id="mobileMenu">
       <a href="/" class="nav-link-item">Home</a>
       <a href="/products/" class="nav-link-item">Tools</a>
       <a href="/faqs/" class="nav-link-item">FAQs</a>
@@ -18,10 +18,11 @@
       <a href="/about/" class="nav-link-item">About</a>
       <a href="/contact/" class="nav-link-item">Contact</a>
     </div>
-    
-    <a href="https://wa.me/923229952880" target="_blank" style="background:var(--primary);color:var(--bg);padding:8px 20px;border-radius:100px;font-weight:700;font-size:13px;text-decoration:none;white-space:nowrap">
-      <i class="fa-brands fa-whatsapp" style="margin-right:6px"></i>WhatsApp
-    </a>
+
+    <div class="d-flex align-items-center gap-2 nav-cta">
+      <a href="/products/" class="nav-browse"><i class="fa-solid fa-magnifying-glass"></i>Browse Tools</a>
+      <a href="https://wa.me/923229952880" target="_blank" class="nav-wa"><i class="fa-brands fa-whatsapp"></i>WHATSAPP</a>
+    </div>
   </div>
 </nav>
 
@@ -30,31 +31,58 @@
   <span style="font-weight: 600; font-size: 14px; color: var(--text);">Follow Channel</span>
 </a>
 
-<style>:root{--bg:#FFFFFF;--bg-soft:#F6F7FB;--card:#FFFFFF;--border:#E5E8F2;--primary:#FA920B;--primary-text:#B45309;--accent:#FF8200;--cta:#15803D;--cta-hover:#166534;--hot:#EF4444;--gold:#F59E0B;--text:#222222;--text-muted:#5B6270;}.nav-bar{background:rgba(255,255,255,.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,140,0,0.15);padding:16px 0;position:sticky;top:0;z-index:1000}.nav-logo{font-size:1.4rem;font-weight:900;background:linear-gradient(135deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-0.5px}.nav-link-item{color:var(--text-muted);text-decoration:none;font-size:14px;font-weight:600;transition:color 0.25s;position:relative;padding:4px 0}.nav-link-item:hover{color:var(--primary-text)}.nav-link-item.active{color:var(--primary-text)}.nav-link-item.active::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:2px;background:var(--primary);border-radius:2px}.menu-toggle{ display:none; background:transparent; border:none; color:var(--primary); font-size:24px; cursor:pointer}
-  
-  @media(max-width: 991px) {.menu-toggle{ display:block}.nav-links{ display:none; width:100%; flex-direction:column; background:var(--card); padding:20px; border-radius:12px; border:1px solid var(--border); margin-top:15px; gap:15px !important}.nav-links.show-menu{ display:flex !important}
+<style>:root{--bg:#FFFFFF;--bg-soft:#F6F7FB;--card:#FFFFFF;--border:#E5E8F2;--primary:#FA920B;--primary-text:#B45309;--accent:#FF8200;--cta:#15803D;--cta-hover:#166534;--hot:#EF4444;--gold:#F59E0B;--text:#222222;--text-muted:#5B6270;}
+/* floating pill header (competitor-style) */
+#navbar-placeholder .nav-bar{position:sticky;top:12px;z-index:1000;width:calc(100% - 24px);max-width:1280px;margin:12px auto 0;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid var(--border);border-radius:100px;box-shadow:0 10px 34px rgba(20,24,60,.10);padding:10px 12px 10px 26px}
+#navbar-placeholder .nav-inner{flex-wrap:nowrap}
+#navbar-placeholder .nav-links{gap:22px}
+.nav-logo{font-size:1.25rem;font-weight:900;background:linear-gradient(135deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-0.5px;white-space:nowrap}
+.nav-link-item{color:var(--text-muted);text-decoration:none;font-size:14px;font-weight:600;transition:color 0.25s;position:relative;padding:4px 0;white-space:nowrap}
+.nav-link-item:hover{color:var(--primary-text)}
+.nav-link-item.active{color:var(--primary-text)}
+.nav-link-item.active::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:2px;background:var(--primary);border-radius:2px}
+.nav-browse{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--border);color:var(--text);font-weight:700;font-size:13px;padding:10px 20px;border-radius:100px;text-decoration:none;white-space:nowrap;transition:border-color .2s,color .2s}
+.nav-browse:hover{border-color:var(--primary);color:var(--primary-text)}
+.nav-browse i{font-size:13px;color:var(--text-muted)}
+.nav-wa{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--primary),var(--accent));color:#fff;font-weight:800;font-size:13px;letter-spacing:1px;padding:11px 24px;border-radius:100px;text-decoration:none;white-space:nowrap;box-shadow:0 6px 18px rgba(250,146,11,.35);transition:transform .2s,box-shadow .2s}
+.nav-wa:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(250,146,11,.45);color:#fff}
+.nav-wa i{font-size:16px}
+.menu-toggle{ display:none; background:transparent; border:none; color:var(--primary); font-size:24px; cursor:pointer}
+
+  @media(max-width: 1100px) {.nav-browse{display:none}}
+  @media(max-width: 991px) {
+    #navbar-placeholder .nav-bar{border-radius:28px}
+    #navbar-placeholder .nav-inner{flex-wrap:wrap}
+    .menu-toggle{ display:block}
+    .nav-links{ display:none; width:100%; flex-direction:column; align-items:flex-start !important; background:var(--card); padding:20px; border-radius:16px; border:1px solid var(--border); margin-top:12px; gap:14px !important}
+    .nav-links.show-menu{ display:flex !important}
+    #navbar-placeholder .nav-cta{margin-left:auto}
   }
-  @media(min-width: 992px) {.nav-links{ display:flex !important}
-  }.dropdown{ position:relative; display:inline-block}.dropdown-content{ display:none; position:absolute; top:100%; left:0; background-color:var(--card); min-width:220px; border:1px solid var(--border); border-radius:12px; box-shadow:0 10px 30px rgba(20,24,60,.12); z-index:1050; padding:10px 0; flex-direction:column; overflow:hidden}.dropdown:hover .dropdown-content{ display:flex}.dropdown-content a{ color:var(--text-muted); padding:12px 20px; text-decoration:none; font-size:14px; font-weight:600; transition:all 0.25s; border-left:3px solid transparent}.dropdown-content a:hover{ color:var(--primary); background-color:rgba(255,140,0,0.05); border-left-color:var(--primary)}
-  
+  @media(max-width: 480px) {
+    .nav-logo{font-size:1.05rem}
+    .nav-wa{padding:9px 16px;font-size:12px}
+    #navbar-placeholder .nav-bar{padding:8px 10px 8px 18px}
+  }
+  .dropdown{ position:relative; display:inline-block}.dropdown-content{ display:none; position:absolute; top:100%; left:0; background-color:var(--card); min-width:220px; border:1px solid var(--border); border-radius:12px; box-shadow:0 10px 30px rgba(20,24,60,.12); z-index:1050; padding:10px 0; flex-direction:column; overflow:hidden}.dropdown:hover .dropdown-content{ display:flex}.dropdown-content a{ color:var(--text-muted); padding:12px 20px; text-decoration:none; font-size:14px; font-weight:600; transition:all 0.25s; border-left:3px solid transparent}.dropdown-content a:hover{ color:var(--primary); background-color:rgba(255,140,0,0.05); border-left-color:var(--primary)}
+
   @media(max-width: 991px) {.dropdown-content{ position:static; box-shadow:none; border:none; background:transparent; padding:0 0 0 15px; margin-top:5px}.dropdown:hover .dropdown-content{ display:none}.dropdown-content.show-mobile{ display:flex !important}.dropdown .nav-link-item{ padding-bottom:4px !important}
   }.channel-float{
     position:fixed;
     bottom:28px;
-    left:28px; 
-    background:#111b14; 
+    left:28px;
+    background:#111b14;
     border:1px solid #1f5c2f;
     padding:10px 20px;
-    border-radius:50px; 
+    border-radius:50px;
     display:flex;
     align-items:center;
     gap:8px;
     text-decoration:none;
-    z-index:9999; 
+    z-index:9999;
     box-shadow:0 4px 15px rgba(20,24,60,.12);
     transition:all 0.3s ease}.channel-float:hover{
     background:#1a2e20;
-    transform:translateY(-3px); 
+    transform:translateY(-3px);
     border-color:#25D366}
 
   @media(max-width: 768px) {.channel-float{
@@ -97,7 +125,7 @@
     });
 
   }
-  
+
   highlightActiveMenu();
 </script>
 
