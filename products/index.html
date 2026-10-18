@@ -51,7 +51,18 @@
 
 
 
+
+/* scroll reveal (same system as homepage) */
+.js .rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;transition-delay:calc(var(--rd,0)*80ms)}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}}
+/* category filter chips */
+.cat-chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:18px}
+.cat-chip{background:var(--card);border:1px solid var(--border);color:var(--text-muted);font-size:13px;font-weight:600;padding:8px 18px;border-radius:100px;cursor:pointer;transition:all .2s;font-family:inherit}
+.cat-chip:hover{border-color:var(--primary);color:var(--primary-text)}
+.cat-chip.active{background:var(--primary);border-color:var(--primary);color:#fff}
 </style>
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 
@@ -72,15 +83,24 @@
         <input type="text" id="productSearch" oninput="filterProducts(this.value)" placeholder="Search tools... (e.g. Netflix, VPN, AI)" autocomplete="off"
           style="width:100%;background:var(--card);border:1px solid var(--border);color:var(--text);padding:13px 18px 13px 44px;border-radius:100px;font-size:14px;outline:none;font-family:'Inter',sans-serif">
       </div>
+      <div class="cat-chips rv">
+        <button class="cat-chip active" onclick="setCat('all',this)">All</button>
+        <button class="cat-chip" onclick="setCat('design',this)">Design</button>
+        <button class="cat-chip" onclick="setCat('security',this)">Security</button>
+        <button class="cat-chip" onclick="setCat('ai',this)">AI Tools</button>
+        <button class="cat-chip" onclick="setCat('streaming',this)">Streaming</button>
+        <button class="cat-chip" onclick="setCat('productivity',this)">Productivity</button>
+        <button class="cat-chip" onclick="setCat('learning',this)">Learning</button>
+      </div>
   </div>
 </section>
 
 <section class="products-section">
   <div class="container">
-    <div class="cat-label"><i class="fa-solid fa-palette"></i> Design & Creativity</div>
-    <div class="row g-4 mb-5">
+    <div class="cat-label rv"><i class="fa-solid fa-palette"></i> Design & Creativity</div>
+    <div class="row g-4 mb-5" data-cat="design">
 <div class="col-lg-4 col-md-6">
-        <div class="product-card">
+        <div class="product-card rv">
           <div class="card-tag">Design Tool</div>
           <img width="128" height="128" class="product-icon" src="/images/canva.webp" alt="Canva EDU Pro">
           <div class="product-name">Canva EDU Pro</div>
@@ -99,7 +119,7 @@
         </div>
       </div>
 <div class="col-lg-4 col-md-6">
-        <div class="product-card" style="border-color:rgba(255,140,0,0.15)">
+        <div class="product-card rv" style="border-color:rgba(255,140,0,0.15)">
           <div class="card-tag" style="background:rgba(255,140,0,0.15)">🔥 Popular</div>
           <img width="128" height="128" class="product-icon" src="/images/capcut.webp" alt="CapCut Pro">
           <div class="product-name">CapCut Pro</div>
@@ -118,7 +138,7 @@
         </div>
       </div>
 <div class="col-lg-4 col-md-6">
-        <div class="product-card">
+        <div class="product-card rv">
           <div class="card-tag">AI Assistant</div>
           <img width="128" height="128" class="product-icon" src="/images/gemini.webp" alt="Gemini Pro">
           <div class="product-name">Gemini Pro</div>
@@ -136,7 +156,7 @@
         </div>
       </div>
 <div class="col-lg-4 col-md-6">
-        <div class="product-card">
+        <div class="product-card rv">
           <div class="card-tag">Design Tool</div>
           <img width="128" height="128" class="product-icon" src="/images/adobe.webp" alt="Adobe Express Premium">
           <div class="product-name">Adobe Express Premium</div>
@@ -154,7 +174,7 @@
         </div>
       </div>
 <div class="col-lg-4 col-md-6">
-        <div class="product-card">
+        <div class="product-card rv">
           <div class="card-tag">Design Tool</div>
           <img width="128" height="128" class="product-icon" src="/images/figma.webp" alt="Figma Pro Education">
           <div class="product-name">Figma Pro Education</div>
@@ -172,7 +192,7 @@
         </div>
       </div>
 <div class="col-lg-4 col-md-6">
-        <div class="product-card">
+        <div class="product-card rv">
           <div class="card-tag">Web Design</div>
           <img width="128" height="128" class="product-icon" src="/images/framer.webp" alt="Framer Basic">
           <div class="product-name">Framer Basic</div>
@@ -190,10 +210,10 @@
         </div>
       </div>
     </div>
-    <div class="cat-label"><i class="fa-solid fa-shield-halved"></i> Security & Privacy</div>
-    <div class="row g-4 mb-5">
+    <div class="cat-label rv"><i class="fa-solid fa-shield-halved"></i> Security & Privacy</div>
+    <div class="row g-4 mb-5" data-cat="security">
 <div class="col-lg-4 col-md-6">
-        <div class="product-card">
+        <div class="product-card rv">
           <div class="card-tag">Security</div>
           <img width="128" height="128" class="product-icon" src="/images/surf.webp" alt="Surfshark VPN">
           <div class="product-name">Surfshark VPN</div>
@@ -212,7 +232,7 @@
         </div>
       </div>
 <div class="col-lg-4 col-md-6">
-        <div class="product-card">
+        <div class="product-card rv">
           <div class="card-tag">Security</div>
           <img width="128" height="128" class="product-icon" src="/images/nordvpn.webp" alt="NordVPN Basic">
           <div class="product-name">NordVPN Basic</div>
@@ -230,10 +250,10 @@
         </div>
       </div>
     </div>
-    <div class="cat-label"><i class="fa-solid fa-robot"></i> AI Tools</div>
-    <div class="row g-4 mb-5">
+    <div class="cat-label rv"><i class="fa-solid fa-robot"></i> AI Tools</div>
+    <div class="row g-4 mb-5" data-cat="ai">
 <div class="col-lg-4 col-md-6">
-        <div class="product-card">
+        <div class="product-card rv">
           <div class="card-tag">AI Writing</div>
           <img width="128" height="128" class="product-icon" src="/images/quillbot.webp" alt="Quillbot Premium">
           <div class="product-name">Quillbot Premium</div>
@@ -251,7 +271,7 @@
         </div>
       </div>
 <div class="col-lg-4 col-md-6">
-        <div class="product-card">
+        <div class="product-card rv">
           <div class="card-tag">AI Builder</div>
           <img width="128" height="128" class="product-icon" src="/images/lovable.webp" alt="Lovable Pro Lite">
           <div class="product-name">Lovable Pro Lite</div>
@@ -269,10 +289,10 @@
         </div>
       </div>
     </div>
-    <div class="cat-label"><i class="fa-solid fa-tv"></i> Streaming & Entertainment</div>
-    <div class="row g-4 mb-5">
+    <div class="cat-label rv"><i class="fa-solid fa-tv"></i> Streaming & Entertainment</div>
+    <div class="row g-4 mb-5" data-cat="streaming">
 <div class="col-lg-4 col-md-6">
-        <div class="product-card">
+        <div class="product-card rv">
           <div class="card-tag">Streaming</div>
           <img width="128" height="128" class="product-icon" src="/images/netflix.webp" alt="Netflix 4K UHD">
           <div class="product-name">Netflix 4K UHD</div>
@@ -290,7 +310,7 @@
         </div>
       </div>
 <div class="col-lg-4 col-md-6">
-        <div class="product-card">
+        <div class="product-card rv">
           <div class="card-tag">Streaming</div>
           <img width="128" height="128" class="product-icon" src="/images/ytpremium.webp" alt="YouTube Premium">
           <div class="product-name">YouTube Premium</div>
@@ -308,7 +328,7 @@
         </div>
       </div>
 <div class="col-lg-4 col-md-6">
-        <div class="product-card">
+        <div class="product-card rv">
           <div class="card-tag">Music</div>
           <img width="128" height="128" class="product-icon" src="/images/applemusic.webp" alt="Apple Music">
           <div class="product-name">Apple Music</div>
@@ -326,10 +346,10 @@
         </div>
       </div>
     </div>
-    <div class="cat-label"><i class="fa-solid fa-briefcase"></i> Productivity & Office</div>
-    <div class="row g-4 mb-5">
+    <div class="cat-label rv"><i class="fa-solid fa-briefcase"></i> Productivity & Office</div>
+    <div class="row g-4 mb-5" data-cat="productivity">
 <div class="col-lg-4 col-md-6">
-        <div class="product-card">
+        <div class="product-card rv">
           <div class="card-tag">Productivity</div>
           <img width="128" height="128" class="product-icon" src="/images/office365.webp" alt="Microsoft Office 365">
           <div class="product-name">Microsoft Office 365</div>
@@ -347,7 +367,7 @@
         </div>
       </div>
 <div class="col-lg-4 col-md-6">
-        <div class="product-card">
+        <div class="product-card rv">
           <div class="card-tag">Productivity</div>
           <img width="128" height="128" class="product-icon" src="/images/notion.webp" alt="Notion Education Plus">
           <div class="product-name">Notion Education Plus</div>
@@ -365,7 +385,7 @@
         </div>
       </div>
 <div class="col-lg-4 col-md-6">
-        <div class="product-card">
+        <div class="product-card rv">
           <div class="card-tag">PDF Tools</div>
           <img width="128" height="128" class="product-icon" src="/images/ilovepdf.webp" alt="iLovePDF Premium">
           <div class="product-name">iLovePDF Premium</div>
@@ -383,10 +403,10 @@
         </div>
       </div>
     </div>
-    <div class="cat-label"><i class="fa-solid fa-graduation-cap"></i> Learning & Career</div>
-    <div class="row g-4 mb-5">
+    <div class="cat-label rv"><i class="fa-solid fa-graduation-cap"></i> Learning & Career</div>
+    <div class="row g-4 mb-5" data-cat="learning">
 <div class="col-lg-4 col-md-6">
-        <div class="product-card">
+        <div class="product-card rv">
           <div class="card-tag">Learning</div>
           <img width="128" height="128" class="product-icon" src="/images/coursera.webp" alt="Coursera Plus">
           <div class="product-name">Coursera Plus</div>
@@ -404,7 +424,7 @@
         </div>
       </div>
 <div class="col-lg-4 col-md-6">
-        <div class="product-card">
+        <div class="product-card rv">
           <div class="card-tag">Learning</div>
           <img width="128" height="128" class="product-icon" src="/images/udemy.webp" alt="Udemy Personal Plan">
           <div class="product-name">Udemy Personal Plan</div>
@@ -422,7 +442,7 @@
         </div>
       </div>
 <div class="col-lg-4 col-md-6">
-        <div class="product-card">
+        <div class="product-card rv">
           <div class="card-tag">Learning</div>
           <img width="128" height="128" class="product-icon" src="/images/duolingo.webp" alt="Super Duolingo">
           <div class="product-name">Super Duolingo</div>
@@ -440,7 +460,7 @@
         </div>
       </div>
 <div class="col-lg-4 col-md-6">
-        <div class="product-card">
+        <div class="product-card rv">
           <div class="card-tag">Career</div>
           <img width="128" height="128" class="product-icon" src="/images/linkedin.webp" alt="LinkedIn Premium">
           <div class="product-name">LinkedIn Premium</div>
@@ -546,12 +566,25 @@ function toggleMobileMenu() {
 let curProduct = '', curPrice = '', curCardId = '';
 
 // Tab Pricing Logic
-function filterProducts(q){
-  q = q.toLowerCase().trim();
+var activeCat = 'all';
+function setCat(cat, btn){
+  activeCat = cat;
+  document.querySelectorAll('.cat-chip').forEach(function(ch){ch.classList.remove('active');});
+  btn.classList.add('active');
+  applyFilters();
+}
+function applyFilters(){
+  var q = document.getElementById('productSearch').value.toLowerCase().trim();
   var anyVisible = false;
   document.querySelectorAll('.product-card').forEach(function(card){
     var name = card.querySelector('.product-name').textContent.toLowerCase();
-    var show = name.indexOf(q) !== -1;
+    var desc = card.querySelector('.product-desc').textContent.toLowerCase();
+    var tag = card.querySelector('.card-tag').textContent.toLowerCase();
+    var row = card.closest('.row[data-cat]');
+    var cat = row ? row.getAttribute('data-cat') : '';
+    var okSearch = q === '' || name.indexOf(q) !== -1 || desc.indexOf(q) !== -1 || tag.indexOf(q) !== -1;
+    var okCat = activeCat === 'all' || cat === activeCat;
+    var show = okSearch && okCat;
     card.closest('.col-lg-4').style.display = show ? '' : 'none';
     if(show) anyVisible = true;
   });
@@ -568,6 +601,7 @@ function filterProducts(q){
   });
   document.getElementById('noResults').style.display = anyVisible ? 'none' : 'block';
 }
+function filterProducts(v){ applyFilters(); }
 
 function setDur(card, price, label, btn) {
   let tabs = document.getElementById('tabs-'+card).querySelectorAll('.dur-tab');
@@ -614,6 +648,20 @@ function sendOrder() {
   window.open('https://wa.me/923229952880?text='+encodeURIComponent(msg), '_blank');
   closeModal('orderModal');
 }
+</script>
+<script>
+/* scroll reveal (same as homepage) + stagger cards */
+(function(){
+  document.querySelectorAll('.row[data-cat]').forEach(function(row){
+    row.querySelectorAll('.product-card.rv').forEach(function(card,i){
+      card.style.setProperty('--rd', i % 3);
+    });
+  });
+  var els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)||window.matchMedia('(prefers-reduced-motion: reduce)').matches){els.forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(e){io.observe(e)});
+})();
 </script>
 </body>
 </html>
