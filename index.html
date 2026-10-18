@@ -145,6 +145,41 @@ body{padding-bottom:68px}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.ticker-inner,.float-chip,.hero-title .accent,#typedAccent,.tool-marquee-track,.ann-dot,.ann-order,.go1,.go2{animation:none}.js .rv{opacity:1;transform:none;transition:none}.js .hero [data-h]{animation:none;opacity:1}.hero-cta:hover,.hero-cta-ghost:hover{transform:none}}
 
+
+/* ---- Bundle Offer ---- */
+.bundle-section{background:var(--bg-soft);padding:70px 0}
+.bundle-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:860px;margin:0 auto}
+@media(max-width:768px){.bundle-grid{grid-template-columns:repeat(2,1fr);gap:12px}}
+.bundle-card{background:var(--card);border:2px solid var(--border);border-radius:16px;padding:22px 14px;text-align:center;cursor:pointer;position:relative;transition:border-color .2s,transform .2s,box-shadow .2s}
+.bundle-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(250,146,11,.12)}
+.bundle-card.selected{border-color:var(--primary);box-shadow:0 10px 28px rgba(250,146,11,.18)}
+.bundle-check{position:absolute;top:10px;right:10px;width:26px;height:26px;border-radius:50%;background:#E5E7EB;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;transition:background .2s}
+.bundle-card.selected .bundle-check{background:var(--cta)}
+.bundle-card img{width:56px;height:56px;border-radius:14px;margin-bottom:10px}
+.bundle-name{font-weight:700;font-size:15px;color:var(--text)}
+.bundle-plan{font-size:12px;color:var(--text-muted);margin-top:2px}
+.bundle-price{font-weight:800;font-size:16px;color:var(--primary);margin-top:6px}
+.bundle-summary{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:24px;max-width:860px;margin:26px auto 0;box-shadow:0 8px 30px rgba(0,0,0,.05)}
+.bs-row{display:flex;justify-content:space-between;align-items:center;padding:7px 0;font-size:15px;color:var(--text)}
+.bs-row b{font-weight:700}
+.bs-save b{color:var(--cta)}
+.bs-total{border-top:1px dashed var(--border);margin-top:8px;padding-top:14px;font-size:18px}
+.bs-total b{color:var(--primary);font-size:22px;font-weight:800}
+.bs-order{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;margin-top:16px;background:var(--cta);color:#fff;font-weight:700;font-size:16px;padding:14px;border-radius:14px;text-decoration:none;transition:background .2s}
+.bs-order:hover{background:var(--cta-hover);color:#fff}
+.bs-hint{text-align:center;font-size:13px;color:var(--text-muted);margin:10px 0 0}
+/* ---- How It Works ---- */
+.hiw-section{padding:70px 0}
+.hiw-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-width:1080px;margin:0 auto}
+@media(max-width:900px){.hiw-steps{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.hiw-steps{grid-template-columns:1fr}}
+.hiw-step{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:30px 20px;text-align:center;position:relative;transition:transform .2s,box-shadow .2s}
+.hiw-step:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(250,146,11,.12)}
+.hiw-num{position:absolute;top:12px;left:16px;font-size:44px;font-weight:800;color:rgba(250,146,11,.14);line-height:1}
+.hiw-icon{width:58px;height:58px;margin:0 auto 14px;border-radius:18px;background:linear-gradient(135deg,var(--primary),var(--accent));color:#fff;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 8px 20px rgba(250,146,11,.3)}
+.hiw-title{font-weight:700;font-size:16px;color:var(--text);margin-bottom:8px}
+.hiw-text{font-size:13.5px;color:var(--text-muted);line-height:1.6}
+
 </style>
 
 <script type="application/ld+json">
@@ -338,6 +373,68 @@ body{padding-bottom:68px}
   </div>
 </section>
 
+<section class="bundle-section" id="bundle">
+  <div class="container">
+    <div class="text-center mb-5 rv">
+      <div class="section-eyebrow">Special Bundle Offer</div>
+      <h2 class="section-title">Build Your Own Bundle</h2>
+      <p style="color:var(--text-muted);font-size:15px;margin-top:12px;font-weight:300">Select any <b style="color:var(--text)">2 or more</b> tools and unlock an instant <b style="color:var(--primary)">10% bundle discount</b></p>
+    </div>
+    <div class="bundle-grid" id="bundleGrid">
+      <div class="bundle-card rv" style="--rd:0" data-name="Canva EDU Pro" data-plan="1 Month" data-price="149" onclick="toggleBundle(this)">
+        <div class="bundle-check"><i class="fa-solid fa-check"></i></div>
+        <img width="112" height="112" src="/images/canva.webp" alt="Canva EDU Pro">
+        <div class="bundle-name">Canva EDU Pro</div>
+        <div class="bundle-plan">1 Month</div>
+        <div class="bundle-price">Rs. 149</div>
+      </div>
+      <div class="bundle-card rv" style="--rd:1" data-name="CapCut Pro" data-plan="1 Month" data-price="650" onclick="toggleBundle(this)">
+        <div class="bundle-check"><i class="fa-solid fa-check"></i></div>
+        <img width="112" height="112" src="/images/capcut.webp" alt="CapCut Pro">
+        <div class="bundle-name">CapCut Pro</div>
+        <div class="bundle-plan">1 Month</div>
+        <div class="bundle-price">Rs. 650</div>
+      </div>
+      <div class="bundle-card rv" style="--rd:2" data-name="Gemini Pro" data-plan="18 Months" data-price="1199" onclick="toggleBundle(this)">
+        <div class="bundle-check"><i class="fa-solid fa-check"></i></div>
+        <img width="112" height="112" src="/images/gemini.webp" alt="Gemini Pro">
+        <div class="bundle-name">Gemini Pro</div>
+        <div class="bundle-plan">18 Months</div>
+        <div class="bundle-price">Rs. 1,199</div>
+      </div>
+      <div class="bundle-card rv" style="--rd:3" data-name="Netflix 4K" data-plan="1 Month" data-price="350" onclick="toggleBundle(this)">
+        <div class="bundle-check"><i class="fa-solid fa-check"></i></div>
+        <img width="112" height="112" src="/images/netflix.webp" alt="Netflix">
+        <div class="bundle-name">Netflix 4K</div>
+        <div class="bundle-plan">1 Month</div>
+        <div class="bundle-price">Rs. 350</div>
+      </div>
+      <div class="bundle-card rv" style="--rd:4" data-name="YouTube Premium" data-plan="3 Months" data-price="1500" onclick="toggleBundle(this)">
+        <div class="bundle-check"><i class="fa-solid fa-check"></i></div>
+        <img width="112" height="112" src="/images/ytpremium.webp" alt="YouTube Premium">
+        <div class="bundle-name">YouTube Premium</div>
+        <div class="bundle-plan">3 Months</div>
+        <div class="bundle-price">Rs. 1,500</div>
+      </div>
+      <div class="bundle-card rv" style="--rd:5" data-name="Surfshark VPN" data-plan="1 Month" data-price="300" onclick="toggleBundle(this)">
+        <div class="bundle-check"><i class="fa-solid fa-check"></i></div>
+        <img width="112" height="112" src="/images/surf.webp" alt="Surfshark VPN">
+        <div class="bundle-name">Surfshark VPN</div>
+        <div class="bundle-plan">1 Month</div>
+        <div class="bundle-price">Rs. 300</div>
+      </div>
+    </div>
+    <div class="bundle-summary rv">
+      <div class="bs-row"><span>Selected tools</span><b id="bsCount">0</b></div>
+      <div class="bs-row"><span>Regular total</span><b id="bsRegular">Rs. 0</b></div>
+      <div class="bs-row bs-save"><span>Bundle discount (10%)</span><b id="bsSave">&ndash; Rs. 0</b></div>
+      <div class="bs-row bs-total"><span>Bundle price</span><b id="bsTotal">Rs. 0</b></div>
+      <a id="bsOrder" class="bs-order" target="_blank" href="https://wa.me/923229952880"><i class="fa-brands fa-whatsapp" style="font-size:20px"></i> Order Bundle on WhatsApp</a>
+      <p class="bs-hint" id="bsHint">Select any 2 or more tools to unlock the 10% bundle discount</p>
+    </div>
+  </div>
+</section>
+
 <section class="features-section">
   <div class="container">
     <div class="text-center mb-5 rv">
@@ -349,6 +446,42 @@ body{padding-bottom:68px}
       <div class="col-md-6 rv" style="--rd:1"><div class="feature-item"><div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div><div><div class="feature-title">100% Secure & Verified</div><div class="feature-text">All products are original and verified. Zero risk.</div></div></div></div>
       <div class="col-md-6 rv" style="--rd:2"><div class="feature-item"><div class="feature-icon"><i class="fa-solid fa-headset"></i></div><div><div class="feature-title">24/7 Customer Support</div><div class="feature-text">Whether it's day or night, we are always available on WhatsApp.</div></div></div></div>
       <div class="col-md-6 rv" style="--rd:3"><div class="feature-item"><div class="feature-icon"><i class="fa-solid fa-tag"></i></div><div><div class="feature-title">Best Price in Pakistan</div><div class="feature-text">Premium tools at prices lower than the market. Budget-friendly subscriptions.</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="hiw-section" id="how-it-works">
+  <div class="container">
+    <div class="text-center mb-5 rv">
+      <div class="section-eyebrow">Simple Process</div>
+      <h2 class="section-title">How It Works</h2>
+      <p style="color:var(--text-muted);font-size:15px;margin-top:12px;font-weight:300">Order karna bohat asaan hai &mdash; sirf 4 steps</p>
+    </div>
+    <div class="hiw-steps">
+      <div class="hiw-step rv" style="--rd:0">
+        <div class="hiw-num">1</div>
+        <div class="hiw-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+        <div class="hiw-title">Choose Your Tool</div>
+        <div class="hiw-text">Pick any premium tool from our collection of 20+ tools.</div>
+      </div>
+      <div class="hiw-step rv" style="--rd:1">
+        <div class="hiw-num">2</div>
+        <div class="hiw-icon"><i class="fa-solid fa-tag"></i></div>
+        <div class="hiw-title">Select a Plan</div>
+        <div class="hiw-text">Choose the plan and duration that fits your needs and budget.</div>
+      </div>
+      <div class="hiw-step rv" style="--rd:2">
+        <div class="hiw-num">3</div>
+        <div class="hiw-icon"><i class="fa-brands fa-whatsapp"></i></div>
+        <div class="hiw-title">Order on WhatsApp</div>
+        <div class="hiw-text">Send your order on WhatsApp and pay via JazzCash, Easypaisa or bank.</div>
+      </div>
+      <div class="hiw-step rv" style="--rd:3">
+        <div class="hiw-num">4</div>
+        <div class="hiw-icon"><i class="fa-solid fa-bolt"></i></div>
+        <div class="hiw-title">Instant Delivery</div>
+        <div class="hiw-text">Get your login details on WhatsApp within ~2 minutes.</div>
+      </div>
     </div>
   </div>
 </section>
@@ -618,5 +751,35 @@ function annTick(){
 setInterval(annTick,1000); annTick();
 </script>
 
+<script>
+/* Bundle builder: 2+ tools = BUNDLE_DISCOUNT_PCT % off */
+var BUNDLE_DISCOUNT_PCT = 10;
+function fmtRs(n){return 'Rs. ' + n.toLocaleString('en-PK');}
+function toggleBundle(card){card.classList.toggle('selected');updateBundle();}
+function updateBundle(){
+  var cards=document.querySelectorAll('.bundle-card.selected');
+  var regular=0,lines=[];
+  cards.forEach(function(cd){
+    regular+=parseInt(cd.dataset.price,10);
+    lines.push('\u2022 '+cd.dataset.name+' ('+cd.dataset.plan+') - '+fmtRs(parseInt(cd.dataset.price,10)));
+  });
+  var n=cards.length;
+  var disc=n>=2?Math.round(regular*BUNDLE_DISCOUNT_PCT/100):0;
+  var total=regular-disc;
+  document.getElementById('bsCount').textContent=n;
+  document.getElementById('bsRegular').textContent=fmtRs(regular);
+  document.getElementById('bsSave').textContent='\u2013 '+fmtRs(disc);
+  document.getElementById('bsTotal').textContent=fmtRs(total);
+  var hint=document.getElementById('bsHint');
+  if(n===0){hint.textContent='Select any 2 or more tools to unlock the '+BUNDLE_DISCOUNT_PCT+'% bundle discount';}
+  else if(n===1){hint.textContent='1 more tool select karo aur '+BUNDLE_DISCOUNT_PCT+'% bundle discount unlock karo';}
+  else{hint.textContent='Mubarak ho! '+BUNDLE_DISCOUNT_PCT+'% bundle discount applied \u2014 aap ne '+fmtRs(disc)+' bachaye';}
+  var msg;
+  if(n===0){msg='Assalam-o-Alaikum! I want to build a bundle from SR Digital World.';}
+  else{msg='Assalam-o-Alaikum! I want to order this bundle from SR Digital World:\n'+lines.join('\n')+'\n\nTotal: '+fmtRs(total)+(disc>0?' (bundle discount applied)':'');}
+  document.getElementById('bsOrder').href='https://wa.me/923229952880?text='+encodeURIComponent(msg);
+}
+updateBundle();
+</script>
 </body>
 </html>
