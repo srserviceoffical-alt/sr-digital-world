@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build Your Own Bundle | SR Digital World</title>
+<link rel="canonical" href="https://www.srdigitalworld.shop/bundle/">
+<meta name="description" content="Build your own bundle from Canva, CapCut, Gemini, Surfshark VPN, Adobe Express and Office 365 — select any 2 or more tools and unlock an instant 10% bundle discount.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SR Digital World">
+<meta property="og:title" content="Build Your Own Bundle | SR Digital World">
+<meta property="og:description" content="Select any 2 or more tools and unlock an instant 10% bundle discount. Order on WhatsApp.">
+<meta property="og:image" content="https://www.srdigitalworld.shop/images/og-banner.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://www.srdigitalworld.shop/images/og-banner.jpg">
+<meta property="og:url" content="https://www.srdigitalworld.shop/bundle/">
+<link rel="icon" type="image/png" href="/images/favicon.png">
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text)}
+.page-hero{padding:70px 0 40px;background:var(--bg);text-align:center;position:relative;overflow:hidden}
+.page-hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 50% 50% at 50% 0%,rgba(250,146,11,0.1) 0%,transparent 70%)}
+/* scroll reveal (same system as homepage) */
+.js .rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;transition-delay:calc(var(--rd,0)*80ms)}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}}
+/* ---- Bundle builder ---- */
+.bundle-section{background:var(--bg);padding:20px 0 70px}
+.bundle-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:860px;margin:0 auto}
+@media(max-width:768px){.bundle-grid{grid-template-columns:repeat(2,1fr);gap:12px}}
+.bundle-card{background:var(--card);border:2px solid var(--border);border-radius:16px;padding:22px 14px;text-align:center;cursor:pointer;position:relative;transition:border-color .2s,transform .2s,box-shadow .2s}
+.bundle-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(250,146,11,.12)}
+.bundle-card.selected{border-color:var(--primary);box-shadow:0 10px 28px rgba(250,146,11,.18)}
+.bundle-check{position:absolute;top:10px;right:10px;width:26px;height:26px;border-radius:50%;background:#E5E7EB;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;transition:background .2s}
+.bundle-card.selected .bundle-check{background:var(--cta)}
+.bundle-card img{width:56px;height:56px;border-radius:14px;margin-bottom:10px}
+.bundle-name{font-weight:700;font-size:15px;color:var(--text)}
+.bundle-plan{font-size:12px;color:var(--text-muted);margin-top:2px}
+.bundle-price{font-weight:800;font-size:16px;color:var(--primary);margin-top:6px}
+.bundle-summary{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:24px;max-width:860px;margin:26px auto 0;box-shadow:0 8px 30px rgba(0,0,0,.05)}
+.bs-row{display:flex;justify-content:space-between;align-items:center;padding:7px 0;font-size:15px;color:var(--text)}
+.bs-row b{font-weight:700}
+.bs-save b{color:var(--cta)}
+.bs-total{border-top:1px dashed var(--border);margin-top:8px;padding-top:14px;font-size:18px}
+.bs-total b{color:var(--primary);font-size:22px;font-weight:800}
+.bs-order{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;margin-top:16px;background:var(--cta);color:#fff;font-weight:700;font-size:16px;padding:14px;border-radius:14px;text-decoration:none;transition:background .2s}
+.bs-order:hover{background:var(--cta-hover);color:#fff}
+.bs-hint{text-align:center;font-size:13px;color:var(--text-muted);margin:10px 0 0}
+</style>
+</head>
+<body>
+
+<div id="navbar-placeholder"></div>
+
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="container" style="position:relative">
+    <div class="section-eyebrow">Special Bundle Offer</div>
+    <h1 class="section-title">Build Your Own Bundle</h1>
+    <p style="color:var(--text-muted);font-size:15px;margin-top:14px;max-width:520px;margin-left:auto;margin-right:auto">Select any <b style="color:var(--text)">2 or more</b> tools and unlock an instant <b style="color:var(--primary)">10% bundle discount</b></p>
+  </div>
+</section>
+
+<section class="bundle-section">
+  <div class="container">
+    <div class="bundle-grid" id="bundleGrid">
+      <div class="bundle-card rv" style="--rd:0" data-name="Canva EDU Pro" data-plan="1 Month" data-price="149" onclick="toggleBundle(this)">
+        <div class="bundle-check"><i class="fa-solid fa-check"></i></div>
+        <img width="112" height="112" src="/images/canva.webp" alt="Canva EDU Pro">
+        <div class="bundle-name">Canva EDU Pro</div>
+        <div class="bundle-plan">1 Month</div>
+        <div class="bundle-price">Rs. 149</div>
+      </div>
+      <div class="bundle-card rv" style="--rd:1" data-name="CapCut Pro" data-plan="1 Month" data-price="650" onclick="toggleBundle(this)">
+        <div class="bundle-check"><i class="fa-solid fa-check"></i></div>
+        <img width="112" height="112" src="/images/capcut.webp" alt="CapCut Pro">
+        <div class="bundle-name">CapCut Pro</div>
+        <div class="bundle-plan">1 Month</div>
+        <div class="bundle-price">Rs. 650</div>
+      </div>
+      <div class="bundle-card rv" style="--rd:2" data-name="Gemini Pro" data-plan="18 Months" data-price="1199" onclick="toggleBundle(this)">
+        <div class="bundle-check"><i class="fa-solid fa-check"></i></div>
+        <img width="112" height="112" src="/images/gemini.webp" alt="Gemini Pro">
+        <div class="bundle-name">Gemini Pro</div>
+        <div class="bundle-plan">18 Months</div>
+        <div class="bundle-price">Rs. 1,199</div>
+      </div>
+      <div class="bundle-card rv" style="--rd:3" data-name="Surfshark VPN" data-plan="1 Month" data-price="300" onclick="toggleBundle(this)">
+        <div class="bundle-check"><i class="fa-solid fa-check"></i></div>
+        <img width="112" height="112" src="/images/surf.webp" alt="Surfshark VPN">
+        <div class="bundle-name">Surfshark VPN</div>
+        <div class="bundle-plan">1 Month</div>
+        <div class="bundle-price">Rs. 300</div>
+      </div>
+      <div class="bundle-card rv" style="--rd:4" data-name="Adobe Express Premium" data-plan="12 Months" data-price="750" onclick="toggleBundle(this)">
+        <div class="bundle-check"><i class="fa-solid fa-check"></i></div>
+        <img width="112" height="112" src="/images/adobe.webp" alt="Adobe Express Premium">
+        <div class="bundle-name">Adobe Express Premium</div>
+        <div class="bundle-plan">12 Months</div>
+        <div class="bundle-price">Rs. 750</div>
+      </div>
+      <div class="bundle-card rv" style="--rd:5" data-name="Microsoft Office 365" data-plan="12 Months" data-price="1000" onclick="toggleBundle(this)">
+        <div class="bundle-check"><i class="fa-solid fa-check"></i></div>
+        <img width="112" height="112" src="/images/office365.webp" alt="Microsoft Office 365">
+        <div class="bundle-name">Microsoft Office 365</div>
+        <div class="bundle-plan">12 Months</div>
+        <div class="bundle-price">Rs. 1,000</div>
+      </div>
+    </div>
+    <div class="bundle-summary rv">
+      <div class="bs-row"><span>Selected tools</span><b id="bsCount">0</b></div>
+      <div class="bs-row"><span>Regular total</span><b id="bsRegular">Rs. 0</b></div>
+      <div class="bs-row bs-save"><span>Bundle discount (10%)</span><b id="bsSave">&ndash; Rs. 0</b></div>
+      <div class="bs-row bs-total"><span>Bundle price</span><b id="bsTotal">Rs. 0</b></div>
+      <a id="bsOrder" class="bs-order" target="_blank" href="https://wa.me/923229952880"><i class="fa-brands fa-whatsapp" style="font-size:20px"></i> Order Bundle on WhatsApp</a>
+      <p class="bs-hint" id="bsHint">Select any 2 or more tools to unlock the 10% bundle discount</p>
+    </div>
+    <div class="text-center mt-4 rv">
+      <a href="/products/" style="display:inline-flex;align-items:center;gap:6px;color:var(--primary);font-weight:700;font-size:14px;text-decoration:none;border:1px solid rgba(255,140,0,0.3);padding:8px 18px;border-radius:100px">Browse All Tools <i class="fa-solid fa-arrow-right" style="font-size:12px"></i></a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="row text-start g-4 mb-4">
+      <div class="col-md-4">
+        <div class="footer-logo">⚡ SR Digital World</div>
+        <p style="color:var(--text-muted);font-size:13px;line-height:1.7;margin-top:8px">Pakistan's #1 digital tools store. Premium subscriptions, best prices, instant delivery.</p>
+      </div>
+      <div class="col-md-4">
+        <div style="color:var(--text);font-weight:700;font-size:13px;margin-bottom:12px;letter-spacing:0.5px">QUICK LINKS</div>
+        <div class="d-flex flex-column gap-2">
+          <a href="/" class="footer-link">Home</a>
+          <a href="/products/" class="footer-link">Tools</a>
+          <a href="/about/" class="footer-link">About Us</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div style="color:var(--text);font-weight:700;font-size:13px;margin-bottom:12px;letter-spacing:0.5px">SUPPORT</div>
+        <div class="d-flex flex-column gap-2">
+          <a href="/faqs/" class="footer-link">FAQs</a><a href="/warranty/" class="footer-link">Warranty</a>
+          <a href="/contact/" class="footer-link">Contact Us</a>
+          <a href="https://wa.me/923229952880" target="_blank" class="footer-link">WhatsApp Support</a>
+        </div>
+      </div>
+    </div>
+    <p class="footer-text" style="border-top:1px solid var(--border);padding-top:20px">© 2026 SR Digital World. All Rights Reserved. | 🇵🇰 Made in Pakistan</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+// --- NAVBAR SCRIPT START ---
+fetch('/navbar.html?v=3')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('navbar-placeholder').innerHTML = data;
+    let segs = window.location.pathname.split('/').filter(s => s);
+    let top = segs[0] || 'index';
+    let navLinks = document.querySelectorAll('.nav-link-item');
+    navLinks.forEach(link => {
+      let href = link.getAttribute('href') || '';
+      let hseg = href.split('/').filter(s => s)[0] || 'index';
+      if(hseg === top) { link.classList.add('active'); }
+      else { link.classList.remove('active'); }
+    });
+  });
+</script>
+<script>
+/* Bundle builder: 2+ tools = BUNDLE_DISCOUNT_PCT % off */
+var BUNDLE_DISCOUNT_PCT = 10;
+function fmtRs(n){return 'Rs. ' + n.toLocaleString('en-PK');}
+function toggleBundle(card){card.classList.toggle('selected');updateBundle();}
+function updateBundle(){
+  var cards=document.querySelectorAll('.bundle-card.selected');
+  var regular=0,lines=[];
+  cards.forEach(function(cd){
+    regular+=parseInt(cd.dataset.price,10);
+    lines.push('\u2022 '+cd.dataset.name+' ('+cd.dataset.plan+') - '+fmtRs(parseInt(cd.dataset.price,10)));
+  });
+  var n=cards.length;
+  var disc=n>=2?Math.round(regular*BUNDLE_DISCOUNT_PCT/100):0;
+  var total=regular-disc;
+  document.getElementById('bsCount').textContent=n;
+  document.getElementById('bsRegular').textContent=fmtRs(regular);
+  document.getElementById('bsSave').textContent='\u2013 '+fmtRs(disc);
+  document.getElementById('bsTotal').textContent=fmtRs(total);
+  var hint=document.getElementById('bsHint');
+  if(n===0){hint.textContent='Select any 2 or more tools to unlock the '+BUNDLE_DISCOUNT_PCT+'% bundle discount';}
+  else if(n===1){hint.textContent='1 more tool select karo aur '+BUNDLE_DISCOUNT_PCT+'% bundle discount unlock karo';}
+  else{hint.textContent='Mubarak ho! '+BUNDLE_DISCOUNT_PCT+'% bundle discount applied \u2014 aap ne '+fmtRs(disc)+' bachaye';}
+  var msg;
+  if(n===0){msg='Assalam-o-Alaikum! I want to build a bundle from SR Digital World.';}
+  else{msg='Assalam-o-Alaikum! I want to order this bundle from SR Digital World:\n'+lines.join('\n')+'\n\nTotal: '+fmtRs(total)+(disc>0?' (bundle discount applied)':'');}
+  document.getElementById('bsOrder').href='https://wa.me/923229952880?text='+encodeURIComponent(msg);
+}
+updateBundle();
+</script>
+<script>
+/* scroll reveal (same as homepage) */
+(function(){
+  var els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)||window.matchMedia('(prefers-reduced-motion: reduce)').matches){els.forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>

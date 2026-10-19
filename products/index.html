@@ -61,6 +61,17 @@
 .cat-chip{background:var(--card);border:1px solid var(--border);color:var(--text-muted);font-size:13px;font-weight:600;padding:8px 18px;border-radius:100px;cursor:pointer;transition:all .2s;font-family:inherit}
 .cat-chip:hover{border-color:var(--primary);color:var(--primary-text)}
 .cat-chip.active{background:var(--primary);border-color:var(--primary);color:#fff}
+
+/* bundle promo banner */
+.bundle-banner{padding:26px 0 0;background:var(--bg)}
+.bb-inner{background:linear-gradient(135deg,#FA920B,#FF8200);border-radius:20px;padding:26px 30px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;box-shadow:0 12px 34px rgba(250,146,11,.28);position:relative;overflow:hidden}
+.bb-inner::before{content:'';position:absolute;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.14);top:-70px;right:10%}
+.bb-eyebrow{font-size:12px;font-weight:800;letter-spacing:2px;color:#fff;opacity:.9;margin-bottom:6px}
+.bb-title{font-size:24px;font-weight:800;color:#fff;margin:0 0 6px}
+.bb-text{font-size:14px;color:rgba(255,255,255,.92);margin:0;max-width:560px;position:relative;z-index:1}
+.bb-btn{display:inline-flex;align-items:center;gap:10px;background:#fff;color:#B45309;font-weight:800;font-size:15px;padding:13px 30px;border-radius:100px;text-decoration:none;white-space:nowrap;position:relative;z-index:1;transition:transform .2s,box-shadow .2s;box-shadow:0 6px 18px rgba(0,0,0,.15)}
+.bb-btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.2);color:#B45309}
+@media(max-width:576px){.bb-inner{padding:22px 20px}.bb-title{font-size:20px}}
 </style>
 <script>document.documentElement.classList.add('js')</script>
 </head>
@@ -71,6 +82,19 @@
 </a>
 
 <div id="navbar-placeholder"></div>
+
+<section class="bundle-banner">
+  <div class="container">
+    <div class="bb-inner rv">
+      <div style="position:relative;z-index:1">
+        <div class="bb-eyebrow">SPECIAL BUNDLE OFFER</div>
+        <div class="bb-title">Build Your Own Bundle</div>
+        <p class="bb-text">Canva, CapCut, Gemini, Surfshark VPN, Adobe Express aur Office 365 mein se koi <b>2 ya zyada</b> select karo aur <b>10% bundle discount</b> pao.</p>
+      </div>
+      <a href="/bundle/" class="bb-btn">Build My Bundle <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
 
 <section class="page-hero">
   <div class="page-hero-bg"></div>
