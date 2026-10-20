@@ -117,7 +117,7 @@
 <div class="pd-plans-label">Select Plan:</div>
         <div class="pd-plans"><button class="pd-plan active" onclick="selPlan(0,this)">Rs. 800<small>3 months</small></button></div>
         <div class="pd-price"><span id="pdPrice">Rs. 800</span> <span id="pdDur">/ 3 months</span></div>
-        <div class="pd-actions">
+        <div class="pd-coupon"><div class="pd-coupon-row"><input type="text" id="pdCoupon" placeholder="Coupon code (agar hai to)" autocomplete="off"><button type="button" class="pd-coupon-btn" onclick="srdApplyPdCoupon()">Apply</button></div><div class="pd-coupon-msg" id="pdCouponMsg"></div></div><div class="pd-actions">
           <a class="pd-order" id="pdOrder" href="#" target="_blank"><i class="fa-brands fa-whatsapp"></i> Order Now</a>
           <a class="pd-chat" href="https://wa.me/923229952880?text=Assalam-o-Alaikum%21%20I%20have%20a%20question%20about%20LinkedIn%20Premium." target="_blank"><i class="fa-solid fa-comment-dots"></i> Ask a Question</a>
         </div>
@@ -165,6 +165,7 @@
     <p class="footer-text" style="border-top:1px solid var(--border);padding-top:20px">© 2026 SR Digital World. All Rights Reserved. | 🇵🇰 Made in Pakistan</p>
   </div>
 </footer>
+<script src="/coupons.js"></script>
 <script>
 // --- NAVBAR SCRIPT START ---
 fetch('/navbar.html?v=4')
@@ -194,6 +195,7 @@ function toggleMobileMenu() {
 }
 
 const PNAME = "LinkedIn Premium";
+const PD_SLUG='linkedin';
 const PLANS = [["800", "3 months"]];
 let curPlan = 0;
 function selPlan(i, el){
@@ -205,9 +207,26 @@ function selPlan(i, el){
   if(PLANS.length<2){document.querySelector('.pd-plans-label').style.display='none';document.querySelector('.pd-plans').style.display='none';}
 updOrder();
 }
+let pdCoupon=null;
 function updOrder(){
-  const msg = 'Assalam-o-Alaikum! I want to order ' + PNAME + ' (' + PLANS[curPlan][1] + ' - Rs. ' + PLANS[curPlan][0] + ') from SR Digital World.';
+  const base=parseInt(PLANS[curPlan][0],10);
+  let msg;
+  if(pdCoupon){
+    const r=SRD_applyPrice(base,pdCoupon.percent);
+    msg='Assalam-o-Alaikum! I want to order ' + PNAME + ' (' + PLANS[curPlan][1] + ' - Rs. ' + r.final + ') from SR Digital World. Coupon: ' + pdCoupon.code + ' (' + pdCoupon.percent + '% OFF, asal price Rs. ' + base + ')';
+    document.getElementById('pdPrice').textContent='Rs. ' + r.final;
+  } else {
+    msg='Assalam-o-Alaikum! I want to order ' + PNAME + ' (' + PLANS[curPlan][1] + ' - Rs. ' + PLANS[curPlan][0] + ') from SR Digital World.';
+    document.getElementById('pdPrice').textContent='Rs. ' + base;
+  }
   document.getElementById('pdOrder').href = 'https://wa.me/923229952880?text=' + encodeURIComponent(msg);
+}
+function srdApplyPdCoupon(){
+  const inp=document.getElementById('pdCoupon'); const msgEl=document.getElementById('pdCouponMsg');
+  const res=SRD_findCoupon(inp.value, PD_SLUG);
+  if(res.ok){ pdCoupon=res; msgEl.textContent='\u2705 Coupon lag gaya! ' + res.percent + '% OFF — nayi price update ho gayi hai.'; msgEl.style.color='#15803d'; }
+  else { pdCoupon=null; msgEl.textContent=SRD_couponErrorText(res.reason); msgEl.style.color='#dc2626'; }
+  updOrder();
 }
 updOrder();
 </script>
