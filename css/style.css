@@ -68,7 +68,6 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;overf
 #navbar-placeholder .dropdown-content{background:var(--card);border:1px solid var(--border);box-shadow:0 10px 30px rgba(34,34,34,.12)}
 #navbar-placeholder .dropdown-content a{color:var(--text-muted)}
 #navbar-placeholder .dropdown-content a:hover{color:var(--primary);background:rgba(250,146,11,.06)}
-#navbar-placeholder .channel-float{background:var(--cta);border:1px solid var(--cta)}
 /* stock + sale badges (competitor-style) */
 .stock-badge{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:800;letter-spacing:.3px;padding:5px 11px;border-radius:100px;vertical-align:2px}
 .stock-badge.in{background:rgba(22,163,74,.12);color:#15803D}
