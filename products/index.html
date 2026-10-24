@@ -26,7 +26,7 @@
 
 .page-hero{padding:70px 0 50px;background:var(--bg);text-align:center;border-bottom:1px solid var(--border);position:relative;overflow:hidden}.page-hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 50% 50% at 50% 0%,rgba(250,146,11,0.1) 0%,transparent 70%)}.products-section{padding:70px 0;background:var(--bg)}.cat-label{font-size:13px;font-weight:700;color:var(--primary);letter-spacing:1px;text-transform:uppercase;margin-bottom:24px;display:flex;align-items:center;gap:10px}.cat-label::after{content:'';flex:1;height:1px;background:var(--border)}/* PRODUCT CARD */
 .product-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:32px 28px;transition:all 0.4s;position:relative;overflow:hidden;height:100%; z-index:1; display:flex; flex-direction:column}.card-tag{display:inline-block;background:rgba(250,146,11,0.1);color:var(--primary-text);font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:6px;margin-bottom:20px; width:max-content}.product-desc{font-size:13px;color:var(--text-muted);line-height:1.6;margin-bottom:18px; flex-grow:1}.feat-list{list-style:none;margin-bottom:24px}.feat-list li{font-size:12.5px;color:var(--text-muted);padding:5px 0;display:flex;align-items:center;gap:8px}.feat-list li i{color:var(--primary);font-size:11px}/* BUTTONS */
-.btn-group-custom{ display:flex; flex-direction:column; gap:10px; margin-top:auto; align-items:flex-start}.details-btn{width:200px;padding:13px 20px;background:var(--card);border:1px solid var(--border);color:var(--text);border-radius:12px;font-weight:700;font-size:15px;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.3s; position:relative; z-index:10}.details-btn:hover{background:var(--bg-soft);border-color:#444}.order-btn{width:200px;padding:13px 20px;background:linear-gradient(135deg,#FA920B,#FF8200);border:none;color:#fff;box-shadow:0 4px 14px rgba(250,146,11,.35);border-radius:12px;font-weight:700;font-size:15px;cursor:pointer;font-family:'Inter',sans-serif;transition:transform .25s ease,box-shadow .25s ease;display:flex;align-items:center;justify-content:center;gap:8px; position:relative; z-index:10}.cta-banner{background:linear-gradient(135deg,#FFF7ED,var(--bg-soft));border:1px solid rgba(250,146,11,0.2);border-radius:24px;padding:50px 40px;text-align:center;margin-top:30px}.modal-box{background:var(--card);border:1px solid rgba(250,146,11,0.25);border-radius:24px;padding:32px;width:90%;max-width:420px;animation:slideUp 0.3s ease; max-height:90vh; overflow-y:auto}/* Hide scrollbar for clean look */
+.btn-group-custom{ display:flex; flex-direction:column; gap:10px; margin-top:auto; align-items:flex-start}.details-btn{width:200px;padding:13px 20px;background:var(--card);border:1px solid var(--border);color:var(--text);border-radius:12px;font-weight:700;font-size:15px;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.3s; position:relative; z-index:10}.details-btn:hover{background:var(--bg-soft);border-color:#444}.order-btn{width:200px;padding:13px 20px;background:#222222;border:none;color:#fff;box-shadow:0 4px 14px rgba(34,34,34,.35);border-radius:12px;font-weight:700;font-size:15px;cursor:pointer;font-family:'Inter',sans-serif;transition:transform .25s ease,box-shadow .25s ease;display:flex;align-items:center;justify-content:center;gap:8px; position:relative; z-index:10}.cta-banner{background:linear-gradient(135deg,#FFF7ED,var(--bg-soft));border:1px solid rgba(250,146,11,0.2);border-radius:24px;padding:50px 40px;text-align:center;margin-top:30px}.modal-box{background:var(--card);border:1px solid rgba(250,146,11,0.25);border-radius:24px;padding:32px;width:90%;max-width:420px;animation:slideUp 0.3s ease; max-height:90vh; overflow-y:auto}/* Hide scrollbar for clean look */
 .modal-box::-webkit-scrollbar{ width:6px}.modal-box::-webkit-scrollbar-thumb{ background:var(--bg-soft); border-radius:10px}.modal-input:focus, .contact-input:focus, .contact-textarea:focus{
   border-color:var(--primary);
   background-color:var(--bg-soft);
@@ -138,7 +138,7 @@
           </div>
           <div class="btn-group-custom">
             <button class="details-btn" onclick="window.location.href='/products/canva/'">More Details</button>
-            <button class="order-btn" onclick="openOrder('Canva EDU Pro','canva')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button>
+            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Canva EDU Pro','canva')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button></div>
           </div>
         </div>
       </div>
@@ -157,7 +157,7 @@
           </div>
           <div class="btn-group-custom">
             <button class="details-btn" onclick="window.location.href='/products/capcut/'">More Details</button>
-            <button class="order-btn" onclick="openOrder('CapCut Pro','capcut')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button>
+            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('CapCut Pro','capcut')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button></div>
           </div>
         </div>
       </div>
@@ -175,7 +175,7 @@
           </div>
           <div class="btn-group-custom">
             <button class="details-btn" onclick="window.location.href='/products/gemini/'">More Details</button>
-            <button class="order-btn" onclick="openOrder('Gemini Pro','gemini')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button>
+            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Gemini Pro','gemini')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button></div>
           </div>
         </div>
       </div>
@@ -193,7 +193,7 @@
           </div>
           <div class="btn-group-custom">
             <button class="details-btn" onclick="window.location.href='/products/adobe/'">More Details</button>
-            <button class="order-btn" onclick="openOrder('Adobe Express Premium','adobe')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button>
+            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Adobe Express Premium','adobe')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button></div>
           </div>
         </div>
       </div>
@@ -211,7 +211,7 @@
           </div>
           <div class="btn-group-custom">
             <button class="details-btn" onclick="window.location.href='/products/figma/'">More Details</button>
-            <button class="order-btn" onclick="openOrder('Figma Pro Education','figma')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button>
+            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Figma Pro Education','figma')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button></div>
           </div>
         </div>
       </div>
@@ -229,7 +229,7 @@
           </div>
           <div class="btn-group-custom">
             <button class="details-btn" onclick="window.location.href='/products/framer/'">More Details</button>
-            <button class="order-btn" onclick="openOrder('Framer Basic','framer')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button>
+            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Framer Basic','framer')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button></div>
           </div>
         </div>
       </div>
@@ -251,7 +251,7 @@
           </div>
           <div class="btn-group-custom">
             <button class="details-btn" onclick="window.location.href='/products/surf/'">More Details</button>
-            <button class="order-btn" onclick="openOrder('Surfshark VPN','surf')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button>
+            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Surfshark VPN','surf')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button></div>
           </div>
         </div>
       </div>
@@ -269,7 +269,7 @@
           </div>
           <div class="btn-group-custom">
             <button class="details-btn" onclick="window.location.href='/products/nordvpn/'">More Details</button>
-            <button class="order-btn" onclick="openOrder('NordVPN Basic','nordvpn')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button>
+            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('NordVPN Basic','nordvpn')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button></div>
           </div>
         </div>
       </div>
@@ -308,7 +308,7 @@
           </div>
           <div class="btn-group-custom">
             <button class="details-btn" onclick="window.location.href='/products/lovable/'">More Details</button>
-            <button class="order-btn" onclick="openOrder('Lovable Pro Lite','lovable')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button>
+            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Lovable Pro Lite','lovable')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button></div>
           </div>
         </div>
       </div>
@@ -329,7 +329,7 @@
           </div>
           <div class="btn-group-custom">
             <button class="details-btn" onclick="window.location.href='/products/netflix/'">More Details</button>
-            <button class="order-btn" onclick="openOrder('Netflix 4K UHD','netflix')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button>
+            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Netflix 4K UHD','netflix')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button></div>
           </div>
         </div>
       </div>
@@ -347,7 +347,7 @@
           </div>
           <div class="btn-group-custom">
             <button class="details-btn" onclick="window.location.href='/products/ytpremium/'">More Details</button>
-            <button class="order-btn" onclick="openOrder('YouTube Premium','ytpremium')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button>
+            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('YouTube Premium','ytpremium')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button></div>
           </div>
         </div>
       </div>
@@ -365,7 +365,7 @@
           </div>
           <div class="btn-group-custom">
             <button class="details-btn" onclick="window.location.href='/products/applemusic/'">More Details</button>
-            <button class="order-btn" onclick="openOrder('Apple Music','applemusic')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button>
+            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Apple Music','applemusic')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button></div>
           </div>
         </div>
       </div>
@@ -386,7 +386,7 @@
           </div>
           <div class="btn-group-custom">
             <button class="details-btn" onclick="window.location.href='/products/office365/'">More Details</button>
-            <button class="order-btn" onclick="openOrder('Microsoft Office 365','office365')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button>
+            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Microsoft Office 365','office365')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button></div>
           </div>
         </div>
       </div>
@@ -404,7 +404,7 @@
           </div>
           <div class="btn-group-custom">
             <button class="details-btn" onclick="window.location.href='/products/notion/'">More Details</button>
-            <button class="order-btn" onclick="openOrder('Notion Education Plus','notion')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button>
+            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Notion Education Plus','notion')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button></div>
           </div>
         </div>
       </div>
@@ -422,7 +422,7 @@
           </div>
           <div class="btn-group-custom">
             <button class="details-btn" onclick="window.location.href='/products/ilovepdf/'">More Details</button>
-            <button class="order-btn" onclick="openOrder('iLovePDF Premium','ilovepdf')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button>
+            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('iLovePDF Premium','ilovepdf')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button></div>
           </div>
         </div>
       </div>
@@ -443,7 +443,7 @@
           </div>
           <div class="btn-group-custom">
             <button class="details-btn" onclick="window.location.href='/products/coursera/'">More Details</button>
-            <button class="order-btn" onclick="openOrder('Coursera Plus','coursera')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button>
+            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Coursera Plus','coursera')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button></div>
           </div>
         </div>
       </div>
@@ -461,7 +461,7 @@
           </div>
           <div class="btn-group-custom">
             <button class="details-btn" onclick="window.location.href='/products/udemy/'">More Details</button>
-            <button class="order-btn" onclick="openOrder('Udemy Personal Plan','udemy')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button>
+            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Udemy Personal Plan','udemy')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button></div>
           </div>
         </div>
       </div>
@@ -479,7 +479,7 @@
           </div>
           <div class="btn-group-custom">
             <button class="details-btn" onclick="window.location.href='/products/duolingo/'">More Details</button>
-            <button class="order-btn" onclick="openOrder('Super Duolingo','duolingo')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button>
+            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Super Duolingo','duolingo')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button></div>
           </div>
         </div>
       </div>
@@ -497,7 +497,7 @@
           </div>
           <div class="btn-group-custom">
             <button class="details-btn" onclick="window.location.href='/products/linkedin/'">More Details</button>
-            <button class="order-btn" onclick="openOrder('LinkedIn Premium','linkedin')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button>
+            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('LinkedIn Premium','linkedin')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button></div>
           </div>
         </div>
       </div>
@@ -558,6 +558,7 @@
 </div>
 
 <script src="/coupons.js"></script>
+<script src="/cart.js"></script>
 <script>
 // --- NAVBAR SCRIPT START ---
 fetch('/navbar.html?v=4')
