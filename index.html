@@ -316,9 +316,8 @@ body{padding-bottom:68px}
       <!-- Canva EDU Pro -->
       <div class="col-lg-4 col-md-6">
         <div class="product-card rv" style="--rd:0">
-          <div class="card-tag">Design Tool</div> <span class="stock-badge in"><span class="dot"></span>In Stock</span>
-          <!-- Image Tag Fixed -->
-          <img width="128" height="128" class="product-icon" src="/images/canva.webp" alt="Canva EDU Pro Icon">
+          <div class="pc-banner"><div class="pc-tile"><img src="/images/canva.webp" alt="Canva EDU Pro Icon" class="pc-tile-img"></div><span class="pc-badge pc-dur">✓ 30D</span><span class="pc-badge pc-stock in">● In Stock</span></div>
+          <div class="card-tag">Design Tool</div>
           <div class="product-name">Canva EDU Pro</div>
           <p class="product-desc">Professional designs, premium templates, background remover, and much more. Perfect for students and creators.</p>
           <div class="dur-tabs" id="tabs-canva">
@@ -335,9 +334,8 @@ body{padding-bottom:68px}
       <!-- CapCut Pro -->
       <div class="col-lg-4 col-md-6">
         <div class="product-card rv" style="border-color:rgba(255,140,0,0.15);--rd:1">
-          <div class="card-tag" style="background:rgba(255,140,0,0.15)">🔥 Popular</div> <span class="stock-badge in"><span class="dot"></span>In Stock</span>
-          <!-- Image Tag Fixed -->
-          <img width="128" height="128" class="product-icon" src="/images/capcut.webp" alt="CapCut Pro Icon">
+          <div class="pc-banner"><div class="pc-tile"><img src="/images/capcut.webp" alt="CapCut Pro Icon" class="pc-tile-img"></div><span class="pc-badge pc-dur">✓ 30D</span><span class="pc-badge pc-stock in">● In Stock</span></div>
+          <div class="card-tag" style="background:rgba(255,140,0,0.15)">🔥 Popular</div>
           <div class="product-name">CapCut Pro</div>
           <p class="product-desc">AI video editing, premium effects, watermark-free export, and pro templates. The first choice for content creators.</p>
           <div class="dur-tabs" id="tabs-capcut">
@@ -354,9 +352,8 @@ body{padding-bottom:68px}
       <!-- Surfshark VPN -->
       <div class="col-lg-4 col-md-6">
         <div class="product-card rv" style="--rd:2">
-          <div class="card-tag">Security</div> <span class="stock-badge in"><span class="dot"></span>In Stock</span>
-          <!-- Image Tag Fixed -->
-          <img width="128" height="128" class="product-icon" src="/images/surf.webp" alt="Surfshark VPN Icon">
+          <div class="pc-banner"><div class="pc-tile"><img src="/images/surf.webp" alt="Surfshark VPN Icon" class="pc-tile-img"></div><span class="pc-badge pc-dur">✓ 30D</span><span class="pc-badge pc-stock in">● In Stock</span></div>
+          <div class="card-tag">Security</div>
           <div class="product-name">Surfshark VPN</div>
           <p class="product-desc">Unlimited devices, blazing fast speeds, bypass geo-restrictions. Easily access websites outside of Pakistan.</p>
           <div class="dur-tabs" id="tabs-surf">
@@ -663,6 +660,9 @@ function setDur(card,price,label,btn){
   btn.classList.add('active');
   document.getElementById('p-'+card).textContent='Rs. '+price;
   document.getElementById('d-'+card).textContent='/ '+label;
+  var durMap = {'7 days':'7D','1 month':'30D','2 months':'60D','3 months':'90D','5 months':'150D','12 months':'365D','1 year':'365D','18 months':'540D','2 years':'730D','lifetime data':'Lifetime'};
+  var badge = btn.closest('.product-card').querySelector('.pc-dur');
+  if(badge) badge.textContent = '✓ ' + (durMap[label] || label);
 }
 function openModal(name,cardId){
   curProduct=name;

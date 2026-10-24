@@ -77,3 +77,13 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;overf
 .stock-badge.low .dot{width:7px;height:7px;border-radius:50%;background:#F97316;display:inline-block}
 .sale-badge{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:800;letter-spacing:.3px;background:linear-gradient(135deg,#EF4444,#F97316);color:#fff;padding:5px 11px;border-radius:100px;vertical-align:2px}
 .pd-stock{display:inline-block;background:rgba(22,163,74,.12);color:#15803D;font-size:12px;font-weight:800;padding:6px 14px;border-radius:100px;letter-spacing:.5px;margin-bottom:12px;margin-left:8px}
+/* product card banner (DigitalGuider-style) */
+.pc-banner{position:relative;margin:-32px -28px 22px;border-radius:20px 20px 0 0;overflow:hidden;background:radial-gradient(circle at 50% 28%,rgba(59,130,246,.5),transparent 62%),linear-gradient(180deg,#0F172A,#1E293B);display:flex;align-items:center;justify-content:center;padding:30px 0 26px}
+.pc-tile{width:140px;height:140px;background:#fff;border-radius:30px;display:flex;align-items:center;justify-content:center;box-shadow:0 14px 34px rgba(0,0,0,.45);padding:14px}
+.pc-tile-img{width:100%;height:100%;object-fit:contain;border-radius:20px}
+.pc-badge{position:absolute;font-size:11px;font-weight:800;letter-spacing:.3px;padding:5px 11px;border-radius:100px;white-space:nowrap;z-index:2}
+.pc-sale{top:12px;left:12px;background:rgba(220,38,38,.95);color:#fff}
+.pc-dur{top:12px;right:12px;background:#fff;color:#111827}
+.pc-stock{bottom:12px;left:12px}
+.pc-stock.in{background:rgba(255,255,255,.95);color:#15803D}
+.pc-stock.out{background:rgba(220,38,38,.95);color:#fff}
