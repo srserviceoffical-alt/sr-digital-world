@@ -69,3 +69,11 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;overf
 #navbar-placeholder .dropdown-content a{color:var(--text-muted)}
 #navbar-placeholder .dropdown-content a:hover{color:var(--primary);background:rgba(250,146,11,.06)}
 #navbar-placeholder .channel-float{background:var(--card);border:1px solid var(--border)}
+/* stock + sale badges (competitor-style) */
+.stock-badge{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:800;letter-spacing:.3px;padding:5px 11px;border-radius:100px;vertical-align:2px}
+.stock-badge.in{background:rgba(22,163,74,.12);color:#15803D}
+.stock-badge.in .dot{width:7px;height:7px;border-radius:50%;background:#16A34A;display:inline-block}
+.stock-badge.low{background:rgba(249,115,22,.14);color:#C2410C}
+.stock-badge.low .dot{width:7px;height:7px;border-radius:50%;background:#F97316;display:inline-block}
+.sale-badge{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:800;letter-spacing:.3px;background:linear-gradient(135deg,#EF4444,#F97316);color:#fff;padding:5px 11px;border-radius:100px;vertical-align:2px}
+.pd-stock{display:inline-block;background:rgba(22,163,74,.12);color:#15803D;font-size:12px;font-weight:800;padding:6px 14px;border-radius:100px;letter-spacing:.5px;margin-bottom:12px;margin-left:8px}
