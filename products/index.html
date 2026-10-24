@@ -26,7 +26,7 @@
 
 .page-hero{padding:70px 0 50px;background:var(--bg);text-align:center;border-bottom:1px solid var(--border);position:relative;overflow:hidden}.page-hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 50% 50% at 50% 0%,rgba(250,146,11,0.1) 0%,transparent 70%)}.products-section{padding:70px 0;background:var(--bg)}.cat-label{font-size:13px;font-weight:700;color:var(--primary);letter-spacing:1px;text-transform:uppercase;margin-bottom:24px;display:flex;align-items:center;gap:10px}.cat-label::after{content:'';flex:1;height:1px;background:var(--border)}/* PRODUCT CARD */
 .product-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:32px 28px;transition:all 0.4s;position:relative;overflow:hidden;height:100%; z-index:1; display:flex; flex-direction:column}.card-tag{display:inline-block;background:rgba(250,146,11,0.1);color:var(--primary-text);font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:6px;margin-bottom:20px; width:max-content}.product-desc{font-size:13px;color:var(--text-muted);line-height:1.6;margin-bottom:18px; flex-grow:1}.feat-list{list-style:none;margin-bottom:24px}.feat-list li{font-size:12.5px;color:var(--text-muted);padding:5px 0;display:flex;align-items:center;gap:8px}.feat-list li i{color:var(--primary);font-size:11px}/* BUTTONS */
-.btn-group-custom{ display:flex; flex-direction:column; gap:10px; margin-top:auto; align-items:flex-start}.details-btn{width:200px;padding:13px 20px;background:var(--card);border:1px solid var(--border);color:var(--text);border-radius:12px;font-weight:700;font-size:15px;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.3s; position:relative; z-index:10}.details-btn:hover{background:var(--bg-soft);border-color:#444}.order-btn{width:200px;padding:13px 20px;background:#222222;border:none;color:#fff;box-shadow:0 4px 14px rgba(34,34,34,.35);border-radius:12px;font-weight:700;font-size:15px;cursor:pointer;font-family:'Inter',sans-serif;transition:transform .25s ease,box-shadow .25s ease;display:flex;align-items:center;justify-content:center;gap:8px; position:relative; z-index:10}.cta-banner{background:linear-gradient(135deg,#FFF7ED,var(--bg-soft));border:1px solid rgba(250,146,11,0.2);border-radius:24px;padding:50px 40px;text-align:center;margin-top:30px}.modal-box{background:var(--card);border:1px solid rgba(250,146,11,0.25);border-radius:24px;padding:32px;width:90%;max-width:420px;animation:slideUp 0.3s ease; max-height:90vh; overflow-y:auto}/* Hide scrollbar for clean look */
+.btn-group-custom{ display:flex; flex-direction:column; gap:10px; margin-top:auto; align-items:flex-start}.details-btn{width:200px;padding:13px 20px;background:var(--card);border:1px solid var(--border);color:var(--text);border-radius:12px;font-weight:700;font-size:15px;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.3s; position:relative; z-index:10}.details-btn:hover{background:var(--bg-soft);border-color:#444}.order-btn{width:auto;padding:13px 26px;background:#222222;border:none;color:#fff;box-shadow:0 4px 14px rgba(34,34,34,.35);border-radius:12px;font-weight:700;font-size:15px;cursor:pointer;font-family:'Inter',sans-serif;transition:transform .25s ease,box-shadow .25s ease;display:flex;align-items:center;justify-content:center;gap:8px; position:relative; z-index:10}.cta-banner{background:linear-gradient(135deg,#FFF7ED,var(--bg-soft));border:1px solid rgba(250,146,11,0.2);border-radius:24px;padding:50px 40px;text-align:center;margin-top:30px}.modal-box{background:var(--card);border:1px solid rgba(250,146,11,0.25);border-radius:24px;padding:32px;width:90%;max-width:420px;animation:slideUp 0.3s ease; max-height:90vh; overflow-y:auto}/* Hide scrollbar for clean look */
 .modal-box::-webkit-scrollbar{ width:6px}.modal-box::-webkit-scrollbar-thumb{ background:var(--bg-soft); border-radius:10px}.modal-input:focus, .contact-input:focus, .contact-textarea:focus{
   border-color:var(--primary);
   background-color:var(--bg-soft);
@@ -124,7 +124,7 @@
     <div class="cat-label rv"><i class="fa-solid fa-palette"></i> Design & Creativity</div>
     <div class="row g-4 mb-5" data-cat="design">
 <div class="col-lg-4 col-md-6">
-        <div class="product-card rv" data-desc="The easiest tool for creating professional designs — perfect for students, businesses, and content creators.">
+        <div class="product-card rv" data-desc="The easiest tool for creating professional designs — perfect for students, businesses, and content creators." data-href="/products/canva/">
           <div class="pc-banner"><div class="pc-tile"><img src="/images/canva.webp" alt="Canva EDU Pro" class="pc-tile-img"></div><span class="pc-badge pc-dur">✓ 30D</span><span class="pc-badge pc-stock in">● In Stock</span></div>
           <div class="card-tag">Design Tool</div>
           <div class="product-name">Canva EDU Pro</div>
@@ -134,16 +134,17 @@
             <button class="dur-tab" onclick="setDur('canva','199','lifetime data',this)">Lifetime Data</button>
           </div>
           <div class="price-block">
+            <div class="price-old" id="o-canva">Rs. 201</div>
             <span class="price-amount" id="p-canva">Rs. 149</span>
+            <span class="price-usd" id="u-canva">(~$0.54)</span>
           </div>
           <div class="btn-group-custom">
-            <button class="details-btn" onclick="window.location.href='/products/canva/'">More Details</button>
-            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Canva EDU Pro','canva')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button></div>
+            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Canva EDU Pro','canva')">BUY NOW →</button></div>
           </div>
         </div>
       </div>
 <div class="col-lg-4 col-md-6">
-        <div class="product-card rv" style="border-color:rgba(250,146,11,0.15)" data-desc="AI-powered video editing — the most widely used tool for Reels, TikToks, and YouTube Shorts.">
+        <div class="product-card rv" style="border-color:rgba(250,146,11,0.15)" data-desc="AI-powered video editing — the most widely used tool for Reels, TikToks, and YouTube Shorts." data-href="/products/capcut/">
           <div class="pc-banner"><div class="pc-tile"><img src="/images/capcut.webp" alt="CapCut Pro" class="pc-tile-img"></div><span class="pc-badge pc-dur">✓ 30D</span><span class="pc-badge pc-stock in">● In Stock</span></div>
           <div class="card-tag" style="background:rgba(250,146,11,0.15)">🔥 Popular</div>
           <div class="product-name">CapCut Pro</div>
@@ -153,16 +154,17 @@
             <button class="dur-tab" disabled title="Out of Stock">7 Days · Out of Stock</button>
           </div>
           <div class="price-block">
+            <div class="price-old" id="o-capcut">Rs. 878</div>
             <span class="price-amount" id="p-capcut">Rs. 650</span>
+            <span class="price-usd" id="u-capcut">(~$2.35)</span>
           </div>
           <div class="btn-group-custom">
-            <button class="details-btn" onclick="window.location.href='/products/capcut/'">More Details</button>
-            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('CapCut Pro','capcut')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button></div>
+            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('CapCut Pro','capcut')">BUY NOW →</button></div>
           </div>
         </div>
       </div>
 <div class="col-lg-4 col-md-6">
-        <div class="product-card rv" data-desc="Google&#x27;s advanced AI assistant — the perfect companion for content writing, research, coding, and studies.">
+        <div class="product-card rv" data-desc="Google&#x27;s advanced AI assistant — the perfect companion for content writing, research, coding, and studies." data-href="/products/gemini/">
           <div class="pc-banner"><div class="pc-tile"><img src="/images/gemini.webp" alt="Gemini Pro" class="pc-tile-img"></div><span class="pc-badge pc-sale">🔥 FLASH SALE</span><span class="pc-badge pc-dur">✓ 540D</span><span class="pc-badge pc-stock in">● In Stock</span></div>
           <div class="card-tag">AI Assistant</div>
           <div class="product-name">Gemini Pro</div>
@@ -171,16 +173,17 @@
             <button class="dur-tab active" onclick="setDur('gemini','1199','18 months',this)">18 Months</button>
           </div>
           <div class="price-block">
+            <div class="price-old" id="o-gemini">Rs. 1619</div>
             <span class="price-amount" id="p-gemini">Rs. 1199</span>
+            <span class="price-usd" id="u-gemini">(~$4.33)</span>
           </div>
           <div class="btn-group-custom">
-            <button class="details-btn" onclick="window.location.href='/products/gemini/'">More Details</button>
-            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Gemini Pro','gemini')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button></div>
+            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Gemini Pro','gemini')">BUY NOW →</button></div>
           </div>
         </div>
       </div>
 <div class="col-lg-4 col-md-6">
-        <div class="product-card rv" data-desc="Design stunning graphics, videos &amp; social posts with Adobe&#x27;s AI-powered creative suite.">
+        <div class="product-card rv" data-desc="Design stunning graphics, videos &amp; social posts with Adobe&#x27;s AI-powered creative suite." data-href="/products/adobe/">
           <div class="pc-banner"><div class="pc-tile"><img src="/images/adobe.webp" alt="Adobe Express Premium" class="pc-tile-img"></div><span class="pc-badge pc-dur">✓ 365D</span><span class="pc-badge pc-stock in">● In Stock</span></div>
           <div class="card-tag">Design Tool</div>
           <div class="product-name">Adobe Express Premium</div>
@@ -189,16 +192,17 @@
             <button class="dur-tab active" onclick="setDur('adobe','750','12 months',this)">12 Months</button>
           </div>
           <div class="price-block">
+            <div class="price-old" id="o-adobe">Rs. 1013</div>
             <span class="price-amount" id="p-adobe">Rs. 750</span>
+            <span class="price-usd" id="u-adobe">(~$2.71)</span>
           </div>
           <div class="btn-group-custom">
-            <button class="details-btn" onclick="window.location.href='/products/adobe/'">More Details</button>
-            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Adobe Express Premium','adobe')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button></div>
+            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Adobe Express Premium','adobe')">BUY NOW →</button></div>
           </div>
         </div>
       </div>
 <div class="col-lg-4 col-md-6">
-        <div class="product-card rv" data-desc="Professional UI/UX design, prototyping &amp; team collaboration — 2 full years of access.">
+        <div class="product-card rv" data-desc="Professional UI/UX design, prototyping &amp; team collaboration — 2 full years of access." data-href="/products/figma/">
           <div class="pc-banner"><div class="pc-tile"><img src="/images/figma.webp" alt="Figma Pro Education" class="pc-tile-img"></div><span class="pc-badge pc-dur">✓ 730D</span><span class="pc-badge pc-stock in">● In Stock</span></div>
           <div class="card-tag">Design Tool</div>
           <div class="product-name">Figma Pro Education</div>
@@ -207,16 +211,17 @@
             <button class="dur-tab active" onclick="setDur('figma','2200','2 years',this)">2 Years</button>
           </div>
           <div class="price-block">
+            <div class="price-old" id="o-figma">Rs. 2970</div>
             <span class="price-amount" id="p-figma">Rs. 2200</span>
+            <span class="price-usd" id="u-figma">(~$7.94)</span>
           </div>
           <div class="btn-group-custom">
-            <button class="details-btn" onclick="window.location.href='/products/figma/'">More Details</button>
-            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Figma Pro Education','figma')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button></div>
+            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Figma Pro Education','figma')">BUY NOW →</button></div>
           </div>
         </div>
       </div>
 <div class="col-lg-4 col-md-6">
-        <div class="product-card rv" data-desc="Build &amp; publish professional websites with zero code — custom domain, CMS &amp; SEO tools.">
+        <div class="product-card rv" data-desc="Build &amp; publish professional websites with zero code — custom domain, CMS &amp; SEO tools." data-href="/products/framer/">
           <div class="pc-banner"><div class="pc-tile"><img src="/images/framer.webp" alt="Framer Basic" class="pc-tile-img"></div><span class="pc-badge pc-dur">✓ 365D</span><span class="pc-badge pc-stock in">● In Stock</span></div>
           <div class="card-tag">Web Design</div>
           <div class="product-name">Framer Basic</div>
@@ -225,11 +230,12 @@
             <button class="dur-tab active" onclick="setDur('framer','2000','12 months',this)">12 Months</button>
           </div>
           <div class="price-block">
+            <div class="price-old" id="o-framer">Rs. 2700</div>
             <span class="price-amount" id="p-framer">Rs. 2000</span>
+            <span class="price-usd" id="u-framer">(~$7.22)</span>
           </div>
           <div class="btn-group-custom">
-            <button class="details-btn" onclick="window.location.href='/products/framer/'">More Details</button>
-            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Framer Basic','framer')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button></div>
+            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Framer Basic','framer')">BUY NOW →</button></div>
           </div>
         </div>
       </div>
@@ -237,7 +243,7 @@
     <div class="cat-label rv"><i class="fa-solid fa-shield-halved"></i> Security & Privacy</div>
     <div class="row g-4 mb-5" data-cat="security">
 <div class="col-lg-4 col-md-6">
-        <div class="product-card rv" data-desc="Fast and secure browsing on unlimited devices. Bypass geo-restrictions and protect your privacy.">
+        <div class="product-card rv" data-desc="Fast and secure browsing on unlimited devices. Bypass geo-restrictions and protect your privacy." data-href="/products/surf/">
           <div class="pc-banner"><div class="pc-tile"><img src="/images/surf.webp" alt="Surfshark VPN" class="pc-tile-img"></div><span class="pc-badge pc-dur">✓ 30D</span><span class="pc-badge pc-stock in">● In Stock</span></div>
           <div class="card-tag">Security</div>
           <div class="product-name">Surfshark VPN</div>
@@ -247,16 +253,17 @@
             <button class="dur-tab" onclick="setDur('surf','500','2 months',this)">2 Months</button>
           </div>
           <div class="price-block">
+            <div class="price-old" id="o-surf">Rs. 405</div>
             <span class="price-amount" id="p-surf">Rs. 300</span>
+            <span class="price-usd" id="u-surf">(~$1.08)</span>
           </div>
           <div class="btn-group-custom">
-            <button class="details-btn" onclick="window.location.href='/products/surf/'">More Details</button>
-            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Surfshark VPN','surf')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button></div>
+            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Surfshark VPN','surf')">BUY NOW →</button></div>
           </div>
         </div>
       </div>
 <div class="col-lg-4 col-md-6">
-        <div class="product-card rv" data-desc="Blazing-fast VPN on 10 devices — unlock global streaming libraries &amp; stay private.">
+        <div class="product-card rv" data-desc="Blazing-fast VPN on 10 devices — unlock global streaming libraries &amp; stay private." data-href="/products/nordvpn/">
           <div class="pc-banner"><div class="pc-tile"><img src="/images/nordvpn.webp" alt="NordVPN Basic" class="pc-tile-img"></div><span class="pc-badge pc-dur">✓ 90D</span><span class="pc-badge pc-stock in">● In Stock</span></div>
           <div class="card-tag">Security</div>
           <div class="product-name">NordVPN Basic</div>
@@ -265,11 +272,12 @@
             <button class="dur-tab active" onclick="setDur('nordvpn','1800','3 months',this)">3 Months</button>
           </div>
           <div class="price-block">
+            <div class="price-old" id="o-nordvpn">Rs. 2430</div>
             <span class="price-amount" id="p-nordvpn">Rs. 1800</span>
+            <span class="price-usd" id="u-nordvpn">(~$6.50)</span>
           </div>
           <div class="btn-group-custom">
-            <button class="details-btn" onclick="window.location.href='/products/nordvpn/'">More Details</button>
-            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('NordVPN Basic','nordvpn')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button></div>
+            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('NordVPN Basic','nordvpn')">BUY NOW →</button></div>
           </div>
         </div>
       </div>
@@ -277,7 +285,7 @@
     <div class="cat-label rv"><i class="fa-solid fa-robot"></i> AI Tools</div>
     <div class="row g-4 mb-5" data-cat="ai">
 <div class="col-lg-4 col-md-6">
-        <div class="product-card rv" data-desc="AI paraphrasing, grammar check &amp; plagiarism checker — perfect for students &amp; writers.">
+        <div class="product-card rv" data-desc="AI paraphrasing, grammar check &amp; plagiarism checker — perfect for students &amp; writers." data-href="/products/quillbot/">
           <div class="pc-banner"><div class="pc-tile"><img src="/images/quillbot.webp" alt="Quillbot Premium" class="pc-tile-img"></div><span class="pc-badge pc-dur">✓ 30D</span><span class="pc-badge pc-stock out">Sold Out</span></div>
           <div class="card-tag">AI Writing</div>
           <div class="product-name">Quillbot Premium</div>
@@ -286,16 +294,17 @@
             <button class="dur-tab" disabled title="Out of Stock">1 Month · Out of Stock</button>
           </div>
           <div class="price-block">
+            <div class="price-old" id="o-quillbot">Rs. 1620</div>
             <span class="price-amount" id="p-quillbot">Rs. 1200</span>
+            <span class="price-usd" id="u-quillbot">(~$4.33)</span>
           </div>
           <div class="btn-group-custom">
-            <button class="details-btn" onclick="window.location.href='/products/quillbot/'">More Details</button>
             <button class="order-btn" disabled style="background:#808080;box-shadow:none;cursor:not-allowed;opacity:.75"><i class="fa-solid fa-ban"></i> Out of Stock</button>
           </div>
         </div>
       </div>
 <div class="col-lg-4 col-md-6">
-        <div class="product-card rv" data-desc="Build full-stack web apps with AI using simple text prompts — no coding needed.">
+        <div class="product-card rv" data-desc="Build full-stack web apps with AI using simple text prompts — no coding needed." data-href="/products/lovable/">
           <div class="pc-banner"><div class="pc-tile"><img src="/images/lovable.webp" alt="Lovable Pro Lite" class="pc-tile-img"></div><span class="pc-badge pc-dur">✓ 365D</span><span class="pc-badge pc-stock in">● In Stock</span></div>
           <div class="card-tag">AI Builder</div>
           <div class="product-name">Lovable Pro Lite</div>
@@ -304,11 +313,12 @@
             <button class="dur-tab active" onclick="setDur('lovable','3000','12 months',this)">12 Months</button>
           </div>
           <div class="price-block">
+            <div class="price-old" id="o-lovable">Rs. 4050</div>
             <span class="price-amount" id="p-lovable">Rs. 3000</span>
+            <span class="price-usd" id="u-lovable">(~$10.83)</span>
           </div>
           <div class="btn-group-custom">
-            <button class="details-btn" onclick="window.location.href='/products/lovable/'">More Details</button>
-            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Lovable Pro Lite','lovable')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button></div>
+            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Lovable Pro Lite','lovable')">BUY NOW →</button></div>
           </div>
         </div>
       </div>
@@ -316,7 +326,7 @@
     <div class="cat-label rv"><i class="fa-solid fa-tv"></i> Streaming & Entertainment</div>
     <div class="row g-4 mb-5" data-cat="streaming">
 <div class="col-lg-4 col-md-6">
-        <div class="product-card rv" data-desc="4K Ultra HD movies, series &amp; Netflix Originals with HDR on your own private screen.">
+        <div class="product-card rv" data-desc="4K Ultra HD movies, series &amp; Netflix Originals with HDR on your own private screen." data-href="/products/netflix/">
           <div class="pc-banner"><div class="pc-tile"><img src="/images/netflix.webp" alt="Netflix 4K UHD" class="pc-tile-img"></div><span class="pc-badge pc-dur">✓ 30D</span><span class="pc-badge pc-stock in">● In Stock</span></div>
           <div class="card-tag">Streaming</div>
           <div class="product-name">Netflix 4K UHD</div>
@@ -325,16 +335,17 @@
             <button class="dur-tab active" onclick="setDur('netflix','350','1 month',this)">1 Month</button>
           </div>
           <div class="price-block">
+            <div class="price-old" id="o-netflix">Rs. 473</div>
             <span class="price-amount" id="p-netflix">Rs. 350</span>
+            <span class="price-usd" id="u-netflix">(~$1.26)</span>
           </div>
           <div class="btn-group-custom">
-            <button class="details-btn" onclick="window.location.href='/products/netflix/'">More Details</button>
-            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Netflix 4K UHD','netflix')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button></div>
+            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Netflix 4K UHD','netflix')">BUY NOW →</button></div>
           </div>
         </div>
       </div>
 <div class="col-lg-4 col-md-6">
-        <div class="product-card rv" data-desc="Ad-free YouTube + YouTube Music, background play &amp; offline downloads.">
+        <div class="product-card rv" data-desc="Ad-free YouTube + YouTube Music, background play &amp; offline downloads." data-href="/products/ytpremium/">
           <div class="pc-banner"><div class="pc-tile"><img src="/images/ytpremium.webp" alt="YouTube Premium" class="pc-tile-img"></div><span class="pc-badge pc-dur">✓ 90D</span><span class="pc-badge pc-stock in">● In Stock</span></div>
           <div class="card-tag">Streaming</div>
           <div class="product-name">YouTube Premium</div>
@@ -343,16 +354,17 @@
             <button class="dur-tab active" onclick="setDur('ytpremium','1500','3 months',this)">3 Months</button>
           </div>
           <div class="price-block">
+            <div class="price-old" id="o-ytpremium">Rs. 2025</div>
             <span class="price-amount" id="p-ytpremium">Rs. 1500</span>
+            <span class="price-usd" id="u-ytpremium">(~$5.42)</span>
           </div>
           <div class="btn-group-custom">
-            <button class="details-btn" onclick="window.location.href='/products/ytpremium/'">More Details</button>
-            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('YouTube Premium','ytpremium')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button></div>
+            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('YouTube Premium','ytpremium')">BUY NOW →</button></div>
           </div>
         </div>
       </div>
 <div class="col-lg-4 col-md-6">
-        <div class="product-card rv" data-desc="100M+ ad-free songs with lossless &amp; spatial audio across all your devices.">
+        <div class="product-card rv" data-desc="100M+ ad-free songs with lossless &amp; spatial audio across all your devices." data-href="/products/applemusic/">
           <div class="pc-banner"><div class="pc-tile"><img src="/images/applemusic.webp" alt="Apple Music" class="pc-tile-img"></div><span class="pc-badge pc-dur">✓ 150D</span><span class="pc-badge pc-stock in">● In Stock</span></div>
           <div class="card-tag">Music</div>
           <div class="product-name">Apple Music</div>
@@ -361,11 +373,12 @@
             <button class="dur-tab active" onclick="setDur('applemusic','600','5 months',this)">5 Months</button>
           </div>
           <div class="price-block">
+            <div class="price-old" id="o-applemusic">Rs. 810</div>
             <span class="price-amount" id="p-applemusic">Rs. 600</span>
+            <span class="price-usd" id="u-applemusic">(~$2.17)</span>
           </div>
           <div class="btn-group-custom">
-            <button class="details-btn" onclick="window.location.href='/products/applemusic/'">More Details</button>
-            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Apple Music','applemusic')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button></div>
+            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Apple Music','applemusic')">BUY NOW →</button></div>
           </div>
         </div>
       </div>
@@ -373,7 +386,7 @@
     <div class="cat-label rv"><i class="fa-solid fa-briefcase"></i> Productivity & Office</div>
     <div class="row g-4 mb-5" data-cat="productivity">
 <div class="col-lg-4 col-md-6">
-        <div class="product-card rv" data-desc="Word, Excel, PowerPoint &amp; more — genuine Office apps on all your devices.">
+        <div class="product-card rv" data-desc="Word, Excel, PowerPoint &amp; more — genuine Office apps on all your devices." data-href="/products/office365/">
           <div class="pc-banner"><div class="pc-tile"><img src="/images/office365.webp" alt="Microsoft Office 365" class="pc-tile-img"></div><span class="pc-badge pc-dur">✓ 365D</span><span class="pc-badge pc-stock in">● In Stock</span></div>
           <div class="card-tag">Productivity</div>
           <div class="product-name">Microsoft Office 365</div>
@@ -382,16 +395,17 @@
             <button class="dur-tab active" onclick="setDur('office365','1000','12 months',this)">12 Months</button>
           </div>
           <div class="price-block">
+            <div class="price-old" id="o-office365">Rs. 1350</div>
             <span class="price-amount" id="p-office365">Rs. 1000</span>
+            <span class="price-usd" id="u-office365">(~$3.61)</span>
           </div>
           <div class="btn-group-custom">
-            <button class="details-btn" onclick="window.location.href='/products/office365/'">More Details</button>
-            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Microsoft Office 365','office365')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button></div>
+            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Microsoft Office 365','office365')">BUY NOW →</button></div>
           </div>
         </div>
       </div>
 <div class="col-lg-4 col-md-6">
-        <div class="product-card rv" data-desc="Ultimate workspace for notes, wikis &amp; projects with unlimited blocks.">
+        <div class="product-card rv" data-desc="Ultimate workspace for notes, wikis &amp; projects with unlimited blocks." data-href="/products/notion/">
           <div class="pc-banner"><div class="pc-tile"><img src="/images/notion.webp" alt="Notion Education Plus" class="pc-tile-img"></div><span class="pc-badge pc-dur">✓ 365D</span><span class="pc-badge pc-stock in">● In Stock</span></div>
           <div class="card-tag">Productivity</div>
           <div class="product-name">Notion Education Plus</div>
@@ -400,16 +414,17 @@
             <button class="dur-tab active" onclick="setDur('notion','1000','12 months',this)">12 Months</button>
           </div>
           <div class="price-block">
+            <div class="price-old" id="o-notion">Rs. 1350</div>
             <span class="price-amount" id="p-notion">Rs. 1000</span>
+            <span class="price-usd" id="u-notion">(~$3.61)</span>
           </div>
           <div class="btn-group-custom">
-            <button class="details-btn" onclick="window.location.href='/products/notion/'">More Details</button>
-            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Notion Education Plus','notion')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button></div>
+            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Notion Education Plus','notion')">BUY NOW →</button></div>
           </div>
         </div>
       </div>
 <div class="col-lg-4 col-md-6">
-        <div class="product-card rv" data-desc="All premium PDF tools — edit, convert, compress, sign &amp; AI document workflows.">
+        <div class="product-card rv" data-desc="All premium PDF tools — edit, convert, compress, sign &amp; AI document workflows." data-href="/products/ilovepdf/">
           <div class="pc-banner"><div class="pc-tile"><img src="/images/ilovepdf.webp" alt="iLovePDF Premium" class="pc-tile-img"></div><span class="pc-badge pc-dur">✓ 365D</span><span class="pc-badge pc-stock in">● In Stock</span></div>
           <div class="card-tag">PDF Tools</div>
           <div class="product-name">iLovePDF Premium</div>
@@ -418,11 +433,12 @@
             <button class="dur-tab active" onclick="setDur('ilovepdf','600','12 months',this)">12 Months</button>
           </div>
           <div class="price-block">
+            <div class="price-old" id="o-ilovepdf">Rs. 810</div>
             <span class="price-amount" id="p-ilovepdf">Rs. 600</span>
+            <span class="price-usd" id="u-ilovepdf">(~$2.17)</span>
           </div>
           <div class="btn-group-custom">
-            <button class="details-btn" onclick="window.location.href='/products/ilovepdf/'">More Details</button>
-            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('iLovePDF Premium','ilovepdf')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button></div>
+            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('iLovePDF Premium','ilovepdf')">BUY NOW →</button></div>
           </div>
         </div>
       </div>
@@ -430,7 +446,7 @@
     <div class="cat-label rv"><i class="fa-solid fa-graduation-cap"></i> Learning & Career</div>
     <div class="row g-4 mb-5" data-cat="learning">
 <div class="col-lg-4 col-md-6">
-        <div class="product-card rv" data-desc="Thousands of courses &amp; professional certificates from top universities.">
+        <div class="product-card rv" data-desc="Thousands of courses &amp; professional certificates from top universities." data-href="/products/coursera/">
           <div class="pc-banner"><div class="pc-tile"><img src="/images/coursera.webp" alt="Coursera Plus" class="pc-tile-img"></div><span class="pc-badge pc-dur">✓ 365D</span><span class="pc-badge pc-stock in">● In Stock</span></div>
           <div class="card-tag">Learning</div>
           <div class="product-name">Coursera Plus</div>
@@ -439,16 +455,17 @@
             <button class="dur-tab active" onclick="setDur('coursera','1000','12 months',this)">12 Months</button>
           </div>
           <div class="price-block">
+            <div class="price-old" id="o-coursera">Rs. 1350</div>
             <span class="price-amount" id="p-coursera">Rs. 1000</span>
+            <span class="price-usd" id="u-coursera">(~$3.61)</span>
           </div>
           <div class="btn-group-custom">
-            <button class="details-btn" onclick="window.location.href='/products/coursera/'">More Details</button>
-            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Coursera Plus','coursera')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button></div>
+            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Coursera Plus','coursera')">BUY NOW →</button></div>
           </div>
         </div>
       </div>
 <div class="col-lg-4 col-md-6">
-        <div class="product-card rv" data-desc="11,000+ top-rated courses with certificates — tech, business &amp; design.">
+        <div class="product-card rv" data-desc="11,000+ top-rated courses with certificates — tech, business &amp; design." data-href="/products/udemy/">
           <div class="pc-banner"><div class="pc-tile"><img src="/images/udemy.webp" alt="Udemy Personal Plan" class="pc-tile-img"></div><span class="pc-badge pc-dur">✓ 30D</span><span class="pc-badge pc-stock in">● In Stock</span></div>
           <div class="card-tag">Learning</div>
           <div class="product-name">Udemy Personal Plan</div>
@@ -457,16 +474,17 @@
             <button class="dur-tab active" onclick="setDur('udemy','800','1 month',this)">1 Month</button>
           </div>
           <div class="price-block">
+            <div class="price-old" id="o-udemy">Rs. 1080</div>
             <span class="price-amount" id="p-udemy">Rs. 800</span>
+            <span class="price-usd" id="u-udemy">(~$2.89)</span>
           </div>
           <div class="btn-group-custom">
-            <button class="details-btn" onclick="window.location.href='/products/udemy/'">More Details</button>
-            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Udemy Personal Plan','udemy')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button></div>
+            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Udemy Personal Plan','udemy')">BUY NOW →</button></div>
           </div>
         </div>
       </div>
 <div class="col-lg-4 col-md-6">
-        <div class="product-card rv" data-desc="Ad-free language learning with unlimited hearts — 1 full year of Super.">
+        <div class="product-card rv" data-desc="Ad-free language learning with unlimited hearts — 1 full year of Super." data-href="/products/duolingo/">
           <div class="pc-banner"><div class="pc-tile"><img src="/images/duolingo.webp" alt="Super Duolingo" class="pc-tile-img"></div><span class="pc-badge pc-dur">✓ 365D</span><span class="pc-badge pc-stock in">● In Stock</span></div>
           <div class="card-tag">Learning</div>
           <div class="product-name">Super Duolingo</div>
@@ -475,16 +493,17 @@
             <button class="dur-tab active" onclick="setDur('duolingo','700','1 year',this)">1 Year</button>
           </div>
           <div class="price-block">
+            <div class="price-old" id="o-duolingo">Rs. 945</div>
             <span class="price-amount" id="p-duolingo">Rs. 700</span>
+            <span class="price-usd" id="u-duolingo">(~$2.53)</span>
           </div>
           <div class="btn-group-custom">
-            <button class="details-btn" onclick="window.location.href='/products/duolingo/'">More Details</button>
-            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Super Duolingo','duolingo')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button></div>
+            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Super Duolingo','duolingo')">BUY NOW →</button></div>
           </div>
         </div>
       </div>
 <div class="col-lg-4 col-md-6">
-        <div class="product-card rv" data-desc="InMail recruiters, see profile viewers &amp; unlock 16,000+ Learning courses.">
+        <div class="product-card rv" data-desc="InMail recruiters, see profile viewers &amp; unlock 16,000+ Learning courses." data-href="/products/linkedin/">
           <div class="pc-banner"><div class="pc-tile"><img src="/images/linkedin.webp" alt="LinkedIn Premium" class="pc-tile-img"></div><span class="pc-badge pc-dur">✓ 90D</span><span class="pc-badge pc-stock in">● In Stock</span></div>
           <div class="card-tag">Career</div>
           <div class="product-name">LinkedIn Premium</div>
@@ -493,11 +512,12 @@
             <button class="dur-tab active" onclick="setDur('linkedin','800','3 months',this)">3 Months</button>
           </div>
           <div class="price-block">
+            <div class="price-old" id="o-linkedin">Rs. 1080</div>
             <span class="price-amount" id="p-linkedin">Rs. 800</span>
+            <span class="price-usd" id="u-linkedin">(~$2.89)</span>
           </div>
           <div class="btn-group-custom">
-            <button class="details-btn" onclick="window.location.href='/products/linkedin/'">More Details</button>
-            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('LinkedIn Premium','linkedin')"><i class="fa-brands fa-whatsapp"></i> Buy Now</button></div>
+            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('LinkedIn Premium','linkedin')">BUY NOW →</button></div>
           </div>
         </div>
       </div>
@@ -634,6 +654,10 @@ function setDur(card, price, label, btn) {
   tabs.forEach(t => t.classList.remove('active'));
   btn.classList.add('active');
   document.getElementById('p-'+card).textContent = 'Rs. ' + price;
+  var oldEl = document.getElementById('o-'+card);
+  if(oldEl) oldEl.textContent = 'Rs. ' + Math.round(parseFloat(price) * 1.35);
+  var usdEl = document.getElementById('u-'+card);
+  if(usdEl) usdEl.textContent = '(~$' + (parseFloat(price) / 277).toFixed(2) + ')';
   var durMap = {'7 days':'7D','1 month':'30D','2 months':'60D','3 months':'90D','5 months':'150D','12 months':'365D','1 year':'365D','18 months':'540D','2 years':'730D','lifetime data':'Lifetime'};
   var badge = btn.closest('.product-card').querySelector('.pc-dur');
   if(badge) badge.textContent = '✓ ' + (durMap[label] || label);
@@ -692,6 +716,15 @@ function sendOrder() {
   var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
   els.forEach(function(e){io.observe(e)});
 })();
+</script>
+<script>
+document.querySelectorAll('.product-card').forEach(function(card){
+  card.addEventListener('click', function(e){
+    if(e.target.closest('button, a')) return;
+    var href = card.getAttribute('data-href');
+    if(href) window.location.href = href;
+  });
+});
 </script>
 </body>
 </html>
