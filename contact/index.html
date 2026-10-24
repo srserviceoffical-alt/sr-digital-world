@@ -127,7 +127,7 @@
 
 <script>
 // --- NAVBAR SCRIPT START ---
-fetch('/navbar.html?v=4')
+fetch('/navbar.html?v=5')
   .then(response => response.text())
   .then(data => {
     document.getElementById('navbar-placeholder').innerHTML = data;
@@ -161,5 +161,6 @@ function sendContactForm(){
   window.open('https://wa.me/923229952880?text='+encodeURIComponent(msg),'_blank');
 }
 </script>
+<script src="/cart.js?v=2"></script>
 </body>
 </html>

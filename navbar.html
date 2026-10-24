@@ -21,6 +21,7 @@
 
     <div class="d-flex align-items-center gap-2 nav-cta">
       <a href="/products/" class="nav-browse"><i class="fa-solid fa-magnifying-glass"></i>Browse Tools</a>
+      <button class="nav-cart" onclick="srOpenCart()" title="Cart"><i class="fa-solid fa-cart-shopping"></i><span class="sr-cart-count nav-cart-count">0</span></button>
       <a href="https://wa.me/923229952880" target="_blank" class="nav-wa"><i class="fa-brands fa-whatsapp"></i>WHATSAPP</a>
     </div>
   </div>
@@ -47,6 +48,7 @@
 .nav-wa{display:inline-flex;align-items:center;gap:8px;background:var(--cta);color:#fff;font-weight:800;font-size:13px;letter-spacing:1px;padding:11px 24px;border-radius:100px;text-decoration:none;white-space:nowrap;box-shadow:0 6px 18px rgba(21,128,61,.35);transition:transform .2s,box-shadow .2s}
 .nav-wa:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(21,128,61,.45);background:var(--cta-hover);color:#fff}
 .nav-wa i{font-size:16px}
+.nav-cart{position:relative;width:42px;height:42px;border-radius:50%;border:none;background:#222222;color:#fff;font-size:16px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}.nav-cart:hover{background:#FA920B}.nav-cart-count{position:absolute;top:-4px;right:-4px;min-width:19px;height:19px;border-radius:100px;background:#FA920B;color:#fff;font-size:10px;font-weight:800;display:none;align-items:center;justify-content:center;padding:0 4px}
 .menu-toggle{ display:none; background:transparent; border:none; color:var(--primary); font-size:24px; cursor:pointer}
 
   @media(max-width: 1100px) {.nav-browse{display:none}}

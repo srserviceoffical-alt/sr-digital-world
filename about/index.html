@@ -146,7 +146,7 @@
 
 <script>
 // --- NAVBAR SCRIPT START ---
-fetch('/navbar.html?v=4')
+fetch('/navbar.html?v=5')
   .then(response => response.text())
   .then(data => {
     document.getElementById('navbar-placeholder').innerHTML = data;
@@ -182,5 +182,6 @@ function setLanguage(lang) {
   }
 }
 </script>
+<script src="/cart.js?v=2"></script>
 </body>
 </html>

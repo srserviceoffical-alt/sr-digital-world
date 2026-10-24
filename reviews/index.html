@@ -366,7 +366,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text)}
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
 // --- NAVBAR SCRIPT START ---
-fetch('/navbar.html?v=4')
+fetch('/navbar.html?v=5')
   .then(response => response.text())
   .then(data => {
     document.getElementById('navbar-placeholder').innerHTML = data;
@@ -440,5 +440,6 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeProof()
   els.forEach(function(e){io.observe(e)});
 })();
 </script>
+<script src="/cart.js?v=2"></script>
 </body>
 </html>

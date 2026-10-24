@@ -118,6 +118,7 @@
         <div class="pd-plans"><button class="pd-plan active" onclick="selPlan(0,this)">Rs. 2200<small>2 years</small></button></div>
         <div class="pd-price"><span id="pdPrice">Rs. 2200</span> <span id="pdDur">/ 2 years</span></div>
         <div class="pd-coupon"><div class="pd-coupon-row"><input type="text" id="pdCoupon" placeholder="Coupon code (agar hai to)" autocomplete="off"><button type="button" class="pd-coupon-btn" onclick="srdApplyPdCoupon()">Apply</button></div><div class="pd-coupon-msg" id="pdCouponMsg"></div></div><div class="pd-actions">
+          <button class="pd-cart" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button>
           <a class="pd-order" id="pdOrder" href="#" target="_blank"><i class="fa-brands fa-whatsapp"></i> Order Now</a>
           <a class="pd-chat" href="https://wa.me/923229952880?text=Assalam-o-Alaikum%21%20I%20have%20a%20question%20about%20Figma%20Pro%20Education." target="_blank"><i class="fa-solid fa-comment-dots"></i> Ask a Question</a>
         </div>
@@ -168,7 +169,7 @@
 <script src="/coupons.js"></script>
 <script>
 // --- NAVBAR SCRIPT START ---
-fetch('/navbar.html?v=4')
+fetch('/navbar.html?v=5')
   .then(response => response.text())
   .then(data => {
     document.getElementById('navbar-placeholder').innerHTML = data;
@@ -230,5 +231,6 @@ function srdApplyPdCoupon(){
 }
 updOrder();
 </script>
+<script src="/cart.js?v=2"></script>
 </body>
 </html>

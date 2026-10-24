@@ -247,7 +247,7 @@
 // ==========================================
 // 1. NAVBAR LOAD, HIGHLIGHT KAREIN (Mobile support ke sath)
 // ==========================================
-fetch('/navbar.html?v=4')
+fetch('/navbar.html?v=5')
   .then(response => response.text())
   .then(data => { 
     document.getElementById('navbar-placeholder').innerHTML = data; 
@@ -392,5 +392,6 @@ function smartDownload(event, buttonElement, realDownloadLink) {
 <!-- Adsterra Social Bar Code (Popunder removed to stop ads on category clicks) -->
 <script type='text/javascript' src='//pl30327570.effectivecpmnetwork.com/40/c6/ef/40c6efc207ecd8ad1f6be56f2ffb8101.js'></script>
 
+<script src="/cart.js?v=2"></script>
 </body>
 </html>
