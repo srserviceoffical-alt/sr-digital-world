@@ -25,8 +25,8 @@
 
 
 .page-hero{padding:70px 0 50px;background:var(--bg);text-align:center;border-bottom:1px solid var(--border);position:relative;overflow:hidden}.page-hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 50% 50% at 50% 0%,rgba(250,146,11,0.1) 0%,transparent 70%)}.products-section{padding:70px 0;background:var(--bg)}.cat-label{font-size:13px;font-weight:700;color:var(--primary);letter-spacing:1px;text-transform:uppercase;margin-bottom:24px;display:flex;align-items:center;gap:10px}.cat-label::after{content:'';flex:1;height:1px;background:var(--border)}/* PRODUCT CARD */
-.product-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:32px 28px;transition:all 0.4s;position:relative;overflow:hidden;height:100%; z-index:1; display:flex; flex-direction:column}.card-tag{display:inline-block;background:rgba(250,146,11,0.1);color:var(--primary-text);font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:6px;margin-bottom:20px; width:max-content}.product-desc{font-size:13px;color:var(--text-muted);line-height:1.6;margin-bottom:18px; flex-grow:1}.feat-list{list-style:none;margin-bottom:24px}.feat-list li{font-size:12.5px;color:var(--text-muted);padding:5px 0;display:flex;align-items:center;gap:8px}.feat-list li i{color:var(--primary);font-size:11px}/* BUTTONS */
-.btn-group-custom{ display:flex; flex-direction:column; gap:10px; margin-top:auto; align-items:flex-start}.details-btn{width:200px;padding:13px 20px;background:var(--card);border:1px solid var(--border);color:var(--text);border-radius:12px;font-weight:700;font-size:15px;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.3s; position:relative; z-index:10}.details-btn:hover{background:var(--bg-soft);border-color:#444}.order-btn{width:auto;padding:13px 26px;background:#222222;border:none;color:#fff;box-shadow:0 4px 14px rgba(34,34,34,.35);border-radius:14px;font-weight:700;font-size:15px;cursor:pointer;font-family:'Inter',sans-serif;transition:transform .25s ease,box-shadow .25s ease;display:flex;align-items:center;justify-content:center;gap:8px; position:relative; z-index:10}.cta-banner{background:linear-gradient(135deg,#FFF7ED,var(--bg-soft));border:1px solid rgba(250,146,11,0.2);border-radius:24px;padding:50px 40px;text-align:center;margin-top:30px}.modal-box{background:var(--card);border:1px solid rgba(250,146,11,0.25);border-radius:24px;padding:32px;width:90%;max-width:420px;animation:slideUp 0.3s ease; max-height:90vh; overflow-y:auto}/* Hide scrollbar for clean look */
+.product-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:32px 20px;transition:all 0.4s;position:relative;overflow:hidden;height:100%; z-index:1; display:flex; flex-direction:column}.card-tag{display:inline-block;background:rgba(250,146,11,0.1);color:var(--primary-text);font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:6px;margin-bottom:20px; width:max-content}.product-desc{font-size:13px;color:var(--text-muted);line-height:1.6;margin-bottom:18px; flex-grow:1}.feat-list{list-style:none;margin-bottom:24px}.feat-list li{font-size:12.5px;color:var(--text-muted);padding:5px 0;display:flex;align-items:center;gap:8px}.feat-list li i{color:var(--primary);font-size:11px}/* BUTTONS */
+.btn-group-custom{ display:flex; flex-direction:column; gap:10px; margin-top:auto; align-items:flex-start}.details-btn{width:200px;padding:13px 20px;background:var(--card);border:1px solid var(--border);color:var(--text);border-radius:12px;font-weight:700;font-size:15px;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.3s; position:relative; z-index:10}.details-btn:hover{background:var(--bg-soft);border-color:#444}.order-btn{width:auto;padding:12px 18px;background:#222222;border:none;color:#fff;box-shadow:0 4px 14px rgba(34,34,34,.35);border-radius:14px;font-weight:700;font-size:14px;cursor:pointer;font-family:'Inter',sans-serif;transition:transform .25s ease,box-shadow .25s ease;display:flex;align-items:center;justify-content:center;gap:8px; position:relative; z-index:10}.cta-banner{background:linear-gradient(135deg,#FFF7ED,var(--bg-soft));border:1px solid rgba(250,146,11,0.2);border-radius:24px;padding:50px 40px;text-align:center;margin-top:30px}.modal-box{background:var(--card);border:1px solid rgba(250,146,11,0.25);border-radius:24px;padding:32px;width:90%;max-width:420px;animation:slideUp 0.3s ease; max-height:90vh; overflow-y:auto}/* Hide scrollbar for clean look */
 .modal-box::-webkit-scrollbar{ width:6px}.modal-box::-webkit-scrollbar-thumb{ background:var(--bg-soft); border-radius:10px}.modal-input:focus, .contact-input:focus, .contact-textarea:focus{
   border-color:var(--primary);
   background-color:var(--bg-soft);
@@ -133,14 +133,14 @@
             <button class="dur-tab active" onclick="setDur('canva','149','1 month',this)">1 Month</button>
             <button class="dur-tab" onclick="setDur('canva','199','lifetime data',this)">Lifetime Data</button>
           </div>
+          <div class="price-row">
           <div class="price-block">
-            <div class="price-old" id="o-canva">Rs. 201</div>
-            <span class="price-amount" id="p-canva">Rs. 149</span>
+            <div class="price-old" id="o-canva">Rs 201</div>
+            <span class="price-amount" id="p-canva">Rs 149</span>
             <span class="price-usd" id="u-canva">(~$0.54)</span>
           </div>
-          <div class="btn-group-custom">
-            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Canva EDU Pro','canva')">BUY NOW →</button></div>
-          </div>
+          <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Canva EDU Pro','canva')">BUY NOW →</button></div>
+        </div>
         </div>
       </div>
 <div class="col-lg-4 col-md-6">
@@ -153,14 +153,14 @@
             <button class="dur-tab active" onclick="setDur('capcut','650','1 month',this)">1 Month</button>
             <button class="dur-tab" disabled title="Out of Stock">7 Days · Out of Stock</button>
           </div>
+          <div class="price-row">
           <div class="price-block">
-            <div class="price-old" id="o-capcut">Rs. 878</div>
-            <span class="price-amount" id="p-capcut">Rs. 650</span>
+            <div class="price-old" id="o-capcut">Rs 878</div>
+            <span class="price-amount" id="p-capcut">Rs 650</span>
             <span class="price-usd" id="u-capcut">(~$2.35)</span>
           </div>
-          <div class="btn-group-custom">
-            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('CapCut Pro','capcut')">BUY NOW →</button></div>
-          </div>
+          <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('CapCut Pro','capcut')">BUY NOW →</button></div>
+        </div>
         </div>
       </div>
 <div class="col-lg-4 col-md-6">
@@ -172,14 +172,14 @@
           <div class="dur-tabs" id="tabs-gemini">
             <button class="dur-tab active" onclick="setDur('gemini','1199','18 months',this)">18 Months</button>
           </div>
+          <div class="price-row">
           <div class="price-block">
-            <div class="price-old" id="o-gemini">Rs. 1619</div>
-            <span class="price-amount" id="p-gemini">Rs. 1199</span>
+            <div class="price-old" id="o-gemini">Rs 1619</div>
+            <span class="price-amount" id="p-gemini">Rs 1199</span>
             <span class="price-usd" id="u-gemini">(~$4.33)</span>
           </div>
-          <div class="btn-group-custom">
-            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Gemini Pro','gemini')">BUY NOW →</button></div>
-          </div>
+          <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Gemini Pro','gemini')">BUY NOW →</button></div>
+        </div>
         </div>
       </div>
 <div class="col-lg-4 col-md-6">
@@ -191,14 +191,14 @@
           <div class="dur-tabs" id="tabs-adobe">
             <button class="dur-tab active" onclick="setDur('adobe','750','12 months',this)">12 Months</button>
           </div>
+          <div class="price-row">
           <div class="price-block">
-            <div class="price-old" id="o-adobe">Rs. 1013</div>
-            <span class="price-amount" id="p-adobe">Rs. 750</span>
+            <div class="price-old" id="o-adobe">Rs 1013</div>
+            <span class="price-amount" id="p-adobe">Rs 750</span>
             <span class="price-usd" id="u-adobe">(~$2.71)</span>
           </div>
-          <div class="btn-group-custom">
-            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Adobe Express Premium','adobe')">BUY NOW →</button></div>
-          </div>
+          <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Adobe Express Premium','adobe')">BUY NOW →</button></div>
+        </div>
         </div>
       </div>
 <div class="col-lg-4 col-md-6">
@@ -210,14 +210,14 @@
           <div class="dur-tabs" id="tabs-figma">
             <button class="dur-tab active" onclick="setDur('figma','2200','2 years',this)">2 Years</button>
           </div>
+          <div class="price-row">
           <div class="price-block">
-            <div class="price-old" id="o-figma">Rs. 2970</div>
-            <span class="price-amount" id="p-figma">Rs. 2200</span>
+            <div class="price-old" id="o-figma">Rs 2970</div>
+            <span class="price-amount" id="p-figma">Rs 2200</span>
             <span class="price-usd" id="u-figma">(~$7.94)</span>
           </div>
-          <div class="btn-group-custom">
-            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Figma Pro Education','figma')">BUY NOW →</button></div>
-          </div>
+          <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Figma Pro Education','figma')">BUY NOW →</button></div>
+        </div>
         </div>
       </div>
 <div class="col-lg-4 col-md-6">
@@ -229,14 +229,14 @@
           <div class="dur-tabs" id="tabs-framer">
             <button class="dur-tab active" onclick="setDur('framer','2000','12 months',this)">12 Months</button>
           </div>
+          <div class="price-row">
           <div class="price-block">
-            <div class="price-old" id="o-framer">Rs. 2700</div>
-            <span class="price-amount" id="p-framer">Rs. 2000</span>
+            <div class="price-old" id="o-framer">Rs 2700</div>
+            <span class="price-amount" id="p-framer">Rs 2000</span>
             <span class="price-usd" id="u-framer">(~$7.22)</span>
           </div>
-          <div class="btn-group-custom">
-            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Framer Basic','framer')">BUY NOW →</button></div>
-          </div>
+          <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Framer Basic','framer')">BUY NOW →</button></div>
+        </div>
         </div>
       </div>
     </div>
@@ -252,14 +252,14 @@
             <button class="dur-tab active" onclick="setDur('surf','300','1 month',this)">1 Month</button>
             <button class="dur-tab" onclick="setDur('surf','500','2 months',this)">2 Months</button>
           </div>
+          <div class="price-row">
           <div class="price-block">
-            <div class="price-old" id="o-surf">Rs. 405</div>
-            <span class="price-amount" id="p-surf">Rs. 300</span>
+            <div class="price-old" id="o-surf">Rs 405</div>
+            <span class="price-amount" id="p-surf">Rs 300</span>
             <span class="price-usd" id="u-surf">(~$1.08)</span>
           </div>
-          <div class="btn-group-custom">
-            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Surfshark VPN','surf')">BUY NOW →</button></div>
-          </div>
+          <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Surfshark VPN','surf')">BUY NOW →</button></div>
+        </div>
         </div>
       </div>
 <div class="col-lg-4 col-md-6">
@@ -271,14 +271,14 @@
           <div class="dur-tabs" id="tabs-nordvpn">
             <button class="dur-tab active" onclick="setDur('nordvpn','1800','3 months',this)">3 Months</button>
           </div>
+          <div class="price-row">
           <div class="price-block">
-            <div class="price-old" id="o-nordvpn">Rs. 2430</div>
-            <span class="price-amount" id="p-nordvpn">Rs. 1800</span>
+            <div class="price-old" id="o-nordvpn">Rs 2430</div>
+            <span class="price-amount" id="p-nordvpn">Rs 1800</span>
             <span class="price-usd" id="u-nordvpn">(~$6.50)</span>
           </div>
-          <div class="btn-group-custom">
-            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('NordVPN Basic','nordvpn')">BUY NOW →</button></div>
-          </div>
+          <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('NordVPN Basic','nordvpn')">BUY NOW →</button></div>
+        </div>
         </div>
       </div>
     </div>
@@ -293,14 +293,14 @@
           <div class="dur-tabs" id="tabs-quillbot">
             <button class="dur-tab" disabled title="Out of Stock">1 Month · Out of Stock</button>
           </div>
+          <div class="price-row">
           <div class="price-block">
-            <div class="price-old" id="o-quillbot">Rs. 1620</div>
-            <span class="price-amount" id="p-quillbot">Rs. 1200</span>
+            <div class="price-old" id="o-quillbot">Rs 1620</div>
+            <span class="price-amount" id="p-quillbot">Rs 1200</span>
             <span class="price-usd" id="u-quillbot">(~$4.33)</span>
           </div>
-          <div class="btn-group-custom">
-            <button class="order-btn" disabled style="background:#808080;box-shadow:none;cursor:not-allowed;opacity:.75"><i class="fa-solid fa-ban"></i> Out of Stock</button>
-          </div>
+          <div class="buy-row"><button class="order-btn" disabled style="background:#808080;box-shadow:none;cursor:not-allowed;opacity:.75"><i class="fa-solid fa-ban"></i> Out of Stock</button></div>
+        </div>
         </div>
       </div>
 <div class="col-lg-4 col-md-6">
@@ -312,14 +312,14 @@
           <div class="dur-tabs" id="tabs-lovable">
             <button class="dur-tab active" onclick="setDur('lovable','3000','12 months',this)">12 Months</button>
           </div>
+          <div class="price-row">
           <div class="price-block">
-            <div class="price-old" id="o-lovable">Rs. 4050</div>
-            <span class="price-amount" id="p-lovable">Rs. 3000</span>
+            <div class="price-old" id="o-lovable">Rs 4050</div>
+            <span class="price-amount" id="p-lovable">Rs 3000</span>
             <span class="price-usd" id="u-lovable">(~$10.83)</span>
           </div>
-          <div class="btn-group-custom">
-            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Lovable Pro Lite','lovable')">BUY NOW →</button></div>
-          </div>
+          <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Lovable Pro Lite','lovable')">BUY NOW →</button></div>
+        </div>
         </div>
       </div>
     </div>
@@ -334,14 +334,14 @@
           <div class="dur-tabs" id="tabs-netflix">
             <button class="dur-tab active" onclick="setDur('netflix','350','1 month',this)">1 Month</button>
           </div>
+          <div class="price-row">
           <div class="price-block">
-            <div class="price-old" id="o-netflix">Rs. 473</div>
-            <span class="price-amount" id="p-netflix">Rs. 350</span>
+            <div class="price-old" id="o-netflix">Rs 473</div>
+            <span class="price-amount" id="p-netflix">Rs 350</span>
             <span class="price-usd" id="u-netflix">(~$1.26)</span>
           </div>
-          <div class="btn-group-custom">
-            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Netflix 4K UHD','netflix')">BUY NOW →</button></div>
-          </div>
+          <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Netflix 4K UHD','netflix')">BUY NOW →</button></div>
+        </div>
         </div>
       </div>
 <div class="col-lg-4 col-md-6">
@@ -353,14 +353,14 @@
           <div class="dur-tabs" id="tabs-ytpremium">
             <button class="dur-tab active" onclick="setDur('ytpremium','1500','3 months',this)">3 Months</button>
           </div>
+          <div class="price-row">
           <div class="price-block">
-            <div class="price-old" id="o-ytpremium">Rs. 2025</div>
-            <span class="price-amount" id="p-ytpremium">Rs. 1500</span>
+            <div class="price-old" id="o-ytpremium">Rs 2025</div>
+            <span class="price-amount" id="p-ytpremium">Rs 1500</span>
             <span class="price-usd" id="u-ytpremium">(~$5.42)</span>
           </div>
-          <div class="btn-group-custom">
-            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('YouTube Premium','ytpremium')">BUY NOW →</button></div>
-          </div>
+          <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('YouTube Premium','ytpremium')">BUY NOW →</button></div>
+        </div>
         </div>
       </div>
 <div class="col-lg-4 col-md-6">
@@ -372,14 +372,14 @@
           <div class="dur-tabs" id="tabs-applemusic">
             <button class="dur-tab active" onclick="setDur('applemusic','600','5 months',this)">5 Months</button>
           </div>
+          <div class="price-row">
           <div class="price-block">
-            <div class="price-old" id="o-applemusic">Rs. 810</div>
-            <span class="price-amount" id="p-applemusic">Rs. 600</span>
+            <div class="price-old" id="o-applemusic">Rs 810</div>
+            <span class="price-amount" id="p-applemusic">Rs 600</span>
             <span class="price-usd" id="u-applemusic">(~$2.17)</span>
           </div>
-          <div class="btn-group-custom">
-            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Apple Music','applemusic')">BUY NOW →</button></div>
-          </div>
+          <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Apple Music','applemusic')">BUY NOW →</button></div>
+        </div>
         </div>
       </div>
     </div>
@@ -394,14 +394,14 @@
           <div class="dur-tabs" id="tabs-office365">
             <button class="dur-tab active" onclick="setDur('office365','1000','12 months',this)">12 Months</button>
           </div>
+          <div class="price-row">
           <div class="price-block">
-            <div class="price-old" id="o-office365">Rs. 1350</div>
-            <span class="price-amount" id="p-office365">Rs. 1000</span>
+            <div class="price-old" id="o-office365">Rs 1350</div>
+            <span class="price-amount" id="p-office365">Rs 1000</span>
             <span class="price-usd" id="u-office365">(~$3.61)</span>
           </div>
-          <div class="btn-group-custom">
-            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Microsoft Office 365','office365')">BUY NOW →</button></div>
-          </div>
+          <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Microsoft Office 365','office365')">BUY NOW →</button></div>
+        </div>
         </div>
       </div>
 <div class="col-lg-4 col-md-6">
@@ -413,14 +413,14 @@
           <div class="dur-tabs" id="tabs-notion">
             <button class="dur-tab active" onclick="setDur('notion','1000','12 months',this)">12 Months</button>
           </div>
+          <div class="price-row">
           <div class="price-block">
-            <div class="price-old" id="o-notion">Rs. 1350</div>
-            <span class="price-amount" id="p-notion">Rs. 1000</span>
+            <div class="price-old" id="o-notion">Rs 1350</div>
+            <span class="price-amount" id="p-notion">Rs 1000</span>
             <span class="price-usd" id="u-notion">(~$3.61)</span>
           </div>
-          <div class="btn-group-custom">
-            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Notion Education Plus','notion')">BUY NOW →</button></div>
-          </div>
+          <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Notion Education Plus','notion')">BUY NOW →</button></div>
+        </div>
         </div>
       </div>
 <div class="col-lg-4 col-md-6">
@@ -432,14 +432,14 @@
           <div class="dur-tabs" id="tabs-ilovepdf">
             <button class="dur-tab active" onclick="setDur('ilovepdf','600','12 months',this)">12 Months</button>
           </div>
+          <div class="price-row">
           <div class="price-block">
-            <div class="price-old" id="o-ilovepdf">Rs. 810</div>
-            <span class="price-amount" id="p-ilovepdf">Rs. 600</span>
+            <div class="price-old" id="o-ilovepdf">Rs 810</div>
+            <span class="price-amount" id="p-ilovepdf">Rs 600</span>
             <span class="price-usd" id="u-ilovepdf">(~$2.17)</span>
           </div>
-          <div class="btn-group-custom">
-            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('iLovePDF Premium','ilovepdf')">BUY NOW →</button></div>
-          </div>
+          <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('iLovePDF Premium','ilovepdf')">BUY NOW →</button></div>
+        </div>
         </div>
       </div>
     </div>
@@ -454,14 +454,14 @@
           <div class="dur-tabs" id="tabs-coursera">
             <button class="dur-tab active" onclick="setDur('coursera','1000','12 months',this)">12 Months</button>
           </div>
+          <div class="price-row">
           <div class="price-block">
-            <div class="price-old" id="o-coursera">Rs. 1350</div>
-            <span class="price-amount" id="p-coursera">Rs. 1000</span>
+            <div class="price-old" id="o-coursera">Rs 1350</div>
+            <span class="price-amount" id="p-coursera">Rs 1000</span>
             <span class="price-usd" id="u-coursera">(~$3.61)</span>
           </div>
-          <div class="btn-group-custom">
-            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Coursera Plus','coursera')">BUY NOW →</button></div>
-          </div>
+          <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Coursera Plus','coursera')">BUY NOW →</button></div>
+        </div>
         </div>
       </div>
 <div class="col-lg-4 col-md-6">
@@ -473,14 +473,14 @@
           <div class="dur-tabs" id="tabs-udemy">
             <button class="dur-tab active" onclick="setDur('udemy','800','1 month',this)">1 Month</button>
           </div>
+          <div class="price-row">
           <div class="price-block">
-            <div class="price-old" id="o-udemy">Rs. 1080</div>
-            <span class="price-amount" id="p-udemy">Rs. 800</span>
+            <div class="price-old" id="o-udemy">Rs 1080</div>
+            <span class="price-amount" id="p-udemy">Rs 800</span>
             <span class="price-usd" id="u-udemy">(~$2.89)</span>
           </div>
-          <div class="btn-group-custom">
-            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Udemy Personal Plan','udemy')">BUY NOW →</button></div>
-          </div>
+          <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Udemy Personal Plan','udemy')">BUY NOW →</button></div>
+        </div>
         </div>
       </div>
 <div class="col-lg-4 col-md-6">
@@ -492,14 +492,14 @@
           <div class="dur-tabs" id="tabs-duolingo">
             <button class="dur-tab active" onclick="setDur('duolingo','700','1 year',this)">1 Year</button>
           </div>
+          <div class="price-row">
           <div class="price-block">
-            <div class="price-old" id="o-duolingo">Rs. 945</div>
-            <span class="price-amount" id="p-duolingo">Rs. 700</span>
+            <div class="price-old" id="o-duolingo">Rs 945</div>
+            <span class="price-amount" id="p-duolingo">Rs 700</span>
             <span class="price-usd" id="u-duolingo">(~$2.53)</span>
           </div>
-          <div class="btn-group-custom">
-            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Super Duolingo','duolingo')">BUY NOW →</button></div>
-          </div>
+          <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Super Duolingo','duolingo')">BUY NOW →</button></div>
+        </div>
         </div>
       </div>
 <div class="col-lg-4 col-md-6">
@@ -511,14 +511,14 @@
           <div class="dur-tabs" id="tabs-linkedin">
             <button class="dur-tab active" onclick="setDur('linkedin','800','3 months',this)">3 Months</button>
           </div>
+          <div class="price-row">
           <div class="price-block">
-            <div class="price-old" id="o-linkedin">Rs. 1080</div>
-            <span class="price-amount" id="p-linkedin">Rs. 800</span>
+            <div class="price-old" id="o-linkedin">Rs 1080</div>
+            <span class="price-amount" id="p-linkedin">Rs 800</span>
             <span class="price-usd" id="u-linkedin">(~$2.89)</span>
           </div>
-          <div class="btn-group-custom">
-            <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('LinkedIn Premium','linkedin')">BUY NOW →</button></div>
-          </div>
+          <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('LinkedIn Premium','linkedin')">BUY NOW →</button></div>
+        </div>
         </div>
       </div>
     </div>
@@ -653,9 +653,9 @@ function setDur(card, price, label, btn) {
   let tabs = document.getElementById('tabs-'+card).querySelectorAll('.dur-tab');
   tabs.forEach(t => t.classList.remove('active'));
   btn.classList.add('active');
-  document.getElementById('p-'+card).textContent = 'Rs. ' + price;
+  document.getElementById('p-'+card).textContent = 'Rs ' + price;
   var oldEl = document.getElementById('o-'+card);
-  if(oldEl) oldEl.textContent = 'Rs. ' + Math.round(parseFloat(price) * 1.35);
+  if(oldEl) oldEl.textContent = 'Rs ' + Math.round(parseFloat(price) * 1.35);
   var usdEl = document.getElementById('u-'+card);
   if(usdEl) usdEl.textContent = '(~$' + (parseFloat(price) / 277).toFixed(2) + ')';
   var durMap = {'7 days':'7D','1 month':'30D','2 months':'60D','3 months':'90D','5 months':'150D','12 months':'365D','1 year':'365D','18 months':'540D','2 years':'730D','lifetime data':'Lifetime'};
