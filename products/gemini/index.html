@@ -74,7 +74,7 @@
 
 
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Product", "name": "Gemini Pro", "image": "https://www.srdigitalworld.shop//images/gemini.webp", "description": "Gemini Pro - Google&#x27;s advanced AI assistant — the perfect companion for content writing, research, coding, and studies.", "brand": {"@type": "Brand", "name": "Google"}, "offers": {"@type": "Offer", "url": "https://www.srdigitalworld.shop/products/gemini/", "priceCurrency": "PKR", "price": "1199", "availability": "https://schema.org/InStock"}}
+{"@context": "https://schema.org", "@type": "Product", "name": "Gemini Pro", "image": "https://www.srdigitalworld.shop//images/gemini.webp", "description": "Gemini Pro - Google&#x27;s advanced AI assistant — the perfect companion for content writing, research, coding, and studies.", "brand": {"@type": "Brand", "name": "Google"}, "offers": {"@type": "Offer", "url": "https://www.srdigitalworld.shop/products/gemini/", "priceCurrency": "PKR", "price": "250", "availability": "https://schema.org/InStock"}}
 </script>
 
 <script type="application/ld+json">
@@ -90,10 +90,10 @@
     <div class="pd-grid">
       <div class="pd-logo-card pd-poster-card"><img class="pd-poster" src="/images/posters/gemini.jpg" alt="Gemini Pro"></div>
       <div>
-        <div class="pd-tag">AI Assistant</div><span class="pd-stock">● In Stock</span> <span class="sale-badge" style="font-size:12px;padding:6px 14px;margin-bottom:12px">🔥 FLASH SALE</span>
+        <div class="pd-tag">AI Assistant</div><span class="pd-stock">● In Stock</span> 
         <h1 class="pd-name">Gemini Pro</h1>
         <div class="pd-stars">★★★★★<span>4.9/5 · Verified reviews</span></div>
-        <p class="pd-desc">Google AI Pro <strong>owner account</strong> — 18 months access activated on your own Gmail. Add up to 5 family members.</p>
+        <p class="pd-desc">Google AI Pro <strong>invite plan</strong> — invite sent to your Gmail. 1 month / 2 months access.</p>
                 <details class="pd-pay">
           <summary class="pd-pay-title"><i class="fa-solid fa-wallet"></i> Payment Methods <span class="pd-pay-toggle">▼</span></summary>
           <div class="pd-pay-item">
@@ -115,8 +115,8 @@
         </details>
         <script>function copyPdPay(t,b){if(navigator.clipboard){navigator.clipboard.writeText(t).then(function(){var o=b.innerHTML;b.innerHTML='Copied \u2713';setTimeout(function(){b.innerHTML=o},1500)})}}</script>
 <div class="pd-plans-label">Select Plan:</div>
-        <div class="pd-plans"><button class="pd-plan active" onclick="selPlan(0,this)">Rs. 1199<small>18 months</small></button></div>
-        <div class="pd-price"><span id="pdPrice">Rs. 1199</span> <span id="pdDur">/ 18 months</span></div>
+        <div class="pd-plans"><button class="pd-plan active" onclick="selPlan(0,this)">Rs. 250<small>1 month</small></button><button class="pd-plan" onclick="selPlan(1,this)">Rs. 450<small>2 months</small></button></div>
+        <div class="pd-price"><span id="pdPrice">Rs. 250</span> <span id="pdDur">/ 1 month</span></div>
         <div class="pd-coupon"><div class="pd-coupon-row"><input type="text" id="pdCoupon" placeholder="Coupon code (agar hai to)" autocomplete="off"><button type="button" class="pd-coupon-btn" onclick="srdApplyPdCoupon()">Apply</button></div><div class="pd-coupon-msg" id="pdCouponMsg"></div></div><div class="pd-actions">
           <button class="pd-cart" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button>
           <a class="pd-order" id="pdOrder" href="#" target="_blank"><i class="fa-brands fa-whatsapp"></i> Order Now</a>
@@ -133,9 +133,8 @@
   <section class="pd-sec">
     <h2 class="pd-sec-title">Product Details</h2>
     <div class="pd-detail-box"><div class="pdetail">
-<strong>🚀 Google AI Pro – 18 Months Access (Owner Account)</strong><br>
-🔐 Activated on <strong>your own personal Gmail</strong> — full owner access, not a shared invite.<br>
-👥 Add up to <strong>5 family members</strong> after activation.<br>
+<strong>🚀 Google AI Pro – Invite Access</strong><br>
+📩 An invite will be sent to <strong>your personal Gmail</strong> — accept it and Gemini Pro activates on your account.<br>
 <br>
 <strong>✅ What's Included</strong>
 <ul>
@@ -150,8 +149,7 @@
 </ul>
 <strong>📋 Important — Please Read</strong>
 <ul>
-<li>Activation is completed on your personal email.</li>
-<li>No warranty or refund will be provided after successful activation.</li>
+<li>The invite will be sent to the Gmail you provide when ordering.</li>
 <li>Please make sure your email is correct before placing your order.</li>
 </ul>
 </div></div>
@@ -219,7 +217,7 @@ function toggleMobileMenu() {
 
 const PNAME = "Gemini Pro";
 const PD_SLUG='gemini';
-const PLANS = [["1199", "18 months"]];
+const PLANS = [["250", "1 month"], ["450", "2 months"]];
 let curPlan = 0;
 function selPlan(i, el){
   curPlan = i;
