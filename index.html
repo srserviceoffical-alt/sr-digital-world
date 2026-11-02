@@ -283,25 +283,7 @@ body{padding-bottom:68px}
   </div>
 </div>
 
-<section class="ann-section" id="announcement">
-  <div class="container">
-    <div class="ann-card rv">
-      <div class="ann-badge"><span class="ann-dot"></span>⚠️ Important Announcement</div>
-      <h2 class="section-title ann-title">🔥 <span>Last Chance:</span> Gemini Pro 18 Months</h2>
-      <p class="ann-sub">⏳ Offer sirf <b>30 October 2026</b> tak!</p>
-      <div class="ann-timer"><i class="fa-regular fa-clock"></i> <span id="annTimer">--:--:--</span></div>
-    <div class="ann-box">
-      <p><b>Jio wala 18-month Gemini Pro offer khatam hone wala hai!</b> 30 October 2026 ke baad ye exclusive offer shayad dobara na mile.</p>
-      <p>✅ <b>Abhi available hai</b> — khatam hone se pehle le lo! Agar Gemini Pro lene ka plan tha to abhi time hai, last minute ka wait mat karo.</p>
-      <p>⚠️ Deadline qareeb aate hi <b>price ya availability change</b> ho sakti hai — aaj hi apna order secure karo.</p>
-    </div>
-      <div class="ann-cta">
-      <a class="ann-order" target="_blank" href="https://wa.me/923229952880?text=Assalam-o-Alaikum!%20I%20want%20to%20order%20Gemini%20Pro%20(18%20months%20-%20Rs.%201199)%20from%20SR%20Digital%20World."><i class="fa-brands fa-whatsapp"></i> 🚀 Gemini Pro Order Karo</a>
-      <a class="ann-details" href="/products/gemini/">Details dekho</a>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 <section class="deals-section">
     <div class="container">
@@ -826,17 +808,7 @@ function copyPay(id, btn){
   els.forEach(function(e){io.observe(e)});
 })();
 </script>
-<script>
-function annTick(){
-  var now=new Date(), end=new Date('2026-10-30T23:59:59+05:00');
-  var diff=end-now, sec=document.getElementById('announcement');
-  if(diff<=0){ if(sec) sec.style.display='none'; return; }
-  var d=Math.floor(diff/864e5), hh=Math.floor(diff%864e5/36e5), mm=Math.floor(diff%36e5/6e4), ss=Math.floor(diff%6e4/1e3);
-  var t=document.getElementById('annTimer');
-  if(t) t.textContent=d+'d '+String(hh).padStart(2,'0')+':'+String(mm).padStart(2,'0')+':'+String(ss).padStart(2,'0');
-}
-setInterval(annTick,1000); annTick();
-</script>
+
 
 <script>
 /* Bundle builder: 2+ tools = BUNDLE_DISCOUNT_PCT % off */
