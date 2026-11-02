@@ -181,6 +181,23 @@ body{padding-bottom:68px}
 .hiw-text{font-size:13.5px;color:var(--text-muted);line-height:1.6}
 
 .deals-section{padding:70px 0}.section-sub{color:var(--text-muted);font-size:15px;margin-top:12px;text-align:center}
+.hero-center{display:flex;flex-direction:column;align-items:center;text-align:center}
+.hero-center .hero-sub{max-width:640px}
+.hero-showcase{position:relative;width:100%;max-width:880px;margin:10px auto 0}
+.hero-slides{position:relative;aspect-ratio:16/9;border-radius:24px;overflow:hidden;box-shadow:0 24px 60px rgba(34,34,34,.18)}
+.hero-slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1s ease}
+.hero-slide.active{opacity:1}
+.hero-statcard{position:absolute;z-index:2;display:flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--border);border-radius:100px;padding:10px 18px;font-weight:700;font-size:14px;color:var(--text);box-shadow:0 10px 30px rgba(34,34,34,.16);text-decoration:none;animation:floaty 5s ease-in-out infinite}
+.hero-statcard i{color:var(--primary)}
+.hsc1{top:20px;left:-12px;animation-delay:0s}
+.hsc2{top:20px;right:-12px;animation-delay:1.2s}
+.hsc3{bottom:20px;left:-12px;animation-delay:2.1s}
+.hsc4{bottom:20px;right:-12px;background:#222222;color:#fff;border-color:#222222;animation-delay:3s}
+.hero-cta-row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:32px}
+.hero-cta-row .hero-cta-ghost{margin-left:0}
+.hero-center .hero-proof{justify-content:center}
+@media(max-width:640px){.hero-slides{border-radius:16px}.hero-statcard{font-size:12px;padding:8px 12px}.hsc1{top:10px;left:6px}.hsc2{top:10px;right:6px}.hsc3{bottom:10px;left:6px}.hsc4{bottom:10px;right:6px}}
+@media (prefers-reduced-motion:reduce){.hero-statcard{animation:none}}
 </style>
 
 <script type="application/ld+json">
@@ -202,59 +219,42 @@ body{padding-bottom:68px}
   <div class="glass-orb go1"></div>
   <div class="glass-orb go2"></div>
   <div class="container py-5">
-    <div class="row align-items-center">
-      <div class="col-lg-7">
-        <div class="hero-badge" data-h style="--hd:0"><i class="fa-solid fa-circle-check"></i> Trusted by 4999+ customers</div>
-        <h1 class="hero-title" data-h style="--hd:1">
-          Premium Tools.<br>
-          <span class="accent" id="typedAccent">Lowest Prices.</span><br>
-          <span style="color:var(--text-muted);font-weight:300;font-size:0.7em;letter-spacing:-0.5px">Delivered Instantly.</span>
-        </h1>
-        <p class="hero-sub" data-h style="--hd:2">Canva, CapCut, Netflix, YouTube Premium and more - order on WhatsApp and get delivery in minutes.</p>
-        <div class="d-flex flex-wrap gap-2" data-h style="--hd:3">
-          <a href="/products/" class="hero-cta">
-            <i class="fa-solid fa-bolt"></i> Explore Premium Tools
-          </a>
-          <a href="/reviews/" class="hero-cta-ghost">
-            <i class="fa-solid fa-star"></i> Customer Reviews
-          </a>
+    <div class="hero-center">
+      <div class="hero-badge" data-h style="--hd:0"><i class="fa-solid fa-circle-check"></i> Trusted by 4999+ customers</div>
+      <h1 class="hero-title" data-h style="--hd:1">
+        Premium Tools.<br>
+        <span class="accent" id="typedAccent">Lowest Prices.</span><br>
+        <span style="color:var(--text-muted);font-weight:300;font-size:0.7em;letter-spacing:-0.5px">Delivered Instantly.</span>
+      </h1>
+      <p class="hero-sub" data-h style="--hd:2">Canva, CapCut, Netflix, YouTube Premium and more - order on WhatsApp and get delivery in minutes.</p>
+      <div class="hero-showcase" data-h style="--hd:3">
+        <div class="hero-slides" id="heroSlides">
+          <img class="hero-slide active" src="/images/hero-tools-hub.webp" alt="SR Digital World premium digital tools" width="1672" height="941">
+          <img class="hero-slide" src="/images/hero-payments.webp" alt="Easy and secure payment options" width="1672" height="941" loading="lazy">
+          <img class="hero-slide" src="/images/hero-premium.webp" alt="SR Digital World premium tools hub" width="1672" height="941" loading="lazy">
         </div>
-        <div class="hero-trust" data-h style="--hd:4">
-          <span><i class="fa-solid fa-bolt"></i>~2 min delivery</span>
-          <span class="trust-sep">|</span>
-          <span><i class="fa-solid fa-shield-halved"></i><a href="/warranty/">Warranty</a> included</span>
-          <span class="trust-sep">|</span>
-          <span><i class="fa-solid fa-headset"></i>24/7 support</span>
-        </div>
-        <div class="hero-proof" data-h style="--hd:5">
-          <div class="proof-avatars">
-            <span class="proof-avatar" style="background:#FFE8CC;color:#B45309">RC</span>
-            <span class="proof-avatar" style="background:#E5E7EB;color:#808080">HA</span>
-            <span class="proof-avatar" style="background:#FFF7ED;color:#222222">MN</span>
-            <span class="proof-avatar" style="background:#FFE0B8;color:#B45309">SH</span>
-          </div>
-          <div class="proof-text"><strong>4.9 <span class="star">&starf;</span></strong> rating &nbsp;&middot;&nbsp; <strong>4999+</strong> orders</div>
-        </div>
+        <div class="hero-statcard hsc1"><i class="fa-solid fa-bolt"></i><span>~2 min delivery</span></div>
+        <a class="hero-statcard hsc2" href="/warranty/"><i class="fa-solid fa-shield-halved"></i><span>Warranty included</span></a>
+        <div class="hero-statcard hsc3"><i class="fa-solid fa-headset"></i><span>24/7 support</span></div>
+        <div class="hero-statcard hsc4"><strong>4999+</strong>&nbsp;orders</div>
       </div>
-      <div class="col-lg-5">
-        <div class="hero-visual" data-h style="--hd:6">
-          <a href="/products/canva/" class="float-chip fc1"><img width="128" height="128" src="/images/canva.webp" alt="Canva"><span>Canva</span></a>
-          <a href="/products/netflix/" class="float-chip fc2"><img width="128" height="128" src="/images/netflix.webp" alt="Netflix"><span>Netflix</span></a>
-          <a href="/products/capcut/" class="float-chip fc3"><img width="128" height="128" src="/images/capcut.webp" alt="CapCut"><span>CapCut</span></a>
-          <a href="/products/ytpremium/" class="float-chip fc4"><img width="128" height="128" src="/images/ytpremium.webp" alt="YouTube"><span>YouTube</span></a>
-          <div class="hero-phone">
-            <div class="hp-head"><i class="fa-brands fa-whatsapp"></i><div><b>SR Digital World</b><small>online</small></div></div>
-            <div class="hp-chat">
-              <div class="hp-msg in">Assalam-o-Alaikum! Canva EDU Pro chahiye 🙋</div>
-              <div class="hp-msg out">Walaikum Assalam! ✅ Ho gaya — Gmail bhejein, pehle activation phir payment 👍</div>
-              <div class="hp-msg in">Done! Pro active ho gaya 🔥</div>
-            </div>
-          </div>
+      <div class="hero-cta-row" data-h style="--hd:4">
+        <a href="/products/" class="hero-cta"><i class="fa-solid fa-bolt"></i> Explore Premium Tools</a>
+        <a href="/reviews/" class="hero-cta-ghost"><i class="fa-solid fa-star"></i> Customer Reviews</a>
+      </div>
+      <div class="hero-proof" data-h style="--hd:5">
+        <div class="proof-avatars">
+          <span class="proof-avatar" style="background:#FFE8CC;color:#B45309">RC</span>
+          <span class="proof-avatar" style="background:#E5E7EB;color:#808080">HA</span>
+          <span class="proof-avatar" style="background:#FFF7ED;color:#222222">MN</span>
+          <span class="proof-avatar" style="background:#FFE0B8;color:#B45309">SH</span>
         </div>
+        <div class="proof-text"><strong>4.9 <span class="star">&starf;</span></strong> rating</div>
       </div>
     </div>
   </div>
-</section>
+</section><script>(function(){var s=document.getElementById('heroSlides');if(!s)return;var im=s.querySelectorAll('.hero-slide');if(im.length<2)return;var k=0;setInterval(function(){im[k].classList.remove('active');k=(k+1)%im.length;im[k].classList.add('active');},4000);})();</script>
+
 <div class="ticker">
   <span class="ticker-inner">⚡ Premium Digital Tools &nbsp;&nbsp;&nbsp; 🚀 Instant Delivery &nbsp;&nbsp;&nbsp; 🔒 100% Secure &nbsp;&nbsp;&nbsp; 🌟 24/7 Support &nbsp;&nbsp;&nbsp; 🇵🇰 Pakistan's #1 Digital Store &nbsp;&nbsp;&nbsp; 💰 Best Prices Guaranteed &nbsp;&nbsp;&nbsp; ⚡ Premium Digital Tools &nbsp;&nbsp;&nbsp; 🚀 Instant Delivery &nbsp;&nbsp;&nbsp;</span>
 </div>
