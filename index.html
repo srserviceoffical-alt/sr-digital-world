@@ -302,7 +302,7 @@
           </div>
           <div class="price-row">
           <div class="price-block">
-            <div class="price-old" id="o-canva">Rs 203</div>
+            <div class="price-old" id="o-canva">Rs 200</div>
             <span class="price-amount" id="p-canva">Rs 150</span>
             <span class="price-usd" id="u-canva">(~$0.54)</span>
             <span class="price-period" id="d-canva">/ 1 month</span>
@@ -323,7 +323,7 @@
           </div>
           <div class="price-row">
           <div class="price-block">
-            <div class="price-old" id="o-capcut">Rs 810</div>
+            <div class="price-old" id="o-capcut">Rs 950</div>
             <span class="price-amount" id="p-capcut">Rs 600</span>
             <span class="price-usd" id="u-capcut">(~$2.17)</span>
             <span class="price-period" id="d-capcut">/ 1 month</span>
@@ -343,7 +343,7 @@
           </div>
           <div class="price-row">
           <div class="price-block">
-            <div class="price-old" id="o-surf">Rs 473</div>
+            <div class="price-old" id="o-surf">Rs 400</div>
             <span class="price-amount" id="p-surf">Rs 350</span>
             <span class="price-usd" id="u-surf">(~$1.26)</span>
             <span class="price-period" id="d-surf">/ 1 month</span>
@@ -646,7 +646,8 @@ function setDur(card,price,label,btn){
   btn.classList.add('active');
   document.getElementById('p-'+card).textContent='Rs. '+price;
   var oldEl = document.getElementById('o-'+card);
-  if(oldEl) oldEl.textContent = 'Rs ' + Math.round(parseFloat(price) * 1.35);
+  var CUT={'canva':{'1 month':200,'3 months':300},'capcut':{'1 month':950},'gemini':{'1 month':399,'2 months':599},'adobe':{'12 months':1200},'figma':{'2 years':3000},'framer':{'12 months':3200},'surf':{'1 month':400,'2 months':700},'nordvpn':{'3 months':2200},'quillbot':{'1 month':1500},'lovable':{'12 months':3500},'netflix':{'1 month':400},'ytpremium':{'3 months':1800},'applemusic':{'5 months':800},'office365':{'12 months':1200},'notion':{'12 months':1500},'ilovepdf':{'12 months':800},'coursera':{'12 months':1600},'udemy':{'1 month':900},'duolingo':{'1 year':1000},'linkedin':{'3 months':1200}};
+  if(oldEl) oldEl.textContent = 'Rs ' + ((CUT[card] && CUT[card][label]) || Math.round(parseFloat(price) * 1.35));
   var usdEl = document.getElementById('u-'+card);
   if(usdEl) usdEl.textContent = '(~$' + (parseFloat(price) / 277).toFixed(2) + ')';
   document.getElementById('d-'+card).textContent='/ '+label;
