@@ -8,6 +8,8 @@
   function escapeHtml(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
   function updateBadge(){
     var n = getCart().length;
+    var fb = document.getElementById('srCartBtn');
+    if(fb){ fb.style.display = n > 0 ? 'flex' : 'none'; }
     document.querySelectorAll('.sr-cart-count').forEach(function(b){
       b.textContent = n;
       b.style.display = n > 0 ? 'flex' : 'none';

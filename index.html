@@ -128,8 +128,6 @@
 .ticker{background:linear-gradient(90deg,var(--primary),var(--accent));padding:8px 0;overflow:hidden;white-space:nowrap}
 .ticker-inner{display:inline-block;animation:tick 20s linear infinite;font-size:13px;font-weight:600;color:#fff;letter-spacing:0.5px}
 @keyframes tick{0%{transform:translateX(100vw)}100%{transform:translateX(-100%)}}
-/* sticky mobile order bar */
-.hero-sticky-bar{display:none}
 /* responsive */
 @media(max-width:991px){.go1{width:220px;height:220px}.go2{display:none}.hero-visual{height:420px;margin-top:28px}}
 @media(max-width:768px){
@@ -139,11 +137,6 @@
 .hero-sub{font-size:1rem}
 .hero-cta-ghost{margin-left:0}
 .float-chip{animation:none}
-.hero-sticky-bar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:9990;background:var(--cta);color:#fff;align-items:center;justify-content:center;gap:10px;padding:14px 16px calc(14px + env(safe-area-inset-bottom,0px));font-weight:700;font-size:16px;text-decoration:none;box-shadow:0 -4px 20px rgba(34,34,34,.15)}
-.hero-sticky-bar:hover{color:#fff}
-#modalOverlay.open ~ .hero-sticky-bar{display:none}
-.wa-float{display:none}
-body{padding-bottom:68px}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.ticker-inner,.float-chip,.hero-title .accent,#typedAccent,.tool-marquee-track,.ann-dot,.ann-order,.go1,.go2{animation:none}.js .rv{opacity:1;transform:none;transition:none}.js .hero [data-h]{animation:none;opacity:1}.hero-cta:hover,.hero-cta-ghost:hover{transform:none}}
 
@@ -616,7 +609,6 @@ body{padding-bottom:68px}
     </div>
   </div>
 </div>
-<a href="https://wa.me/923229952880" target="_blank" class="hero-sticky-bar"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="/coupons.js"></script>
