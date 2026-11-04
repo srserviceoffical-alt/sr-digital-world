@@ -121,7 +121,7 @@
 <div class="pd-plans-label">Select Plan:</div>
         <div class="pd-plans"><button class="pd-plan active" onclick="selPlan(0,this)">Rs. 1000<small>12 months</small></button></div>
         <div class="pd-price"><span id="pdPrice">Rs. 1000</span> <span id="pdDur">/ 12 months</span> <span id="pdUsd">(~$3.61)</span></div>
-        <div class="pd-coupon"><div class="pd-coupon-row"><input type="text" id="pdCoupon" placeholder="Coupon code" autocomplete="off"><button type="button" class="pd-coupon-btn" onclick="srdApplyPdCoupon()">Apply</button></div><div class="pd-coupon-msg" id="pdCouponMsg"></div></div><div class="pd-actions">
+        <div class="pd-actions">
           <button class="pd-cart" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button>
           <button type="button" class="pd-order" id="pdOrder" onclick="openPdOrder()">Order Now</button>
           <a class="pd-chat" href="https://wa.me/923229952880?text=Assalam-o-Alaikum%21%20I%20have%20a%20question%20about%20Notion%20Education%20Plus." target="_blank"><i class="fa-solid fa-comment-dots"></i> Ask a Question</a>
@@ -240,28 +240,15 @@ function selPlan(i, el){
   if(PLANS.length<2){document.querySelector('.pd-plans-label').style.display='none';document.querySelector('.pd-plans').style.display='none';}
 updOrder();
 }
-let pdCoupon=null;
 function updOrder(){
   const base=parseInt(PLANS[curPlan][0],10);
   let msg;
-  if(pdCoupon){
-    const r=SRD_applyPrice(base,pdCoupon.percent);
-    msg='Assalam-o-Alaikum! I want to order ' + PNAME + ' (' + PLANS[curPlan][1] + ' - Rs. ' + r.final + ') from SR Digital World. Coupon: ' + pdCoupon.code + ' (' + pdCoupon.percent + '% OFF, asal price Rs. ' + base + ')';
-    document.getElementById('pdPrice').textContent='Rs. ' + r.final;
-  } else {
-    msg='Assalam-o-Alaikum! I want to order ' + PNAME + ' (' + PLANS[curPlan][1] + ' - Rs. ' + PLANS[curPlan][0] + ') from SR Digital World.';
-    document.getElementById('pdPrice').textContent='Rs. ' + base;
-  }
-  var _ue=document.getElementById('pdUsd');if(_ue){var _ep=pdCoupon?SRD_applyPrice(base,pdCoupon.percent).final:base;_ue.textContent='(~$'+(_ep/277).toFixed(2)+')';}
+  msg='Assalam-o-Alaikum! I want to order ' + PNAME + ' (' + PLANS[curPlan][1] + ' - Rs. ' + PLANS[curPlan][0] + ') from SR Digital World.';
+  document.getElementById('pdPrice').textContent='Rs. ' + base;
+  var _ue=document.getElementById('pdUsd');if(_ue){_ue.textContent='(~$'+(base/277).toFixed(2)+')';}
   var _po=document.getElementById('pdOrder');if(_po&&_po.tagName==='A')_po.href='https://wa.me/923229952880?text='+encodeURIComponent(msg);
 }
-function srdApplyPdCoupon(){
-  const inp=document.getElementById('pdCoupon'); const msgEl=document.getElementById('pdCouponMsg');
-  const res=SRD_findCoupon(inp.value, PD_SLUG);
-  if(res.ok){ pdCoupon=res; msgEl.textContent='\u2705 Coupon lag gaya! ' + res.percent + '% OFF — nayi price update ho gayi hai.'; msgEl.style.color='#15803d'; }
-  else { pdCoupon=null; msgEl.textContent=SRD_couponErrorText(res.reason); msgEl.style.color='#dc2626'; }
-  updOrder();
-}
+
 updOrder();
 let pdModalCoupon=null;
 function openPdOrder(){
@@ -300,9 +287,6 @@ function sendPdOrder(){
   if(pdModalCoupon){
     var r=SRD_applyPrice(base,pdModalCoupon.percent);
     priceText='Rs. '+r.final+' (Coupon '+pdModalCoupon.code+' \u2014 '+pdModalCoupon.percent+'% OFF, asal price Rs. '+base+')';
-  } else if(pdCoupon){
-    var r2=SRD_applyPrice(base,pdCoupon.percent);
-    priceText='Rs. '+r2.final+' (Coupon '+pdCoupon.code+' \u2014 '+pdCoupon.percent+'% OFF, asal price Rs. '+base+')';
   } else {
     priceText='Rs. '+base;
   }
