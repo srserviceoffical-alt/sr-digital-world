@@ -54,11 +54,11 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;overf
 .about-section,.faqs-section{background:var(--bg)}
 .product-card:hover{transform:translateY(-6px);box-shadow:0 14px 34px rgba(250,146,11,.13);border-color:rgba(250,146,11,.5)}
 @media(hover:none){.product-card:hover{transform:none;box-shadow:none}}
-.order-btn:hover{background:var(--cta-hover);color:#fff;transform:translateY(-2px);box-shadow:0 8px 26px rgba(21,128,61,.45)}
+.order-btn:hover{background:#FA920B;color:#fff;transform:translateY(-2px);box-shadow:0 8px 26px rgba(250,146,11,.45)}
 .order-btn i{margin-right:6px}
 .product-card:hover,.review-card:hover,.pay-card:hover{transform:translateY(-6px);border-color:var(--primary)!important;box-shadow:0 12px 32px rgba(34,34,34,.12)}
 .hero-cta,.pd-order,.order-btn,.combo-order,.wiki-btn:not(.ghost),.copy-btn{box-shadow:0 4px 14px rgba(21,128,61,.35)}
-.hero-cta:hover,.pd-order:hover,.order-btn:hover,.wiki-btn:not(.ghost):hover{background:var(--cta-hover)!important;color:#fff!important}
+.hero-cta:hover,.wiki-btn:not(.ghost):hover{background:var(--cta-hover)!important;color:#fff!important}
 #navbar-placeholder .nav-bar{background:rgba(255,255,255,.95);border-bottom:1px solid var(--border)}
 #navbar-placeholder .nav-logo{background:linear-gradient(135deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 #navbar-placeholder .nav-link-item{color:var(--text-muted)}
