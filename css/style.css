@@ -57,7 +57,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;overf
 .order-btn:hover{background:#FA920B;color:#fff;transform:translateY(-2px);box-shadow:0 8px 26px rgba(250,146,11,.45)}
 .order-btn i{margin-right:6px}
 .product-card:hover,.review-card:hover,.pay-card:hover{transform:translateY(-6px);border-color:var(--primary)!important;box-shadow:0 12px 32px rgba(34,34,34,.12)}
-.hero-cta,.pd-order,.order-btn,.combo-order,.wiki-btn:not(.ghost),.copy-btn{box-shadow:0 4px 14px rgba(21,128,61,.35)}
+.hero-cta,.pd-order,.order-btn,.combo-order,.wiki-btn:not(.ghost),.copy-btn{box-shadow:0 4px 14px rgba(250,146,11,.35)}
 .hero-cta:hover,.wiki-btn:not(.ghost):hover{background:var(--cta-hover)!important;color:#fff!important}
 #navbar-placeholder .nav-bar{background:rgba(255,255,255,.95);border-bottom:1px solid var(--border)}
 #navbar-placeholder .nav-logo{background:linear-gradient(135deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
