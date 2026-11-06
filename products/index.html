@@ -450,12 +450,12 @@
     <div class="row g-4 mb-5" data-cat="learning">
 <div class="col-lg-4 col-md-6">
         <div class="product-card rv" data-desc="Thousands of courses &amp; professional certificates from top universities." data-price="1000" data-href="/products/coursera/">
-          <div class="pc-banner"><img src="/images/cards/coursera.webp" alt="Coursera Plus" class="pc-poster"><span class="pc-badge pc-dur">✓ 365D</span><span class="pc-badge pc-stock in">● In Stock</span></div>
+          <div class="pc-banner oos"><img src="/images/cards/coursera.webp" alt="Coursera Plus" class="pc-poster"><span class="pc-badge pc-dur">✓ 365D</span><span class="pc-badge pc-stock out">Sold Out</span></div>
           <div class="card-tag">Learning</div>
           <div class="product-name">Coursera Plus</div>
           
           <div class="dur-tabs" id="tabs-coursera">
-            <button class="dur-tab active" onclick="setDur('coursera','1000','12 months',this)">12 Months</button>
+            <button class="dur-tab" disabled title="Out of Stock">12 Months · Out of Stock</button>
           </div>
           <div class="price-row">
           <div class="price-block">
@@ -463,7 +463,7 @@
             <span class="price-amount" id="p-coursera">Rs 1000</span>
             <span class="price-usd" id="u-coursera">(~$3.61)</span>
           </div>
-          <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Coursera Plus','coursera')">BUY NOW →</button></div>
+          <div class="buy-row"><button class="order-btn" disabled style="background:#808080;box-shadow:none;cursor:not-allowed;opacity:.75"><i class="fa-solid fa-ban"></i> Out of Stock</button></div>
         </div>
         </div>
       </div>
