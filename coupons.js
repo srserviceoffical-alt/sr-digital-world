@@ -31,6 +31,7 @@
 
 window.SRD_COUPONS = [
   { code: "SRDIGITALWORLD5", percent: 5, applies: "ALL", expiry: "" },
+  { code: "SALE11", percent: 11, applies: "ALL", expiry: "2026-11-12" },
 
   // ——— Misal (ye band hain, chalane ke liye // hata dein) ———
   // { code: "CANVA10", percent: 10, applies: "canva", expiry: "2026-10-31" },
