@@ -7,6 +7,12 @@
 //   mein expiry check hai) aur ye bar + popup bhi khud gayab
 //   ho jayenge — kuch delete karne ki zaroorat nahi.
 //
+//   POPUP: har visit par dikhta hai — matlab jab bhi koi nayi
+//   tab/session mein site khole, popup ek dafa aayega. Site ke
+//   andar page badalne par dobara nahi aata (sessionStorage).
+//   Sirf pehli dafa dikhana ho to neeche ssGet/ssSet wali
+//   jagah localStorage use karein (pehle aisa hi tha).
+//
 //   CODE BADALNA HO TO: neeche SRD_1111_CODE badlein AUR
 //   coupons.js mein usi code wali line bhi badlein — dono
 //   jagah ek hi code hona chahiye, warna copy kiya hua
@@ -17,7 +23,7 @@
 (function () {
   var CODE = 'SALE11';
   var END = '2026-11-12'; // is date tak valid (12 Nov shamil)
-  var SEEN_KEY = 'srd1111Seen';       // popup ek browser mein ek dafa
+  var SEEN_KEY = 'srd1111SeenSession'; // popup har visit par ek dafa
   // NOTE: announcement bar par Close (×) nahi hai — wo offer chalte
   // hue hamesha dikhegi. Sirf popup band ho sakta hai (× button se).
 
@@ -28,8 +34,9 @@
       String(d.getDate()).padStart(2, '0');
   }
   function isActive() { return todayStr() <= END; }
-  function lsGet(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
-  function lsSet(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+  // sessionStorage: tab band hote hi khatam — agli visit par popup dobara aayega.
+  function ssGet(k) { try { return sessionStorage.getItem(k); } catch (e) { return null; } }
+  function ssSet(k, v) { try { sessionStorage.setItem(k, v); } catch (e) {} }
 
   // Offer khatam — na bar, na popup.
   if (!isActive()) return;
@@ -127,11 +134,11 @@
   var shop = pop.querySelector('.srd1111-shop');
   if (shop) shop.addEventListener('click', closePopup);
 
-  if (!lsGet(SEEN_KEY)) {
+  if (!ssGet(SEEN_KEY)) {
     setTimeout(function () {
       pop.classList.add('show');
       document.body.style.overflow = 'hidden';
-      lsSet(SEEN_KEY, '1');
+      ssSet(SEEN_KEY, '1');
     }, 900);
   }
 })();
