@@ -18,7 +18,8 @@
   var CODE = 'SALE11';
   var END = '2026-11-12'; // is date tak valid (12 Nov shamil)
   var SEEN_KEY = 'srd1111Seen';       // popup ek browser mein ek dafa
-  var BAR_KEY = 'srd1111BarClosed';   // bar band karne par dobara na dikhe
+  // NOTE: announcement bar par Close (×) nahi hai — wo offer chalte
+  // hue hamesha dikhegi. Sirf popup band ho sakta hai (× button se).
 
   function todayStr() {
     var d = new Date();
@@ -35,21 +36,20 @@
 
   // ---- styles (site theme: orange #FA920B / #FF8200, dark #222, CTA green #15803D) ----
   var css =
-    '.srd1111-bar{position:relative;z-index:1001;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px 12px;background:linear-gradient(90deg,#FA920B,#FF8200);color:#fff;font-size:14px;font-weight:600;padding:9px 40px 9px 14px;text-align:center;line-height:1.4}' +
+    '.srd1111-bar{position:relative;z-index:1001;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px 12px;background:linear-gradient(90deg,#FA920B,#FF8200);color:#fff;font-size:14px;font-weight:600;padding:9px 14px;text-align:center;line-height:1.4}' +
     '.srd1111-bar b{font-weight:800}' +
     '.srd1111-code{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.18);border:1px dashed rgba(255,255,255,.8);border-radius:8px;padding:3px 6px 3px 10px;font-weight:800;letter-spacing:1.5px}' +
     '.srd1111-copy{background:#fff;color:#B45309;border:none;border-radius:100px;padding:4px 12px;font-weight:800;font-size:12px;cursor:pointer;white-space:nowrap;letter-spacing:0}' +
     '.srd1111-copy:hover{background:#FFF7ED}' +
-    '.srd1111-bar-x{position:absolute;right:8px;top:50%;transform:translateY(-50%);background:transparent;border:none;color:#fff;font-size:20px;line-height:1;cursor:pointer;padding:4px 8px;opacity:.85}' +
-    '.srd1111-bar-x:hover{opacity:1}' +
     '.srd1111-overlay{position:fixed;inset:0;background:rgba(34,34,34,.55);display:flex;align-items:center;justify-content:center;z-index:9999;opacity:0;pointer-events:none;transition:opacity .25s ease;padding:16px}' +
     '.srd1111-overlay.show{opacity:1;pointer-events:auto}' +
-    '.srd1111-card{position:relative;background:#fff;border-radius:20px;padding:28px 24px 24px;width:100%;max-width:420px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.28);transform:translateY(12px) scale(.98);transition:transform .25s ease}' +
+    '.srd1111-card{position:relative;background:#fff;border-radius:20px;padding:26px 24px 24px;width:100%;max-width:430px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.28);transform:translateY(12px) scale(.98);transition:transform .25s ease;overflow:hidden}' +
+    '.srd1111-card::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,#FA920B,#FF8200,#FA920B)}' +
     '.srd1111-overlay.show .srd1111-card{transform:none}' +
-    '.srd1111-x{position:absolute;top:8px;right:12px;background:none;border:none;color:#808080;font-size:26px;line-height:1;cursor:pointer;padding:4px}' +
+    '.srd1111-x{position:absolute;top:10px;right:12px;background:#fff;border:none;color:#808080;font-size:26px;line-height:1;cursor:pointer;padding:2px 6px;z-index:2}' +
     '.srd1111-x:hover{color:#222}' +
-    '.srd1111-badge{display:inline-block;background:rgba(250,146,11,.12);color:#B45309;font-weight:800;font-size:12px;letter-spacing:1.5px;padding:6px 14px;border-radius:100px}' +
-    '.srd1111-card h2{font-size:22px;line-height:1.3;color:#222;margin:14px 0 6px;font-weight:800}' +
+    '.srd1111-img{width:100%;max-width:340px;display:block;margin:2px auto 6px;filter:drop-shadow(0 8px 14px rgba(250,146,11,.28))}' +
+    '.srd1111-card h2{font-size:23px;line-height:1.3;color:#222;margin:8px 0 6px;font-weight:800}' +
     '.srd1111-sub{color:#808080;font-size:15px;margin:0 0 16px}' +
     '.srd1111-codebox{display:flex;gap:8px;justify-content:center;align-items:stretch;margin:0 0 14px;flex-wrap:wrap}' +
     '.srd1111-codebox span{border:2px dashed #FA920B;border-radius:10px;padding:10px 18px;font-weight:900;letter-spacing:2px;font-size:18px;color:#222}' +
@@ -86,25 +86,17 @@
     } else { fallback(); }
   }
 
-  // ---- announcement bar (website ke bilkul top par) ----
-  if (!lsGet(BAR_KEY)) {
-    var bar = document.createElement('div');
-    bar.id = 'srd1111Bar';
-    bar.className = 'srd1111-bar';
-    bar.innerHTML =
-      '<span>🎉 <b>11.11 Offer</b> — Flat <b>11% OFF</b> on All Tools!</span>' +
-      '<span class="srd1111-code">' + CODE + '<button type="button" class="srd1111-copy">Copy</button></span>' +
-      '<span>Valid till 12 Nov</span>' +
-      '<button type="button" class="srd1111-bar-x" aria-label="Close">×</button>';
-    document.body.insertBefore(bar, document.body.firstChild);
-    var barCopy = bar.querySelector('.srd1111-copy');
-    if (barCopy) barCopy.addEventListener('click', function () { copyCode(barCopy); });
-    var barX = bar.querySelector('.srd1111-bar-x');
-    if (barX) barX.addEventListener('click', function () {
-      bar.style.display = 'none';
-      lsSet(BAR_KEY, '1');
-    });
-  }
+  // ---- announcement bar (website ke bilkul top par, hamesha dikhegi) ----
+  var bar = document.createElement('div');
+  bar.id = 'srd1111Bar';
+  bar.className = 'srd1111-bar';
+  bar.innerHTML =
+    '<span>🎉 <b>11.11 Offer</b> — Flat <b>11% OFF</b> on All Tools!</span>' +
+    '<span class="srd1111-code">' + CODE + '<button type="button" class="srd1111-copy">Copy</button></span>' +
+    '<span>Valid till 12 Nov</span>';
+  document.body.insertBefore(bar, document.body.firstChild);
+  var barCopy = bar.querySelector('.srd1111-copy');
+  if (barCopy) barCopy.addEventListener('click', function () { copyCode(barCopy); });
 
   // ---- popup (pehli visit par) ----
   var pop = document.createElement('div');
@@ -113,7 +105,7 @@
   pop.innerHTML =
     '<div class="srd1111-card">' +
       '<button type="button" class="srd1111-x" aria-label="Close">×</button>' +
-      '<span class="srd1111-badge">🎉 11.11 SALE</span>' +
+      '<img src="/images/promo-1111.png" alt="11.11 — The World\'s Biggest Sale Day" class="srd1111-img">' +
       '<h2>Pakistan\'s Biggest Sale – 11.11 Offer</h2>' +
       '<p class="srd1111-sub">Get Flat 11% OFF on All Tools!</p>' +
       '<div class="srd1111-codebox"><span>' + CODE + '</span><button type="button" class="srd1111-copy">Copy Code</button></div>' +
