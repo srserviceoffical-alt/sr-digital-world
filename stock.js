@@ -6,7 +6,7 @@
 // Khaali (null) chhorne par sirf "In Stock" likha nazar aayega,
 // aur tadaad kabhi ghalat nahi dikhayi jayegi.
 // Misaal: agar Canva ki 25 tadaad hai to neeche canva: 25 likh dein.
-// Out of Stock products (quillbot, ytpremium, coursera) ki tadaad
+// Out of Stock products (quillbot, ytpremium, coursera, lovable) ki tadaad
 // yahan se nahi badalti — un ka status un ke page par pehle se set hai.
 var SR_STOCK = {
   canva: 250,
@@ -18,7 +18,7 @@ var SR_STOCK = {
   surf: 5,
   nordvpn: 10,
   quillbot: null,
-  lovable: 3,
+  lovable: null,
   netflix: 5,
   ytpremium: null,
   applemusic: 110,
