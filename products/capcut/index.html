@@ -98,7 +98,7 @@
         <h1 class="pd-name">CapCut Pro 1 Month</h1>
         <div class="pd-stars">★★★★★<span>4.9/5 · Verified reviews</span></div>
         <div class="pd-stockline"><span id="pdStockText">In Stock - ready for instant delivery on WhatsApp</span></div>
-        <p class="pd-desc">CapCut Pro price in Pakistan — buy cheap</p>
+        <p class="pd-desc">CapCut Pro price in Pakistan — buy cheap. 1 month access with 25-day warranty.</p>
                 <details class="pd-pay">
           <summary class="pd-pay-title"><i class="fa-solid fa-wallet"></i> Payment Methods <span class="pd-pay-toggle">▼</span></summary>
           <div class="pd-pay-item">
@@ -229,7 +229,7 @@ function toggleMobileMenu() {
 
 const PNAME = "CapCut Pro 1 Month";
 const PD_SLUG='capcut';
-const PLANS = [["650", "1 month"]];
+const PLANS = [["650", "1 month", "CapCut Pro price in Pakistan — buy cheap. 1 month access with 25-day warranty."], ["200", "7 days", "CapCut Pro price in Pakistan — buy cheap. 7 days access with 5-day warranty."]]; // 7-day plan is OUT OF STOCK (pill disabled) - desc wired for when it returns
 let curPlan = 0;
 function selPlan(i, el){
   curPlan = i;
@@ -238,6 +238,7 @@ function selPlan(i, el){
   document.getElementById('pdPrice').textContent = 'Rs. ' + PLANS[i][0];
   document.getElementById('pdDur').textContent = '/ ' + PLANS[i][1];
   var _u=document.getElementById('pdUsd');if(_u)_u.textContent='(~$'+(parseFloat(PLANS[i][0])/277).toFixed(2)+')';
+  var _d=document.querySelector('.pd-desc');if(_d&&PLANS[i][2])_d.textContent=PLANS[i][2]; // per-plan description
   updOrder();
 }
 function updOrder(){

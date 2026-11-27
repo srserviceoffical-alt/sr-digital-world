@@ -97,7 +97,7 @@
         <h1 class="pd-name">Surfshark VPN Single Device</h1>
         <div class="pd-stars">★★★★★<span>4.9/5 · Verified reviews</span></div>
         <div class="pd-stockline"><span id="pdStockText">In Stock - ready for instant delivery on WhatsApp</span></div>
-        <p class="pd-desc">Surfshark VPN price in Pakistan — buy cheap VPN</p>
+        <p class="pd-desc">Surfshark VPN price in Pakistan — buy cheap VPN. 1 month access on 1 device, 30-day replacement warranty.</p>
                 <details class="pd-pay">
           <summary class="pd-pay-title"><i class="fa-solid fa-wallet"></i> Payment Methods <span class="pd-pay-toggle">▼</span></summary>
           <div class="pd-pay-item">
@@ -228,7 +228,7 @@ function toggleMobileMenu() {
 
 const PNAME = "Surfshark VPN Single Device";
 const PD_SLUG='surf';
-const PLANS = [["350", "1 month"], ["500", "2 months"]];
+const PLANS = [["350", "1 month", "Surfshark VPN price in Pakistan — buy cheap VPN. 1 month access on 1 device, 30-day replacement warranty."], ["500", "2 months", "Surfshark VPN price in Pakistan — buy cheap VPN. 2 months access on 1 device."]];
 let curPlan = 0;
 function selPlan(i, el){
   curPlan = i;
@@ -237,6 +237,7 @@ function selPlan(i, el){
   document.getElementById('pdPrice').textContent = 'Rs. ' + PLANS[i][0];
   document.getElementById('pdDur').textContent = '/ ' + PLANS[i][1];
   var _u=document.getElementById('pdUsd');if(_u)_u.textContent='(~$'+(parseFloat(PLANS[i][0])/277).toFixed(2)+')';
+  var _d=document.querySelector('.pd-desc');if(_d&&PLANS[i][2])_d.textContent=PLANS[i][2]; // per-plan description
   if(PLANS.length<2){document.querySelector('.pd-plans-label').style.display='none';document.querySelector('.pd-plans').style.display='none';}
 updOrder();
 }
