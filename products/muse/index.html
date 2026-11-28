@@ -56,6 +56,7 @@
 <style>.pd-wrap{max-width:1100px;margin:0 auto;padding:0 16px}.pd-crumb{padding:26px 0 0;font-size:13px;color:var(--text-muted)}.pd-crumb a{color:var(--primary-text);text-decoration:none}.pd-hero{padding:26px 0 10px}.pd-grid{display:grid;grid-template-columns:320px 1fr;gap:36px;align-items:start}
 @media(max-width:820px){.pd-grid{grid-template-columns:1fr}}.pd-logo-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:36px;display:flex;align-items:center;justify-content:center;min-height:300px}.pd-logo-card img{width:170px;height:170px;object-fit:contain;border-radius:24px}.pd-logo-card img.pd-poster{width:100%;height:auto;max-height:460px;object-fit:contain;border-radius:16px}.pd-poster-card{padding:20px!important}.pd-tag{display:inline-block;background:rgba(250,146,11,.12);color:var(--primary);font-size:12px;font-weight:700;padding:6px 14px;border-radius:100px;letter-spacing:.5px;margin-bottom:12px}.pd-name{color:var(--text);font-size:32px;font-weight:800;margin:0 0 8px}.pd-stars{color:var(--gold);letter-spacing:3px;font-size:14px;margin-bottom:12px}.pd-stars span{color:var(--gold);letter-spacing:0;font-size:12px;margin-left:8px}.pd-desc{color:var(--text-muted);font-size:15px;line-height:1.7;margin-bottom:20px}.pd-plans-label{color:var(--text);font-weight:700;font-size:14px;margin-bottom:10px}.pd-plans{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}.pd-plan{background:var(--card);border:1.5px solid var(--border);color:var(--text-muted);font-weight:700;font-size:13px;padding:10px 20px;border-radius:100px;cursor:pointer;transition:all .2s;font-family:'Inter',sans-serif}.pd-plan small{display:block;font-weight:400;font-size:11px;color:var(--text-muted)}.pd-plan.active{border-color:var(--primary);color:var(--text);background:rgba(250,146,11,.1)}.pd-plan.active small{color:var(--primary)}.pd-price{font-size:34px;font-weight:800;color:var(--text)}.pd-price span{font-size:15px;color:var(--text-muted);font-weight:400}.pd-actions{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap}.pd-order{display:inline-flex;align-items:center;gap:10px;background:#222222;color:#fff;box-shadow:0 4px 14px rgba(34,34,34,.35);font-weight:800;font-size:15px;padding:14px 34px;border-radius:100px;border:none;cursor:pointer;font-family:'Inter',sans-serif;text-decoration:none;transition:transform .2s,box-shadow .2s,background .2s}.pd-order:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(250,146,11,.45);color:#fff;background:#FA920B}.pd-chat{display:inline-flex;align-items:center;gap:10px;border:1.5px solid rgba(21,128,61,.55);color:var(--cta);font-weight:700;font-size:15px;padding:13px 30px;border-radius:100px;text-decoration:none}.pd-chat:hover{background:rgba(21,128,61,.08);color:var(--cta-hover)}.pd-trust{display:flex;gap:22px;margin-top:24px;flex-wrap:wrap}.pd-trust div{color:var(--text-muted);font-size:13px}.pd-trust i{color:#25D366;margin-right:7px}.pd-sec{padding:34px 0}.pd-sec-title{color:var(--text);font-size:21px;font-weight:800;margin-bottom:18px}.pd-detail-box{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:30px;color:var(--text-muted);font-size:14.5px;line-height:1.8}.pd-detail-box strong{color:var(--text)}.pd-detail-box ul{margin:10px 0 18px;padding-left:20px}.pd-detail-box li{margin-bottom:7px}.pd-detail-box li::marker{color:var(--primary)}.pd-rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 @media(max-width:700px){.pd-rel-grid{grid-template-columns:1fr}}.pd-rel{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;text-align:center;text-decoration:none;transition:transform .25s,box-shadow .25s;display:block}.pd-rel:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(250,146,11,.12)}.pd-rel img{width:64px;height:64px;object-fit:contain;border-radius:14px;margin-bottom:10px}.pd-rel .rn{color:var(--text);font-weight:700;font-size:14px}.pd-rel .rp{color:var(--primary);font-weight:700;font-size:13px;margin-top:6px}
+.pd-qty-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:18px}.pd-qty-label{color:var(--text);font-weight:700;font-size:14px}.pd-qty{display:flex;align-items:center;border:1.5px solid var(--border);border-radius:100px;overflow:hidden}.pd-qty-btn{background:var(--card);border:none;color:var(--text);font-weight:800;font-size:16px;width:36px;height:36px;cursor:pointer;font-family:'Inter',sans-serif}.pd-qty-btn:hover{background:rgba(250,146,11,.1);color:var(--primary)}.pd-qty-val{min-width:36px;text-align:center;font-weight:800;font-size:14px;color:var(--text)}.pd-qty-note{color:var(--text-muted);font-size:12.5px}
 /* ===== light-theme global additions ===== */
 
 
@@ -120,6 +121,7 @@
         <script>function copyPdPay(t,b){if(navigator.clipboard){navigator.clipboard.writeText(t).then(function(){var o=b.innerHTML;b.innerHTML='Copied \u2713';setTimeout(function(){b.innerHTML=o},1500)})}}</script>
 <div class="pd-plans-label">Select Plan:</div>
         <div class="pd-plans"><button class="pd-plan active" onclick="selPlan(0,this)">Rs. 150<small>1 Billion</small></button></div>
+        <div class="pd-qty-row"><span class="pd-qty-label">Quantity:</span><div class="pd-qty"><button type="button" class="pd-qty-btn" onclick="museQtyChange(-1)" aria-label="Decrease quantity">−</button><span class="pd-qty-val" id="museQtyVal">1</span><button type="button" class="pd-qty-btn" onclick="museQtyChange(1)" aria-label="Increase quantity">+</button></div><span class="pd-qty-note">1 unit = 1 Billion tokens · bulk rates apply automatically</span></div>
         <div class="pd-price"><span id="pdPrice">Rs. 150</span> <span id="pdDur">/ 1 Billion</span> <span id="pdUsd">(~$0.54)</span></div>
         <div class="pd-actions">
           <button class="pd-cart" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button>
@@ -137,7 +139,7 @@
   </section>
   <section class="pd-sec">
     <h2 class="pd-sec-title">Price in Pakistan</h2>
-    <div class="pd-detail-box" style="padding:22px 26px"><table class="pd-ptable"><tr><th>Plan</th><th>Price (PKR)</th><th>Price (USD)</th></tr><tr><td>1 Billion</td><td>Rs. 150</td><td>~$0.54</td></tr></table></div>
+    <div class="pd-detail-box" style="padding:22px 26px"><table class="pd-ptable"><tr><th>Quantity</th><th>Price / 1 Billion</th><th>Total (PKR)</th><th>Total (USD)</th></tr><tr><td>1 unit</td><td>Rs. 150</td><td>Rs. 150</td><td>~$0.54</td></tr><tr><td>5 units</td><td>Rs. 145</td><td>Rs. 725</td><td>~$2.62</td></tr><tr><td>10 units</td><td>Rs. 140</td><td>Rs. 1,400</td><td>~$5.05</td></tr><tr><td>15 units</td><td>Rs. 130</td><td>Rs. 1,950</td><td>~$7.04</td></tr><tr><td>20 units</td><td>Rs. 120</td><td>Rs. 2,400</td><td>~$8.66</td></tr><tr><td>25 units</td><td>Rs. 110</td><td>Rs. 2,750</td><td>~$9.93</td></tr><tr><td>30 units</td><td>Rs. 100</td><td>Rs. 3,000</td><td>~$10.83</td></tr></table></div>
   </section>
   <section class="pd-sec">
     <h2 class="pd-sec-title">Product Details</h2>
@@ -230,20 +232,26 @@ const PNAME = "Muse AI Token On Client Account";
 const PD_SLUG='muse';
 const PLANS = [["150", "1 Billion"]];
 let curPlan = 0;
+var museQty=1;
+function museUnitPrice(q){if(q>=30)return 100;if(q>=25)return 110;if(q>=20)return 120;if(q>=15)return 130;if(q>=10)return 140;if(q>=5)return 145;return 150;}
+function museTotal(){return museQty*museUnitPrice(museQty);}
+function museLabel(){return museQty+' Billion';}
+function museRefresh(){var tt=museTotal();document.getElementById('pdPrice').textContent='Rs. '+tt;document.getElementById('pdDur').textContent='/ '+museLabel();var _u=document.getElementById('pdUsd');if(_u)_u.textContent='(~$'+(tt/277).toFixed(2)+')';updOrder();}
+function museQtyChange(d){museQty=Math.min(30,Math.max(1,museQty+d));document.getElementById('museQtyVal').textContent=museQty;museRefresh();}
 function selPlan(i, el){
   curPlan = i;
   document.querySelectorAll('.pd-plan').forEach(b=>b.classList.remove('active'));
   el.classList.add('active');
-  document.getElementById('pdPrice').textContent = 'Rs. ' + PLANS[i][0];
-  document.getElementById('pdDur').textContent = '/ ' + PLANS[i][1];
-  var _u=document.getElementById('pdUsd');if(_u)_u.textContent='(~$'+(parseFloat(PLANS[i][0])/277).toFixed(2)+')';
+  document.getElementById('pdPrice').textContent = 'Rs. ' + museTotal();
+  document.getElementById('pdDur').textContent = '/ ' + museLabel();
+  var _u=document.getElementById('pdUsd');if(_u)_u.textContent='(~$'+(museTotal()/277).toFixed(2)+')';
   if(PLANS.length<2){document.querySelector('.pd-plans-label').style.display='none';document.querySelector('.pd-plans').style.display='none';}
 updOrder();
 }
 function updOrder(){
-  const base=parseInt(PLANS[curPlan][0],10);
+  const base=museTotal();
   let msg;
-  msg='Assalam-o-Alaikum! I want to order ' + PNAME + ' (' + PLANS[curPlan][1] + ' - Rs. ' + PLANS[curPlan][0] + ') from SR Digital World.';
+  msg='Assalam-o-Alaikum! I want to order ' + PNAME + ' (' + museLabel() + ' - Rs. ' + base + ') from SR Digital World.';
   document.getElementById('pdPrice').textContent='Rs. ' + base;
   var _ue=document.getElementById('pdUsd');if(_ue){_ue.textContent='(~$'+(base/277).toFixed(2)+')';}
   var _po=document.getElementById('pdOrder');if(_po&&_po.tagName==='A')_po.href='https://wa.me/923229952880?text='+encodeURIComponent(msg);
@@ -257,7 +265,7 @@ function openPdOrder(){
   var _cm=document.getElementById('couponMsg');if(_cm)_cm.textContent='';
   document.getElementById('mName').value='';
   document.getElementById('mPhone').value='';
-  document.getElementById('modalChip').textContent=PNAME+' ('+PLANS[curPlan][1]+') \u2014 '+document.getElementById('pdPrice').textContent;
+  document.getElementById('modalChip').textContent=PNAME+' ('+museLabel()+') \u2014 '+document.getElementById('pdPrice').textContent;
   document.getElementById('orderModal').classList.add('open');
   document.body.style.overflow='hidden';
 }
@@ -268,21 +276,21 @@ function srdApplyPdModalCoupon(){
   var res=SRD_findCoupon(inp.value,PD_SLUG);
   if(res.ok){
     pdModalCoupon=res;
-    var base=parseInt(PLANS[curPlan][0],10);
+    var base=museTotal();
     var r=SRD_applyPrice(base,res.percent);
     msgEl.textContent='\u2705 Coupon lag gaya! '+res.percent+'% OFF \u2014 nayi price: Rs. '+r.final+' (asal price: Rs. '+base+')';msgEl.style.color='#15803d';
-    document.getElementById('modalChip').textContent=PNAME+' ('+PLANS[curPlan][1]+') \u2014 Rs. '+r.final+' ('+res.percent+'% OFF)';
+    document.getElementById('modalChip').textContent=PNAME+' ('+museLabel()+') \u2014 Rs. '+r.final+' ('+res.percent+'% OFF)';
   } else {
     pdModalCoupon=null;
     msgEl.textContent=SRD_couponErrorText(res.reason);msgEl.style.color='#dc2626';
-    document.getElementById('modalChip').textContent=PNAME+' ('+PLANS[curPlan][1]+') \u2014 '+document.getElementById('pdPrice').textContent;
+    document.getElementById('modalChip').textContent=PNAME+' ('+museLabel()+') \u2014 '+document.getElementById('pdPrice').textContent;
   }
 }
 function sendPdOrder(){
   var name=document.getElementById('mName').value.trim();
   var phone=document.getElementById('mPhone').value.trim();
   if(!name||!phone){alert('Name and number are required!');return;}
-  var base=parseInt(PLANS[curPlan][0],10);
+  var base=museTotal();
   var priceText;
   if(pdModalCoupon){
     var r=SRD_applyPrice(base,pdModalCoupon.percent);
@@ -290,7 +298,7 @@ function sendPdOrder(){
   } else {
     priceText='Rs. '+base;
   }
-  var msg='Hello!\n\nI want to place an order:\n🛍️ *Product:* '+PNAME+' ('+PLANS[curPlan][1]+')\n💵 *Price:* '+priceText+'\n👤 *Name:* '+name+'\n📞 *Phone:* '+phone+'\n🔑 *Muse Invite Code:* (please write your Muse invite code here)\n\n_Order from SR Digital World website_';
+  var msg='Hello!\n\nI want to place an order:\n🛍️ *Product:* '+PNAME+' ('+museLabel()+')\n💵 *Price:* '+priceText+'\n👤 *Name:* '+name+'\n📞 *Phone:* '+phone+'\n🔑 *Muse Invite Code:* (please write your Muse invite code here)\n\n_Order from SR Digital World website_';
   window.open('https://wa.me/923229952880?text='+encodeURIComponent(msg),'_blank');
   closePdModal();
 }
