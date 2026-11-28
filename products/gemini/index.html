@@ -144,6 +144,7 @@
     <div class="pd-detail-box"><div class="pdetail">
 <strong>🚀 Google AI Pro – Invite Access</strong><br>
 📩 An invite will be sent to <strong>your personal Gmail</strong> — accept it and Gemini Pro Invite On Client Mail activates on your account.<br>
+🗓️ Validity: <span id="pdDet0">1 Month</span><br>
 <br>
 <strong>✅ What's Included</strong>
 <ul>
@@ -248,6 +249,7 @@ function toggleMobileMenu() {
 const PNAME = "Gemini Pro Invite On Client Mail";
 const PD_SLUG='gemini';
 const PLANS = [["299", "1 month", "Google AI Pro price in Pakistan — buy cheap. 1 month access, activation guaranteed."], ["499", "2 months", "Google AI Pro price in Pakistan — buy cheap. 2 months access, activation guaranteed."]];
+const PDET=[["1 Month"],["2 Months"]];
 let curPlan = 0;
 function selPlan(i, el){
   curPlan = i;
@@ -257,6 +259,7 @@ function selPlan(i, el){
   document.getElementById('pdDur').textContent = '/ ' + PLANS[i][1];
   var _u=document.getElementById('pdUsd');if(_u)_u.textContent='(~$'+(parseFloat(PLANS[i][0])/277).toFixed(2)+')';
   var _d=document.querySelector('.pd-desc');if(_d&&PLANS[i][2])_d.textContent=PLANS[i][2]; // per-plan description
+  if(typeof PDET!=='undefined'&&PDET[i]){for(var k=0;k<PDET[i].length;k++){var _s=document.getElementById('pdDet'+k);if(_s)_s.textContent=PDET[i][k];}} // per-plan details
   if(PLANS.length<2){document.querySelector('.pd-plans-label').style.display='none';document.querySelector('.pd-plans').style.display='none';}
 updOrder();
 }

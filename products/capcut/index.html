@@ -142,7 +142,7 @@
   </section>
   <section class="pd-sec">
     <h2 class="pd-sec-title">Product Details</h2>
-    <div class="pd-detail-box"><div class="pdetail">🔐 Private Account<br>🗓️ Validity: As Per Purchased Plan<br>🛡️ Warranty: 25 Days (1 Month Plan) / 5 Days (7 Days Plan)<br><br><strong>📌 How to Use</strong><ul><li>Login In Only 2 Devices (1 Mobile and 1 Pc)</li><li>Don't Login and Logout account again n again</li><li>Copy The Login Credentials Correctly. If You Get Wrong pass or mail. Just contact admin. Don't try again n again wrong. It will cause Maximum Attempts issue. And we will not provide any warranty or replacement of it</li></ul><strong>📋 Warranty Rules</strong><ul><li>Warranty Accepted Only If Account Goes Non Pro</li><li>Warranty Not Accepted If Account Gets Maximum Attempts Of Number</li></ul></div></div>
+    <div class="pd-detail-box"><div class="pdetail">🔐 Private Account<br>🗓️ Validity: <span id="pdDet0">1 Month</span><br>🛡️ Warranty: <span id="pdDet1">25 Days</span><br><br><strong>📌 How to Use</strong><ul><li>Login In Only 2 Devices (1 Mobile and 1 Pc)</li><li>Don't Login and Logout account again n again</li><li>Copy The Login Credentials Correctly. If You Get Wrong pass or mail. Just contact admin. Don't try again n again wrong. It will cause Maximum Attempts issue. And we will not provide any warranty or replacement of it</li></ul><strong>📋 Warranty Rules</strong><ul><li>Warranty Accepted Only If Account Goes Non Pro</li><li>Warranty Not Accepted If Account Gets Maximum Attempts Of Number</li></ul></div></div>
   </section>
   <section class="pd-sec">
     <h2 class="pd-sec-title">What Buyers Say</h2>
@@ -229,7 +229,8 @@ function toggleMobileMenu() {
 
 const PNAME = "CapCut Pro 1 Month";
 const PD_SLUG='capcut';
-const PLANS = [["650", "1 month", "CapCut Pro price in Pakistan — buy cheap. 1 month access with 25-day warranty."], ["200", "7 days", "CapCut Pro price in Pakistan — buy cheap. 7 days access with 5-day warranty."]]; // 7-day plan is OUT OF STOCK (pill disabled) - desc wired for when it returns
+const PLANS = [["650", "1 month", "CapCut Pro price in Pakistan — buy cheap. 1 month access with 25-day warranty."], ["200", "7 days", "CapCut Pro price in Pakistan — buy cheap. 7 days access with 5-day warranty."]];
+const PDET=[["1 Month","25 Days"],["7 Days","5 Days"]]; // 7-day plan is OUT OF STOCK (pill disabled) - desc wired for when it returns
 let curPlan = 0;
 function selPlan(i, el){
   curPlan = i;
@@ -239,6 +240,7 @@ function selPlan(i, el){
   document.getElementById('pdDur').textContent = '/ ' + PLANS[i][1];
   var _u=document.getElementById('pdUsd');if(_u)_u.textContent='(~$'+(parseFloat(PLANS[i][0])/277).toFixed(2)+')';
   var _d=document.querySelector('.pd-desc');if(_d&&PLANS[i][2])_d.textContent=PLANS[i][2]; // per-plan description
+  if(typeof PDET!=='undefined'&&PDET[i]){for(var k=0;k<PDET[i].length;k++){var _s=document.getElementById('pdDet'+k);if(_s)_s.textContent=PDET[i][k];}} // per-plan details
   updOrder();
 }
 function updOrder(){

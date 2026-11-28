@@ -141,7 +141,7 @@
   </section>
   <section class="pd-sec">
     <h2 class="pd-sec-title">Product Details</h2>
-    <div class="pd-detail-box"><div class="pdetail">👥 Team Panel Model — activated directly on YOUR Gmail<br>💵 Payment after activation — no advance needed<br>🗓️ Plans: 1 Month (Rs. 150) / 3 Months (Rs. 200)<br>⚠️ 3 Months plan: full access for 3 months.<br>🛡️ Warranty: 1 Month (1M plan) / 3 Months (3M plan)<br><br><strong>✨ Features</strong><ul><li>150+ English, Urdu & Arabic fonts</li><li>Full Canva AI suite — AI Image Generator, Magic Studio, Design Generator</li><li>Background Remover, Resize Tool, Magic Eraser, Magic Grab</li><li>Unlimited premium templates, fonts, stock photos & videos</li><li>100% private projects</li><li>Works on Windows, Mac, Linux, Android & iOS</li></ul><strong>🎁 Free Bonus</strong><ul><li>Canva Elements Keywords E-Book included</li></ul><strong>📋 Warranty Rules</strong><ul><li>1 Month Plan: 1-month (30 days) full replacement warranty.</li><li>3 Months Plan: 3-month full replacement warranty.</li><li>Replacement only if premium access is removed during the warranty period.</li></ul></div></div>
+    <div class="pd-detail-box"><div class="pdetail">👥 Team Panel Model — activated directly on YOUR Gmail<br>💵 Payment after activation — no advance needed<br>🗓️ Plan: <span id="pdDet0">1 Month (Rs. 150)</span><br>⚠️ <span id="pdDet1">1 Month plan: full access for 1 month.</span><br>🛡️ Warranty: <span id="pdDet2">1 Month</span><br><br><strong>✨ Features</strong><ul><li>150+ English, Urdu & Arabic fonts</li><li>Full Canva AI suite — AI Image Generator, Magic Studio, Design Generator</li><li>Background Remover, Resize Tool, Magic Eraser, Magic Grab</li><li>Unlimited premium templates, fonts, stock photos & videos</li><li>100% private projects</li><li>Works on Windows, Mac, Linux, Android & iOS</li></ul><strong>🎁 Free Bonus</strong><ul><li>Canva Elements Keywords E-Book included</li></ul><strong>📋 Warranty Rules</strong><ul><li>1 Month Plan: 1-month (30 days) full replacement warranty.</li><li>3 Months Plan: 3-month full replacement warranty.</li><li>Replacement only if premium access is removed during the warranty period.</li></ul></div></div>
   </section>
   <section class="pd-sec">
     <h2 class="pd-sec-title">What Buyers Say</h2>
@@ -229,6 +229,7 @@ function toggleMobileMenu() {
 const PNAME = "Canva Edu Invite On Client Mail";
 const PD_SLUG='canva';
 const PLANS = [["150", "1 month", "Canva Pro price in Pakistan — cheap design tool. 1 month access with 1-month warranty."], ["200", "3 months", "Canva Pro price in Pakistan — cheap design tool. 3 months access with 3-month warranty."]];
+const PDET=[["1 Month (Rs. 150)","1 Month plan: full access for 1 month.","1 Month"],["3 Months (Rs. 200)","3 Months plan: full access for 3 months.","3 Months"]];
 let curPlan = 0;
 function selPlan(i, el){
   curPlan = i;
@@ -238,6 +239,7 @@ function selPlan(i, el){
   document.getElementById('pdDur').textContent = '/ ' + PLANS[i][1];
   var _u=document.getElementById('pdUsd');if(_u)_u.textContent='(~$'+(parseFloat(PLANS[i][0])/277).toFixed(2)+')';
   var _d=document.querySelector('.pd-desc');if(_d&&PLANS[i][2])_d.textContent=PLANS[i][2]; // per-plan description
+  if(typeof PDET!=='undefined'&&PDET[i]){for(var k=0;k<PDET[i].length;k++){var _s=document.getElementById('pdDet'+k);if(_s)_s.textContent=PDET[i][k];}} // per-plan details
   updOrder();
 }
 function updOrder(){
