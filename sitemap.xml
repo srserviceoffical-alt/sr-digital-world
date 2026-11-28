@@ -21,6 +21,7 @@
   <url><loc>https://www.srdigitalworld.shop/products/ilovepdf/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.srdigitalworld.shop/products/linkedin/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.srdigitalworld.shop/products/lovable/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.srdigitalworld.shop/products/muse/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.srdigitalworld.shop/products/netflix/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.srdigitalworld.shop/products/nordvpn/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.srdigitalworld.shop/products/notion/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
@@ -90,6 +91,12 @@
   <url>
     <loc>https://www.srdigitalworld.shop/blog/lovable-price-pakistan/</loc>
     <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.srdigitalworld.shop/blog/muse-ai-token-price-pakistan/</loc>
+    <lastmod>2026-11-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

@@ -325,6 +325,24 @@
         </div>
         </div>
       </div>
+<div class="col-lg-4 col-md-6">
+        <div class="product-card rv" data-desc="Muse AI Token price in Pakistan — buy cheap" data-price="150" data-href="/products/muse/">
+          <div class="pc-banner"><img src="/images/cards/muse.webp" alt="Muse AI Token On Client Account" class="pc-poster"><span class="pc-badge pc-dur">✓ 1B</span><span class="pc-badge pc-stock in">● In Stock</span></div>
+          <div class="card-tag">AI Tokens</div>
+          <div class="product-name">Muse AI Token On Client Account</div>
+          
+          <div class="dur-tabs" id="tabs-muse">
+            <button class="dur-tab active" onclick="setDur('muse','150','1 Billion',this)">1 Billion</button>
+          </div>
+          <div class="price-row">
+          <div class="price-block">
+            <span class="price-amount" id="p-muse">Rs 150</span>
+            <span class="price-usd" id="u-muse">(~$0.54)</span>
+          </div>
+          <div class="buy-row"><button class="cart-btn" onclick="srAddToCart(this)" title="Add to Cart"><i class="fa-solid fa-cart-shopping"></i></button><button class="order-btn" onclick="openOrder('Muse AI Token On Client Account','muse')">BUY NOW →</button></div>
+        </div>
+        </div>
+      </div>
     </div>
     <div class="cat-label rv"><i class="fa-solid fa-tv"></i> Streaming & Entertainment</div>
     <div class="row g-4 mb-5" data-cat="streaming">
@@ -662,7 +680,7 @@ function setDur(card, price, label, btn) {
   if(oldEl) oldEl.textContent = 'Rs ' + ((CUT[card] && CUT[card][label]) || Math.round(parseFloat(price) * 1.35));
   var usdEl = document.getElementById('u-'+card);
   if(usdEl) usdEl.textContent = '(~$' + (parseFloat(price) / 277).toFixed(2) + ')';
-  var durMap = {'7 days':'7D','1 month':'30D','2 months':'60D','3 months':'90D','5 months':'150D','12 months':'365D','1 year':'365D','18 months':'540D','2 years':'730D'};
+  var durMap = {'7 days':'7D','1 month':'30D','2 months':'60D','3 months':'90D','5 months':'150D','12 months':'365D','1 year':'365D','18 months':'540D','2 years':'730D','1 Billion':'1B'};
   var badge = btn.closest('.product-card').querySelector('.pc-dur');
   if(badge) badge.textContent = '✓ ' + (durMap[label] || label);
 }
@@ -702,7 +720,7 @@ function sendOrder() {
   if(!name || !phone) { alert('Name and number are required!'); return; }
   
   if(window._srdCoupon){var _b=parseInt(curPrice.replace(/[^0-9]/g,''),10);var _r=SRD_applyPrice(_b,window._srdCoupon.percent);window._srdPriceText='Rs. '+_r.final+' (Coupon '+window._srdCoupon.code+' — '+window._srdCoupon.percent+'% OFF, asal price '+curPrice+')';}else{window._srdPriceText=null;}
-  const msg = `Hello!\n\nI want to place an order:\n🛍️ *Product:* ${curProduct}\n💵 *Price:* ${window._srdPriceText||curPrice}\n👤 *Name:* ${name}\n📞 *Phone:* ${phone}\n\n_Order from SR Digital World website_`;
+  const msg = `Hello!\n\nI want to place an order:\n🛍️ *Product:* ${curProduct}\n💵 *Price:* ${window._srdPriceText||curPrice}\n👤 *Name:* ${name}\n📞 *Phone:* ${phone}${curCardId==='muse'?'\n🔑 *Muse Invite Code:* (please write your Muse invite code here)':''}\n\n_Order from SR Digital World website_`;
   window.open('https://wa.me/923229952880?text='+encodeURIComponent(msg), '_blank');
   closeModal('orderModal');
 }
